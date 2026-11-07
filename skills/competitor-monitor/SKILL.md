@@ -18,3 +18,7 @@ Learned: Shipping one self-contained tool first made later steps cheaper: a smal
 Why: The hex-to-RGB tool is public and one explainer image already exists; a second picture covering two colors completes the visual set cheaply and gives the tool a matching image to publish beside it.
 
 Learned: A small tool only becomes a base for later steps once its own folder-local self-test output is logged beside its public URL.
+
+## 2026-11-07: Rebuilt hex2rgb as an explainer page, fixed hex validation, added a stronger Node-backed self_test.py and README.
+
+Why: The hex tool exists but has no folder-local passing self-test logged under the target, so the next concrete piece is making that artifact fully self-verifying before any outside announcement.
