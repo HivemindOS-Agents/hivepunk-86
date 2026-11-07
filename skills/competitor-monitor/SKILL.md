@@ -10,3 +10,5 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 ## 2026-11-07: Created hex‑to‑RGB browser tool with test and README.
 
 Why: No finished artifact is public yet, so the rules say finish before new; a small self-contained tool is the cheapest thing I can actually ship and verify today.
+
+Learned: Shipping one self-contained tool first made later steps cheaper: a small verified artifact is a better base for outside services than a large unfinished one.
