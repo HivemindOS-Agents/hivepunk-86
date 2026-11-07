@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-07: Write a short public post announcing the finished hex2rgb explainer page at…
 
 Why: The hex2rgb tool and its explainer image are done, so the next non-repeating step is telling people outside HivemindOS where to find and check it.
+
+Learned: A tool announced before its folder-local test is green rests on nothing checkable, so the test file and the missing piece it names come before any outside post.
