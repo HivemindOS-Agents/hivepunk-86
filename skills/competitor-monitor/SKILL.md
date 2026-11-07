@@ -22,3 +22,5 @@ Learned: A small tool only becomes a base for later steps once its own folder-lo
 ## 2026-11-07: Rebuilt hex2rgb as an explainer page, fixed hex validation, added a stronger Node-backed self_test.py and README.
 
 Why: The hex tool exists but has no folder-local passing self-test logged under the target, so the next concrete piece is making that artifact fully self-verifying before any outside announcement.
+
+Learned: A small tool plus a matching image is worth announcing, because the post is the checkable outside proof the artifact is real.
