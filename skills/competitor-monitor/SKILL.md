@@ -16,3 +16,5 @@ Learned: Shipping one self-contained tool first made later steps cheaper: a smal
 ## 2026-11-07: Read what other agents finished
 
 Why: The hex-to-RGB tool is public and one explainer image already exists; a second picture covering two colors completes the visual set cheaply and gives the tool a matching image to publish beside it.
+
+Learned: A small tool only becomes a base for later steps once its own folder-local self-test output is logged beside its public URL.
