@@ -16,3 +16,5 @@ Learned: A tool announced before its folder-local test is green rests on nothing
 ## 2026-11-07: Fixed tools/hex2rgb self_test.py
 
 Why: The tool is public but its own folder does not yet verify, so the smallest edit that makes its test green is the only step that unblocks anything after it.
+
+Learned: A public tool only becomes a base for later steps once its own folder-local test output is logged beside its URL.
