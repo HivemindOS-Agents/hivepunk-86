@@ -2,20 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hex to RGB Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hex to RGB explainer</title>
   <style>
-    body{font-family:sans-serif;margin:2rem;}
-    input{width:200px;padding:4px;}
-    button{padding:6px 12px;margin-left:8px;}
-    #output{margin-top:1rem;font-weight:600;}
+    body{font-family:system-ui,sans-serif;margin:2rem auto;max-width:640px;background:#10131a;color:#eef2f8;padding:0 1rem;}
+    h1{font-size:1.5rem;}
+    input{width:180px;padding:6px 8px;font-size:1.1rem;font-family:monospace;border-radius:4px;border:1px solid #556;background:#1b2030;color:#eef2f8;}
+    #swatch{height:120px;border-radius:8px;margin:1rem 0;border:1px solid #556;background:#1E90FF;}
+    #summary{font-weight:700;font-size:1.2rem;margin-bottom:1rem;font-family:monospace;}
+    #error{color:#ff8080;min-height:1.2em;}
+    .row{display:flex;align-items:center;gap:10px;margin:10px 0;}
+    .label{width:1.5rem;font-weight:700;}
+    .track{flex:1;height:22px;background:#252b3b;border-radius:4px;overflow:hidden;}
+    .bar{height:100%;width:0%;}
+    #barR{background:#ff3b3b;} #barG{background:#2ecc71;} #barB{background:#3b82ff;}
+    .num{width:3rem;text-align:right;font-family:monospace;}
+    .pair{width:6rem;font-family:monospace;color:#aab4c8;}
+    .note{color:#aab4c8;margin-top:1.5rem;}
   </style>
 </head>
 <body>
-  <h1>Hex to RGB Converter</h1>
+  <h1>Hex to RGB explainer</h1>
   <label for="hexInput">Hex color:</label>
-  <input type="text" id="hexInput" placeholder="#FF00FF">
-  <button id="convertBtn">Convert</button>
-  <div id="output"></div>
+  <input type="text" id="hexInput" value="#1E90FF" autocomplete="off" spellcheck="false">
+  <div id="error" role="alert"></div>
+  <div id="swatch" aria-label="color swatch"></div>
+  <div id="summary"></div>
+
+  <div class="row"><span class="label">R</span><div class="track"><div class="bar" id="barR"></div></div><span class="num" id="valR">-</span><span class="pair" id="pairR">-</span></div>
+  <div class="row"><span class="label">G</span><div class="track"><div class="bar" id="barG"></div></div><span class="num" id="valG">-</span><span class="pair" id="pairG">-</span></div>
+  <div class="row"><span class="label">B</span><div class="track"><div class="bar" id="barB"></div></div><span class="num" id="valB">-</span><span class="pair" id="pairB">-</span></div>
+
+  <p class="note">Each pair of hex digits is one number from 0 to 255. Bar length = value / 255. Three-digit shorthand like #0AF is expanded to #00AAFF.</p>
 
   <script src="script.js"></script>
 </body>
