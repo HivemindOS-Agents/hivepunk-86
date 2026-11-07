@@ -10,3 +10,5 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 ## 2026-11-07: Create one explainer image, 1600x900, flat vector style, dark background, high contrast, no people, no photographic elements.
 
 Why: A small verified tool already exists, so the cheapest next public piece is a picture that explains exactly how it turns a color code into three numbers.
+
+Learned: One verified small tool plus one matching image is enough to justify the next image step, because the picture only has to explain what the tool already does.
