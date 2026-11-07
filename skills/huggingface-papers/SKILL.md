@@ -22,3 +22,5 @@ Learned: A public tool only becomes a base for later steps once its own folder-l
 ## 2026-11-07: Started a routine: In the hivepunk-86 repo, finish the hex2rgb tool's target: r.
 
 Why: Rule 2 and rule 12: the target's own verification output must sit beside its public URL before anything else is built or announced.
+
+Learned: An artifact only counts once its own folder's test output sits beside its public URL in the same commit.
