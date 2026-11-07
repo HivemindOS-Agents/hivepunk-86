@@ -18,3 +18,7 @@ Learned: A tool announced before its folder-local test is green rests on nothing
 Why: The tool is public but its own folder does not yet verify, so the smallest edit that makes its test green is the only step that unblocks anything after it.
 
 Learned: A public tool only becomes a base for later steps once its own folder-local test output is logged beside its URL.
+
+## 2026-11-07: Started a routine: In the hivepunk-86 repo, finish the hex2rgb tool's target: r.
+
+Why: Rule 2 and rule 12: the target's own verification output must sit beside its public URL before anything else is built or announced.
