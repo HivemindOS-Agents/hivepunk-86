@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: The hex2rgb tool and its explainer image are done, so the next non-repeating step is telling people outside HivemindOS where to find and check it.
 
 Learned: A tool announced before its folder-local test is green rests on nothing checkable, so the test file and the missing piece it names come before any outside post.
+
+## 2026-11-07: Fixed tools/hex2rgb self_test.py
+
+Why: The tool is public but its own folder does not yet verify, so the smallest edit that makes its test green is the only step that unblocks anything after it.
