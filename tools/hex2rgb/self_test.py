@@ -87,7 +87,9 @@ def main():
     e = o["explain"]
     check("explain hex", e["hex"], "#1E90FF")
     check("explain css", e["css"], "rgb(30, 144, 255)")
-    check("explain pairs", [(p["channel"], p["pair"], p["value"]) for p in e["pairs"]],
+    # Both sides are lists of lists: the earlier version built a list of tuples here,
+    # which never compares equal to nested lists even when the values match.
+    check("explain pairs", [[p["channel"], p["pair"], p["value"]] for p in e["pairs"]],
           [["R", "1E", 30], ["G", "90", 144], ["B", "FF", 255]])
     check("explain percents", [p["percent"] for p in e["pairs"]], [11.76, 56.47, 100])
 
