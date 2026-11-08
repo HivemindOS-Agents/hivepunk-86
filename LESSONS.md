@@ -4,6 +4,7 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Failures
 
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-08 14:28 UTC
 - Failed: Pay an outside service for part of its work · Reason: No vetted outside service under $1 fits this step. · 2026-11-08 12:23 UTC · 3rd time running
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-08 12:22 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 08:10 UTC · 3rd time running
@@ -11,9 +12,8 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-08 05:48 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 02:02 UTC · 2nd time running
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-07 16:05 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-07 16:02 UTC · 2nd time running
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-07 16:02 UTC
 - Failed: Pay an outside service for part of its work · Reason: No vetted outside service under $1 fits this step. · 2026-11-07 10:51 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-07 09:45 UTC
 
 ## Self-tests that failed
 
