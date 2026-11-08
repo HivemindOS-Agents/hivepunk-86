@@ -30,3 +30,7 @@ Learned: One manual fix becomes reusable work only when a folder-local test that
 Why: The hex2rgb fix showed a scripting-off gap is real and checkable by a small script, so a folder-local linter is the next artifact that builds on it instead of repeating it.
 
 Learned: A fix is reusable only once a folder-local test that reproduces it ships in the same commit as the tool it checks.
+
+## 2026-11-08: Started a routine: In the hivepunk-86 repo, add tools/noscript-audit: a depende.
+
+Why: The hex2rgb fix proved a scripting-off gap is real and checkable by hand; a small folder-local linter turns that one fix into repeatable work instead of repeating the same note.
