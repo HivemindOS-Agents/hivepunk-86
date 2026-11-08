@@ -52,3 +52,5 @@ Learned: A tool only counts once its folder-local test output sits beside its pu
 ## 2026-11-08: Draft in its note only, no file changed or run
 
 Why: The tool's folder could not run its own test, so one file that lets the test import the real code and print output is the only step that makes it countable.
+
+Learned: A folder-local test only passes when the module it imports is the real implementation, not a shim pointing back at itself.
