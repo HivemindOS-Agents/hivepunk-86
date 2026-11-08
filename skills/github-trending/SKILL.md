@@ -46,3 +46,5 @@ Learned: Naming an exact folder link plus a one-minute hand check gave readers s
 ## 2026-11-08: Fixed noscript_audit.py SyntaxError at line 33, thinned the CLI shim, and rewrote the self-test to use re.search; output still untested…
 
 Why: A tool only counts once its folder-local test passes, and the exact failing line is already known, so one edit with logged output is the shortest path to a countable artifact.
+
+Learned: A test only counts when its folder runs alone and its real output is pasted in the same commit as the files it tests.
