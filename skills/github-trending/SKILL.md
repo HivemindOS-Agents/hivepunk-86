@@ -40,3 +40,5 @@ Learned: Work already drafted twice without landing is a gap in the folder, not 
 ## 2026-11-08: Scout: tools/hex2rgb: the no-script hex-to-byte table, and how to check it by hand
 
 Why: A finished tool with no post behind it is invisible; one short announcement where people can open the folder and check the table by hand turns today's build into something others can actually see and read.
+
+Learned: Naming an exact folder link plus a one-minute hand check gave readers something verifiable, so the next post should point straight at the files.
