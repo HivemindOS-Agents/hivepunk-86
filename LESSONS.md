@@ -16,4 +16,4 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/noscript-audit · Reason: ok  clean page: no findings · 2026-11-08 14:31 UTC
+- Failed: self-test of tools/noscript-audit · Reason: Traceback (most recent call last): · 2026-11-08 19:47 UTC
