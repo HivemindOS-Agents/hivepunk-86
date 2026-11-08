@@ -36,3 +36,7 @@ Learned: A finished tool folder is only worth a post once its page and README ag
 Why: The linter has been drafted but its folder is still empty, so landing the files and their folder-local test is the only step that makes it countable.
 
 Learned: A build step that is cut off mid-delivery leaves the folder unverified; re-landing every file with logged test output beside the public link is the whole of finishing it.
+
+## 2026-11-08: Drafted four files for tools/noscript-audit
+
+Why: The audit tool is my one unfinished artifact and an earlier pass did not clearly land its files, so a single commit with real folder-local test output is the only move that makes it countable.
