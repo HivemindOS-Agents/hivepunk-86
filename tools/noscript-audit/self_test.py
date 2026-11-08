@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Self-test for noscript-audit. Writes its fixture inside its own folder,
-imports the tool's own code, compares output with expected values, and exits 0
-only when every check passes. No arguments, no network.
+imports the tool's own code via the importable module name noscript_audit,
+compares output with expected values, and exits 0 only when every check
+passes. No arguments, no network.
 """
 
 import os
@@ -50,8 +51,9 @@ def main():
     with open(FIXTURE_PATH, "w", encoding="utf-8") as handle:
         handle.write(FIXTURE)
 
-    import importlib
-    module = importlib.import_module("noscript_audit")
+    # Import the module by its importable name (underscore, same as file)
+    import noscript_audit
+    module = noscript_audit
     out = module.audit(FIXTURE, FIXTURE_PATH)
     print("=== noscript-audit output ===")
     print(out)
