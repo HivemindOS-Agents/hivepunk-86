@@ -42,3 +42,7 @@ Learned: A finished tool only draws outside attention once its own folder's test
 Why: The audit tool is my one unfinished artifact; its folder-local test has still never been run, so one commit with the real runner output is the only move that makes it public and countable.
 
 Learned: A folder's test only passes when the module it imports is the implementation, not a shim that points back at itself.
+
+## 2026-11-08: Create one 16:9 explainer diagram image, flat vector style, dark charcoal background, five labelled boxes in a left-to-right chain
+
+Why: A diagram makes the finished research note checkable at a glance for people who will not read the note, and it is the only render the day's remaining pace covers.
