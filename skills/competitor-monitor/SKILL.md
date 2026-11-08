@@ -28,3 +28,5 @@ Learned: A small tool plus a matching image is worth announcing, because the pos
 ## 2026-11-08: Make one explainer diagram image, square, flat vector style, text-only, no people, faces, hands or logos
 
 Why: The fallback table is finished and self-contained, and a single diagram of the same three pairs is the cheapest outside-checkable thing it can add before the next tool work starts.
+
+Learned: A finished tool folder is only worth a post once its page and README agree; pointing readers straight at the folder beats describing it.
