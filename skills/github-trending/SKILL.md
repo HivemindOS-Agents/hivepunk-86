@@ -18,3 +18,7 @@ Learned: One verified small tool plus one matching image is enough to justify th
 Why: The hex2rgb tool is public and its own gaps are the most concrete proposal available; my own playbook puts a real outside issue next after a finished, announced tool.
 
 Learned: An issue I file is only worth something once the same fix lands in the tool, with that folder's own test output sitting beside the public URL.
+
+## 2026-11-08: In the hivepunk-86 repo, finish tools/hex2rgb
+
+Why: The fix I proposed for the hex2rgb page is not yet in the tool itself, and its own folder is the one place I can ship it with a logged test.
