@@ -30,6 +30,7 @@ out.bad_len5 = tryit(() => m.hexToRgb('12345'));
 out.bad_len8 = tryit(() => m.hexToRgb('#11223344'));
 out.norm = m.normalizeHex('#0af');
 out.explain = m.explain('#1E90FF');
+out.explain_fb = m.explain('#3498DB');
 const d = fakeDoc();
 const info = m.render(d, '#1E90FF');
 out.render_ok = {
@@ -107,15 +108,59 @@ def main():
     check("render bad resets bar", b["barR"], "0%")
     check("render bad resets value", b["valB"], "-")
 
-    # Page wiring: every id the script looks up must exist in index.html.
+    # --- Static <noscript> fallback table ---------------------------------
+    fb = o["explain_fb"]
+    check("fallback colour resolves", fb["css"], "rgb(52, 152, 219)")
+
     with open(os.path.join(HERE, "index.html"), encoding="utf-8") as f:
         html = f.read()
+
+    ns = re.findall(r"<noscript>(.*?)</noscript>", html, re.S)
+    check("exactly one noscript block", len(ns), 1)
+    block = ns[0] if ns else ""
+    check("noscript holds a table", "<table" in block, True)
+    check("table has id pairTable", 'id="pairTable"' in block, True)
+    check("caption names #3498DB", "#3498DB" in block, True)
+    for head in ("Pair", "Hex", "Share of 255"):
+        check("header cell %r" % head, "<th scope=\"col\">%s</th>" % head in block, True)
+
+    rows = re.findall(r"<tr aria-label=\"([^\"]*)\">(.*?)</tr>", block, re.S)
+    check("three labelled rows", len(rows), 3)
+    if len(rows) == 3:
+        for i, (label, cells) in enumerate(rows):
+            p = fb["pairs"][i]
+            label_txt = re.search(r"<th scope=\"row\">(.*?)</th>", cells, re.S)
+            tds = re.findall(r"<td>(.*?)</td>", cells, re.S)
+            check("row %d label cell" % (i + 1), label_txt.group(1) if label_txt else None,
+                  "pair %d" % (i + 1))
+            check("row %d hex cell matches script.js" % (i + 1), tds[:1], [p["pair"]])
+            check("row %d share cell matches script.js" % (i + 1), tds[1:2], ["%g%%" % p["percent"]])
+            check("row %d aria-label names pair" % (i + 1), "pair %d" % (i + 1) in label, True)
+            check("row %d aria-label names channel" % (i + 1), p["channel"] in label, True)
+            check("row %d aria-label names value of 255" % (i + 1),
+                  "%d of 255" % p["value"] in label, True)
+            check("row %d aria-label names share" % (i + 1), "%g percent" % p["percent"] in label, True)
+
+    check("default input is #3498DB", 'id="hexInput" value="#3498DB"' in html, True)
+
+    # --- Page wiring ------------------------------------------------------ 
     ids = set(re.findall(r'id="([^"]+)"', html))
     needed = {"hexInput", "error", "swatch", "summary"}
     for ch in "RGB":
         needed |= {"bar" + ch, "val" + ch, "pair" + ch}
     check("index.html has all ids", sorted(needed - ids), [])
     check("index.html loads script.js", 'src="script.js"' in html, True)
+    check("only one script tag", len(re.findall(r"<script", html)), 1)
+    check("no external src or href", re.search(r'(src|href)="https?:', html), None)
+
+    # --- README browser test ---------------------------------------------
+    with open(os.path.join(HERE, "README.md"), encoding="utf-8") as f:
+        readme = f.read()
+    check("README has Browser test heading", "## Browser test" in readme, True)
+    check("README names the page", "tools/hex2rgb/index.html" in readme, True)
+    check("README names the input", "#3498DB" in readme, True)
+    for want in ("34` -> 52", "98` -> 152", "DB` -> 219"):
+        check("README states %s" % want, want in readme, True)
 
     if failures:
         print("\nFAILED:")
