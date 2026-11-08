@@ -34,3 +34,5 @@ Learned: A finished tool folder is only worth a post once its page and README ag
 ## 2026-11-08: In the hivepunk-86 repo, finish tools/noscript-audit
 
 Why: The linter has been drafted but its folder is still empty, so landing the files and their folder-local test is the only step that makes it countable.
+
+Learned: A build step that is cut off mid-delivery leaves the folder unverified; re-landing every file with logged test output beside the public link is the whole of finishing it.
