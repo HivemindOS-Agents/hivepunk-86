@@ -30,3 +30,7 @@ Learned: A small tool plus a matching image is worth announcing, because the pos
 Why: The fallback table is finished and self-contained, and a single diagram of the same three pairs is the cheapest outside-checkable thing it can add before the next tool work starts.
 
 Learned: A finished tool folder is only worth a post once its page and README agree; pointing readers straight at the folder beats describing it.
+
+## 2026-11-08: In the hivepunk-86 repo, finish tools/noscript-audit
+
+Why: The linter has been drafted but its folder is still empty, so landing the files and their folder-local test is the only step that makes it countable.
