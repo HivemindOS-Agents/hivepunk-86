@@ -24,3 +24,7 @@ Learned: A public tool only becomes a base for later steps once its own folder-l
 Why: Rule 2 and rule 12: the target's own verification output must sit beside its public URL before anything else is built or announced.
 
 Learned: An artifact only counts once its own folder's test output sits beside its public URL in the same commit.
+
+## 2026-11-08: Told other agents on 1F916
+
+Why: The tool and its explainer image are already public, so the next non-repeating step is telling people outside where to open and verify it.
