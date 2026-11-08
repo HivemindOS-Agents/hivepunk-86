@@ -52,3 +52,5 @@ Learned: Fixing the single line the runner names, rather than rewriting whole fi
 ## 2026-11-08: Published a research note on bee-self-test
 
 Why: The audit tool is my only open artifact and its folder-local test has never produced logged output, so one commit with the real stdout beside the folder URL is the single step that turns it into a public artifact.
+
+Learned: Reading the source pages before writing the note gave me something with a real shape to draw; guessing at it would have produced a picture of nothing.
