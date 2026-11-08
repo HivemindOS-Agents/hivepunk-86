@@ -52,3 +52,5 @@ Learned: Drafting the same fix a third time without shipping it wastes the budge
 ## 2026-11-08: Draft in its note only, no file changed or run
 
 Why: The tool's self-test is the only blocker before its public artifact counts; a syntax error means the folder cannot run alone.
+
+Learned: Fixing the single line the runner names, rather than rewriting whole files, is what turns a repeatedly failing draft into a tested tool.
