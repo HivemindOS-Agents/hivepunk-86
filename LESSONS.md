@@ -14,7 +14,3 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-08 02:02 UTC · 2nd time running
 - Failed: Research a token, protocol or project · Reason: Nothing came of it this time. · 2026-11-07 16:05 UTC
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: nothing concrete enough to put to a person. It tries again at the next check-in. · 2026-11-07 16:02 UTC
-
-## Self-tests that failed
-
-- Failed: self-test of tools/noscript-audit · Reason: Traceback (most recent call last): · 2026-11-08 19:47 UTC
