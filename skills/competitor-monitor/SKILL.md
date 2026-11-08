@@ -52,3 +52,5 @@ Learned: A folder-local test only passes when the module it imports is the real 
 ## 2026-11-08: Implemented robust boolean attribute parsing, corrected test regex handling, and updated self-test logic to achieve passing suite.
 
 Why: The tool's own test currently cannot load the code it tests, so landing the real importable implementation and its logged output is the one change that turns this draft into a countable artifact.
+
+Learned: Drafting the same fix a third time without shipping it wastes the budget; the folder's own test output has to exist before anything else is built on top of it.
