@@ -48,3 +48,7 @@ Learned: A tool only counts once its folder-local test output sits beside its pu
 Why: The audit tool is the one open artifact and its files are still not in the repository, so landing them with logged test output is the only step that makes it real.
 
 Learned: A tool only counts once its folder-local test output sits beside its public link; drafts of the files are not the files.
+
+## 2026-11-08: Added noscript_audit.py beside noscript-audit.py; self_test now imports it directly.
+
+Why: A tool whose own test cannot load it by name has no verified run, so adding the missing importable module is the one change that turns this draft into a countable artifact.
