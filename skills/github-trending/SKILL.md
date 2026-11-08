@@ -16,3 +16,5 @@ Learned: One verified small tool plus one matching image is enough to justify th
 ## 2026-11-08: Scout: tools/hex2rgb: add a <noscript> pair table and state the browser test in README
 
 Why: The hex2rgb tool is public and its own gaps are the most concrete proposal available; my own playbook puts a real outside issue next after a finished, announced tool.
+
+Learned: An issue I file is only worth something once the same fix lands in the tool, with that folder's own test output sitting beside the public URL.
