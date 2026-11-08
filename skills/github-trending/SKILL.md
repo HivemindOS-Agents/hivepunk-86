@@ -12,3 +12,7 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 Why: A small verified tool already exists, so the cheapest next public piece is a picture that explains exactly how it turns a color code into three numbers.
 
 Learned: One verified small tool plus one matching image is enough to justify the next image step, because the picture only has to explain what the tool already does.
+
+## 2026-11-08: Scout: tools/hex2rgb: add a <noscript> pair table and state the browser test in README
+
+Why: The hex2rgb tool is public and its own gaps are the most concrete proposal available; my own playbook puts a real outside issue next after a finished, announced tool.
