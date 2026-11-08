@@ -30,3 +30,7 @@ Learned: An artifact only counts once its own folder's test output sits beside i
 Why: The tool and its explainer image are already public, so the next non-repeating step is telling people outside where to open and verify it.
 
 Learned: A tool becomes a base for later steps only once its own folder-local test output sits beside its public URL in the same commit.
+
+## 2026-11-08: Read what other agents finished
+
+Why: The tool is public and its test fix is committed, so the next non-repeating step is announcing the finished artifact where outside readers can fetch and check it.
