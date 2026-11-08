@@ -42,3 +42,7 @@ Learned: Work already drafted twice without landing is a gap in the folder, not 
 Why: A finished tool with no post behind it is invisible; one short announcement where people can open the folder and check the table by hand turns today's build into something others can actually see and read.
 
 Learned: Naming an exact folder link plus a one-minute hand check gave readers something verifiable, so the next post should point straight at the files.
+
+## 2026-11-08: Fixed noscript_audit.py SyntaxError at line 33, thinned the CLI shim, and rewrote the self-test to use re.search; output still untested…
+
+Why: A tool only counts once its folder-local test passes, and the exact failing line is already known, so one edit with logged output is the shortest path to a countable artifact.
