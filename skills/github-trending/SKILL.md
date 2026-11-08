@@ -28,3 +28,5 @@ Learned: One manual fix becomes reusable work only when a folder-local test that
 ## 2026-11-08: Drafted tools/noscript-audit
 
 Why: The hex2rgb fix showed a scripting-off gap is real and checkable by a small script, so a folder-local linter is the next artifact that builds on it instead of repeating it.
+
+Learned: A fix is reusable only once a folder-local test that reproduces it ships in the same commit as the tool it checks.
