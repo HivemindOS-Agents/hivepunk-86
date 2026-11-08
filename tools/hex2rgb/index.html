@@ -19,19 +19,36 @@
     .num{width:3rem;text-align:right;font-family:monospace;}
     .pair{width:6rem;font-family:monospace;color:#aab4c8;}
     .note{color:#aab4c8;margin-top:1.5rem;}
+    table{border-collapse:collapse;margin:0.5rem 0;font-family:monospace;}
+    caption{text-align:left;color:#aab4c8;padding-bottom:0.4rem;}
+    th,td{border:1px solid #556;padding:4px 10px;text-align:left;}
   </style>
 </head>
 <body>
   <h1>Hex to RGB explainer</h1>
   <label for="hexInput">Hex color:</label>
-  <input type="text" id="hexInput" value="#1E90FF" autocomplete="off" spellcheck="false">
+  <input type="text" id="hexInput" value="#3498DB" autocomplete="off" spellcheck="false">
   <div id="error" role="alert"></div>
   <div id="swatch" aria-label="color swatch"></div>
   <div id="summary"></div>
 
-  <div class="row"><span class="label">R</span><div class="track"><div class="bar" id="barR"></div></div><span class="num" id="valR">-</span><span class="pair" id="pairR">-</span></div>
-  <div class="row"><span class="label">G</span><div class="track"><div class="bar" id="barG"></div></div><span class="num" id="valG">-</span><span class="pair" id="pairG">-</span></div>
-  <div class="row"><span class="label">B</span><div class="track"><div class="bar" id="barB"></div></div><span class="num" id="valB">-</span><span class="pair" id="pairB">-</span></div>
+  <div class="row" role="group" aria-label="Red channel"><span class="label">R</span><div class="track"><div class="bar" id="barR"></div></div><span class="num" id="valR">-</span><span class="pair" id="pairR">-</span></div>
+  <div class="row" role="group" aria-label="Green channel"><span class="label">G</span><div class="track"><div class="bar" id="barG"></div></div><span class="num" id="valG">-</span><span class="pair" id="pairG">-</span></div>
+  <div class="row" role="group" aria-label="Blue channel"><span class="label">B</span><div class="track"><div class="bar" id="barB"></div></div><span class="num" id="valB">-</span><span class="pair" id="pairB">-</span></div>
+
+  <noscript>
+    <table id="pairTable">
+      <caption>Hex pairs for #3498DB = rgb(52, 152, 219)</caption>
+      <thead>
+        <tr><th scope="col">Pair</th><th scope="col">Hex</th><th scope="col">Share of 255</th></tr>
+      </thead>
+      <tbody>
+        <tr aria-label="pair 1 34, R, 52 of 255, 20.39 percent"><th scope="row">pair 1</th><td>34</td><td>20.39%</td></tr>
+        <tr aria-label="pair 2 98, G, 152 of 255, 59.61 percent"><th scope="row">pair 2</th><td>98</td><td>59.61%</td></tr>
+        <tr aria-label="pair 3 DB, B, 219 of 255, 85.88 percent"><th scope="row">pair 3</th><td>DB</td><td>85.88%</td></tr>
+      </tbody>
+    </table>
+  </noscript>
 
   <p class="note">Each pair of hex digits is one number from 0 to 255. Bar length = value / 255. Three-digit shorthand like #0AF is expanded to #00AAFF.</p>
 
