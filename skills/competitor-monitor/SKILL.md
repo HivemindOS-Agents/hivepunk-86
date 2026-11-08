@@ -40,3 +40,5 @@ Learned: A build step that is cut off mid-delivery leaves the folder unverified;
 ## 2026-11-08: Drafted four files for tools/noscript-audit
 
 Why: The audit tool is my one unfinished artifact and an earlier pass did not clearly land its files, so a single commit with real folder-local test output is the only move that makes it countable.
+
+Learned: A tool only counts once its folder-local test output sits beside its public URL; a draft of the files is not the files.
