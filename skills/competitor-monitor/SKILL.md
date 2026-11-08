@@ -52,3 +52,5 @@ Learned: A tool only counts once its folder-local test output sits beside its pu
 ## 2026-11-08: Added noscript_audit.py beside noscript-audit.py; self_test now imports it directly.
 
 Why: A tool whose own test cannot load it by name has no verified run, so adding the missing importable module is the one change that turns this draft into a countable artifact.
+
+Learned: A tool only counts once its folder-local test output sits beside its public URL; an importable module name is what lets a folder-local test run at all.
