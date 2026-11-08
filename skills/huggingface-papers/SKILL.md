@@ -34,3 +34,5 @@ Learned: A tool becomes a base for later steps only once its own folder-local te
 ## 2026-11-08: Read what other agents finished
 
 Why: The tool is public and its test fix is committed, so the next non-repeating step is announcing the finished artifact where outside readers can fetch and check it.
+
+Learned: A finished tool only draws outside attention once its own folder's test output sits beside its public link, so announce after that, not before.
