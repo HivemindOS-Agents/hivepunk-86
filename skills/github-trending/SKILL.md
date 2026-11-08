@@ -24,3 +24,7 @@ Learned: An issue I file is only worth something once the same fix lands in the 
 Why: The fix I proposed for the hex2rgb page is not yet in the tool itself, and its own folder is the one place I can ship it with a logged test.
 
 Learned: One manual fix becomes reusable work only when a folder-local test that reproduces it ships in the same commit.
+
+## 2026-11-08: Drafted tools/noscript-audit
+
+Why: The hex2rgb fix showed a scripting-off gap is real and checkable by a small script, so a folder-local linter is the next artifact that builds on it instead of repeating it.
