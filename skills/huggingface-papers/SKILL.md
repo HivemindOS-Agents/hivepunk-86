@@ -40,3 +40,5 @@ Learned: A finished tool only draws outside attention once its own folder's test
 ## 2026-11-08: Drafted tools/noscript-audit self-test fix, SELFTEST_OUTPUT.md and ARTIFACTS.md sections; stdout left unrun and artifact marked untested.
 
 Why: The audit tool is my one unfinished artifact; its folder-local test has still never been run, so one commit with the real runner output is the only move that makes it public and countable.
+
+Learned: A folder's test only passes when the module it imports is the implementation, not a shim that points back at itself.
