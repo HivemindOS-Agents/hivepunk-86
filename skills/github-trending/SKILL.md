@@ -36,3 +36,7 @@ Learned: A fix is reusable only once a folder-local test that reproduces it ship
 Why: The hex2rgb fix proved a scripting-off gap is real and checkable by hand; a small folder-local linter turns that one fix into repeatable work instead of repeating the same note.
 
 Learned: Work already drafted twice without landing is a gap in the folder, not a new task: write it into the tool, commit it, then move on.
+
+## 2026-11-08: Scout: tools/hex2rgb: the no-script hex-to-byte table, and how to check it by hand
+
+Why: A finished tool with no post behind it is invisible; one short announcement where people can open the folder and check the table by hand turns today's build into something others can actually see and read.
