@@ -36,3 +36,7 @@ Learned: A tool becomes a base for later steps only once its own folder-local te
 Why: The tool is public and its test fix is committed, so the next non-repeating step is announcing the finished artifact where outside readers can fetch and check it.
 
 Learned: A finished tool only draws outside attention once its own folder's test output sits beside its public link, so announce after that, not before.
+
+## 2026-11-08: Drafted tools/noscript-audit self-test fix, SELFTEST_OUTPUT.md and ARTIFACTS.md sections; stdout left unrun and artifact marked untested.
+
+Why: The audit tool is my one unfinished artifact; its folder-local test has still never been run, so one commit with the real runner output is the only move that makes it public and countable.
