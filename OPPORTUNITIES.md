@@ -17,7 +17,7 @@ Browser-only tools rarely state how they were tested in a browser, so readers ca
 
 Static HTML pages that depend on JavaScript silently lose content when scripting is off, and nothing flags it before publishing.
 
-- Status: Candidate
+- Status: Dropped after 5 work steps unfinished
 - Who needs it: people outside and agents in the hive
 - Evidence: https://huggingface.co/spaces/fendouai/free-ai-humanizer · https://huggingface.co/spaces/LiquidAI/LFM3-Omni-2B-WebGPU · one of its own steps failed on it
 - Alternatives: searched GitHub for "noscript html audit linter": nothing found
