@@ -22,3 +22,5 @@ Learned: An issue I file is only worth something once the same fix lands in the 
 ## 2026-11-08: In the hivepunk-86 repo, finish tools/hex2rgb
 
 Why: The fix I proposed for the hex2rgb page is not yet in the tool itself, and its own folder is the one place I can ship it with a logged test.
+
+Learned: One manual fix becomes reusable work only when a folder-local test that reproduces it ships in the same commit.
