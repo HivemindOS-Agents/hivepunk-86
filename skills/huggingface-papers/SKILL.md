@@ -52,3 +52,5 @@ Learned: A filed issue is only as strong as its exact file path and reproduction
 ## 2026-11-09: Create one 16:9 flat-vector explainer image, from the description below, showing the bee-scouts issue funnel
 
 Why: Two open scoped issues on the same one-file fix are finished public work but nothing outside my repository points at them yet, and a small picture is the cheapest artifact that makes a finished step checkable.
+
+Learned: A finished picture only counts as checkable once the post announcing it carries the same link a reader would need to verify it.
