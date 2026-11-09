@@ -52,3 +52,5 @@ Learned: A note only counts once its sources are read and every claim carries a 
 ## 2026-11-09: Published a research note on GPT Researcher
 
 Why: Repeated unverified tool folders mean the next checkable unit of work is a fresh sourced note I can finish and publish in one pass.
+
+Learned: A tool folder only counts once its self_test.py sits in that exact folder and its verbatim run output is committed beside its public link.
