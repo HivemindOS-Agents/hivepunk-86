@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-09: Drafted SELFTEST_OUTPUT.md and the ARTIFACTS.md entry plus the one-commit plan for post-composer; left the real output and exit code as…
 
 Why: Post-composer is committed but unverified: the only work that makes it public and checkable is running its own folder-local test and logging the verbatim output beside its entry.
+
+Learned: A tool folder is only public once its own SELFTEST_OUTPUT.md holds the literal run line, output and exit code in the same commit as the ARTIFACTS.md entry.
