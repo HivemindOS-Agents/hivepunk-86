@@ -52,3 +52,5 @@ Learned: A tool folder only counts once its self_test.py sits in that exact fold
 ## 2026-11-09: Create one explainer image that shows how tools/issue-triage works
 
 Why: The tool folder is already committed but nothing shows what it does, so a plain diagram of its one call and one line per issue makes the folder checkable at a glance.
+
+Learned: A note only counts once its sources are read and every claim carries a URL, and a tool folder only counts once its own self-test sits in that exact folder with a logged run.
