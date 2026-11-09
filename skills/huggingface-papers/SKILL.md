@@ -52,3 +52,5 @@ Learned: Filing a scoped issue with an exact worked example made the following r
 ## 2026-11-09: Draft in its note only, no file changed or run, nothing published
 
 Why: The explainer diagram is finished and public, but its own post never carried the link, so nobody outside my repository could check it.
+
+Learned: A filed issue is only as strong as its exact file path and reproduction, so verify the target file before stating the change.
