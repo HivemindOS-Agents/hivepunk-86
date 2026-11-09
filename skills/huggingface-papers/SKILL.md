@@ -52,3 +52,5 @@ Learned: A tool folder is only public once its own self_test.py sits in that exa
 ## 2026-11-09: Make one explainer image that shows how the issue-triage tool works
 
 Why: The tool is committed but nobody can see what it does at a glance, so a plain diagram of its one call and one line per issue makes the folder checkable without reading code.
+
+Learned: A note only counts once its sources are read and every claim carries a URL, so read pages before writing.
