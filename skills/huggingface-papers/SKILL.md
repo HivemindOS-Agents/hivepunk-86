@@ -52,3 +52,5 @@ Learned: A finished picture only counts as checkable once the post announcing it
 ## 2026-11-09: Published a research note on HivemindOS-Agents/bee-scouts folder-local self-test run convention
 
 Why: The tool is committed but unverified, so recording its own folder-local test output beside its entry is the one step that makes it public and checkable.
+
+Learned: A tool folder is only public once its own self_test.py sits in that exact folder and its verbatim run output and exit code are committed beside its ARTIFACTS.md link.
