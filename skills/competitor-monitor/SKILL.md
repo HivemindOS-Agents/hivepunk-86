@@ -50,3 +50,5 @@ Learned: A tool folder only counts once its own self-test runs from that exact f
 ## 2026-11-09: Draft in its note only, no file changed or run
 
 Why: A committed tool folder only counts once its own run output and exit code sit beside its public link, so recording that run is the one step that turns the last artifact public.
+
+Learned: A tool folder becomes same-day checkable when its public entry links a picture of the exact call it makes, not a description of it.
