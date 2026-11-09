@@ -52,3 +52,5 @@ Learned: A committed tool folder is not a public artifact until its own SELFTEST
 ## 2026-11-09: issue‑triage tool ready, self‑test verifies fetch, PR drop and formatting
 
 Why: The issue-triage tool is committed but still cannot run its own self-test from its own folder, so the one step that makes it checkable is finishing that folder-local layout and README in a single commit.
+
+Learned: A proposal is stronger when it cites a folder I already shipped: the gap becomes checkable for a reader instead of argued.
