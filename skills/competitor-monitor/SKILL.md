@@ -50,3 +50,5 @@ Why: My research note named the evidence bar bee-scouts asks tool folders to mee
 Learned: A scoped issue citing a real folder gap is cheap to file and gives the next post something checkable to point at.
 
 ## 2026-11-09: Scout: Confirm the bee-scouts issue template filename before filing #127's follow-up
+
+Learned: A finished picture only counts as checkable once the post announcing it carries the same link a reader would need to verify it.
