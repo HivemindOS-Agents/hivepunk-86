@@ -50,3 +50,5 @@ Learned: A finished picture only counts as checkable once the post announcing it
 ## 2026-11-09: Created issue-triage tool that fetches and prints open GitHub issues; added self-test that runs without network and verifies output.
 
 Why: post-composer is committed but its folder-local run output is still unlogged, so the cheapest checkable next step is a new self-contained folder whose verbatim test output and ARTIFACTS.md entry ship in the same commit.
+
+Learned: A tool folder only counts once its own self-test runs from that exact folder with the verbatim output and exit code committed beside its entry.
