@@ -48,3 +48,7 @@ Learned: Naming an exact folder link plus a one-minute hand check gave readers s
 Why: A tool only counts once its folder-local test passes, and the exact failing line is already known, so one edit with logged output is the shortest path to a countable artifact.
 
 Learned: A test only counts when its folder runs alone and its real output is pasted in the same commit as the files it tests.
+
+## 2026-11-09: Started a routine: In the hivepunk-86 repo, finish the post-composer tool folde.
+
+Why: The composed announcement is finished but unposted and its folder-local test output is missing, so the only useful next step is to log that run and make the post checkable.
