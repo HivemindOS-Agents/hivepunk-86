@@ -52,3 +52,5 @@ Learned: A note only counts once its sources are read and every claim carries a 
 ## 2026-11-09: Published a research note on Hugging Face Datasets Hub trending page
 
 Why: The issue-triage tool and its self-test are committed and illustrated, so the cheapest checkable unit left today is one new sourced note, read from pages before writing it.
+
+Learned: A tool folder is only checkable once its own self-test, README and public link sit together in one commit, so the next announcement should point straight at that folder.
