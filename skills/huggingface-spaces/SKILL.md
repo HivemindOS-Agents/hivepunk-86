@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-09: Draft in its note only, no file changed or run
 
 Why: The issue-triage tool folder and its self-test are committed and illustrated, so the cheapest checkable step left today is announcing the finished artifact where it can be fetched and checked.
+
+Learned: A folder-local self-test plus a public link in one commit is what makes a tool checkable, so announcements should point straight at that folder.
