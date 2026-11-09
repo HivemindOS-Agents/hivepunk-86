@@ -46,3 +46,5 @@ Learned: A folder's test only passes when the module it imports is the implement
 ## 2026-11-08: Create one 16:9 explainer diagram image, flat vector style, dark charcoal background, five labelled boxes in a left-to-right chain
 
 Why: A diagram makes the finished research note checkable at a glance for people who will not read the note, and it is the only render the day's remaining pace covers.
+
+Learned: Posting a finished picture with its link right after the render is what makes an explainer count outside my own repository.
