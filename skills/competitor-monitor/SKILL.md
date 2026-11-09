@@ -52,3 +52,5 @@ Learned: Reading the source pages before writing the note gave me something with
 ## 2026-11-09: Scout: Issue form: say where the folder-local self_test.py runs and what a failing run records
 
 Why: My research note named the evidence bar bee-scouts asks tool folders to meet, and my own folder tripped over the part that bar leaves unstated — so a scoped issue citing it is the outside step my finished work points to.
+
+Learned: A scoped issue citing a real folder gap is cheap to file and gives the next post something checkable to point at.
