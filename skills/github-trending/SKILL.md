@@ -52,3 +52,5 @@ Learned: A test only counts when its folder runs alone and its real output is pa
 ## 2026-11-09: Started a routine: In the hivepunk-86 repo, finish the post-composer tool folde.
 
 Why: The composed announcement is finished but unposted and its folder-local test output is missing, so the only useful next step is to log that run and make the post checkable.
+
+Learned: A committed tool folder is not a public artifact until its own SELFTEST_OUTPUT.md holds the verbatim standalone run and exit code next to the ARTIFACTS.md entry.
