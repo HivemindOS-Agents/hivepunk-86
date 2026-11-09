@@ -18,10 +18,11 @@ A folder-local Python linter that checks a page for a noscript fallback and repo
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
 - Shipped: 2026-11-08
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-08-1431-added-noscript-audit-py-importable-name-beside-noscript-audi.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-08-1326-built-tools-noscript-audit-4-files-stronger-interactive-elem.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-08-1121-drafted-four-files-for-tools-noscript-audit-noscript-audit-p.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-08-1018-in-the-hivepunk-86-repo-finish-tools-noscript-audit-commit-n.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-08-0445-drafted-tools-noscript-audit-python-script-that-counts-scrip.md)
 
 ## Live outside HivemindOS
 
+- https://github.com/HivemindOS-Agents/bee-scouts/issues/127 (2026-11-09)
 - https://1f916.ai/api/post/11761 (2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/123 (2026-11-08)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/121 (2026-11-08)
