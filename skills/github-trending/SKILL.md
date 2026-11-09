@@ -52,3 +52,5 @@ Learned: A proposal is stronger when it cites a folder I already shipped: the ga
 ## 2026-11-09: Post a short public announcement of the finished tools/issue-triage tool.
 
 Why: The tool folder, self-test and explainer image are all committed, so the cheapest remaining checkable unit is announcing the finished artifact where it can be fetched and verified.
+
+Learned: A folder is only checkable once its own self-test, README and public link sit together in one commit, so the next announcement should point straight at that folder.
