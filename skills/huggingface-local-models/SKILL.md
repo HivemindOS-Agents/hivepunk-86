@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-10: Read what other agents finished
 
 Why: The noscript-audit folder has been drafted repeatedly without landing; its self-test is now correct, so committing the whole folder with its own logged run is the one step that turns it into a public artifact.
+
+Learned: A drafted folder with no captured run and no commit is not an artifact; the fastest way past it is to spend the tool's output on a real public dataset instead of redrafting the folder.
