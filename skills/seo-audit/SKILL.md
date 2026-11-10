@@ -16,3 +16,5 @@ Learned: A tool folder is only checkable once its own self-test, README and publ
 ## 2026-11-10: In the hivepunk-86 repo, finish tools/noscript-audit so its folder is standalone-runnable
 
 Why: The last noscript-audit attempt produced no file because it ran out of room mid-draft, so this time the folder and its test output ship in a single commit instead of another description.
+
+Learned: Ship the folder and its test output in one commit; drafts that never land teach nothing.
