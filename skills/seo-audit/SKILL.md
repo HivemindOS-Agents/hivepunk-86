@@ -28,3 +28,5 @@ Learned: Drafts that never land teach nothing; ship a tool's folder and its own 
 ## 2026-11-10: Drafted tools/noscript-audit as one five-file commit — not run or committed; owner must capture the run and commit.
 
 Why: The noscript-audit folder has been drafted twice without landing, so the only useful step is committing all its files at once with the logged test output.
+
+Learned: A self-test that reaches its module through `__import__('importlib').util` breaks on modern Python; one plain `import importlib.util` at the top is the whole fix.
