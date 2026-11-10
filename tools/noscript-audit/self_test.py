@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''Offline self-test for nostrip_audit.py. Standard library only, no network.
 
-Run from inside the folder:  python3 self_test.py
+Run from inside this folder:  python3 self_test.py
 Exits 0 only when every check passes.
 '''
 
@@ -14,80 +14,86 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TOOL = os.path.join(HERE, 'nostrip_audit.py')
 FIXTURE = os.path.join(HERE, 'fixture.html')
 
-EXPECTED = '''external-script: https://cdn.example.com/analytics.js
-external-script: //cdn.example.com/analytics.js
-external-script: https://cdn.example.com/app.js
-noscript-missing: 3 external script(s) and no <noscript> fallback
-summary: 3 external script(s), noscript missing
-'''
+EXPECTED = (
+    'external-script: https://cdn.example.com/analytics.js\n'
+    'external-script: //cdn.example.com/analytics.js\n'
+    'external-script: https://cdn.example.com/app.js\n'
+    'noscript-missing: 3 external script(s) and no <noscript> fallback\n'
+    'summary: 3 external script(s), noscript missing\n'
+)
 
-
-# Import the tool module to test audit_lines directly
-spec = importlib.util.spec_from_file_location('audit_mod', TOOL)
+# Load the tool's own module so audit_lines() can be checked directly.
+spec = importlib.util.spec_from_file_location('nostrip_audit', TOOL)
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
 
 
-def run() -> list:
+def cli(*args):
+    return subprocess.run([sys.executable, TOOL] + list(args),
+                          capture_output=True, text=True)
+
+
+def run():
     failures = []
 
-    # 1. CLI on fixture
-    out = subprocess.run([sys.executable, TOOL, FIXTURE], capture_output=True, text=True)
+    # 1. The tool on the in-folder fixture: exit 0, exact stdout, quiet stderr.
+    out = cli(FIXTURE)
     if out.returncode != 0:
-        failures.append('fixture CLI exited %d, expected 0' % out.returncode)
+        failures.append('fixture: exit %d, expected 0' % out.returncode)
     if out.stdout != EXPECTED:
-        failures.append('fixture stdout does not match expected')
-        failures.append('expected:\n' + EXPECTED)
-        failures.append('got:\n' + out.stdout)
+        failures.append('fixture stdout mismatch\nexpected:\n%s\ngot:\n%s'
+                        % (EXPECTED, out.stdout))
+    if out.stderr != '':
+        failures.append('fixture stderr not empty: %r' % out.stderr)
 
-    # 2. audit_lines: fallback present -> no noscript-missing line
+    # 2. A usable <noscript> fallback: no noscript-missing line.
     lines = mod.audit_lines('<script src="https://cdn.test/a.js"></script>'
-                             '<noscript>Enable JavaScript.</noscript>')
-    expected = ['external-script: https://cdn.test/a.js',
-                'summary: 1 external script(s), noscript present']
-    if lines != expected:
-        failures.append('fallback present: expected %r, got %r' % (expected, lines))
+                            '<noscript>Enable JavaScript.</noscript>')
+    want = ['external-script: https://cdn.test/a.js',
+            'summary: 1 external script(s), noscript present']
+    if lines != want:
+        failures.append('fallback present: want %r, got %r' % (want, lines))
 
-    # 3. audit_lines: relative, inline and empty-noscript -> no external-script, noscript missing
+    # 3. Relative and inline scripts are not external; an empty <noscript> is missing.
     lines = mod.audit_lines('<script src="app.js"></script>'
-                             '<script>run()</script><noscript></noscript>')
-    expected = ['summary: 0 external script(s), noscript missing']
-    if lines != expected:
-        failures.append('relative + inline + empty noscript: expected %r, got %r'
-                        % (expected, lines))
+                            '<script>run()</script><noscript></noscript>')
+    want = ['summary: 0 external script(s), noscript missing']
+    if lines != want:
+        failures.append('relative/inline/empty: want %r, got %r' % (want, lines))
 
-    # 4. audit_lines: script inside <noscript> is not an external dependency
+    # 4. A <noscript> holding only a nested <script> has no visible text, so the
+    #    fallback counts as missing; the nested script is not a dependency.
     lines = mod.audit_lines('<noscript>'
-                             '<script src="https://cdn.test/fallback.js"></script>'
-                             '</noscript>')
-    expected = ['summary: 0 external script(s), noscript present']
-    if lines != expected:
-        failures.append('script inside noscript: expected %r, got %r' % (expected, lines))
+                            '<script src="https://cdn.test/fallback.js"></script>'
+                            '</noscript>')
+    want = ['summary: 0 external script(s), noscript missing']
+    if lines != want:
+        failures.append('noscript with only a nested script: want %r, got %r'
+                        % (want, lines))
 
-    # 5. CLI: no argument -> exit 2, usage on stderr
-    out = subprocess.run([sys.executable, TOOL], capture_output=True, text=True)
+    # 5. No argument: usage message on stderr, exit 2.
+    out = cli()
     if out.returncode != 2:
-        failures.append('no-arg CLI exited %d, expected 2' % out.returncode)
+        failures.append('no argument: exit %d, expected 2' % out.returncode)
     if not out.stderr.startswith('usage:'):
-        failures.append('no-arg stderr: %r' % out.stderr)
+        failures.append('no argument stderr: %r' % out.stderr)
 
-    # 6. CLI: missing file -> exit 2, error message on stderr
-    missing = os.path.join(HERE, 'no-such-file.html')
-    out = subprocess.run([sys.executable, TOOL, missing], capture_output=True, text=True)
+    # 6. Unreadable path: message on stderr, exit 2.
+    out = cli(os.path.join(HERE, 'no-such-file.html'))
     if out.returncode != 2:
-        failures.append('missing-file CLI exited %d, expected 2' % out.returncode)
+        failures.append('missing file: exit %d, expected 2' % out.returncode)
     if 'cannot read' not in out.stderr:
-        failures.append('missing-file stderr: %r' % out.stderr)
+        failures.append('missing file stderr: %r' % out.stderr)
 
     return failures
 
 
 if __name__ == '__main__':
-    failures = run()
-    if failures:
+    problems = run()
+    if problems:
         print('FAILED checks:', file=sys.stderr)
-        for f in failures:
-            print('  - ' + f, file=sys.stderr)
+        for p in problems:
+            print('  - ' + p, file=sys.stderr)
         sys.exit(1)
     print('all checks passed')
     sys.exit(0)
