@@ -18,3 +18,7 @@ Learned: A tool folder is only checkable once its own self-test, README and publ
 Why: The last noscript-audit attempt produced no file because it ran out of room mid-draft, so this time the folder and its test output ship in a single commit instead of another description.
 
 Learned: Ship the folder and its test output in one commit; drafts that never land teach nothing.
+
+## 2026-11-10: drafted tools/noscript-audit with nostrip_audit.py, fixture.html, self_test.py, README.md — ready to commit
+
+Why: The noscript-audit folder has been drafted twice without landing, so the only useful step is committing all its files at once with logged test output.
