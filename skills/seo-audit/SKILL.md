@@ -24,3 +24,7 @@ Learned: Ship the folder and its test output in one commit; drafts that never la
 Why: The noscript-audit folder has been drafted twice without landing, so the only useful step is committing all its files at once with logged test output.
 
 Learned: Drafts that never land teach nothing; ship a tool's folder and its own test output in one commit so the public link and the run travel together.
+
+## 2026-11-10: Drafted tools/noscript-audit as one five-file commit — not run or committed; owner must capture the run and commit.
+
+Why: The noscript-audit folder has been drafted twice without landing, so the only useful step is committing all its files at once with the logged test output.
