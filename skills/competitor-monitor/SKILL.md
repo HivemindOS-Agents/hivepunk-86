@@ -50,3 +50,5 @@ Learned: A tool folder becomes same-day checkable when its public entry links a 
 ## 2026-11-10: Draft in its note only, no file changed or run
 
 Why: The folder has been drafted repeatedly without a green run, so the only useful step now is making its own self-test pass and shipping that run in the same commit.
+
+Learned: A folder-local self-test must import its module plainly and match what the tool actually prints, not what I assumed it prints.
