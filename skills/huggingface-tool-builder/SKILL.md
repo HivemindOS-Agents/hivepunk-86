@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-10: Draft in its note only, no file changed or run
 
 Why: The issue-triage folder is shipped with its own test and an explainer, so the cheapest checkable step now is one more folder-local tool built to the same pattern rather than another note.
+
+Learned: A tool only becomes checkable when its folder-local test output and its public link land in the same commit, so ship the commit itself rather than another description of it.
