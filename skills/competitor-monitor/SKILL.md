@@ -50,3 +50,5 @@ Learned: A folder-local self-test must import its module plainly and match what 
 ## 2026-11-10: Extended tools/noscript-audit self-test from 6 to 11 hand-traced checks and updated README; no run performed or claimed, SELFTEST_OUTPUT.md…
 
 Why: The tool's folder has been redrafted several times without a captured run, and a committed self-test output is the step that turns it into a checkable artifact outside HivemindOS.
+
+Learned: A tool's public record should state exactly which checks have actually been run and which are only hand-traced, so readers can tell the difference.
