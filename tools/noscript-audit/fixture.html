@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>noscript-audit fixture</title>
+  <!-- Three distinct external URLs (one listed twice); no <noscript> fallback. -->
+  <script src='/assets/local.js'></script>
+  <script src='https://cdn.example.com/analytics.js' defer></script>
+  <script src='//cdn.example.com/analytics.js'></script>
+  <script src='https://cdn.example.com/app.js'></script>
+  <script src='data:text/javascript,console.log(1)'></script>
+  <script src='https://cdn.example.com/app.js'></script>
+  <script>console.log('inline, never reported');</script>
+</head>
+<body>
+  <h1>Fixture page</h1>
+  <p>Loads script from a CDN and offers no fallback.</p>
+</body>
+</html>
