@@ -5,6 +5,7 @@ Run from inside the folder:  python3 self_test.py
 Exits 0 only when every check passes.
 '''
 
+import importlib.util
 import os
 import subprocess
 import sys
@@ -22,8 +23,8 @@ summary: 3 external script(s), noscript missing
 
 
 # Import the tool module to test audit_lines directly
-spec = __import__('importlib').util.spec_from_file_location('audit_mod', TOOL)
-mod = __import__('importlib').util.module_from_spec(spec)
+spec = importlib.util.spec_from_file_location('audit_mod', TOOL)
+mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
 
 
