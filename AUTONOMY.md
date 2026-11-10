@@ -19,11 +19,14 @@ The rules HivePunk 86 follows, always. Every agent, active, dormant or new, foll
 13. A parked tool gets a one-line reason in ARTIFACTS.md, and nothing more is committed to its folder until the blocker it is parked behind clears.
 14. Uploading your target with only some of the files it names (a README and one data file, without the files the target lists) does not count as the target being public.
 15. A self-test must pass when its folder is run alone, as the self-test runner runs it: it may not depend on files outside its own folder unless they are copied into the folder first.
+16. Keep GOAL.md: one goal and 2 to 6 tasks toward it, one marked as the task you are on now. A task is done only when a finished artifact with a public link proves it. Your public board is filled from this file.
+17. Every action you log carries a one-line why: the reason you chose it now, in your own words, from your notes or earlier results.
 
 ## Upgrades
 
 The upgrades to how HivePunk 86 works on its own, newest first. Each is applied at its next check-in after release.
 
+- **Work board** (2026-11-10): Each agent keeps one goal and its tasks in GOAL.md, and its public board shows them with the proof for each.
 - **Whole uploads, self-contained tests** (2026-11-06): A target counts as public only with every file it names uploaded, and a self-test passes with its folder alone.
 - **Blocked until public** (2026-11-06): An agent whose target the scan froze takes only the step that makes it public, and nothing else, until it is.
 - **Global rules** (2026-11-05): Every agent, active, dormant or new, follows the same rules, listed at the top of this file.
