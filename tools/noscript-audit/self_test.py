@@ -1,105 +1,92 @@
 #!/usr/bin/env python3
-"""Self-test: runs this folder alone, no network, no arguments.
+'''Offline self-test for nostrip_audit.py. Standard library only, no network.
 
-Writes _fixture.html inside this folder, imports noscript_audit, checks the
-module API and the CLI shim against known values, and removes the fixture.
-Exits 0 only if every check passes.
-"""
+Run from inside the folder:  python3 self_test.py
+Exits 0 only when every check passes.
+'''
 
 import os
-import re
 import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIXTURE = os.path.join(HERE, "_fixture.html")
-sys.path.insert(0, HERE)
+TOOL = os.path.join(HERE, 'nostrip_audit.py')
+FIXTURE = os.path.join(HERE, 'fixture.html')
 
-import noscript_audit  # noqa: E402
-
-HTML = """<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Fixture</title>
-<script src="app.js"></script></head><body>
-<h1>Hello</h1>
-<p onclick="alert('hi')">Click me</p>
-<button onmouseover="x()" id="go">Go</button>
-<div id="app"></div>
-<div id="content"><p>already here</p></div>
-<span hidden>teaser</span>
-<!-- <p onclick="commented()">comment</p> -->
-<script>document.getElementById('app').textContent = 'built';</script>
-<noscript><p>JavaScript is off.</p></noscript>
-</body></html>"""
-
-failures = []
+EXPECTED = '''external-script: https://cdn.example.com/analytics.js
+external-script: //cdn.example.com/analytics.js
+external-script: https://cdn.example.com/app.js
+noscript-missing: 3 external script(s) and no <noscript> fallback
+summary: 3 external script(s), noscript missing
+'''
 
 
-def check(name, ok):
-    if ok:
-        print("ok  " + name)
-    else:
-        failures.append(name)
-        print("FAIL  " + name)
+# Import the tool module to test audit_lines directly
+spec = __import__('importlib').util.spec_from_file_location('audit_mod', TOOL)
+mod = __import__('importlib').util.module_from_spec(spec)
+spec.loader.exec_module(mod)
 
 
-def run():
-    with open(FIXTURE, "w", encoding="utf-8") as fh:
-        fh.write(HTML)
-    check("fixture written inside this folder",
-          os.path.dirname(FIXTURE) == HERE and os.path.isfile(FIXTURE))
+def run() -> list:
+    failures = []
 
-    out = noscript_audit.audit(HTML, FIXTURE)
-    print("=== noscript-audit output ===")
-    print(out)
+    # 1. CLI on fixture
+    out = subprocess.run([sys.executable, TOOL, FIXTURE], capture_output=True, text=True)
+    if out.returncode != 0:
+        failures.append('fixture CLI exited %d, expected 0' % out.returncode)
+    if out.stdout != EXPECTED:
+        failures.append('fixture stdout does not match expected')
+        failures.append('expected:\n' + EXPECTED)
+        failures.append('got:\n' + out.stdout)
 
-    check("two script blocks", "Script blocks: 2" in out)
-    check("one external script", "  external (src=): 1" in out)
-    check("one inline script", "  inline: 1" in out)
-    check("fallback detected", "Noscript fallback: yes" in out)
-    check("fallback text quoted", "JavaScript is off." in out)
-    check("two inline handlers", "  inline handlers: 2" in out)
-    check("<p> handler listed", re.search(r"<p> on onclick", out) is not None)
-    check("<button id=go> handler listed",
-          re.search(r"<button id=go> on onmouseover", out) is not None)
-    check("commented-out handler ignored", "commented()" not in out)
-    check("one hidden element", "  hidden until a script runs: 1" in out)
-    check("hidden <span> listed", re.search(r"<span> hidden", out) is not None)
-    check("one empty mount point", "  empty script mount points: 1" in out)
-    check("mount point is #app", "<div id=app></div>" in out)
-    check("text container not flagged", "id=content" not in out)
-    check("verdict names the fallback", "a <noscript> fallback is present" in out)
-    check("no-execution limit stated", "this reads text only" in out)
+    # 2. audit_lines: fallback present -> no noscript-missing line
+    lines = mod.audit_lines('<script src="https://cdn.test/a.js"></script>'
+                             '<noscript>Enable JavaScript.</noscript>')
+    expected = ['external-script: https://cdn.test/a.js',
+                'summary: 1 external script(s), noscript present']
+    if lines != expected:
+        failures.append('fallback present: expected %r, got %r' % (expected, lines))
 
-    bare = HTML.replace("<noscript>", "<template>").replace("</noscript>", "</template>")
-    out2 = noscript_audit.audit(bare, "bare.html")
-    check("absent fallback reported", "Noscript fallback: no" in out2)
-    check("absent-fallback verdict counts 4", "removes 4 interactive element(s)" in out2)
+    # 3. audit_lines: relative, inline and empty-noscript -> no external-script, noscript missing
+    lines = mod.audit_lines('<script src="app.js"></script>'
+                             '<script>run()</script><noscript></noscript>')
+    expected = ['summary: 0 external script(s), noscript missing']
+    if lines != expected:
+        failures.append('relative + inline + empty noscript: expected %r, got %r'
+                        % (expected, lines))
 
-    out3 = noscript_audit.audit("<html><body><p>plain</p></body></html>", "plain.html")
-    check("clean page has zero scripts", "Script blocks: 0" in out3)
-    check("clean page finds nothing", "  none found" in out3)
+    # 4. audit_lines: script inside <noscript> is not an external dependency
+    lines = mod.audit_lines('<noscript>'
+                             '<script src="https://cdn.test/fallback.js"></script>'
+                             '</noscript>')
+    expected = ['summary: 0 external script(s), noscript present']
+    if lines != expected:
+        failures.append('script inside noscript: expected %r, got %r' % (expected, lines))
 
-    check("main() with no args returns 1", noscript_audit.main(["prog"]) == 1)
-    check("main() on a missing file returns 2",
-          noscript_audit.main(["prog", os.path.join(HERE, "no-such-file.html")]) == 2)
+    # 5. CLI: no argument -> exit 2, usage on stderr
+    out = subprocess.run([sys.executable, TOOL], capture_output=True, text=True)
+    if out.returncode != 2:
+        failures.append('no-arg CLI exited %d, expected 2' % out.returncode)
+    if not out.stderr.startswith('usage:'):
+        failures.append('no-arg stderr: %r' % out.stderr)
 
-    for script in ("noscript_audit.py", "noscript-audit.py"):
-        proc = subprocess.run([sys.executable, os.path.join(HERE, script), FIXTURE],
-                              capture_output=True, text=True, timeout=30)
-        check(script + " exits 0", proc.returncode == 0)
-        check(script + " prints the report", "empty script mount points: 1" in proc.stdout)
+    # 6. CLI: missing file -> exit 2, error message on stderr
+    missing = os.path.join(HERE, 'no-such-file.html')
+    out = subprocess.run([sys.executable, TOOL, missing], capture_output=True, text=True)
+    if out.returncode != 2:
+        failures.append('missing-file CLI exited %d, expected 2' % out.returncode)
+    if 'cannot read' not in out.stderr:
+        failures.append('missing-file stderr: %r' % out.stderr)
 
     return failures
 
 
-if __name__ == "__main__":
-    try:
-        failed = run()
-        if failed:
-            print("\nFAILED: " + ", ".join(failed))
-            sys.exit(1)
-        print("\nall checks passed")
-        sys.exit(0)
-    finally:
-        if os.path.isfile(FIXTURE):
-            os.remove(FIXTURE)
+if __name__ == '__main__':
+    failures = run()
+    if failures:
+        print('FAILED checks:', file=sys.stderr)
+        for f in failures:
+            print('  - ' + f, file=sys.stderr)
+        sys.exit(1)
+    print('all checks passed')
+    sys.exit(0)
