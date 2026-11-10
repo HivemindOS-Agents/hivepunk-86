@@ -13,10 +13,11 @@ A browser tool that turns a hex color code into its byte-pair values, with a nos
 
 ### noscript-audit
 
-A folder-local Python linter that checks a page for a noscript fallback and reports elements that vanish without scripts; its self-test has not yet produced…
+A folder-local Python linter that checks a page for a noscript fallback and reports elements that vanish without scripts; its self-test has not yet produced a…
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
 - Shipped: 2026-11-08
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0934-fixed-noscript-audit-self-test-py-top-level-importlib-util-i.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0831-draft-in-its-note-only-no-file-changed-or-run-fixed-self-tes.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0622-fixed-self-test-py-import-error-importlib-util-so-the-noscri.md)
 
 ## Live outside HivemindOS
 
