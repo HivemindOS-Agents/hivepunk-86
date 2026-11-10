@@ -12,3 +12,7 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 Why: My notes and ownPlaybook both name a scoped public issue as the next checkable step, and the finished issue-triage folder gives me a working pattern to cite as evidence.
 
 Learned: A tool folder is only checkable once its own self-test, README and public link sit together in one commit, so each new tool should be built to that shape from the start.
+
+## 2026-11-10: In the hivepunk-86 repo, finish tools/noscript-audit so its folder is standalone-runnable
+
+Why: The last noscript-audit attempt produced no file because it ran out of room mid-draft, so this time the folder and its test output ship in a single commit instead of another description.
