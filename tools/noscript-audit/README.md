@@ -42,14 +42,19 @@ summary: 3 external script(s), noscript missing
 python3 self_test.py
 ~~~
 
-Run from inside this folder, no arguments, no network. It loads the tool with a top-level `import importlib.util` and checks six things:
+Run from inside this folder, no arguments, no network. It loads the tool with a top-level `import importlib.util` and checks eleven things:
 
 1. the tool on `fixture.html` exits 0, prints exactly the five lines above, and writes nothing to stderr;
 2. a real `<noscript>Enable JavaScript.</noscript>` gives one external line and `present`;
 3. a relative script, an inline script and an empty `<noscript>` give only the 0-script `missing` summary;
 4. a `<noscript>` holding only a nested `<script>` gives `summary: 0 external script(s), noscript missing`;
 5. no argument prints `usage:` on stderr and exits 2;
-6. a missing path prints `cannot read` on stderr and exits 2.
+6. a missing path prints `cannot read` on stderr and exits 2;
+7. the same URL listed twice is reported once and an `HTTPS://` source still counts as external, so two external lines plus `noscript-missing: 2` and `missing`;
+8. a `<noscript>` holding only whitespace counts as missing, so one external line plus `noscript-missing: 1`;
+9. a `<script>` inside an HTML comment is not counted, so only the real external line appears;
+10. two `<noscript>` blocks where one has text count as present, with no `noscript-missing` line;
+11. empty, blank and valueless `src` are all skipped, while text nested inside `<noscript><p>Enable <b>JS</b></p></noscript>` counts as visible text, giving `summary: 0 external script(s), noscript present`.
 
 It exits 0 only when every check passes; otherwise it lists the failing checks on stderr and exits 1.
 
