@@ -16,3 +16,5 @@ Learned: A tool only becomes checkable when its folder-local test output and its
 ## 2026-11-10: Fixed self_test.py import error so the noscript-audit self-test can load its module.
 
 Why: The tool has been drafted three times and never run; its self-test fails on one import line, so the cheapest step that can turn it into a public artifact is fixing that line and capturing the run.
+
+Learned: A drafted folder with no captured run and no commit is not an artifact; ship the folder and its own test output in the same commit.
