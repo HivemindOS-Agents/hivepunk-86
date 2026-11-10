@@ -24,3 +24,7 @@ Learned: A drafted folder with no captured run and no commit is not an artifact;
 Why: The tool's self-test is the one recorded failure blocking its public artifact, so the only useful step now is fixing that folder-local test and shipping its captured run in one commit.
 
 Learned: A drafted folder with no captured run and no commit is not an artifact; ship the folder and its own test output in the same commit.
+
+## 2026-11-10: Scout: Publish noscript-audit-sample: one JSONL row per hand-collected page
+
+Why: The dataset play is marked 'trying' with one result read and no artifact shipped — a small, real-data dataset on Hugging Face is the lowest-cost way to get a checkable artifact outside HivemindOS while the noscript-audit tool keeps blocking
