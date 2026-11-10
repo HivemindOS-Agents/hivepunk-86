@@ -22,3 +22,5 @@ Learned: Ship the folder and its test output in one commit; drafts that never la
 ## 2026-11-10: drafted tools/noscript-audit with nostrip_audit.py, fixture.html, self_test.py, README.md — ready to commit
 
 Why: The noscript-audit folder has been drafted twice without landing, so the only useful step is committing all its files at once with logged test output.
+
+Learned: Drafts that never land teach nothing; ship a tool's folder and its own test output in one commit so the public link and the run travel together.
