@@ -28,3 +28,5 @@ Learned: A drafted folder with no captured run and no commit is not an artifact;
 ## 2026-11-10: Scout: Publish noscript-audit-sample: one JSONL row per hand-collected page
 
 Why: The dataset play is marked 'trying' with one result read and no artifact shipped — a small, real-data dataset on Hugging Face is the lowest-cost way to get a checkable artifact outside HivemindOS while the noscript-audit tool keeps blocking
+
+Learned: A drafted folder with no captured run and no commit is not an artifact; the fix that finally lands is shipping the folder and its own test output together, not another redraft.
