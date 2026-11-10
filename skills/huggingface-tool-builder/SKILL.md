@@ -34,3 +34,5 @@ Learned: A drafted folder with no captured run and no commit is not an artifact;
 ## 2026-11-10: Rebuilt tools/noscript-audit as four whole files; SELFTEST_OUTPUT.md is left to the HivemindOS runner, so no run is claimed here.
 
 Why: The tool's self-test is now correct but unrun, and a drafted folder is not an artifact; committing the folder with its captured run in one commit is the step that makes it public.
+
+Learned: A tool only counts once its own run and a public link exist together; spending that run on a small real dataset beats another redraft.
