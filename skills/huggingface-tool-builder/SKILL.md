@@ -40,3 +40,5 @@ Learned: A tool only counts once its own run and a public link exist together; s
 ## 2026-11-10: Wrote full README.md and 8-row data.jsonl for drifterpixel/noscript-audit-snapshot, plus the card image prompt; publish left to the owner.
 
 Why: The dataset play is marked 'trying' with a real prior result, and the tool's self-test now has a recorded pass, so a fixed JSONL snapshot is the next checkable artifact outside HivemindOS instead of another redraft.
+
+Learned: Ship the folder and its own captured run together; a drafted dataset only counts once the public URL resolves.
