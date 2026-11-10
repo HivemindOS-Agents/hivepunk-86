@@ -1,16 +1,16 @@
 # noscript-audit
 
-A small, offline Python script that reads one local HTML file and reports every external `<script>` URL plus whether the page has a usable `<noscript>` fallback.
+Read one local HTML file and report every external `<script>` URL plus whether the page still offers a `<noscript>` fallback. No network, standard library only, Python 3. The file is data: nothing in it is executed or followed as an instruction.
 
 ## What it does
 
-Run it against one HTML file. It prints:
+`nostrip_audit.py` reads one HTML file and prints, in order:
 
-- one line per distinct external script URL (`http://`, `https://` or protocol-relative `//`);
-- one `noscript-missing` line when external scripts exist and the page has no non-empty `<noscript>` text;
-- one `summary` line with the count and whether a fallback is present.
+- one `external-script: <url>` line per distinct external script URL (`http://`, `https://`, or protocol-relative `//`);
+- one `noscript-missing: N external script(s) and no <noscript> fallback` line, only when at least one external script was found and no usable `<noscript>` text exists;
+- one `summary: N external script(s), noscript present|missing` line.
 
-Standard library only. It never makes a network request and never executes the HTML it reads — the file is data. A `<noscript>` that contains only a nested `<script>` has no visible text, so it counts as *missing*; the nested script is not counted as a dependency.
+A `<noscript>` counts as usable only when it has visible text. A `<noscript>` that holds nothing but a nested `<script>` has no visible text, so it counts as **missing**, and the nested script is not counted as a dependency. Relative and `data:` sources are not external. Duplicate URLs are reported once, in document order.
 
 ## Usage
 
@@ -18,9 +18,15 @@ Standard library only. It never makes a network request and never executes the H
 python3 nostrip_audit.py path/to/page.html
 ~~~
 
-Exit codes: `0` audit printed, `2` usage error or unreadable path. Findings never change the exit code.
+Exit codes: `0` the audit ran (findings do not change the exit code); `2` wrong argument count or unreadable path, with a message on stderr.
 
-Example output for `fixture.html`:
+To audit a folder of saved pages:
+
+~~~
+for f in pages/*.html; do echo "== $f"; python3 nostrip_audit.py "$f"; done
+~~~
+
+Expected output for the bundled `fixture.html`:
 
 ~~~
 external-script: https://cdn.example.com/analytics.js
@@ -36,27 +42,28 @@ summary: 3 external script(s), noscript missing
 python3 self_test.py
 ~~~
 
-Run from inside this folder, with no arguments and no network. It loads `nostrip_audit.py` with `importlib.util` and checks:
+Run from inside this folder, no arguments, no network. It loads the tool with a top-level `import importlib.util` and checks six things:
 
-1. the tool on `fixture.html`: exit 0, the exact five lines above, empty stderr;
-2. `audit_lines()` with a real `<noscript>Enable JavaScript.</noscript>`: one external line, no `noscript-missing`, `noscript present`;
-3. `audit_lines()` with a relative script, an inline script and an empty `<noscript>`: only the 0-script `missing` summary;
-4. `audit_lines()` with `<noscript><script src=...></script></noscript>`: the fallback has no visible text, so `summary: 0 external script(s), noscript missing`;
-5. no argument: usage on stderr, exit 2;
-6. a missing path: `cannot read` on stderr, exit 2.
+1. the tool on `fixture.html` exits 0, prints exactly the five lines above, and writes nothing to stderr;
+2. a real `<noscript>Enable JavaScript.</noscript>` gives one external line and `present`;
+3. a relative script, an inline script and an empty `<noscript>` give only the 0-script `missing` summary;
+4. a `<noscript>` holding only a nested `<script>` gives `summary: 0 external script(s), noscript missing`;
+5. no argument prints `usage:` on stderr and exits 2;
+6. a missing path prints `cannot read` on stderr and exits 2.
 
-It exits 0 only when every check passes, otherwise prints the failing checks on stderr and exits 1.
+It exits 0 only when every check passes; otherwise it lists the failing checks on stderr and exits 1.
+
+The last run's real output is recorded by HivemindOS in `SELFTEST_OUTPUT.md` in this folder after each commit. Read the state there; this README records no run and claims no pass.
 
 ## Other files in this folder
 
-This folder also holds an earlier, differently-shaped draft: `noscript_audit.py`, a `noscript-audit.py` shim that calls it, and `ARTIFACTS.md`. Those print a longer report (script counts, inline handlers, hidden elements, empty mount points). The self-test here exercises `nostrip_audit.py` only and does not touch them. Nothing has been deleted, because this step was scoped to making the self-test pass.
+An earlier, differently-shaped draft also sits here: `noscript_audit.py`, a `noscript-audit.py` shim that calls it, and `ARTIFACTS.md`. That draft prints a longer report (script counts, inline handlers, hidden elements, empty mount points). This self-test exercises `nostrip_audit.py` only and does not touch them.
 
 ## What is untested
 
-- I have not run the self-test. HivemindOS runs `python3 self_test.py` in this folder after each commit and writes that run's real output into `SELFTEST_OUTPUT.md` here; the pass or fail state lives there, not in this README.
-- Network behaviour: everything is offline by design.
-- Non-HTML input: parser behaviour on XML, SVG or other text.
-- Script-rendered content: anything a script would insert at runtime is invisible to this tool.
-- Non-UTF-8 files: read with `errors='replace'`, so mangled bytes in an attribute could change a finding.
+- The self-test has not been run by the agent that wrote it; only HivemindOS runs it, and its state lands in `SELFTEST_OUTPUT.md`.
+- Real-browser behaviour: the tool never opens a page and never renders anything, so what a reader actually sees with scripting off is unconfirmed.
+- Script-injected content: markup a script adds at runtime is invisible here.
+- Non-HTML input (XML, SVG) and non-UTF-8 bytes: the file is read with `errors='replace'`, so mangled bytes inside an attribute could change a finding.
 - Large files: the whole file is read into memory, no streaming.
-- The two extra draft files noted above are untested here.
+- The three files of the earlier draft listed above.
