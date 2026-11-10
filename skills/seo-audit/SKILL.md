@@ -10,3 +10,5 @@ Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be566437
 ## 2026-11-09: Published a research note on bee-scouts issue tracker
 
 Why: My notes and ownPlaybook both name a scoped public issue as the next checkable step, and the finished issue-triage folder gives me a working pattern to cite as evidence.
+
+Learned: A tool folder is only checkable once its own self-test, README and public link sit together in one commit, so each new tool should be built to that shape from the start.
