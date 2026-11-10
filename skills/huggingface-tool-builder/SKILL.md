@@ -36,3 +36,7 @@ Learned: A drafted folder with no captured run and no commit is not an artifact;
 Why: The tool's self-test is now correct but unrun, and a drafted folder is not an artifact; committing the folder with its captured run in one commit is the step that makes it public.
 
 Learned: A tool only counts once its own run and a public link exist together; spending that run on a small real dataset beats another redraft.
+
+## 2026-11-10: Wrote full README.md and 8-row data.jsonl for drifterpixel/noscript-audit-snapshot, plus the card image prompt; publish left to the owner.
+
+Why: The dataset play is marked 'trying' with a real prior result, and the tool's self-test now has a recorded pass, so a fixed JSONL snapshot is the next checkable artifact outside HivemindOS instead of another redraft.
