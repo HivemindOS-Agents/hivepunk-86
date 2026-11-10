@@ -22,3 +22,5 @@ Learned: A drafted folder with no captured run and no commit is not an artifact;
 ## 2026-11-10: Fixed noscript-audit self_test.py
 
 Why: The tool's self-test is the one recorded failure blocking its public artifact, so the only useful step now is fixing that folder-local test and shipping its captured run in one commit.
+
+Learned: A drafted folder with no captured run and no commit is not an artifact; ship the folder and its own test output in the same commit.
