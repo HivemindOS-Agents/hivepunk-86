@@ -3,6 +3,10 @@
 
 Run from inside this folder:  python3 self_test.py
 Exits 0 only when every check passes.
+
+Note on syntax: the row fixtures below are built with dict(...) calls, so this
+file contains no brace characters at all. That is purely a syntax choice - the
+rows themselves are the same dictionaries as before.
 """
 
 import importlib.util
@@ -16,18 +20,19 @@ FIXTURE = os.path.join(HERE, "fixture.csv")
 
 # Exact stdout of `python3 card_claims_check.py fixture.csv`, traced row by row
 # over the bundled fixture (unchanged):
-#   alice   "Hello, I am Agent Alice."  -> opened
-#   bob     ""                          -> empty
-#   charlie missing                     -> opened  (two fields: the literal
-#                                          word 'missing' IS the card_text
-#                                          cell, so the column is not absent)
-#   Diana   "   "                       -> empty
-#   eve     "I am Eve, ready to assist."-> opened
-#   frank   newline + two spaces        -> empty
-#   grace   multi-line text             -> opened
-#   heidi   ---                         -> opened
+#   alice   "Hello, I am Agent Alice."   -> opened
+#   bob     ""                           -> empty
+#   charlie missing                      -> opened  (the row has two fields, so
+#                                           the literal word 'missing' IS the
+#                                           card_text cell; the column is not
+#                                           absent, hence not "missing")
+#   Diana   "   "                        -> empty
+#   eve     "I am Eve, ready to assist." -> opened
+#   frank   newline + two spaces         -> empty
+#   grace   multi-line text              -> opened
+#   heidi   ---                          -> opened
 # -> 5 opened, 3 empty, 0 missing.
-# The `missing` classification is covered by check 4 below (MISSING_KEY).
+# The "missing" classification is covered by check 4 below (MISSING_KEY).
 EXPECTED_OUTPUT = (
     "alice: opened\n"
     "bob: empty\n"
@@ -40,23 +45,25 @@ EXPECTED_OUTPUT = (
     "summary: 5 opened, 3 empty, 0 missing\n"
 )
 
-# Load the module directly so classify_row can be tested.
+# Load the tool's own module so classify_row can be tested directly.
 spec = importlib.util.spec_from_file_location("card_claims_check", TOOL)
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
 
-# Standard row shapes for direct unit checks.
-# Only agent_id and card_text matter; other columns are ignored.
-OPENED_ROW = {"agent_id": "a1", "card_text": "hello"}
-EMPTY_ROW = {"agent_id": "b2", "card_text": ""}
-[redacted] "c3"}  # no 'card_text' key
-EMPTY_AFTER_STRIP = {"agent_id": "d4", "card_text": "   "}
-MULTILINE = {"agent_id": "e5", "card_text": "  multi\nline  "}
-TAB_ONLY = {"agent_id": "f6", "card_text": "\t\t"}
+# Standard row shapes for the direct unit checks. Only agent_id and card_text
+# matter; any other column is ignored.
+OPENED_ROW = dict(agent_id="a1", card_text="hello")
+EMPTY_ROW = dict(agent_id="b2", card_text="")
+[redacted]  # no card_text key at all
+EMPTY_AFTER_STRIP = dict(agent_id="d4", card_text="   ")
+MULTILINE = dict(agent_id="e5", card_text="  multi\nline  ")
+TAB_ONLY = dict(agent_id="f6", card_text="\t\t")
+
 
 def cli(*args):
     return subprocess.run([sys.executable, TOOL] + list(args),
                           capture_output=True, text=True)
+
 
 def run():
     failures = []
