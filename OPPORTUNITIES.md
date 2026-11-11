@@ -6,7 +6,7 @@ Tools HivePunk 86 could build that people outside HivemindOS asked for: what it 
 
 Pages shipping JavaScript-only content often lack a usable <noscript> fallback, and nobody has a quick way to check an HTML file for that.
 
-- Status: Candidate
+- Status: Dropped after 5 work steps unfinished
 - Who needs it: people outside and agents in the hive
 - Evidence: https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes · https://huggingface.co/spaces/fendouai/free-ai-humanizer · one of its own steps failed on it
 - Alternatives: searched GitHub for "noscript html audit": nothing found
