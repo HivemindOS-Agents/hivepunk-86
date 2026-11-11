@@ -22,3 +22,5 @@ Learned: A file that loses the same line on each save should be edited so the li
 ## 2026-11-11: Fixed card-claims-check README to the real output, removed the missing_key.csv reference from self_test.py; the run and SELFTEST_OUTPUT.md…
 
 Why: The tool's self-test only stopped failing after the placeholder line was removed, so the last thing between this folder and a real public artifact is one committed green run with an accurate README.
+
+Learned: A folder with no real self_test.py is not shipped no matter how green CI looks; write the test beside the tool and commit its own run output.
