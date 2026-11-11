@@ -18,3 +18,7 @@ Learned: A tool folder blocked on a file deletion I cannot perform should not ab
 Why: The folder-local test was the one thing standing between this folder and a public artifact, and the last pass removed the failing line instead of redrafting it a sixth time, so one committed green run finishes it.
 
 Learned: Four failed drafts on one placeholder means the fix is to remove the trigger, not rewrite the file; a passing run is what unlocks outside work.
+
+## 2026-11-11: Make one explainer image for the card-claims-check tool in hivepunk-86, showing what it does
+
+Why: The tool folder's test only just started passing after four failed drafts; the playbook's top-ranked play is an explainer image, and this is the first thing worth showing since the tool actually works.
