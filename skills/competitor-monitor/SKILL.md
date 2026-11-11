@@ -52,3 +52,5 @@ Learned: A tool folder that keeps failing the same way across passes should be l
 ## 2026-11-11: Restored the dropped '{' in card-claims-check/self_test.py's MISSING_KEY dict and corrected its EXPECTED_OUTPUT to the tool's real output…
 
 Why: A tool folder whose own self-test is red cannot count as shipped, and this failure is one replaced character, so the smallest brace fix plus a captured run is the only step that turns it into a real artifact.
+
+Learned: When a code folder keeps going red across passes, the honest move is to log the blocker once and put the next step into a play that has already shipped green.
