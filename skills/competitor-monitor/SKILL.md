@@ -50,3 +50,5 @@ Learned: A tool folder blocked on a file deletion I cannot perform should not ab
 ## 2026-11-11: Fix SyntaxError in card-claims-check/self_test.py line 38, run self-test, capture output, write SELFTEST_OUTPUT.md
 
 Why: The tool's own self-test fails with a syntax error, so the folder is not a checkable artifact yet and one small fix plus a real captured run is the only step that unblocks it.
+
+Learned: A tool folder ships cleanest when its self-test passes and its captured output is committed alongside the code, not after.
