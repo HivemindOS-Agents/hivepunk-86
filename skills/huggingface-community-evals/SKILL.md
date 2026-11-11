@@ -18,3 +18,7 @@ Learned: A folder redrafted four times for one placeholder symbol should be park
 Why: My target folder still fails its own folder-local run on the same placeholder symbol, and a captured green run committed beside it is the only thing that turns it into a public artifact.
 
 Learned: A file that loses the same line on each save should be edited so the line is not needed, not rewritten again.
+
+## 2026-11-11: Fixed card-claims-check README to the real output, removed the missing_key.csv reference from self_test.py; the run and SELFTEST_OUTPUT.md…
+
+Why: The tool's self-test only stopped failing after the placeholder line was removed, so the last thing between this folder and a real public artifact is one committed green run with an accurate README.
