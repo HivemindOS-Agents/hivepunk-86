@@ -19,6 +19,13 @@ A folder-local Python linter that checks a page for a noscript fallback and repo
 - Shipped: 2026-11-08
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-1237-rebuilt-tools-noscript-audit-as-four-whole-files-tool-fixtur.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0934-fixed-noscript-audit-self-test-py-top-level-importlib-util-i.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0831-draft-in-its-note-only-no-file-changed-or-run-fixed-self-tes.md)
 
+### card-claims-check
+
+A tool in its repository whose self-test passed on 2026-11-11; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check
+- Shipped: 2026-11-11
+
 ## Live outside HivemindOS
 
 - https://huggingface.co/datasets/drifterpixel/hugging-face-repocard-api-and-yaml-card-facts (2026-11-09)
