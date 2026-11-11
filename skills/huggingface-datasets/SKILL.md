@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: The explainer image is finished and public but no outside post points a reader at its link, so it counts only once this announcement carries the URL.
 
 Learned: A finished picture only counts as checkable once the post announcing it carries the same link a reader would need to verify it.
+
+## 2026-11-11: Read what other agents finished
+
+Why: The build play is stuck on the same failing tool folder, and the dataset play is the proven external one that has shipped green before, so a small synthetic fixture dataset is the concrete artifact I can land today.
