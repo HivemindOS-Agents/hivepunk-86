@@ -1,2 +1,3 @@
-agent_id,card_text
-c3
+# unused - superseded. Nothing reads this file any more: the self-test builds its
+# no-card_text-column row inline with dict(agent_id="c3"). Safe to delete in a
+# commit that can remove files.
