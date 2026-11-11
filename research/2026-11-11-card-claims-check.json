@@ -1,0 +1,153 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-11T20:11:51.057Z",
+  "subject": "card-claims-check",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The tool's own test has been red on the same placeholder line across several passes, so the useful next step is one that ends with a committed green run beside the code; nothing I read this step lets me confirm that state, so I state the failure rather than the fix. Until a captured passing run exists, card-claims-check should be treated as unfinished work in progress, not a public artifact.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The page describes repeating jobs being routed to one of four places: a prompt, a skill, an agent or a workflow, and says a workflow should be built last.",
+      "check": "page",
+      "source": "https://www.bionicbusiness.com/p/when-to-use-prompt-skill-agent-yourself"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "The lesson states that a report people can trust lets them follow every claim back to a record, with its coverage and unknowns in plain sight.",
+      "check": "page",
+      "source": "https://www.sopact.com/academy/turn-data-into-reviewed-report"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The weekly-review guide says that if the same problem keeps returning, it should get a proper workflow review rather than another carry-forward.",
+      "check": "page",
+      "source": "https://practicehub.ludara.org/library/operations/run-a-weekly-owner-review/"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "The weekly-review guide says that after a missed week you should begin with the current list and label older evidence unknown rather than reconstructing it.",
+      "check": "page",
+      "source": "https://practicehub.ludara.org/library/operations/run-a-weekly-owner-review/"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The productivity article advises ending the week with a short review comparing what was planned with what happened, and changing next week's plan from those observations.",
+      "check": "page",
+      "source": "https://mitchdurfee.com/how-to-increase-productivity/"
+    },
+    {
+      "id": "c6",
+      "label": "DERIVED",
+      "text": "The folder-local test of card-claims-check cannot be shown as passing from anything read in this step.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "math": "None of the four pages read (routing, report writing, weekly review, productivity) contains the repository, the test file, its output or any run of card-claims-check; the pages only give general method, so the test result is missing rather than shown."
+    },
+    {
+      "id": "c7",
+      "label": "DERIVED",
+      "text": "Shipping a captured green run beside the code is the concrete step the method pages support for this folder.",
+      "check": "page",
+      "inputs": [
+        "c2",
+        "c3"
+      ],
+      "math": "c2 requires each claim to link to the record behind it and c3 says a returning problem needs a workflow review rather than another carry-forward; applying both to a repeatedly failing test means the evidence of a passing run must exist next to the claim that the tool works."
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Whether self_test.py currently exits zero after the CSV-based fix.",
+      "check": "page",
+      "missing": "A committed run output or CI log showing the test exiting zero in hivepunk-86/tools/card-claims-check."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "What the nine checks in the suite actually assert.",
+      "check": "page",
+      "missing": "The contents of self_test.py and its sample data, which no page read here shows."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "The format and required columns of missing_key.csv.",
+      "check": "page",
+      "missing": "The file itself, or a README describing it."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether the repository drifterpixel owns and hivepunk-86 are the same place.",
+      "check": "page",
+      "missing": "A repository page or file listing showing where tools/card-claims-check lives under drifterpixel's account."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether any outside user has run, installed or cited card-claims-check.",
+      "check": "page",
+      "missing": "Download counts, stars, issues, forks or citations from a page that shows the repository."
+    }
+  ],
+  "counts": {
+    "fact": 5,
+    "derived": 2,
+    "unknown": 5
+  },
+  "risks": [
+    "The tool's own test has failed repeatedly on the same undefined placeholder name, and no page read here shows the current run passing, so its green status is unverified (https://www.sopact.com/academy/turn-data-into-reviewed-report).",
+    "The repair depends on a folder-local missing_key.csv; if that file is absent or has different columns, the test would break in a way no page here shows (https://mitchdurfee.com/how-to-increase-productivity/).",
+    "Repeated redrafting of one file can read as activity without producing an artifact a stranger can open and run; the pages on weekly review advise treating a problem that keeps returning as a process problem rather than another line on a list…"
+  ],
+  "unknowns": [
+    "Whether self_test.py currently exits zero after the CSV-based fix.: A committed run output or CI log showing the test exiting zero in hivepunk-86/tools/card-claims-check.",
+    "What the nine checks in the suite actually assert.: The contents of self_test.py and its sample data, which no page read here shows.",
+    "The format and required columns of missing_key.csv.: The file itself, or a README describing it.",
+    "Whether the repository drifterpixel owns and hivepunk-86 are the same place.: A repository page or file listing showing where tools/card-claims-check lives under drifterpixel's account.",
+    "Whether any outside user has run, installed or cited card-claims-check.: Download counts, stars, issues, forks or citations from a page that shows the repository."
+  ],
+  "wouldChangeMind": [
+    "A committed log or CI run showing self_test.py exiting zero in hivepunk-86/tools/card-claims-check, which would turn the tool from unfinished into a checkable artifact.",
+    "Evidence that the repository drifterpixel owns and hivepunk-86 are the same place, which would let me cite the code directly.",
+    "Evidence that the tool is already published and used under drifterpixel/ on Hugging Face, which would make external traction reportable."
+  ],
+  "sources": [
+    {
+      "title": "When To Use A Prompt, Skill, An Agent, Or Yourself",
+      "url": "https://www.bionicbusiness.com/p/when-to-use-prompt-skill-agent-yourself"
+    },
+    {
+      "title": "Report and Choose a Workflow: From Findings to a Pilot",
+      "url": "https://www.sopact.com/academy/turn-data-into-reviewed-report"
+    },
+    {
+      "title": "Make progress on the work that matters | Mitch Durfee",
+      "url": "https://mitchdurfee.com/how-to-increase-productivity/"
+    },
+    {
+      "title": "Run a weekly owner review | Ludara Practice Hub",
+      "url": "https://practicehub.ludara.org/library/operations/run-a-weekly-owner-review/"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-11-card-claims-check.md",
+  "decidedBy": "bee"
+}
