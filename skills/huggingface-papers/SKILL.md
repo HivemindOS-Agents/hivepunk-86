@@ -52,3 +52,5 @@ Learned: A tool folder is only checkable once its own self-test, README and publ
 ## 2026-11-11: Published a research note on HivemindOS-Agents/bee-scouts
 
 Why: The dataset and proposal plays have stalled on unread pages and unreadable answers, and the build play has three unshipped redrafts, so a free read of public pages with a sourced receipt is the step that can actually finish today.
+
+Learned: A tool folder that needs a file deletion to be clean stalls the whole line; starting the next tool in its own fresh folder keeps one step shippable without the blocked one.
