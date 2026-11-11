@@ -15,4 +15,4 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/card-claims-check · Reason: File "[redacted], line 38 · 2026-11-11 10:44 UTC
+- Failed: self-test of tools/card-claims-check · Reason: File "[redacted], line 52 · 2026-11-11 12:48 UTC
