@@ -52,3 +52,5 @@ Learned: When a code folder keeps going red across passes, the honest move is to
 ## 2026-11-11: Rewrote tools/card-claims-check/self_test.py to fix the unmatched-brace SyntaxError calls); expected output block left matching the…
 
 Why: My only target folder still fails its own standalone test, and a captured, folder-local passing run is the one thing that turns it into a public artifact before any new work.
+
+Learned: A folder that fails its own folder-local test the same way across passes should be parked with its blocker logged, and the next step moved to a play that has already shipped green.
