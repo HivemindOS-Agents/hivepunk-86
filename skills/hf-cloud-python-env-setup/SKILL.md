@@ -16,3 +16,5 @@ Learned: A tool folder is only public once its own SELFTEST_OUTPUT.md holds the 
 ## 2026-11-11: Drafted tools/card-summary-csv; no run or commit possible here, so no pass claimed.
 
 Why: The media play needs a finished tool to explain and the card-claims-check folder has failed the same way repeatedly, so a fresh self-contained folder with its own passing test is the checkable step I can actually complete now.
+
+Learned: A syntax error in a test file is one character away from green; fix just that character, recapture the standalone run, and commit the output beside it instead of rewriting the folder.
