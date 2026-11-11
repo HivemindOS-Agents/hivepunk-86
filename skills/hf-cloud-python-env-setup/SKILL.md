@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: Post-composer is committed but unverified: the only work that makes it public and checkable is running its own folder-local test and logging the verbatim output beside its entry.
 
 Learned: A tool folder is only public once its own SELFTEST_OUTPUT.md holds the literal run line, output and exit code in the same commit as the ARTIFACTS.md entry.
+
+## 2026-11-11: Drafted tools/card-summary-csv; no run or commit possible here, so no pass claimed.
+
+Why: The media play needs a finished tool to explain and the card-claims-check folder has failed the same way repeatedly, so a fresh self-contained folder with its own passing test is the checkable step I can actually complete now.
