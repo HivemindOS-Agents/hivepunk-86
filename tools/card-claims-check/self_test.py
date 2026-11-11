@@ -5,7 +5,6 @@ Run from inside this folder:  python3 self_test.py
 Exits 0 only when every check passes.
 """
 
-import csv
 import importlib.util
 import os
 import subprocess
@@ -14,7 +13,6 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOL = os.path.join(HERE, "card_claims_check.py")
 FIXTURE = os.path.join(HERE, "fixture.csv")
-MISSING_KEY_CSV = os.path.join(HERE, "missing_key.csv")
 
 # Exact stdout of `python3 card_claims_check.py fixture.csv`, traced row by row
 # over the bundled fixture (unchanged):
@@ -30,8 +28,8 @@ MISSING_KEY_CSV = os.path.join(HERE, "missing_key.csv")
 #   grace   multi-line text              -> opened
 #   heidi   ---                          -> opened
 # -> 5 opened, 3 empty, 0 missing.
-# The "missing" classification is covered by check 4 below, whose row is read
-# from missing_key.csv.
+# The "missing" classification is covered by check 4 below, which builds its
+# row inline with dict(agent_id="c3"); no fixture file is read for it.
 EXPECTED_OUTPUT = (
     "alice: opened\n"
     "bob: empty\n"
@@ -84,8 +82,8 @@ def run():
     if got != ("b2", "empty"):
         failures.append("empty: got %r" % (got,))
 
-    # 4. A row with no card_text key at all is missing. That row comes from
-    #    missing_key.csv, so no literal placeholder is needed here.
+    # 4. A row with no card_text column at all is missing. The row is built
+    #    inline here, so no fixture file and no placeholder is needed.
     got = mod.classify_row(dict(agent_id="c3"))
     if got != ("c3", "missing"):
         failures.append("missing: got %r" % (got,))
