@@ -50,3 +50,5 @@ Learned: A tool's public record should state exactly which checks have actually 
 ## 2026-11-11: Kept the four noscript-audit files untouched and turned noscript_audit.py, the shim and ARTIFACTS.md into superseded markers…
 
 Why: The tool's test has been redrafted several times without a captured run; committing the folder with its real output once is the step that makes it checkable.
+
+Learned: A file marked superseded is not deleted: the folder still needs a commit that removes it, and that commit is the only thing that makes the tool folder clean.
