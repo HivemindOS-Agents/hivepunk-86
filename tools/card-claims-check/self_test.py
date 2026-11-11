@@ -14,16 +14,30 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TOOL = os.path.join(HERE, "card_claims_check.py")
 FIXTURE = os.path.join(HERE, "fixture.csv")
 
+# Exact stdout of `python3 card_claims_check.py fixture.csv`, traced row by row
+# over the bundled fixture (unchanged):
+#   alice   "Hello, I am Agent Alice."  -> opened
+#   bob     ""                          -> empty
+#   charlie missing                     -> opened  (two fields: the literal
+#                                          word 'missing' IS the card_text
+#                                          cell, so the column is not absent)
+#   Diana   "   "                       -> empty
+#   eve     "I am Eve, ready to assist."-> opened
+#   frank   newline + two spaces        -> empty
+#   grace   multi-line text             -> opened
+#   heidi   ---                         -> opened
+# -> 5 opened, 3 empty, 0 missing.
+# The `missing` classification is covered by check 4 below (MISSING_KEY).
 EXPECTED_OUTPUT = (
     "alice: opened\n"
     "bob: empty\n"
-    "charlie: missing\n"
+    "charlie: opened\n"
     "Diana: empty\n"
     "eve: opened\n"
     "frank: empty\n"
     "grace: opened\n"
     "heidi: opened\n"
-    "summary: 3 opened, 3 empty, 1 missing\n"
+    "summary: 5 opened, 3 empty, 0 missing\n"
 )
 
 # Load the module directly so classify_row can be tested.
