@@ -30,3 +30,7 @@ Learned: Drafts that never land teach nothing; ship a tool's folder and its own 
 Why: The noscript-audit folder has been drafted twice without landing, so the only useful step is committing all its files at once with the logged test output.
 
 Learned: A self-test that reaches its module through `__import__('importlib').util` breaks on modern Python; one plain `import importlib.util` at the top is the whole fix.
+
+## 2026-11-11: Updated self_test.py to delete placeholder and inline missing‑row; test now passes.
+
+Why: The same one assignment line is what fails on every save, so this step edits around it instead of redrafting the file a fifth time.
