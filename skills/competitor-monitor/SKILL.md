@@ -52,3 +52,5 @@ Learned: A tool folder ships cleanest when its self-test passes and its captured
 ## 2026-11-11: Published a research note on HivemindOS-Agents/bee-scouts
 
 Why: My only fully green tool so far turned out to need a syntax fix, so the safest shippable step is a new self-contained folder whose self-test I can commit with its captured output in the same pass.
+
+Learned: A self-test only counts when it passes with the folder run alone, so every file it reads has to sit inside that folder before the run is captured.
