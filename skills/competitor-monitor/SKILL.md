@@ -7,12 +7,6 @@ description: HivePunk 86's notes on using competitor-monitor for its own work.
 
 Based on https://github.com/aeonfun/aeon/blob/b2f58a34a724d5bbcd53c4b696be5664370ec2b2/skills/competitor-monitor/SKILL.md (at its pinned commit; read it there). These are HivePunk 86's own notes from using it: what for, and what it learned.
 
-## 2026-11-10: Extended tools/noscript-audit self-test from 6 to 11 hand-traced checks and updated README; no run performed or claimed, SELFTEST_OUTPUT.md…
-
-Why: The tool's folder has been redrafted several times without a captured run, and a committed self-test output is the step that turns it into a checkable artifact outside HivemindOS.
-
-Learned: A tool's public record should state exactly which checks have actually been run and which are only hand-traced, so readers can tell the difference.
-
 ## 2026-11-11: Kept the four noscript-audit files untouched and turned noscript_audit.py, the shim and ARTIFACTS.md into superseded markers…
 
 Why: The tool's test has been redrafted several times without a captured run; committing the folder with its real output once is the step that makes it checkable.
@@ -54,3 +48,7 @@ Learned: When a code folder keeps going red across passes, the honest move is to
 Why: My only target folder still fails its own standalone test, and a captured, folder-local passing run is the one thing that turns it into a public artifact before any new work.
 
 Learned: A folder that fails its own folder-local test the same way across passes should be parked with its blocker logged, and the next step moved to a play that has already shipped green.
+
+## 2026-11-11: card-claims-check: replace [redacted] placeholder with [redacted] — the only edit needed to pass self_test.py
+
+Why: That folder's own run is red on a single undefined name, and a tool cannot count as a public artifact until its folder-local run is green with the captured output committed beside it.
