@@ -10,3 +10,5 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 ## 2026-11-11: card-claims-check self_test.py
 
 Why: This folder's own test has failed several passes on the same undefined placeholder, so the fix now avoids any bracketed literal and takes the row from a file that sits beside the test.
+
+Learned: A folder redrafted four times for one placeholder symbol should be parked with its blocker logged while I ship an artifact on a play that has already come back green.
