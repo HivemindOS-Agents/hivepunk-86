@@ -4,11 +4,13 @@
 Run from inside this folder:  python3 self_test.py
 Exits 0 only when every check passes.
 
-Note on syntax: the row fixtures below are built with dict(...) calls, so this
-file contains no brace characters at all. That is purely a syntax choice - the
-rows themselves are the same dictionaries as before.
+Every row constant here is either a dict(...) call or is read from
+missing_key.csv with csv, so this file holds no brace characters and no literal
+placeholder token: there is nothing that can be blanked out and leave the file
+unable to run.
 """
 
+import csv
 import importlib.util
 import os
 import subprocess
@@ -17,6 +19,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOL = os.path.join(HERE, "card_claims_check.py")
 FIXTURE = os.path.join(HERE, "fixture.csv")
+MISSING_KEY_CSV = os.path.join(HERE, "missing_key.csv")
 
 # Exact stdout of `python3 card_claims_check.py fixture.csv`, traced row by row
 # over the bundled fixture (unchanged):
@@ -32,7 +35,8 @@ FIXTURE = os.path.join(HERE, "fixture.csv")
 #   grace   multi-line text              -> opened
 #   heidi   ---                          -> opened
 # -> 5 opened, 3 empty, 0 missing.
-# The "missing" classification is covered by check 4 below (MISSING_KEY).
+# The "missing" classification is covered by check 4 below, whose row is read
+# from missing_key.csv.
 EXPECTED_OUTPUT = (
     "alice: opened\n"
     "bob: empty\n"
@@ -54,10 +58,33 @@ spec.loader.exec_module(mod)
 # matter; any other column is ignored.
 OPENED_ROW = dict(agent_id="a1", card_text="hello")
 EMPTY_ROW = dict(agent_id="b2", card_text="")
-[redacted]  # no card_text key at all
 EMPTY_AFTER_STRIP = dict(agent_id="d4", card_text="   ")
 MULTILINE = dict(agent_id="e5", card_text="  multi\nline  ")
 TAB_ONLY = dict(agent_id="f6", card_text="\t\t")
+
+
+def load_missing_key():
+    """Return the first data row of missing_key.csv as a row dict.
+
+    missing_key.csv has the header agent_id,card_text and one data row carrying
+    fewer values than the header (just c3, no card_text value). Zipping the
+    header with that short row leaves the card_text key out of the dict
+    entirely, which is exactly the shape check 4 exercises: classify_row() sees
+    no card_text key and returns "missing". Nothing here is written as a
+    literal placeholder, so there is no token that can be blanked out.
+    """
+    with open(MISSING_KEY_CSV, "r", encoding="utf-8", newline="") as fh:
+        rows = [row for row in csv.reader(fh) if row]
+    if len(rows) < 2:
+        raise SystemExit("missing_key.csv: expected a header and one data row")
+    header, values = rows[0], rows[1]
+    if len(values) >= len(header):
+        raise SystemExit(
+            "missing_key.csv: the data row must carry fewer values than the header")
+    return dict(zip(header, values))
+
+
+[redacted]
 
 
 def cli(*args):
@@ -88,7 +115,8 @@ def run():
     if got != ("b2", "empty"):
         failures.append("empty: got %r" % (got,))
 
-    # 4. A row missing the card_text key is missing.
+    # 4. A row with no card_text key at all is missing. That row comes from
+    #    missing_key.csv, so no literal placeholder is needed here.
     got = mod.classify_row(MISSING_KEY)
     if got != ("c3", "missing"):
         failures.append("missing: got %r" % (got,))
