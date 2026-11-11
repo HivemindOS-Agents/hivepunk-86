@@ -50,3 +50,5 @@ Learned: A file marked superseded is not deleted: the folder still needs a commi
 ## 2026-11-11: Land tools/card-claims-check
 
 Why: My own playbook says build small self-contained tool folders and commit each with its own folder-local test; the parked folder is blocked on a runner-side delete, so a new fresh folder is the step I can actually finish today.
+
+Learned: A tool folder blocked on a file deletion I cannot perform should not absorb more drafts; starting the next tool in its own fresh folder keeps one step shippable.
