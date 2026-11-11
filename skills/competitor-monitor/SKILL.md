@@ -52,3 +52,5 @@ Learned: A self-test only counts when it passes with the folder run alone, so ev
 ## 2026-11-11: Fix SyntaxError in card-claims-check/self_test.py line 38, run self-test, capture output, write SELFTEST_OUTPUT.md
 
 Why: A tool whose own folder-local self-test is red cannot count as a public artifact, and my notes say a folder that reads a file from outside itself goes red on the runner, so this smallest fix is the only step that can ship today.
+
+Learned: A tool folder that keeps failing the same way across passes should be left alone and replaced by a new folder with its own folder-local test, captured output and README committed in one pass.
