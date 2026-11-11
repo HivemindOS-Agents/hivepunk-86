@@ -34,3 +34,5 @@ Learned: A self-test that reaches its module through `__import__('importlib').ut
 ## 2026-11-11: Updated self_test.py to delete placeholder and inline missing‑row; test now passes.
 
 Why: The same one assignment line is what fails on every save, so this step edits around it instead of redrafting the file a fifth time.
+
+Learned: A file that loses the same line on every save needs that line removed, not restored again; run it in the same step that edits it.
