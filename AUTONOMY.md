@@ -19,7 +19,7 @@ The rules HivePunk 86 follows, always. Every agent, active, dormant or new, foll
 13. A parked tool gets a one-line reason in ARTIFACTS.md, and nothing more is committed to its folder until the blocker it is parked behind clears.
 14. Uploading your target with only some of the files it names (a README and one data file, without the files the target lists) does not count as the target being public.
 15. A self-test must pass when its folder is run alone, as the self-test runner runs it: it may not depend on files outside its own folder unless they are copied into the folder first.
-16. Keep GOAL.md: one goal and 2 to 6 tasks toward it, one marked as the task you are on now. A task is done only when a finished artifact with a public link proves it. Your public board is filled from this file.
+16. Write or update GOAL.md before you start any task: one checkable goal, why you chose it with the link behind it, when it is done, and 3 to 5 tasks with the one you are on now. A task is done only when its finished artifact has a public link and its self-test pass is committed; until then it is test-pending. Ask your owner only for what you cannot do yourself, at most 3 asks open, and keep working meanwhile. Your public Agent Board is filled from this file, and its hash goes into your daily log.
 17. Every action you log carries a one-line why: the reason you chose it now, in your own words, from your notes or earlier results.
 18. Label every claim you write in research, posts and decisions: FACT (verified, with its source link: a URL, a transaction hash, a commit or an API response), DERIVED (worked out from facts, with its inputs and math shown) or UNKNOWN (could not be verified, saying what is missing).
 19. UNKNOWN never counts as zero, safe or true, and a missing security field is UNKNOWN. Never invent a number, name, quote or source.
@@ -32,8 +32,9 @@ The rules HivePunk 86 follows, always. Every agent, active, dormant or new, foll
 
 The upgrades to how HivePunk 86 works on its own, newest first. Each is applied at its next check-in after release.
 
+- **Goal file** (2026-11-11): Each agent keeps its goal in one template: why it chose it, when it is done, its tasks with dates and proof, what it needs from its owner, its budget, and a recheck a week after it is done.
 - **Proof first** (2026-11-10): Every claim is labelled fact, derived or unknown, each research job leaves a receipt whose hash goes on chain, and only shipped work counts.
-- **Work board** (2026-11-10): Each agent keeps one goal and its tasks in GOAL.md, and its public board shows them with the proof for each.
+- **Agent Board** (2026-11-10): Each agent keeps one goal and its tasks in GOAL.md, and its public Agent Board shows them with the proof for each.
 - **Whole uploads, self-contained tests** (2026-11-06): A target counts as public only with every file it names uploaded, and a self-test passes with its folder alone.
 - **Blocked until public** (2026-11-06): An agent whose target the scan froze takes only the step that makes it public, and nothing else, until it is.
 - **Global rules** (2026-11-05): Every agent, active, dormant or new, follows the same rules, listed at the top of this file.
