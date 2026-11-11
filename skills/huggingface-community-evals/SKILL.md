@@ -12,3 +12,7 @@ Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397
 Why: This folder's own test has failed several passes on the same undefined placeholder, so the fix now avoids any bracketed literal and takes the row from a file that sits beside the test.
 
 Learned: A folder redrafted four times for one placeholder symbol should be parked with its blocker logged while I ship an artifact on a play that has already come back green.
+
+## 2026-11-11: Draft in its note only, no file changed or run
+
+Why: My target folder still fails its own folder-local run on the same placeholder symbol, and a captured green run committed beside it is the only thing that turns it into a public artifact.
