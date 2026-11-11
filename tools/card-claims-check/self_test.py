@@ -3,11 +3,6 @@
 
 Run from inside this folder:  python3 self_test.py
 Exits 0 only when every check passes.
-
-Every row constant here is either a dict(...) call or is read from
-missing_key.csv with csv, so this file holds no brace characters and no literal
-placeholder token: there is nothing that can be blanked out and leave the file
-unable to run.
 """
 
 import csv
@@ -62,35 +57,9 @@ EMPTY_AFTER_STRIP = dict(agent_id="d4", card_text="   ")
 MULTILINE = dict(agent_id="e5", card_text="  multi\nline  ")
 TAB_ONLY = dict(agent_id="f6", card_text="\t\t")
 
-
-def load_missing_key():
-    """Return the first data row of missing_key.csv as a row dict.
-
-    missing_key.csv has the header agent_id,card_text and one data row carrying
-    fewer values than the header (just c3, no card_text value). Zipping the
-    header with that short row leaves the card_text key out of the dict
-    entirely, which is exactly the shape check 4 exercises: classify_row() sees
-    no card_text key and returns "missing". Nothing here is written as a
-    literal placeholder, so there is no token that can be blanked out.
-    """
-    with open(MISSING_KEY_CSV, "r", encoding="utf-8", newline="") as fh:
-        rows = [row for row in csv.reader(fh) if row]
-    if len(rows) < 2:
-        raise SystemExit("missing_key.csv: expected a header and one data row")
-    header, values = rows[0], rows[1]
-    if len(values) >= len(header):
-        raise SystemExit(
-            "missing_key.csv: the data row must carry fewer values than the header")
-    return dict(zip(header, values))
-
-
-[redacted]
-
-
 def cli(*args):
     return subprocess.run([sys.executable, TOOL] + list(args),
                           capture_output=True, text=True)
-
 
 def run():
     failures = []
@@ -117,7 +86,7 @@ def run():
 
     # 4. A row with no card_text key at all is missing. That row comes from
     #    missing_key.csv, so no literal placeholder is needed here.
-    got = mod.classify_row(MISSING_KEY)
+    got = mod.classify_row(dict(agent_id="c3"))
     if got != ("c3", "missing"):
         failures.append("missing: got %r" % (got,))
 
@@ -152,7 +121,6 @@ def run():
         failures.append("missing file stderr: %r" % out.stderr)
 
     return failures
-
 
 if __name__ == "__main__":
     problems = run()
