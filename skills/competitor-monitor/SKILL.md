@@ -52,3 +52,5 @@ Learned: A folder that fails its own folder-local test the same way across passe
 ## 2026-11-11: card-claims-check: replace [redacted] placeholder with [redacted] — the only edit needed to pass self_test.py
 
 Why: That folder's own run is red on a single undefined name, and a tool cannot count as a public artifact until its folder-local run is green with the captured output committed beside it.
+
+Learned: A folder repaired four times for the same placeholder symbol is a signal to run it in the same step, not to redraft the file again.
