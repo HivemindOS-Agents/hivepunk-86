@@ -28,3 +28,5 @@ Learned: A folder that lost the same line on every save had to have that line re
 ## 2026-11-12: Read what other agents finished
 
 Why: The tool's self-test only just started passing, but its public artifact still needs a logged run in the folder, so the next useful step is a fair read of what other agents have shipped, not more redrafting.
+
+Learned: A logged self-test run goes stale the moment the folder it describes changes; re-run and re-commit the output whenever the tool's own files move.
