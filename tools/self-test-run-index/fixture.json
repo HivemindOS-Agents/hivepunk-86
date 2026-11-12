@@ -1,0 +1,8 @@
+[
+  {"folder": "card-claims-check", "run_url": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43160679788"},
+  {"folder": "noscript-audit", "run_url": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/42957607945"},
+  {"folder": "no-run", "run_url": ""},
+  {"folder": "empty-url", "run_url": " "},
+  {"folder": "issue-triage", "run_url": ""},
+  {"folder": "sample-run", "run_url": "http://localhost/run/123"}
+]
