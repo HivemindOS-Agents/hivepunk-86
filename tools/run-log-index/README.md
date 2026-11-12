@@ -6,7 +6,7 @@ Filter a JSON file of `{"folder": ..., "run_url": ...}` rows, printing only thos
 
 Reads a JSON array of objects, each with at least `folder` and `run_url` keys. Prints to stdout a JSON array of the rows whose `run_url` is a non-empty string starting with `http://` or `https://`.
 
-With `--check` flag, also exits with code 1 if any row has a blank, missing, or non-http(s) `run_url`. The first such row's folder (or row index) is printed on stderr.
+With the `--check` flag, the same JSON array is still printed to stdout first; then one `run-log-index: missing run_url: <folder>` line is printed to stderr for **every** row with a blank, missing or non-http(s) `run_url`, and the exit code is 1. Rows with no `folder` value are named by their row index, e.g. `row 3`.
 
 ## Usage
 
@@ -16,13 +16,13 @@ python3 run_log_index.py --check fixture.json
 ~~~
 
 Exit codes:
-- `0` — no check failures, output printed
-- `1` — `--check` found at least one row without a valid URL (messages on stderr)
-- `2` — wrong argument count, unreadable path, or JSON parse error
+- `0` — no check failures, filtered rows printed
+- `1` — `--check` found at least one row without a valid URL (rows still printed to stdout, messages on stderr)
+- `2` — wrong argument count, unreadable path, or JSON parse error (nothing on stdout)
 
 ## Example output for the bundled `fixture.json`
 
-Without `--check`:
+Without `--check`, stdout is:
 
 ~~~json
 [
@@ -41,7 +41,7 @@ Without `--check`:
 ]
 ~~~
 
-With `--check`, the same JSON is printed to stdout, and the following lines appear on stderr (exit 1):
+With `--check`, that same JSON goes to stdout, and these three lines appear on stderr (exit code 1):
 
 ~~~
 run-log-index: missing run_url: empty
@@ -49,15 +49,17 @@ run-log-index: missing run_url: whitespace
 run-log-index: missing run_url: no_url
 ~~~
 
+The fixture holds 6 rows: 3 with a usable URL and 3 without, which is what `self_test.py` check 11 asserts directly.
+
 ## Self-test
 
 ~~~
 python3 self_test.py
 ~~~
 
-Run from inside this folder, no arguments, no network. It tests the tool on `fixture.json`, on edge cases, and on error conditions. Prints `all checks passed` and exits 0 only when every check passes.
+Run from inside this folder, no arguments, no network. It tests the tool on `fixture.json`, on edge cases (empty array, `null` URL, missing key, non-array JSON), on error conditions (no argument, missing file), and asserts the fixture's own row counts. Prints `all checks passed` and exits 0 only when every check passes.
 
-The last run's output is written by HivemindOS into `SELFTEST_OUTPUT.md`.
+HivemindOS runs it after every commit and writes that run's raw output and exit code into `SELFTEST_OUTPUT.md` in this folder. Read the run state there; this README claims no run result.
 
 ## What is untested
 
@@ -68,3 +70,4 @@ The last run's output is written by HivemindOS into `SELFTEST_OUTPUT.md`.
 - The `--check` flag in a non-standard position (e.g., after the filename).
 - Non-UTF-8 encodings.
 - Rows with extra keys beyond `folder` and `run_url`.
+- The exact stdout/exit code of a HivemindOS run of this folder's revision — see `SELFTEST_OUTPUT.md`.
