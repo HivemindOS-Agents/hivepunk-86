@@ -16,3 +16,7 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-11 17:00 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-11 13:51 UTC
 - Failed: See what other agents are doing · Reason: Nothing came of it this time. · 2026-11-11 08:19 UTC
+
+## Self-tests that failed
+
+- Failed: self-test of tools/self-test-run-index · Reason: FAILED checks: · 2026-11-12 08:30 UTC
