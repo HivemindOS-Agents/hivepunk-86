@@ -1,0 +1,164 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-12T12:38:04.417Z",
+  "subject": "self-test-run-index (tools/self-test-run-index in hivepunk-86)",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages show a real, recurring bee-scouts convention that a tool's self-test must run standalone from inside its own folder and be recorded as a captured run, but they do not show hivepunk-86, the tools/self-test-run-index folder, its files or any run of it, so the folder's own state and output stay unconfirmed and the requested stdout and exit code cannot be pasted from any source I read.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 20 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-13T12:38:10.704Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 5dd3c7b, on 2026-10-14.",
+      "check": "shipping",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/commit/5dd3c7bc9fa0380a3886f7cf0501c828ec397d75"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "bee-scouts issue #114 says the public index it was given lists no page, file or repo path for tools/agent-memory-lint-self-test-capture, so it could not confirm self_test.py, README.md or any fixtures exist, and it could not run it from there.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Issue #114 proposes adding fixtures/tiny_memory.md and making self_test.py resolve every path from Path(__file__).parent so nothing outside the folder is read, then capturing real stdout and exit code to fixtures/expected_stdout.txt and fixtures/expected_exit.txt.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "bee-scouts issue #115 asks for SELFTEST_OUTPUT.md holding the exact command cd tools/doc-attribution-check && python3 self_test.py; echo $?, the verbatim output and the exit code from one real run, and says a reader can then tell a self-test that actually passed from one that was never run.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "bee-scouts issue #104 describes a run as cd tools/attribution-docs-check-fixtures && python3 gen_dataset.py && python3 self_test.py; echo $? printing a final 'self-test: 11 checks, 0 failed' line with exit code 0.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "bee-scouts issue #159 lists issues #139, #143, #144, #148, #149 and #150 as existing bee-scouts issues for tools/run-record-lint, and says it could not confirm whether that folder's SELFTEST_OUTPUT.md is a hand-derived block, a captured run, or both.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issue #159 gives an example where the captured run differs from the old derived block: 11 lines vs 9, with a new count line, and says the real EXIT= value should be kept even if failing.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "The bee-scouts commits API reports 20 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial), with the latest real commit 5dd3c7b on 2026-10-14.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-13T12:38:10.704Z"
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Issues #114, #115, #104 and #159 carry the labels bee-547, bee-632, bee-632 and bee-632 respectively, and each says it was written by a bee on a scout mission and that a person decides.",
+      "check": "page",
+      "missing": "Its source does not state 159."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether hivepunk-86 contains a tools/self-test-run-index folder, and what files it holds.",
+      "check": "page",
+      "missing": "A page showing that repository's tree or the folder's files, or a commit for it."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "What python3 self_test.py in that folder prints and what exit code it returns.",
+      "check": "page",
+      "missing": "A captured run of that command, pasted with its stdout and exit code."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether that folder's check 2 asserts only stderr and exit code 1 when --check fails, or asserts stdout as well.",
+      "check": "page",
+      "missing": "The folder's self_test.py source, or a failing-run transcript showing what it asserts."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the tool's self-test reads only files inside its own folder.",
+      "check": "page",
+      "missing": "The self_test.py source showing how it resolves paths."
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 0,
+    "unknown": 5
+  },
+  "risks": [
+    "The pages never show the hivepunk-86 repository or the tools/self-test-run-index folder, so the tool, its self_test.py and any run of it are unverified from a source I read.",
+    "Issue #114 describes the exact failure mode this folder may share: a self-test that resolves paths outside its own folder only passes inside the repo and gives a false green to anyone who copies the folder out [https://github.com/HivemindOS-Agents/bee-scouts/issues/114].",
+    "Issue #159 warns that a derived expected-output block can differ from a real captured run (11 lines vs 9 in its example), so a hand-written expectation can drift from what the tool prints [https://github.com/HivemindOS-Agents/bee-scouts/issues/159].",
+    "Issue #115 says a reader cannot currently tell a self-test that actually passed from one that was never run, which is the same gap for any folder without a captured run [https://github.com/HivemindOS-Agents/bee-scouts/issues/115].",
+    "My step asked for an exact stdout string and exit code that no page I read states, so any such paste would have to come from a run I cannot show a source for."
+  ],
+  "unknowns": [
+    "Issues #114, #115, #104 and #159 carry the labels bee-547, bee-632, bee-632 and bee-632 respectively, and each says it was written by a bee on a scout mission and that a person decides.: Its source does not state 159.",
+    "Whether hivepunk-86 contains a tools/self-test-run-index folder, and what files it holds.: A page showing that repository's tree or the folder's files, or a commit for it.",
+    "What python3 self_test.py in that folder prints and what exit code it returns.: A captured run of that command, pasted with its stdout and exit code.",
+    "Whether that folder's check 2 asserts only stderr and exit code 1 when --check fails, or asserts stdout as well.: The folder's self_test.py source, or a failing-run transcript showing what it asserts.",
+    "Whether the tool's self-test reads only files inside its own folder.: The self_test.py source showing how it resolves paths."
+  ],
+  "wouldChangeMind": [
+    "A page or commit showing tools/self-test-run-index in hivepunk-86 and the bytes of its self_test.py.",
+    "A pasted run of cd tools/self-test-run-index && python3 self_test.py; echo $? with its verbatim stdout and exit code.",
+    "Evidence that the folder's self-test reads files outside its own directory, which would make a pass inside the repo meaningless when the folder is copied out."
+  ],
+  "sources": [
+    {
+      "title": "agent-memory-lint-self-test-capture: self_test.py passes when the folder runs alone · Issue #114 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/114"
+    },
+    {
+      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115"
+    },
+    {
+      "title": "attribution-docs-check-fixtures: self_test.py checks 6 file hashes and 5 README headings · Issue #104 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/104"
+    },
+    {
+      "title": "tools/run-record-lint: SELFTEST_OUTPUT.md as one captured run, banner first · Issue #159 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-13T12:38:10.704Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-12-self-test-run-index-tools-self-test-run-index-in-hivepunk-86.md",
+  "decidedBy": "bee"
+}
