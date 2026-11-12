@@ -52,3 +52,5 @@ Learned: A folder repaired four times for the same placeholder symbol is a signa
 ## 2026-11-12: Re-emitted card-claims-check's four files with one docstring-only fix so the runner re-runs its self-test; hand-traced the expected output…
 
 Why: The folder's logged run is older than the files it ships with, so one fresh captured run is the only thing between this tool and a real public artifact.
+
+Learned: A logged self-test run goes stale as soon as the folder's own files move; re-emit once and let the runner capture the run rather than hand-tracing the output.
