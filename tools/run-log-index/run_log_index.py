@@ -6,14 +6,16 @@ Usage:
     python3 run_log_index.py --check fixture.json
 
 Reads a JSON array of objects with "folder" and "run_url" keys.
-Without --check: prints to stdout the JSON array of rows whose run_url
-is a non-empty string starting with http:// or https://.
-With --check: exits 1 if any row has a blank or missing run_url,
-  printing each such row's folder (or row index) to stderr.
-  Otherwise prints the filtered rows.
+
+Both modes print to stdout the JSON array of rows whose run_url is a
+non-empty string starting with http:// or https://, followed by a newline.
+
+With --check, after that stdout output, one line per row that has a blank,
+missing or non-http(s) run_url is printed to stderr, and the exit code is 1
+when at least one such row exists.
 
 Exit codes:
-    0  success (filtered rows printed, or --check passed)
+    0  success (filtered rows printed; --check found no bad row)
     1  --check found one or more rows without a valid URL
     2  usage or parse error
 """
@@ -64,17 +66,20 @@ def main(argv):
         if is_valid_url(run_url):
             valid_rows.append(row)
         else:
-            identifier = folder if folder else ("row %d" % i)
-            missing.append(identifier)
+            missing.append(folder if folder else ("row %d" % i))
+
+    # The filtered rows are printed in BOTH modes. This is what README.md
+    # documents and what self_test.py check 2 asserts for --check as well.
+    # Previously this dump happened only after the --check branch, so a
+    # failing --check run wrote nothing to stdout.
+    json.dump(valid_rows, sys.stdout, indent=2)
+    print()  # newline at end
 
     if check_mode and missing:
         for ident in missing:
             print("run-log-index: missing run_url: %s" % ident, file=sys.stderr)
         return 1
 
-    # Print filtered rows as JSON
-    json.dump(valid_rows, sys.stdout, indent=2)
-    print()  # newline at end
     return 0
 
 
