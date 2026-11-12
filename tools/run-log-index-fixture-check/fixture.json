@@ -1,0 +1,8 @@
+[
+  {"folder": "valid1", "run_url": "https://example.com/run/1"},
+  {"folder": "valid2", "run_url": "http://example.com/run/2"},
+  {"folder": "empty", "run_url": ""},
+  {"folder": "whitespace", "run_url": " "},
+  {"folder": "no_url", "run_url": null},
+  {"folder": "also_valid", "run_url": "https://github.com/user/repo/actions/runs/12345"}
+]
