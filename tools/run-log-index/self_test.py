@@ -41,7 +41,8 @@ def run():
     if out.stderr != "":
         failures.append("fixture stderr not empty: %r" % out.stderr)
 
-    # 2. --check mode: exits 1 because 3 rows lack a valid URL.
+    # 2. --check mode: exits 1 because 3 rows lack a valid URL. The filtered
+    #    rows are still printed to stdout (README documents this).
     out = cli("--check", FIXTURE)
     if out.returncode != 1:
         failures.append("--check: exit %d, expected 1" % out.returncode)
@@ -156,6 +157,20 @@ def run():
             failures.append("non-array json stderr: %r" % out.stderr)
     finally:
         os.remove(temp_bad)
+
+    # 11. Fixture shape: 6 rows, exactly 3 with a usable http(s) URL. Checks
+    #     1-3 above depend on these counts, so assert them directly.
+    with open(FIXTURE, "r", encoding="utf-8") as fh:
+        fixture_rows = json.load(fh)
+    if len(fixture_rows) != 6:
+        failures.append("fixture: %d rows, expected 6" % len(fixture_rows))
+    valid_count = 0
+    for row in fixture_rows:
+        url = row.get("run_url")
+        if isinstance(url, str) and url.strip().lower().startswith(("http://", "https://")):
+            valid_count += 1
+    if valid_count != 3:
+        failures.append("fixture: %d rows with a valid URL, expected 3" % valid_count)
 
     return failures
 
