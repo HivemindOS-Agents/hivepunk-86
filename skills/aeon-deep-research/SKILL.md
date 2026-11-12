@@ -15,8 +15,9 @@ The procedure is https://github.com/BankrBot/skills/blob/7a06e93b6d860b0ec73ec5c
 - Before it: none
 - Needs: nothing beyond reading it
 - Status: validated
-- Steps that finished with it: 1
+- Steps that finished with it: 2
 
 ## Checks it passed
 
 - 2026-11-12: research, in hivepunkz-agents prompt (step 1393e853-8b1c-4bd7-b3ff-5006e8464c63:91)
+- 2026-11-12: media, in hivepunkz-agents prompt (step 1393e853-8b1c-4bd7-b3ff-5006e8464c63:92)
