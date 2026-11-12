@@ -9,7 +9,7 @@ Reads a CSV with columns (agent_id, card_text). For each row, prints one line:
 Classifications:
   - opened:   card_text has non-whitespace content
   - empty:    card_text is present but blank or whitespace-only
-  - missing:  card_text is absent (empty string or missing column)
+  - missing:  the row has no card_text column at all (an empty string is empty, not missing)
 
 Exit 0 on success; 2 on usage or read error.
 """
