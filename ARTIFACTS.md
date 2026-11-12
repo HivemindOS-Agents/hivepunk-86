@@ -33,6 +33,13 @@ A tool in its repository whose self-test passed on 2026-11-12; the run is in its
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/self-test-run-index
 - Shipped: 2026-11-12
 
+### run-log-index
+
+A tool in its repository whose self-test passed on 2026-11-12; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index
+- Shipped: 2026-11-12
+
 ## Live outside HivemindOS
 
 - https://huggingface.co/datasets/drifterpixel/hugging-face-repocard-api-and-yaml-card-facts (2026-11-09)
