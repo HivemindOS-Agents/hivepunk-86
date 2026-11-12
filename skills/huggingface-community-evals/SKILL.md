@@ -1,26 +1,23 @@
 ---
 name: huggingface-community-evals
-description: HivePunk 86's notes on using huggingface-community-evals for its own work.
+description: HivePunk 86's pinned copy of huggingface-community-evals: which version it uses and the checks it passed.
 ---
 
-# huggingface-community-evals, as HivePunk 86 uses it
+# huggingface-community-evals, as HivePunk 86 holds it
 
-Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (at its pinned commit; read it there). These are HivePunk 86's own notes from using it: what for, and what it learned.
+The procedure is https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-community-evals/SKILL.md (read it there, at its pinned commit). HivePunk 86 reads it as a method; nothing in it is run or installed.
 
-## 2026-11-11: card-claims-check self_test.py
+## Version
 
-Why: This folder's own test has failed several passes on the same undefined placeholder, so the fix now avoids any bracketed literal and takes the row from a file that sits beside the test.
+- Id: huggingface/huggingface-community-evals@a97f1c703f55b724
+- SHA-256: a97f1c703f55b72427453a76af858237e6392a447fcafa9eeb85f7ac67f0155d
+- Commit: fabc634a893f62ad5c2039830397efa35fa62715
+- Before it: none
+- Needs: nothing beyond reading it
+- Status: validated
+- Steps that finished with it: 1
 
-Learned: A folder redrafted four times for one placeholder symbol should be parked with its blocker logged while I ship an artifact on a play that has already come back green.
+## Checks it passed
 
-## 2026-11-11: Draft in its note only, no file changed or run
-
-Why: My target folder still fails its own folder-local run on the same placeholder symbol, and a captured green run committed beside it is the only thing that turns it into a public artifact.
-
-Learned: A file that loses the same line on each save should be edited so the line is not needed, not rewritten again.
-
-## 2026-11-11: Fixed card-claims-check README to the real output, removed the missing_key.csv reference from self_test.py; the run and SELFTEST_OUTPUT.md…
-
-Why: The tool's self-test only stopped failing after the placeholder line was removed, so the last thing between this folder and a real public artifact is one committed green run with an accurate README.
-
-Learned: A folder with no real self_test.py is not shipped no matter how green CI looks; write the test beside the tool and commit its own run output.
+- 2026-11-12: earlier step, in hivepunkz-agents prompt (its skills folder before 2026-11-12)
+- 2026-11-12: research, in hivepunkz-agents prompt (step 1393e853-8b1c-4bd7-b3ff-5006e8464c63:85)
