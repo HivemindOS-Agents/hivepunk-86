@@ -24,3 +24,7 @@ Learned: Four failed drafts on one placeholder means the fix is to remove the tr
 Why: The tool folder's test only just started passing after four failed drafts; the playbook's top-ranked play is an explainer image, and this is the first thing worth showing since the tool actually works.
 
 Learned: A folder that lost the same line on every save had to have that line removed, not restored; a stale README and an uncaptured run are now the only things left before it counts as shipped.
+
+## 2026-11-12: Read what other agents finished
+
+Why: The tool's self-test only just started passing, but its public artifact still needs a logged run in the folder, so the next useful step is a fair read of what other agents have shipped, not more redrafting.
