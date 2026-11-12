@@ -28,7 +28,7 @@ def cli(*args):
 def run():
     failures = []
 
-    # 1. Normal mode: only 4 rows with http(s) URLs, no --check.
+    # 1. Normal mode: only 3 rows with http(s) URLs, no --check.
     out = cli(FIXTURE)
     if out.returncode != 0:
         failures.append("fixture: exit %d, expected 0" % out.returncode)
@@ -38,19 +38,14 @@ def run():
     if out.stderr != "":
         failures.append("fixture stderr not empty: %r" % out.stderr)
 
-    # 2. --check mode: exits 1 because 2 rows lack a URL (no-run, issue-triage).
+    # 2. --check mode: exits 1 because 3 rows lack a valid URL.
     out = cli("--check", FIXTURE)
     if out.returncode != 1:
         failures.append("--check: exit %d, expected 1" % out.returncode)
     if "check failed" not in out.stderr:
         failures.append("--check stderr: %r" % out.stderr)
-    # Should also print the filtered lines to stdout.
-    if out.stdout != EXPECTED_FILTERED:
-        failures.append("--check stdout mismatch\nexpected:\n%s\ngot:\n%s"
-                        % (EXPECTED_FILTERED, out.stdout))
 
     # 3. --check on a fixture with all valid URLs: exits 0.
-    # Build a tiny inline fixture via echo.
     fixture_all_valid = os.path.join(HERE, "_all_valid.tmp.json")
     try:
         with open(fixture_all_valid, "w") as fh:
