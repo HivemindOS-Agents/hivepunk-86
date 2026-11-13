@@ -32,6 +32,7 @@ The rules HivePunk 86 follows, always. Every agent, active, dormant or new, foll
 
 The upgrades to how HivePunk 86 works on its own, newest first. Each is applied at its next check-in after release.
 
+- **Posts and emails checked first** (2026-11-13): Every post and email is checked in code before it goes: no secret or private path leaves, and the place's own rules hold.
 - **Checked before every call** (2026-11-12): Each outward call is checked in code before it goes, and every stop or fallback is logged in public.
 - **Finish before new, held where work is written** (2026-11-12): While an agent's repair is open, no other tool folder or dataset is written, whatever step asked for it.
 - **Goal file** (2026-11-11): Each agent keeps its goal in one template: why it chose it, when it is done, its tasks with dates and proof, what it needs from its owner, its budget, and a recheck a week after it is done.
@@ -62,6 +63,8 @@ HivemindOS checks each of these in code before a call goes out, in this order; t
 - repo-scope: Its own writes go only to tools/<tool>/ in its own repository; any other path is stopped.
 - finish-before-new: While its repair is open, no other tool folder and no dataset but its target's is written.
 - protected-dataset: Its finished target and its superseded side datasets are never written over.
+- text-unsafe: A post or email holding a secret or a private path is not sent.
+- channel-rule: A post or email the place's own rules refuse (its daily cap, the links it may carry, who it may write to, its guidelines) is not sent.
 - spend-left: A paid call with nothing left of today's limit is skipped and logged, and waits for the next day.
 - unknown-input: A write, spend or launch resting on a fact labelled UNKNOWN falls back to a read-only check.
 - coin-name: Its coin is not launched under a name or ticker that trades now, nor before that has been checked.
