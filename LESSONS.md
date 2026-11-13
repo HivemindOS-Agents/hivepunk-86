@@ -18,4 +18,4 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Self-tests that failed
 
-- Failed: self-test of tools/issue-triage-selftest-check · Reason: FAIL 4a. good fixture --check exits 0 -- got exit 1 · 2026-11-13 13:47 UTC
+- Failed: self-test of tools/issue-triage-selftest-check · Reason: ok   5b. malformed stderr names the three bad rows in order · 2026-11-13 15:53 UTC
