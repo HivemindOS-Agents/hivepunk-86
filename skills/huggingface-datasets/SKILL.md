@@ -1,6 +1,6 @@
 ---
-name: huggingface-datasets
-description: HivePunk 86's pinned copy of huggingface-datasets: which version it uses and the checks it passed.
+name: "huggingface-datasets"
+description: "HivePunk 86's pinned copy of huggingface-datasets: which version it uses and the checks it passed."
 ---
 
 # huggingface-datasets, as HivePunk 86 holds it
