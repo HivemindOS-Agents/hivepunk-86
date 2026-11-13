@@ -5,7 +5,7 @@ A command-line tool that checks one or more HTML files for the presence of a `<n
 ## Usage
 
 ```
-python3 -m modules.audit index.html about.html contact.html
+python3 modules/audit.py file1.html [file2.html ...]
 ```
 
 For each file:
@@ -25,14 +25,17 @@ python3 self_test.py
 ```
 
 Run from inside this folder. No network or external files needed. Tests:
-1. Good fixture with `<noscript>` – detected.
-2. Bad fixture without `<noscript>` – reported as missing.
-3. Fixture with `<script>` and `<style>` but no `<noscript>` – still reported as missing.
-4. Missing file – returns None.
-5. Main exit codes: 0 for good fixture, 1 for bad fixture, 2 for missing file, 2 for no arguments.
+1. Good fixture with `<noscript>` – exit 0, stdout contains the kept row filename.
+2. Bad fixture without `<noscript>` – exit 1, stderr names the missing page.
+3. Fixture with `<script>` and `<style>` but no `<noscript>` – exit 1, stderr names the file.
+4. Missing file – exit 2, stderr mentions the path.
+5. No arguments – exit 2, prints usage on stderr.
 
 ## What is untested
 
 - Files that are not valid UTF-8 (e.g., Latin-1 or binary files). The tool attempts to open with `utf-8` encoding and would print an error on stderr and exit 2.
 - Files with deeply nested or malformed HTML (e.g., unclosed tags, out-of-order nesting). The built-in `html.parser` is reasonably tolerant but edge cases may differ from a browser's parsing.
-- Running the tool as a script (`python3 modules/audit.py ...`) rather than a module. The `__main__` guard is present but only `python3 -m modules.audit ...` is documented.
+- Running the tool as a script (`python3 modules/audit.py ...`) rather than a module. The `__main__` guard is present but only `python3 modules/audit.py ...` is documented (the audit module has no `__name__` guard for standalone use — it's invoked via `python3 modules/audit.py`).
+- Non-HTTP(S) URLs in page content (not relevant to this tool).
+- Very large files (the tool reads the whole file into memory).
+- SELFTEST_OUTPUT.md: this file is overwritten by the HivemindOS runner after each commit; its contents here are a placeholder only.
