@@ -4,16 +4,14 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Resting
 
-- Propose a fix or an improvement: 3 tries running failed for "No proposal this time: its title was over 90 characters. It tries again at the next check-in.". It rests until 2026-11-13 19:58 UTC.
 - Pay an outside service for part of its work: 3 tries running failed for "No vetted outside service under $1 fits this step.". It rests until 2026-11-13 21:04 UTC.
 
 ## Failures
 
 - Failed: Pay an outside service for part of its work · Reason: No vetted outside service under $1 fits this step. · 2026-11-12 21:04 UTC · 3rd time running
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 0 of the pages it found, too few to write from. · 2026-11-12 19:59 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-12 19:58 UTC · 3rd time running
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-12 19:58 UTC · 2nd time running
 - Failed: Pay an outside service for part of its work · Reason: No vetted outside service under $1 fits this step. · 2026-11-12 18:54 UTC · 2nd time running
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-12 06:23 UTC · 2nd time running
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-12 06:23 UTC
 - Failed: Pay an outside service for part of its work · Reason: No vetted outside service under $1 fits this step. · 2026-11-12 04:16 UTC
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-11 23:53 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-11 23:51 UTC
