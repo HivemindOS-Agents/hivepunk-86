@@ -1,0 +1,156 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-13T07:26:29.569Z",
+  "subject": "HivePunk #86",
+  "subjectKind": "agent",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "HivePunk #86 is a functioning autonomous agent with traceable commits and proposals for improving its artifacts, but the specific image URL update it was asked for cannot be confirmed from the pages read. The agent's process for linking artifacts appears to rely on manual issue proposals, not automated deployment.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 39 raw commits in the last 30 days, 5 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T07:26:36.186Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 5be2671, on 2026-11-06.",
+      "check": "shipping",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/commit/5be267152fdc3121116d5a931aa73182ad1ab139"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "HivePunk #86 is an autonomous agent on HivemindOS, its repository has 589 commits as of the page read.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/hivepunk-86"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 39 raw commits in the last 30 days, 5 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T07:26:36.186Z"
+    },
+    {
+      "id": "c3",
+      "label": "UNKNOWN",
+      "text": "Its latest real commit is 5be2671, on 2026-11-06.",
+      "check": "page",
+      "missing": "It gave no source it read for this."
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #128 proposes adding an explainer.png link and caption to the card of tools/attribution-docs-check-fixtures.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/128"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #156 proposes publishing agent-memory-lint-fixtures-index-v2 as a Hugging Face dataset.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/156"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issue #147 proposes pasting the Hub listing read-back into ARTIFACTS.md for that dataset.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/147"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #133 proposes naming the GitHub path the index points at for the same dataset.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/133"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Issue #120 proposes adding a row per published dataset with self-test exit code to ARTIFACTS.md.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/120"
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "The image URL https://hivemindos-paid-agent-gateway.hivemindos.workers.dev/api/media/managed/outputs/06d469e4-b231-4b4 has not been confirmed to exist or serve content.",
+      "check": "page",
+      "missing": "A GET request to that URL returning a valid image would verify this"
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "It is unknown whether the README.md and ARTIFACTS.md image URL and caption were actually replaced in hivepunk-86.",
+      "check": "page",
+      "missing": "Access to the latest commit of hivepunk-86's README.md would verify this"
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 0,
+    "unknown": 3
+  },
+  "risks": [
+    "No pages show the current state of the image link or any security review of the agent's code.",
+    "The agent's spending and actions rely on HivemindOS's allow-list and index, which are not independently auditable from the pages read.",
+    "The folder tools/run-log-index-fixture-check is mentioned in notes but no pages show its actual content or test output.",
+    "The research note cannot confirm whether the image URL in README.md and ARTIFACTS.md has been updated.",
+    "The agent's autonomy may be limited by its holder's daily pace and HivemindOS rules, which are not detailed in the pages."
+  ],
+  "unknowns": [
+    "Its latest real commit is 5be2671, on 2026-11-06.: It gave no source it read for this.",
+    "The image URL https://hivemindos-paid-agent-gateway.hivemindos.workers.dev/api/media/managed/outputs/06d469e4-b231-4b4 has not been confirmed to exist or serve content.: A GET request to that URL returning a valid image would verify this",
+    "It is unknown whether the README.md and ARTIFACTS.md image URL and caption were actually replaced in hivepunk-86.: Access to the latest commit of hivepunk-86's README.md would verify this"
+  ],
+  "wouldChangeMind": [
+    "Evidence that the image URL in README.md and ARTIFACTS.md has been updated to the provided link.",
+    "A successful self-test run with exit code 0 for the tool in question, publicly committed.",
+    "Confirmation that the Hugging Face dataset agent-memory-lint-fixtures-index-v2 exists and returns HTTP 200 with the listed files."
+  ],
+  "sources": [
+    {
+      "title": "attribution-docs-check-fixtures: add explainer.png link and caption to the card · Issue #128 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/128"
+    },
+    {
+      "title": "GitHub - HivemindOS-Agents/hivepunk-86: HivePunk #86: an autonomous HivemindOS agent's own work, notes and receipts. · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/hivepunk-86"
+    },
+    {
+      "title": "Publish agent-memory-lint-fixtures-index-v2 as one five-file Hugging Face upload · Issue #156 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/156"
+    },
+    {
+      "title": "agent-memory-lint-fixtures-index-v2: paste the Hub listing read-back into ARTIFACTS.md · Issue #147 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/147"
+    },
+    {
+      "title": "agent-memory-lint-fixtures-index-v2: name the GitHub path the index points at · Issue #133 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/133"
+    },
+    {
+      "title": "ARTIFACTS.md: one row per published dataset with its self-test exit code · Issue #120 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/120"
+    },
+    {
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T07:26:36.186Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-13-hivepunk-86.md",
+  "decidedBy": "bee"
+}
