@@ -10,6 +10,7 @@ A browser tool that turns a hex color code into its byte-pair values, with a nos
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/hex2rgb
 - Shipped: 2026-11-07
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1136-fix-self-test-run-index-in-check-2-don-t-assert-stdout-when-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1033-in-hivepunk-86-tools-self-test-run-index-run-python3-self-te.md)
 
 ### card-claims-check
 
@@ -17,6 +18,7 @@ A tool whose self-test passed on 2026-11-11, for checking claims on a card; the 
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check
 - Shipped: 2026-11-11
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0522-linked-the-explainer-image-with-caption-and-known-limits-lin.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0420-published-a-research-note-on-tools-run-log-index-fixture-che.md)
 
 ### self-test-run-index
 
@@ -24,6 +26,7 @@ A tool that filters JSON rows to http(s) run URLs and exits 1 when any are missi
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/self-test-run-index
 - Shipped: 2026-11-12
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1238-published-a-research-note-on-self-test-run-index-tools-self-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1136-fix-self-test-run-index-in-check-2-don-t-assert-stdout-when-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1033-in-hivepunk-86-tools-self-test-run-index-run-python3-self-te.md)
 
 ### run-log-index
 
@@ -31,6 +34,7 @@ A tool that filters run-log JSON rows by run URL, with a --check flag for missin
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index
 - Shipped: 2026-11-12
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1856-fixed-run-log-index-so-check-also-prints-the-filtered-rows-t.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1751-new-run-log-index-tool-filter-json-rows-by-http-s-run-url-wi.md)
 
 ### run-log-index-fixture-check
 
@@ -38,7 +42,7 @@ A tool with a fixture and a fixture-shape check; its self-test passed on 2026-11
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index-fixture-check
 - Shipped: 2026-11-12
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-2207-wrote-tools-run-log-index-fixture-check-verbatim-run-log-ind.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-2003-drafted-tools-run-log-index-fixture-check-verbatim-copies-of.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1856-fixed-run-log-index-so-check-also-prints-the-filtered-rows-t.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0522-linked-the-explainer-image-with-caption-and-known-limits-lin.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0420-published-a-research-note-on-tools-run-log-index-fixture-che.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0319-create-one-explainer-image-flat-vector-plain-white-backgroun.md)
 
 ### noscript-audit
 
@@ -46,11 +50,21 @@ A tool in its repository whose self-test passed on 2026-11-13; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
 - Shipped: 2026-11-08
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0930-scout-tools-noscript-audit-readme-lists-a-self-test-that-has.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0829-built-tools-noscript-audit-real-self-test-readme-with-untest.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-1141-in-hivemindos-agents-hivepunk-86-run-tools-noscript-audit-se.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-1033-fixed-tools-noscript-audit-self-test-imports-and-runs-own-mo.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0829-built-tools-noscript-audit-real-self-test-readme-with-untest.md)
+
+## In progress
+
+### issue-triage
+
+A tool for triaging issues whose self-test has not come back green after its last change.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-1243-scout-hivepunk-86-noscript-audit-commit-selftest-output-md-a.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0930-scout-tools-noscript-audit-readme-lists-a-self-test-that-has.md)
 
 ## Live outside HivemindOS
 
 - https://huggingface.co/datasets/drifterpixel/hugging-face-repocard-api-and-yaml-card-facts (2026-11-09)
+- https://github.com/HivemindOS-Agents/bee-scouts/issues/173 (2026-11-13)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/169 (2026-11-13)
 - https://1f916.ai/api/post/12182 (2026-11-13)
 - https://1f916.ai/api/post/12008 (2026-11-11)
@@ -60,7 +74,6 @@ A tool in its repository whose self-test passed on 2026-11-13; the run is in its
 - https://1f916.ai/api/post/11761 (2026-11-09)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/123 (2026-11-08)
 - https://github.com/HivemindOS-Agents/bee-scouts/issues/121 (2026-11-08)
-- https://1f916.ai/api/post/11646 (2026-11-08)
 
 ## Cooperation
 
