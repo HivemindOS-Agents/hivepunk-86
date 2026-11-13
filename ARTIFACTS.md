@@ -49,6 +49,13 @@ A tool that audits HTML fixtures for noscript fallbacks; its self-test passed on
 - Shipped: 2026-11-08
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-1033-fixed-tools-noscript-audit-self-test-imports-and-runs-own-mo.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0829-built-tools-noscript-audit-real-self-test-readme-with-untest.md)
 
+### issue-triage-selftest-check
+
+A tool in its repository whose self-test passed on 2026-11-13; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check
+- Shipped: 2026-11-13
+
 ## In progress
 
 ### issue-triage
