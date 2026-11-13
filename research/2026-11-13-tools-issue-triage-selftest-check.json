@@ -1,0 +1,156 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-13T23:18:02.954Z",
+  "subject": "tools/issue-triage-selftest-check",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The captured-self-test-run pattern is documented repeatedly for sibling folders in bee-scouts, but nothing I read shows tools/issue-triage-selftest-check, its recorder, or a committed capture, so the step's premise rests on an unverified folder; the repo's commit stream in the last 30 days reads as maintenance traffic rather than shipping work.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T23:18:10.127Z"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Issue #159 in HivemindOS-Agents/bee-scouts proposes that in tools/run-record-lint only, the folder's self_test.py be run as `cd tools/run-record-lint && python3 self_test.py; echo EXIT=$?` and the verbatim stdout, stderr and EXIT= line pasted under the banner 'Captured run, not derived'.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Issue #159 states it could not confirm from the index or snippets what SELFTEST_OUTPUT.md currently contains, nor whether the folder holds an expected-output file by any name.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #115 states the public index it was given lists no page, file or repo for tools/doc-attribution-check/, so it could not confirm checker.py, self_test.py or SELFTEST_OUTPUT.md exist there.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #111 says a run of tools/card-claims-fetch's self_test.py should be run 'exactly once' and its raw stdout, stderr and exit line saved into SELFTEST_RUN.txt, with no edits to fetch_cards.py, self_test.py or README.md in that step.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #159 carries the labels bee-632 and bee-proposal, is Open, and states 'A person decides; an agent never merges anything.'",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T23:18:10.127Z"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Commit messages in that recent window include 'health: #547 ok', 'health: #86 repairing', 'health: #632 ok' and 'FROZEN.md: #632's run-log-diff unparked, since attribution-docs-check-fixtures i'.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T23:18:10.127Z"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "An unrelated repository's pull request #1912 reports 'selftest_registration_check: 9 tool(s) declare --self-test, 8 have a runner' before its fix.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1912"
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "tools/issue-triage-selftest-check exists, contains record_selftest.py and self_test.py, and has a committed SELFTEST_OUTPUT.md.",
+      "check": "page",
+      "missing": "A page, file listing or commit for tools/issue-triage-selftest-check in HivemindOS-Agents/bee-scouts."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "The step's capture has been run and committed, and with what exit code.",
+      "check": "page",
+      "missing": "The committed SELFTEST_OUTPUT.md with the verbatim output and EXIT line, or a commit hash for it."
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether any bee-proposal self-test-capture issue was adopted or merged.",
+      "check": "page",
+      "missing": "A merged pull request or a human decision comment on one of the proposals."
+    }
+  ],
+  "counts": {
+    "fact": 9,
+    "derived": 0,
+    "unknown": 4
+  },
+  "risks": [
+    "No page I read shows tools/issue-triage-selftest-check, its record_selftest.py, its self_test.py, or any SELFTEST_OUTPUT.md, so the subject's existence and contents are unverified.",
+    "The repository's recent commit volume is dominated by health-check messages, and the service check classifies none of the last 30 days' raw commits as real work, so activity is hard to read as building.",
+    "The sibling proposals are labelled 'bee-proposal' and 'A person decides; an agent never merges anything', so proposals existing does not mean they were adopted or that the output files exist.",
+    "Capturing a run verbatim only proves the tool behaved the way it printed on that machine at that moment; page texts give no evidence of a re-run or independent verification.",
+    "Issue #159 itself says it could not confirm what SELFTEST_OUTPUT.md currently contains or whether an expected-output file exists, which is the same gap for the folder in this step."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "tools/issue-triage-selftest-check exists, contains record_selftest.py and self_test.py, and has a committed SELFTEST_OUTPUT.md.: A page, file listing or commit for tools/issue-triage-selftest-check in HivemindOS-Agents/bee-scouts.",
+    "The step's capture has been run and committed, and with what exit code.: The committed SELFTEST_OUTPUT.md with the verbatim output and EXIT line, or a commit hash for it.",
+    "Whether any bee-proposal self-test-capture issue was adopted or merged.: A merged pull request or a human decision comment on one of the proposals."
+  ],
+  "wouldChangeMind": [
+    "A commit or file in HivemindOS-Agents/bee-scouts showing tools/issue-triage-selftest-check with record_selftest.py and self_test.py, which would ground the step's subject.",
+    "A committed SELFTEST_OUTPUT.md in that folder showing the verbatim run and its real EXIT line, which would show the capture exists.",
+    "A merged pull request or human decision comment on one of the bee-proposal self-test-capture issues, which would show proposals move to action."
+  ],
+  "sources": [
+    {
+      "title": "tools/run-record-lint: SELFTEST_OUTPUT.md as one captured run, banner first · Issue #159 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159"
+    },
+    {
+      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115"
+    },
+    {
+      "title": "tools/card-claims-fetch: record one verbatim self-test run in SELFTEST_RUN.txt · Issue #111 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111"
+    },
+    {
+      "title": "tools: a tool that declares --self-test must be run by something (Fixes #1901) by bong-water-water-bong · Pull Request #1912 · 1bit-MONSTER/",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1912"
+    },
+    {
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-14T23:18:10.127Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-13-tools-issue-triage-selftest-check.md",
+  "decidedBy": "bee"
+}
