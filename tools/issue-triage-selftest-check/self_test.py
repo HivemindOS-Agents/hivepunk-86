@@ -70,36 +70,49 @@ check("3d. kept folders are valid1, valid2, also_valid in order",
       [r.get("folder") for r in kept] == ["valid1", "valid2", "also_valid"],
       "got %r" % [r.get("folder") for r in kept])
 
-# 4. Good fixture --check -> exit 0 (all rows valid) and same kept rows.
-rc, out, err = run(["--check", FIXTURE])
-check("4a. good fixture --check exits 0", rc == 0, "got exit %d" % rc)
-check("4b. good fixture --check keeps same 3 rows",
-      sorted(r.get("folder") for r in json.loads(out))
-      == ["also_valid", "valid1", "valid2"],
-      "got %r" % out)
-check("4c. good fixture --check stderr empty", err.strip() == "", "stderr: %r" % err)
+# 4. Good fixture --check -> exit 0: the good fixture has no malformed row,
+# so --check must not error on rows whose only issue is a missing URL (those
+# are what the tool filters out, not errors). --check accepts either
+# `--check FILE` or `FILE --check`; both orders must give the same result.
+for label, args in (("--check first", ["--check", FIXTURE]),
+                    ("--check last", [FIXTURE, "--check"])):
+    rc, out, err = run(args)
+    check("4a. good fixture --check (%s) exits 0" % label, rc == 0,
+          "got exit %d, stderr %r" % (rc, err))
+    check("4b. good fixture --check (%s) stderr empty" % label,
+          err.strip() == "", "stderr: %r" % err)
+    try:
+        got = json.loads(out)
+    except ValueError:
+        got = None
+    check("4c. good fixture --check (%s) keeps same 3 rows" % label,
+          isinstance(got, list)
+          and sorted(r.get("folder") for r in got)
+          == ["also_valid", "valid1", "valid2"], "stdout: %r" % out)
 
-# 5. Bad-URL fixture the test writes itself -> exit 1, exact stderr rows.
+# 5. Malformed-row fixture the test writes itself -> exit 1, exact stderr.
 bad_rows = [
     {"folder": "check-good-row", "run_url": "https://example.com/run/1"},
-    {"folder": "check-empty-url", "run_url": ""},
-    {"folder": "check-blank-url", "run_url": "   "},
+    {"folder": "", "run_url": "https://example.com/run/2"},
+    {"folder": "check-good-row-2"},
+    "not-an-object",
 ]
 with open(BAD_FIXTURE, "w", encoding="utf-8") as fh:
     json.dump(bad_rows, fh)
 try:
     rc, out, err = run(["--check", BAD_FIXTURE])
-    check("5a. bad fixture --check exits 1", rc == 1, "got exit %d" % rc)
+    check("5a. malformed fixture --check exits 1", rc == 1, "got exit %d" % rc)
     lines = err.strip().splitlines()
-    check("5b. bad fixture stderr names both bad rows in order",
-          lines == ["run-log-index: missing run_url: check-empty-url",
-                    "run-log-index: missing run_url: check-blank-url"],
+    check("5b. malformed stderr names the three bad rows in order",
+          lines == ["run-log-index: malformed row: row 1",
+                    "run-log-index: malformed row: row 3"],
           "stderr lines: %r" % lines)
-    check("5c. bad fixture stderr does not name the good row",
+    check("5c. malformed stderr does not name the good row",
           "check-good-row" not in err, "stderr: %r" % err)
-    check("5d. bad fixture stdout still holds only the kept row",
-          [r.get("folder") for r in json.loads(out)] == ["check-good-row"],
-          "stdout: %r" % out)
+    kept_bad = json.loads(out) if out.strip() else []
+    check("5d. malformed stdout holds only rows with valid URL and folder",
+          [r.get("folder") for r in kept_bad]
+          == ["check-good-row"], "stdout: %r" % out)
 finally:
     if os.path.exists(BAD_FIXTURE):
         os.unlink(BAD_FIXTURE)
