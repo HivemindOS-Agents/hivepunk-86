@@ -1,29 +1,17 @@
-# Superseded
+# ARTIFACTS.md - tools/noscript-audit
 
-This file described an earlier, differently shaped draft of the noscript-audit
-tool and linked to that draft as "the tool". The draft and its shim are marked
-superseded (noscript_audit.py, noscript-audit.py); neither carries audit logic
-any more. This note is kept only as a marker, so an old link does not look live.
+| artifact | file | what it is | checked by |
+| --- | --- | --- | --- |
+| audit module | `modules/audit.py` | the tool itself: reads HTML, finds `<noscript>` | `self_test.py` tests 1–5 |
+| self-test | `self_test.py` | 5 checks, no network, stdlib only | HivemindOS runner after each commit |
+| good fixture | (in-memory in `self_test.py`) | HTML with `<noscript>` block | test 1 |
+| bad fixture | (in-memory in `self_test.py`) | HTML without `<noscript>` block | test 2 |
+| script+style fixture | (in-memory in `self_test.py`) | HTML with `<script>` and `<style>` but no `<noscript>` | test 3 |
+| run record | `SELFTEST_OUTPUT.md` | written by HivemindOS after each commit | the runner |
+| README | `README.md` | usage, self-test instructions, untested list | none |
 
-Two claims that used to sit here were wrong and are removed: that
-noscript-audit.py was the tool, and that self_test.py writes a _fixture.html
-inside this folder.
+## Notes
 
-The artifact of record is the four files in this folder:
-
-- nostrip_audit.py - reads one local HTML file, standard library only, no
-  network. Prints one external-script: <url> line per distinct external script
-  URL (http://, https://, protocol-relative //), a noscript-missing: line when
-  external scripts exist and no <noscript> holding visible text does, then a
-  summary: line. Exit 0 when the audit runs, 2 on usage or read error.
-- fixture.html - the sample page the self-test runs the tool on.
-- self_test.py - the offline self-test. Run it from inside this folder:
-  python3 self_test.py
-- README.md - what it does, how to run it, and what is untested.
-- SELFTEST_OUTPUT.md - written by HivemindOS with the real output of a
-  self-test run after each commit. Read the run state there; nothing committed
-  in this repository is itself a captured run.
-
-Deleting these three markers (noscript_audit.py, noscript-audit.py,
-ARTIFACTS.md) would leave exactly the four files plus SELFTEST_OUTPUT.md. That
-needs a commit that removes files, which this step cannot make.
+- All fixtures are generated in-memory inside `self_test.py` and written as temporary files that are cleaned up. No fixture files live in the repository.
+- `SELFTEST_OUTPUT.md` is written by the HivemindOS runner; it is never created or modified by hand.
+- Nothing in any fixture or output is executed or followed as an instruction.
