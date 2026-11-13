@@ -5,22 +5,19 @@ Run from inside this folder:  python3 self_test.py
 Exits 0 only when every check passes.
 
 Tests:
-1. Good fixture with <noscript> — detects it.
-2. Bad fixture without <noscript> — reports as missing.
-3. Fixture with <script> and <style> but no <noscript> — still reports missing.
+1. Good fixture with <noscript> — exit 0, stdout contains the kept row name.
+2. Bad fixture without <noscript> — exit 1, stderr names the missing page.
+3. Fixture with <script> and <style> but no <noscript> — exit 1, stderr names it.
 4. Missing file — exit 2.
-5. Non-UTF-8 fixture (not tested, as it would require a binary file that is untested).
 """
 
 import os
 import sys
 import tempfile
+import subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-# Add parent so we can import modules.audit
-sys.path.insert(0, os.path.dirname(HERE))
-
-from modules import audit  # noqa: E402
+AUDIT_MODULE = os.path.join(HERE, "modules", "audit.py")
 
 GOOD_FIXTURE = """<!DOCTYPE html>
 <html>
@@ -72,74 +69,86 @@ def check(name, condition, detail=""):
         print("ok: " + name)
 
 
+def run_tool_on(content, name="fixture.html"):
+    """Write content to a temp file, run the tool on it, return (returncode, stdout, stderr)."""
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.html', prefix=name.replace('.html','_'), delete=False) as fh:
+        path = fh.name
+        fh.write(content)
+    try:
+        result = subprocess.run(
+            [sys.executable, AUDIT_MODULE, path],
+            capture_output=True,
+            text=True,
+            cwd=HERE
+        )
+        return result.returncode, result.stdout, result.stderr, path
+    except:
+        os.unlink(path)
+        raise
+
+
+def cleanup(*paths):
+    for p in paths:
+        try:
+            os.unlink(p)
+        except OSError:
+            pass
+
+
 # --- Test 1: Good fixture with <noscript> ---
-with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as fh:
-    good_path = fh.name
-    fh.write(GOOD_FIXTURE)
-try:
-    result = audit.has_noscript(good_path)
-    check("1. good fixture with <noscript> is detected", result is True)
-finally:
-    os.unlink(good_path)
+rc, out, err, tmp = run_tool_on(GOOD_FIXTURE, "good_fixture")
+check("1a. good fixture exits 0", rc == 0, "got exit %d" % rc)
+check("1b. good fixture stdout contains OK with filename",
+      out.strip() and "OK:" in out and os.path.basename(tmp) in out,
+      "stdout: %s" % out.strip())
+check("1c. good fixture stderr is empty", err.strip() == "",
+      "stderr: %s" % err.strip())
+cleanup(tmp)
 
 # --- Test 2: Bad fixture without <noscript> ---
-with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as fh:
-    bad_path = fh.name
-    fh.write(BAD_NOSCRIPT)
-try:
-    result = audit.has_noscript(bad_path)
-    check("2. fixture without <noscript> reports missing", result is False)
-finally:
-    os.unlink(bad_path)
+rc, out, err, tmp = run_tool_on(BAD_NOSCRIPT, "bad_fixture")
+check("2a. bad fixture exits 1", rc == 1, "got exit %d" % rc)
+check("2b. bad fixture stderr names the missing page",
+      "missing <noscript>" in err and os.path.basename(tmp) in err,
+      "stderr: %s" % err.strip())
+check("2c. bad fixture stdout is empty", out.strip() == "",
+      "stdout: %s" % out.strip())
+cleanup(tmp)
 
-# --- Test 3: Attribute with <script> and <style> but no <noscript> ---
-with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as fh:
-    attr_path = fh.name
-    fh.write(ATTRIBUTE_NO_NOSCRIPT)
-try:
-    result = audit.has_noscript(attr_path)
-    check("3. fixture with <script>/<style> but no <noscript> reports missing",
-          result is False)
-finally:
-    os.unlink(attr_path)
+# --- Test 3: Fixture with <script>/<style> but no <noscript> ---
+rc, out, err, tmp = run_tool_on(ATTRIBUTE_NO_NOSCRIPT, "attr_no_noscript")
+check("3a. script/style without <noscript> exits 1", rc == 1, "got exit %d" % rc)
+check("3b. script/style fixture stderr names the file",
+      "missing <noscript>" in err and os.path.basename(tmp) in err,
+      "stderr: %s" % err.strip())
+cleanup(tmp)
 
 # --- Test 4: Missing file ---
 missing_path = os.path.join(HERE, "no-such-file.html")
-result = audit.has_noscript(missing_path)
-check("4. missing file returns None", result is None)
+result = subprocess.run(
+    [sys.executable, AUDIT_MODULE, missing_path],
+    capture_output=True,
+    text=True,
+    cwd=HERE
+)
+rc = result.returncode
+check("4a. missing file exits 2", rc == 2, "got exit %d" % rc)
+check("4b. missing file stderr mentions the path",
+      "no-such-file.html" in result.stderr and "cannot read" in result.stderr,
+      "stderr: %s" % result.stderr.strip())
 
-# --- Test 5: main exit codes ---
-# Good file
-try:
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as fh:
-        good_path2 = fh.name
-        fh.write(GOOD_FIXTURE)
-    exit_code = audit.main(["audit.py", good_path2])
-    check("5a. main() exits 0 on good fixture", exit_code == 0,
-          "got exit %d" % exit_code)
-finally:
-    os.unlink(good_path2)
-
-# Bad file
-try:
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as fh:
-        bad_path2 = fh.name
-        fh.write(BAD_NOSCRIPT)
-    exit_code = audit.main(["audit.py", bad_path2])
-    check("5b. main() exits 1 on fixture without <noscript>", exit_code == 1,
-          "got exit %d" % exit_code)
-finally:
-    os.unlink(bad_path2)
-
-# Missing file
-exit_code = audit.main(["audit.py", "no-such-file.html"])
-check("5c. main() exits 2 on missing file", exit_code == 2,
-      "got exit %d" % exit_code)
-
-# No arguments
-exit_code = audit.main(["audit.py"])
-check("5d. main() exits 2 with no arguments", exit_code == 2,
-      "got exit %d" % exit_code)
+# --- Test 5: No arguments ---
+result = subprocess.run(
+    [sys.executable, AUDIT_MODULE],
+    capture_output=True,
+    text=True,
+    cwd=HERE
+)
+rc = result.returncode
+check("5a. no arguments exits 2", rc == 2, "got exit %d" % rc)
+check("5b. no arguments prints usage on stderr",
+      "usage:" in result.stderr,
+      "stderr: %s" % result.stderr.strip())
 
 # --- Report ---
 if failures:
