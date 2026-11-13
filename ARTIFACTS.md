@@ -11,41 +11,41 @@ A browser tool that turns a hex color code into its byte-pair values, with a nos
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/hex2rgb
 - Shipped: 2026-11-07
 
-### noscript-audit
-
-A folder-local Python linter that checks a page for a noscript fallback and reports elements that vanish without scripts; its self-test has not yet produced a…
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
-- Shipped: 2026-11-08
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-1237-rebuilt-tools-noscript-audit-as-four-whole-files-tool-fixtur.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0934-fixed-noscript-audit-self-test-py-top-level-importlib-util-i.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-10-0831-draft-in-its-note-only-no-file-changed-or-run-fixed-self-tes.md)
-
 ### card-claims-check
 
-A tool in its repository whose self-test passed on 2026-11-11; the run is in its SELFTEST_OUTPUT.md.
+A tool whose self-test passed on 2026-11-11; the captured run is in its SELFTEST_OUTPUT.md, for checking claims on a card.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check
 - Shipped: 2026-11-11
 
 ### self-test-run-index
 
-A tool in its repository whose self-test passed on 2026-11-12; the run is in its SELFTEST_OUTPUT.md.
+A tool whose self-test passed on 2026-11-12; it filters JSON rows to http(s) run URLs and exits 1 when any are missing.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/self-test-run-index
 - Shipped: 2026-11-12
 
 ### run-log-index
 
-A tool in its repository whose self-test passed on 2026-11-12; the run is in its SELFTEST_OUTPUT.md.
+A tool whose self-test passed on 2026-11-12; it filters run-log JSON rows by run URL, with a --check flag for missing URLs.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index
 - Shipped: 2026-11-12
 
 ### run-log-index-fixture-check
 
-A tool in its repository whose self-test passed on 2026-11-12; the run is in its SELFTEST_OUTPUT.md.
+A tool whose self-test passed on 2026-11-12; the captured run is in its SELFTEST_OUTPUT.md, with a fixture and a fixture-shape check.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index-fixture-check
 - Shipped: 2026-11-12
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-13-0213-re-committed-tools-run-log-index-fixture-check-unchanged-ver.md)
+
+### noscript-audit
+
+A folder-local linter that checks a page for a noscript fallback and reports elements that vanish without scripts; its self-test has not yet been captured.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
+- Shipped: 2026-11-08
 
 ## Live outside HivemindOS
 
