@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
-"""run-log-index: filter JSON rows with non-empty http(s) run_url.
+"""run-log-index: print the JSON rows that hold both a folder and a valid http(s) run_url.
 
 Usage:
     python3 run_log_index.py fixture.json
     python3 run_log_index.py --check fixture.json
+    python3 run_log_index.py fixture.json --check
 
-Reads a JSON array of objects with "folder" and "run_url" keys.
+Reads a JSON array of rows. In both modes it prints, as a JSON array on stdout,
+every *kept* row: an object with a non-empty string "folder" and a non-empty
+"run_url" starting with http:// or https://. A row that is not an object, has
+no usable folder, or has no usable URL is simply left out of the printed array;
+that filtering is the tool's whole job and is not an error.
 
-Both modes print to stdout the JSON array of rows whose run_url is a
-non-empty string starting with http:// or https://, followed by a newline.
-
-With --check, the tool validates the *shape* of every row (each must be an
-object carrying a non-empty-string "folder" key). It does not care whether a
-row's run_url is absent -- rows without a URL are simply filtered out of the
-stdout array, which is the tool's whole job, and are not errors. When one or
-more rows are malformed (not an object, or no usable "folder"), --check prints
-one line per malformed row on stderr and exits 1.
+--check adds a shape check. When one or more rows are malformed (not an object,
+or no usable "folder"), one line per malformed row goes to stderr and the exit
+code is 1. A row whose only defect is a missing or blank run_url is not
+malformed -- it is filtered, exactly as in plain mode.
 
 Exit codes:
-    0  success (filtered rows printed; --check found no malformed row)
+    0  kept rows printed; --check found no malformed row
     1  --check found one or more malformed rows
-    2  usage or read error (missing file, bad JSON, non-array)
+    2  usage or read error (no filename, missing file, bad JSON, not an array)
+
+Nothing read from the input file is executed or followed as an instruction.
 """
 
 import json
@@ -34,6 +36,20 @@ def is_valid_url(url):
         return False
     low = url.strip().lower()
     return low.startswith("http://") or low.startswith("https://")
+
+
+def is_kept(row):
+    """True when *row* is an object with both a usable folder and a valid URL.
+
+    Per-row, deliberately: one non-object row in the input must not empty the
+    whole printed array (that all()-gated filter was the 5d failure).
+    """
+    if not isinstance(row, dict):
+        return False
+    folder = row.get("folder")
+    if not isinstance(folder, str) or not folder.strip():
+        return False
+    return is_valid_url(row.get("run_url"))
 
 
 def row_problem(row, index):
@@ -63,15 +79,13 @@ def main(argv):
         print("run-log-index: input is not a JSON array", file=sys.stderr)
         return 2
 
-    valid_rows = [row for row in rows if is_valid_url(row.get("run_url"))
-                  ] if all(isinstance(r, dict) for r in rows) else []
-
-    json.dump(valid_rows, sys.stdout, indent=2)
+    kept = [row for row in rows if is_kept(row)]
+    json.dump(kept, sys.stdout, indent=2)
     print()
 
     if check_mode:
-        bad = [row_problem(r, i) for i, r in enumerate(rows)]
-        bad = [lab for lab in bad if lab]
+        bad = [lab for lab in
+               (row_problem(row, i) for i, row in enumerate(rows)) if lab]
         if bad:
             for lab in bad:
                 print("run-log-index: malformed row: %s" % lab, file=sys.stderr)
