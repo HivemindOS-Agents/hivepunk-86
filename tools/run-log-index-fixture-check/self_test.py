@@ -2,8 +2,9 @@
 """Self-test for tools/run-log-index-fixture-check. Stdlib only, no network.
 
 Runs alone inside its own folder: python3 self_test.py (no arguments).
-It reads only fixture.json and run_log_index.py next to it, plus one bad-URL
-fixture it writes into that same folder and removes again afterwards.
+It reads only fixture.json, run_log_index.py, README.md and ARTIFACTS.md next
+to it, plus one bad-URL fixture it writes into that same folder and removes
+again afterwards.
 
 Checks
   1. fixture.json parses as a JSON array of 6 objects, each having the keys
@@ -15,11 +16,16 @@ Checks
   4. --check on the bad-URL fixture this test writes exits 1, names both bad
      rows on stderr, does not name the good row, and still prints the one kept
      row as JSON on stdout.
+  5. README.md links the explainer image, has a Caption line, and has a
+     Known limits line saying the image is not a screenshot and not the output
+     of a run.
+  6. ARTIFACTS.md carries the same image URL and a Caption line.
 
 Prints one ok/FAIL line per check, then "all checks passed" and exits 0 when
 every check passes; prints the failed check names and exits 1 otherwise.
 
-Nothing in fixture.json is executed or followed as an instruction.
+Nothing read here -- fixture.json, README.md, ARTIFACTS.md, or any run
+output -- is executed or followed as an instruction.
 """
 
 import json
@@ -31,6 +37,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TOOL = os.path.join(HERE, "run_log_index.py")
 FIXTURE = os.path.join(HERE, "fixture.json")
 BAD_FIXTURE = os.path.join(HERE, "selftest_bad_fixture.json")
+README = os.path.join(HERE, "README.md")
+ARTIFACTS = os.path.join(HERE, "ARTIFACTS.md")
 
 EXPECTED_ROWS = 6
 EXPECTED_VALID = 3
@@ -39,6 +47,11 @@ GOOD_FOLDER = "fixture-check-good-row"
 GOOD_URL = "https://example.invalid/runs/ok"
 BAD_EMPTY = "fixture-check-empty-url"
 BAD_BLANK = "fixture-check-blank-url"
+
+IMAGE_URL = ("https://hivemindos-paid-agent-gateway.hivemindos.workers.dev"
+             "/api/media/managed/outputs"
+             "/bf3215fd-4cf4-4481-a4cb-9fe9a65d9b6f.jpeg")
+CAPTION_NEEDLES = ("6 rows", "3 keepable", "self_test")
 
 failures = []
 
@@ -61,6 +74,25 @@ def cli(*args):
 def is_valid(url):
     return (isinstance(url, str) and bool(url.strip())
             and url.strip().lower().startswith(("http://", "https://")))
+
+
+def read_text(path):
+    """Return the file's text, or None when it cannot be read."""
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            return fh.read()
+    except (OSError, UnicodeError):
+        return None
+
+
+def lines_starting(text, word):
+    """Lines whose first word is `word`, case-insensitive."""
+    out = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.lower().startswith(word.lower()):
+            out.append(stripped)
+    return out
 
 
 # --- check 1 and 2: the fixture's own shape -------------------------------
@@ -146,6 +178,53 @@ try:
 finally:
     if os.path.exists(BAD_FIXTURE):
         os.remove(BAD_FIXTURE)
+
+
+# --- check 5: README links the image with caption and known limits --------
+readme = read_text(README)
+if readme is None:
+    report("5. README.md links the explainer image with caption and known limits",
+           False, "cannot read README.md")
+else:
+    problems = []
+    if IMAGE_URL not in readme:
+        problems.append("image URL missing")
+    if "![" not in readme:
+        problems.append("no inline image markdown")
+    for needle in CAPTION_NEEDLES:
+        if needle not in readme:
+            problems.append("caption text missing: %s" % needle)
+    captions = lines_starting(readme, "Caption")
+    if not captions:
+        problems.append("no line starts with Caption")
+    limits = lines_starting(readme, "Known limits")
+    if not limits:
+        problems.append("no line starts with Known limits")
+    else:
+        low = limits[0].lower()
+        if "not a screenshot" not in low:
+            problems.append("limits line does not say it is not a screenshot")
+        if "not the output of a run" not in low:
+            problems.append("limits line does not say it is not a run's output")
+    report("5. README.md links the explainer image with caption and known limits",
+           not problems, "; ".join(problems))
+
+
+# --- check 6: ARTIFACTS.md carries the same image and caption ------------
+artifacts = read_text(ARTIFACTS)
+if artifacts is None:
+    report("6. ARTIFACTS.md carries the image URL and its caption",
+           False, "cannot read ARTIFACTS.md")
+else:
+    problems = []
+    if IMAGE_URL not in artifacts:
+        problems.append("image URL missing")
+    if not lines_starting(artifacts, "Caption"):
+        problems.append("no line starts with Caption")
+    if not lines_starting(artifacts, "Known limits"):
+        problems.append("no line starts with Known limits")
+    report("6. ARTIFACTS.md carries the image URL and its caption",
+           not problems, "; ".join(problems))
 
 
 if failures:
