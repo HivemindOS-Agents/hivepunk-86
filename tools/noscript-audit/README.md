@@ -1,74 +1,38 @@
 # noscript-audit
 
-Read one local HTML file and report every external `<script>` URL plus whether the page still offers a `<noscript>` fallback. No network, standard library only, Python 3. The file is data: nothing in it is executed or followed as an instruction.
-
-## What it does
-
-`nostrip_audit.py` reads one HTML file and prints, in order:
-
-- one `external-script: <url>` line per distinct external script URL (`http://`, `https://`, or protocol-relative `//`);
-- one `noscript-missing: N external script(s) and no <noscript> fallback` line, only when at least one external script was found and no usable `<noscript>` text exists;
-- one `summary: N external script(s), noscript present|missing` line.
-
-A `<noscript>` counts as usable only when it has visible text. A `<noscript>` that holds nothing but a nested `<script>` has no visible text, so it counts as **missing**, and the nested script is not counted as a dependency. Relative and `data:` sources are not external. Duplicate URLs are reported once, in document order.
+A command-line tool that checks one or more HTML files for the presence of a `<noscript>` block. Useful for verifying that each page in a web project has a fallback message for users with JavaScript disabled.
 
 ## Usage
 
-~~~
-python3 nostrip_audit.py path/to/page.html
-~~~
+```
+python3 -m modules.audit index.html about.html contact.html
+```
 
-Exit codes: `0` the audit ran (findings do not change the exit code); `2` wrong argument count or unreadable path, with a message on stderr.
+For each file:
+- If it contains a `<noscript>...</noscript>` element, prints `OK: <filename>` on stdout.
+- If it does NOT contain `<noscript>`, prints `noscript-audit: missing <noscript> in <filename>` on stderr and the final exit code is 1.
+- If the file cannot be read (missing, not UTF-8, etc.), prints an error on stderr and exits 2 immediately.
 
-To audit a folder of saved pages:
-
-~~~
-for f in pages/*.html; do echo "== $f"; python3 nostrip_audit.py "$f"; done
-~~~
-
-Expected output for the bundled `fixture.html`:
-
-~~~
-external-script: https://cdn.example.com/analytics.js
-external-script: //cdn.example.com/analytics.js
-external-script: https://cdn.example.com/app.js
-noscript-missing: 3 external script(s) and no <noscript> fallback
-summary: 3 external script(s), noscript missing
-~~~
+Exit codes:
+- 0: all files contain a `<noscript>` block.
+- 1: one or more files lack `<noscript>`.
+- 2: usage error or I/O error.
 
 ## Self-test
 
-~~~
+```
 python3 self_test.py
-~~~
+```
 
-Run from inside this folder, no arguments, no network. It loads the tool with a top-level `import importlib.util` and checks eleven things:
-
-1. the tool on `fixture.html` exits 0, prints exactly the five lines above, and writes nothing to stderr;
-2. a real `<noscript>Enable JavaScript.</noscript>` gives one external line and `present`;
-3. a relative script, an inline script and an empty `<noscript>` give only the 0-script `missing` summary;
-4. a `<noscript>` holding only a nested `<script>` gives `summary: 0 external script(s), noscript missing`;
-5. no argument prints `usage:` on stderr and exits 2;
-6. a missing path prints `cannot read` on stderr and exits 2;
-7. the same URL listed twice is reported once and an `HTTPS://` source still counts as external, so two external lines plus `noscript-missing: 2` and `missing`;
-8. a `<noscript>` holding only whitespace counts as missing, so one external line plus `noscript-missing: 1`;
-9. a `<script>` inside an HTML comment is not counted, so only the real external line appears;
-10. two `<noscript>` blocks where one has text count as present, with no `noscript-missing` line;
-11. empty, blank and valueless `src` are all skipped, while text nested inside `<noscript><p>Enable <b>JS</b></p></noscript>` counts as visible text, giving `summary: 0 external script(s), noscript present`.
-
-It exits 0 only when every check passes; otherwise it lists the failing checks on stderr and exits 1.
-
-The last run's real output is recorded by HivemindOS in `SELFTEST_OUTPUT.md` in this folder after each commit. Read the state there; this README records no run and claims no pass.
-
-## Other files in this folder
-
-An earlier, differently-shaped draft also sits here: `noscript_audit.py`, a `noscript-audit.py` shim that calls it, and `ARTIFACTS.md`. That draft prints a longer report (script counts, inline handlers, hidden elements, empty mount points). This self-test exercises `nostrip_audit.py` only and does not touch them.
+Run from inside this folder. No network or external files needed. Tests:
+1. Good fixture with `<noscript>` – detected.
+2. Bad fixture without `<noscript>` – reported as missing.
+3. Fixture with `<script>` and `<style>` but no `<noscript>` – still reported as missing.
+4. Missing file – returns None.
+5. Main exit codes: 0 for good fixture, 1 for bad fixture, 2 for missing file, 2 for no arguments.
 
 ## What is untested
 
-- The self-test has not been run by the agent that wrote it; only HivemindOS runs it, and its state lands in `SELFTEST_OUTPUT.md`.
-- Real-browser behaviour: the tool never opens a page and never renders anything, so what a reader actually sees with scripting off is unconfirmed.
-- Script-injected content: markup a script adds at runtime is invisible here.
-- Non-HTML input (XML, SVG) and non-UTF-8 bytes: the file is read with `errors='replace'`, so mangled bytes inside an attribute could change a finding.
-- Large files: the whole file is read into memory, no streaming.
-- The three files of the earlier draft listed above.
+- Files that are not valid UTF-8 (e.g., Latin-1 or binary files). The tool attempts to open with `utf-8` encoding and would print an error on stderr and exit 2.
+- Files with deeply nested or malformed HTML (e.g., unclosed tags, out-of-order nesting). The built-in `html.parser` is reasonably tolerant but edge cases may differ from a browser's parsing.
+- Running the tool as a script (`python3 modules/audit.py ...`) rather than a module. The `__main__` guard is present but only `python3 -m modules.audit ...` is documented.
