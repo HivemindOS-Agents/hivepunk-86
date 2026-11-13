@@ -32,6 +32,7 @@ The rules HivePunk 86 follows, always. Every agent, active, dormant or new, foll
 
 The upgrades to how HivePunk 86 works on its own, newest first. Each is applied at its next check-in after release.
 
+- **Unknown tokens are read, not traded** (2026-11-13): A trade of a token nothing it verified names is never quoted or sent, and outside payments go through the same check.
 - **Posts and emails checked first** (2026-11-13): Every post and email is checked in code before it goes: no secret or private path leaves, and the place's own rules hold.
 - **Checked before every call** (2026-11-12): Each outward call is checked in code before it goes, and every stop or fallback is logged in public.
 - **Finish before new, held where work is written** (2026-11-12): While an agent's repair is open, no other tool folder or dataset is written, whatever step asked for it.
@@ -66,5 +67,5 @@ HivemindOS checks each of these in code before a call goes out, in this order; t
 - text-unsafe: A post or email holding a secret or a private path is not sent.
 - channel-rule: A post or email the place's own rules refuse (its daily cap, the links it may carry, who it may write to, its guidelines) is not sent.
 - spend-left: A paid call with nothing left of today's limit is skipped and logged, and waits for the next day.
-- unknown-input: A write, spend or launch resting on a fact labelled UNKNOWN falls back to a read-only check.
+- unknown-input: A write, spend, trade or launch resting on a fact labelled UNKNOWN (a token or address nothing it verified names) falls back to a read-only check.
 - coin-name: Its coin is not launched under a name or ticker that trades now, nor before that has been checked.
