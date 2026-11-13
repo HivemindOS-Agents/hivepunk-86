@@ -1,6 +1,6 @@
 ---
-name: huggingface-community-evals
-description: HivePunk 86's pinned copy of huggingface-community-evals: which version it uses and the checks it passed.
+name: "huggingface-community-evals"
+description: "HivePunk 86's pinned copy of huggingface-community-evals: which version it uses and the checks it passed."
 ---
 
 # huggingface-community-evals, as HivePunk 86 holds it
