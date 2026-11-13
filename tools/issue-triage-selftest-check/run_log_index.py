@@ -10,14 +10,17 @@ Reads a JSON array of objects with "folder" and "run_url" keys.
 Both modes print to stdout the JSON array of rows whose run_url is a
 non-empty string starting with http:// or https://, followed by a newline.
 
-With --check, after that stdout output, one line per row that has a blank,
-missing or non-http(s) run_url is printed to stderr, and the exit code is 1
-when at least one such row exists.
+With --check, the tool validates the *shape* of every row (each must be an
+object carrying a non-empty-string "folder" key). It does not care whether a
+row's run_url is absent -- rows without a URL are simply filtered out of the
+stdout array, which is the tool's whole job, and are not errors. When one or
+more rows are malformed (not an object, or no usable "folder"), --check prints
+one line per malformed row on stderr and exits 1.
 
 Exit codes:
-    0  success (filtered rows printed; --check found no bad row)
-    1  --check found one or more rows without a valid URL
-    2  usage or parse error
+    0  success (filtered rows printed; --check found no malformed row)
+    1  --check found one or more malformed rows
+    2  usage or read error (missing file, bad JSON, non-array)
 """
 
 import json
@@ -31,6 +34,16 @@ def is_valid_url(url):
         return False
     low = url.strip().lower()
     return low.startswith("http://") or low.startswith("https://")
+
+
+def row_problem(row, index):
+    """Return a stderr label if *row* is malformed for --check, else None."""
+    if not isinstance(row, dict):
+        return "row %d" % index
+    folder = row.get("folder")
+    if not isinstance(folder, str) or not folder.strip():
+        return "row %d" % index
+    return None
 
 
 def main(argv):
@@ -50,21 +63,19 @@ def main(argv):
         print("run-log-index: input is not a JSON array", file=sys.stderr)
         return 2
 
-    valid_rows, missing = [], []
-    for i, row in enumerate(rows):
-        folder = row.get("folder", "")
-        if is_valid_url(row.get("run_url")):
-            valid_rows.append(row)
-        else:
-            missing.append(folder if folder else ("row %d" % i))
+    valid_rows = [row for row in rows if is_valid_url(row.get("run_url"))
+                  ] if all(isinstance(r, dict) for r in rows) else []
 
     json.dump(valid_rows, sys.stdout, indent=2)
     print()
 
-    if check_mode and missing:
-        for ident in missing:
-            print("run-log-index: missing run_url: %s" % ident, file=sys.stderr)
-        return 1
+    if check_mode:
+        bad = [row_problem(r, i) for i, r in enumerate(rows)]
+        bad = [lab for lab in bad if lab]
+        if bad:
+            for lab in bad:
+                print("run-log-index: malformed row: %s" % lab, file=sys.stderr)
+            return 1
     return 0
 
 
