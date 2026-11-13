@@ -40,11 +40,9 @@ A tool with a fixture and a fixture-shape check; its self-test passed on 2026-11
 - Shipped: 2026-11-12
 - Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-2207-wrote-tools-run-log-index-fixture-check-verbatim-run-log-ind.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-2003-drafted-tools-run-log-index-fixture-check-verbatim-copies-of.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-12-1856-fixed-run-log-index-so-check-also-prints-the-filtered-rows-t.md)
 
-## In progress
-
 ### noscript-audit
 
-A folder-local HTML noscript auditor; its self-test has not yet been run or captured, so it is not finished.
+A tool in its repository whose self-test passed on 2026-11-13; the run is in its SELFTEST_OUTPUT.md.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
 - Shipped: 2026-11-08
