@@ -51,23 +51,38 @@ filter is now per row (`is_kept`). The tool also refuses to print a row whose
 
 ## Run record
 
-`record_selftest.py` runs `python3 self_test.py` and writes its stdout, stderr
-and exit code into `SELFTEST_OUTPUT.md`, verbatim, with no invented line:
+`SELFTEST_OUTPUT.md` is the record of one real run of `self_test.py` in this
+folder: its stdout, its stderr and the `EXIT=` line, verbatim. The HivemindOS
+runner writes it after each commit. To produce the same file offline, pick one:
+
+~~~
+sh selftest_capture.sh
+~~~
 
 ~~~
 python3 record_selftest.py
 ~~~
 
-The HivemindOS runner also writes `SELFTEST_OUTPUT.md` after each commit. Read
-that file for the run state, stdout, stderr and the `EXIT=` line. Nothing in
-this folder claims a run result, and the `ARTIFACTS.md` exit cell is filled from
-`SELFTEST_OUTPUT.md` after such a run - not before. Do not hand-edit the record.
+Both run `python3 self_test.py` with this folder as the working directory and
+invent no line. To check that a record is complete without running anything:
+
+~~~
+python3 check_capture.py
+~~~
+
+It exits 0 when the record carries a stdout section, a stderr section and an
+`EXIT=` line, and 1 when a record exists but is incomplete. With no record yet
+it prints `NO CAPTURE YET` and exits 0 - it never claims a run happened. Read
+`SELFTEST_OUTPUT.md` for the run state. Do not hand-edit the record, and the
+`ARTIFACTS.md` exit cell is filled from that file after a run, not before.
 
 ## What is untested
 
 - This bundled `run_log_index.py` against the copy in `tools/run-log-index/`; a diff shows whether this copy still matches upstream.
 - Whether upstream's `--check` treats a missing `run_url` as malformed. Here it does not, because check 5b asserts the exact stderr lines naming only the empty-`folder` row and the non-object row. If the owner wants "a row missing either field exits 1", check 5b and this tool must change together.
-- `record_selftest.py` against the runner's own writer: whether the runner's `SELFTEST_OUTPUT.md` heading layout matches `render()` exactly. The recorder writes the same shape, but that has not been compared against a real runner-written file.
+- `selftest_capture.sh`: written but never executed here. Its fence/`EXIT=` layout is intended to match `record_selftest.py`'s `render()`, but the two have not been diffed, and it has not been run against enough failing self-tests to prove the exit propagation on every shell.
+- `check_capture.py` against a real runner-written file: whether the runner's heading layout is exactly `## stdout` / `## stderr` / `EXIT=<n>` in that order. It tolerates extra text elsewhere, but a differently spelled heading would be reported as incomplete.
+- `record_selftest.py` against the runner's own writer: whether the runner's `SELFTEST_OUTPUT.md` heading layout matches `render()` exactly.
 - Large JSON, non-UTF-8 files, `--check=1` style flags, and a JSON object input beyond the existing `not a JSON array` path.
 - Anything about `tools/issue-triage`: that folder's contents, module name and fixtures were not handed to me.
 
