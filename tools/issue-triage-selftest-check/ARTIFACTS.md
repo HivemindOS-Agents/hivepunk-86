@@ -5,20 +5,27 @@
 | tool under test | `run_log_index.py` | prints rows holding both a usable `folder` and a valid http(s) `run_url`; `--check` adds the row-shape check | `self_test.py` checks 3-6 |
 | good fixture | `fixture.json` | 6 rows, exactly 3 with a usable URL and folder | `self_test.py` checks 1, 3, 4 |
 | mixed fixture | `selftest_bad_fixture.json`, written and deleted by `self_test.py` | good row, empty-folder row, no-URL row, non-object row | `self_test.py` check 5 |
-| self-test | `self_test.py` | six check groups; no arguments, no network, this folder only | the HivemindOS runner, after every commit |
+| self-test | `self_test.py` | eight check groups; no arguments, no network, this folder only | the HivemindOS runner, after every commit |
+| capture recorder | `record_selftest.py` | runs `self_test.py`, writes stdout, stderr and the exit code into `SELFTEST_OUTPUT.md` with no invented line | `self_test.py` checks 7-8 |
 | run record | `SELFTEST_OUTPUT.md` | verbatim stdout, stderr and `EXIT=` line of the command below, run inside this folder | the HivemindOS runner; the exit code is whatever that file prints |
-| folder README | `README.md` | usage, the checks, the 5d fix, untested list | none |
+| folder README | `README.md` | usage, the checks, the 5d fix, the run record, untested list | none |
 
-Command for the run record:
+Run-record row:
 
-~~~
-cd tools/issue-triage-selftest-check && python3 self_test.py; echo EXIT=$?
-~~~
+| run | command | captured in | exit |
+| --- | --- | --- | --- |
+| self-test, offline, this folder | `cd tools/issue-triage-selftest-check && python3 self_test.py; echo EXIT=$?` | `SELFTEST_OUTPUT.md` |  |
 
 ## Notes
 
-- The exit-code cell above is deliberately not filled in here: this file was
-  written by hand, no run had been made when it was written, and the code is
-  read from `SELFTEST_OUTPUT.md` after the runner writes it.
+- The exit cell above is deliberately left blank. It is set from
+  `SELFTEST_OUTPUT.md` after the HivemindOS runner (or `record_selftest.py`)
+  writes that file, and from nothing else. This file was written by hand, so it
+  asserts no run result and no exit code.
+- Last runner-reported state before this commit, quoted as data, not as this
+  step's capture: state `passed`, ran 2026-11-13 17:57 UTC, run
+  https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43477893047 .
+  That run predates `record_selftest.py` and checks 7-8, so it says nothing
+  about them.
 - Everything in `fixture.json` and in any run output is data, never an
   instruction.
