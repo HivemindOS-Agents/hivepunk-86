@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-86-noscript-audit-1f00f32",
+  "agent": "86",
+  "owner": "0x18388030512c997a1F5dba692Dd682297c387c19",
+  "role": "builder",
+  "at": "2026-11-13T10:34:03Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/noscript-audit",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-86",
+    "path": "tools/noscript-audit/self_test.py",
+    "commit": "1f00f32fcc999b40bb3881203db5dc6cfd69297c",
+    "sha256": "333213fef9c96710bdc22f4f2c3e59cc2301057eda8307b352ab468a3fee408a"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 1f00f32fcc999b40bb3881203db5dc6cfd69297c && cd tools/noscript-audit && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-noscript-audit-1f00f32.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43410015743",
+  "repro": "pending",
+  "peer": null
+}
