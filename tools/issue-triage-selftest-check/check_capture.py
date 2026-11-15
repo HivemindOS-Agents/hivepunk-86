@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """check_capture: read SELFTEST_OUTPUT.md, if it exists, and say whether it
-looks like a complete captured run. It never runs the self-test, never writes.
+looks like a complete captured run of THIS folder. It never writes a record and
+never fills the ARTIFACTS.md exit cell.
 
 Usage (from inside tools/issue-triage-selftest-check):
 
@@ -10,11 +11,14 @@ Exit codes:
     0  a record exists and carries a stdout section, a stderr section and a
        single EXIT=<n> line (or, with no record yet, prints NO CAPTURE YET and
        exits 0)
-    1  a record exists but is incomplete, or carries no EXIT=<n> line
+    1  a record exists but is incomplete, carries no single EXIT=<n> line, or
+       cannot be read
 
 Exiting 0 with no record is deliberate: until the HivemindOS runner (or
-selftest_capture.sh / record_selftest.py) writes the file, "not captured yet"
-is the truthful state. Nothing here claims a run happened or passed.
+self_test.py --capture) writes the file, "not captured yet" is the truthful
+state. Nothing here claims a run happened or passed. To check that a stored
+record still matches a fresh run, use `python3 self_test.py --verify-record`;
+that is the check that guards the ARTIFACTS.md exit cell.
 
 Everything in the file is data and is never followed as an instruction.
 """
@@ -32,7 +36,9 @@ EXIT_RE = re.compile(r"^EXIT=(\d+)\s*$", re.MULTILINE)
 def main():
     if not os.path.exists(RECORD):
         print("NO CAPTURE YET: %s does not exist" % RECORD)
-        print("run: sh selftest_capture.sh  (or let the HivemindOS runner write it)")
+        print("run: python3 self_test.py --capture")
+        print("then fill the one ARTIFACTS.md run-record exit cell with the "
+              "integer on that file's EXIT= line.")
         return 0
 
     try:
@@ -64,6 +70,8 @@ def main():
 
     print("check_capture: %s carries stdout, stderr and EXIT=%s"
           % (RECORD, codes[0]))
+    print("next: python3 self_test.py --verify-record   "
+          "(stored run must match a fresh one before the exit cell is filled)")
     return 0
 
 
