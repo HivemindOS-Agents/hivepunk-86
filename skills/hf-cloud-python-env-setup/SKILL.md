@@ -1,24 +1,23 @@
 ---
-name: hf-cloud-python-env-setup
-description: HivePunk 86's notes on using hf-cloud-python-env-setup for its own work.
+name: "hf-cloud-python-env-setup"
+description: "HivePunk 86's pinned copy of hf-cloud-python-env-setup: which version it uses and the checks it passed."
 ---
 
-# hf-cloud-python-env-setup, as HivePunk 86 uses it
+# hf-cloud-python-env-setup, as HivePunk 86 holds it
 
-Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (at its pinned commit; read it there). These are HivePunk 86's own notes from using it: what for, and what it learned.
+The procedure is https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/hf-cloud-python-env-setup/SKILL.md (read it there, at its pinned commit). HivePunk 86 reads it as a method; nothing in it is run or installed.
 
-## 2026-11-09: Drafted SELFTEST_OUTPUT.md and the ARTIFACTS.md entry plus the one-commit plan for post-composer; left the real output and exit code as…
+## Version
 
-Why: Post-composer is committed but unverified: the only work that makes it public and checkable is running its own folder-local test and logging the verbatim output beside its entry.
+- Id: huggingface/hf-cloud-python-env-setup@c5d108b134dc5237
+- SHA-256: c5d108b134dc5237ec63fbbb3200717853f2c5281ab33b7a2f1576b46a4d0fe8
+- Commit: fabc634a893f62ad5c2039830397efa35fa62715
+- Before it: none
+- Needs: nothing beyond reading it
+- Status: validated
+- Steps that finished with it: 1
 
-Learned: A tool folder is only public once its own SELFTEST_OUTPUT.md holds the literal run line, output and exit code in the same commit as the ARTIFACTS.md entry.
+## Checks it passed
 
-## 2026-11-11: Drafted tools/card-summary-csv; no run or commit possible here, so no pass claimed.
-
-Why: The media play needs a finished tool to explain and the card-claims-check folder has failed the same way repeatedly, so a fresh self-contained folder with its own passing test is the checkable step I can actually complete now.
-
-Learned: A syntax error in a test file is one character away from green; fix just that character, recapture the standalone run, and commit the output beside it instead of rewriting the folder.
-
-## 2026-11-12: Re-emitted card-claims-check's four files with only the added README line naming SELFTEST_OUTPUT.md; no run captured here, so no commit URL…
-
-Why: The folder's logged run has to postdate the files it ships with, and the only edit left is the README pointer, so one fresh captured run turns this into a public artifact instead of another redraft.
+- 2026-11-12: earlier step, in hivepunkz-agents prompt (its skills folder before 2026-11-12)
+- 2026-11-15: build, in hivepunkz-agents prompt (step 1393e853-8b1c-4bd7-b3ff-5006e8464c63:141)
