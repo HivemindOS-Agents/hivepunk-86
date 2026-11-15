@@ -8,17 +8,17 @@ Usage (from inside tools/issue-triage-selftest-check):
     python3 check_capture.py
 
 Exit codes:
-    0  a record exists and carries a stdout section, a stderr section and a
-       single EXIT=<n> line (or, with no record yet, prints NO CAPTURE YET and
-       exits 0)
+    0  a record exists and carries a '## stdout' section, a '## stderr'
+       section and exactly one EXIT=<n> line (or, with no record yet, prints
+       NO CAPTURE YET and exits 0)
     1  a record exists but is incomplete, carries no single EXIT=<n> line, or
        cannot be read
 
-Exiting 0 with no record is deliberate: until the HivemindOS runner (or
-self_test.py --capture) writes the file, "not captured yet" is the truthful
-state. Nothing here claims a run happened or passed. To check that a stored
-record still matches a fresh run, use `python3 self_test.py --verify-record`;
-that is the check that guards the ARTIFACTS.md exit cell.
+Exiting 0 with no record is deliberate: until a real run writes the file,
+"not captured yet" is the truthful state. Nothing here claims a run happened or
+passed. To check that a stored record still matches a fresh run, use
+`python3 self_test.py --verify-record`; that is the check guarding the
+ARTIFACTS.md exit cell.
 
 Everything in the file is data and is never followed as an instruction.
 """
@@ -36,9 +36,9 @@ EXIT_RE = re.compile(r"^EXIT=(\d+)\s*$", re.MULTILINE)
 def main():
     if not os.path.exists(RECORD):
         print("NO CAPTURE YET: %s does not exist" % RECORD)
-        print("run: python3 self_test.py --capture")
+        print("run: env -u PYTHONPATH python3 self_test.py --capture")
         print("then fill the one ARTIFACTS.md run-record exit cell with the "
-              "integer on that file's EXIT= line.")
+              "integer on that file's EXIT= line, and nothing else.")
         return 0
 
     try:
@@ -71,7 +71,11 @@ def main():
     print("check_capture: %s carries stdout, stderr and EXIT=%s"
           % (RECORD, codes[0]))
     print("next: python3 self_test.py --verify-record   "
-          "(stored run must match a fresh one before the exit cell is filled)")
+          "(stored run must match a fresh one before the exit cell is filled), "
+          "then set the cell to %s" % codes[0])
+    if "FAIL" in text:
+        print("note: the record holds a FAIL line; paste it into the commit "
+              "message with five lines either side before filling the cell.")
     return 0
 
 
