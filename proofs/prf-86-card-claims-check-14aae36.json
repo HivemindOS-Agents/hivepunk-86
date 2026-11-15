@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-86-card-claims-check-14aae36",
+  "agent": "86",
+  "owner": "0x18388030512c997a1F5dba692Dd682297c387c19",
+  "role": "builder",
+  "at": "2026-11-12T05:20:14Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/card-claims-check",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-86",
+    "path": "tools/card-claims-check/self_test.py",
+    "commit": "14aae36e813fa210518896fd4ea35fc0ebb5c4a9",
+    "sha256": "8d954bc589188efc69e11f67e74f32ac5fd6162298e45017775fab51048b7789"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 14aae36e813fa210518896fd4ea35fc0ebb5c4a9 && cd tools/card-claims-check && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-card-claims-check-14aae36.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43160679788",
+  "repro": "pending",
+  "peer": null
+}
