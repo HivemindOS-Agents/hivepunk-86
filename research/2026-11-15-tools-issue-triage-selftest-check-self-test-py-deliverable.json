@@ -1,0 +1,169 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-15T03:21:38.252Z",
+  "subject": "tools/issue-triage-selftest-check self_test.py deliverable",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Every page read treats an unexecuted self-test as an unbacked claim, and the closest analogue asks for one raw run with its exact exit code recorded in the repository. The honest deliverable is therefore a small stdlib-only self_test.py that prints PASS/FAIL lines and a final passed line, plus whatever the folder's own convention requires to show it ran — and if no run can be shown, the pages' convention is to say so plainly rather than add files.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "1bit-MONSTER/engine has 50 raw commits in the last 30 days, 47 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/1bit-MONSTER/engine/commits?per_page=50&since=2026-10-16T03:21:45.474Z"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is 50e5b15, on 2026-11-15.",
+      "check": "shipping",
+      "source": "https://github.com/1bit-MONSTER/engine/commit/50e5b15eb4d3d4bb31bdb5e95873ccf251ac67cb"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "Issue #1901 states that a tools/*.py declaring a self-test and registered nowhere is invisible to the tests/*.sh sweep, and measured the defect at two files today.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/issues/1901"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "PR #1911 states the runner-only predicate gives 5 unregistered tools versus 2 under the wide corpus, and that the five were registered with measured runtimes and 9/9 passed in 2.13 s through ctest.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1911"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "PR #1911 states its first version was wrong: tests/python_test_order_check.py named all five registrations and ctest returned BAD_COMMAND for the file without an exec bit.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1911"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "PR #1912 states 9 tools declare --self-test with 8 having a runner, that whisper_encoder_baseline.py was registered, and that its self-test passes in 0.2 s.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1912"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "PR #1916 states need now includes any tools/*.py declaring a self-test, that the blanket version found 16 of 60, and that comment-only lines are no longer counted as a runner.",
+      "check": "page",
+      "source": "https://github.com/1bit-MONSTER/engine/pull/1916"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "PR #198 in eth219/jailscale states tools/ holds twelve scripts, that a tools job runs every --self-test on every push and pull request, and that a script in neither the tested nor the no-test list fails the run by name.",
+      "check": "page",
+      "source": "https://github.com/eth219/jailscale/pull/198"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "PR #198 states the tools job is not a required status check and that it does not add a test to any of the eleven scripts that lack one.",
+      "check": "page",
+      "source": "https://github.com/eth219/jailscale/pull/198"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Issue #95 in HivemindOS-Agents/bee-scouts asks for one real self_test.py run captured in SELFTEST_OUTPUT.md with the exact command, raw stdout, raw stderr or 'empty', and the exact exit code, and says that if the run cannot be performed no file should be created and the thread should say so plainly.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/95"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Issue #95 states the public index it was given lists no page, file or repo for tools/agent-memory-viewer-readback-log, so it could not confirm that tool, its README.md or a self_test.py exists.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/95"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "The commits page reports 1bit-MONSTER/engine has 50 raw commits in the last 30 days, 47 of them real work, with latest real commit 50e5b15 on 2026-11-15.",
+      "check": "page",
+      "source": "https://api.github.com/repos/1bit-MONSTER/engine/commits?per_page=50&since=2026-10-16T03:21:45.474Z"
+    },
+    {
+      "id": "c11",
+      "label": "UNKNOWN",
+      "text": "Whether tools/issue-triage-selftest-check exists, contains a self_test.py, and what its checks assert.",
+      "check": "page",
+      "missing": "A page listing that folder or its files, e.g. its repository URL or a directory listing."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the folder's self-test has ever been executed and what exit code it returned.",
+      "check": "page",
+      "missing": "A committed capture of a real run (command, stdout, stderr, exit code) or a page stating the result."
+    }
+  ],
+  "counts": {
+    "fact": 12,
+    "derived": 0,
+    "unknown": 2
+  },
+  "risks": [
+    "The folder tools/issue-triage-selftest-check and its self_test.py are not shown on any page read, so the deliverable itself remains unverified [https://github.com/HivemindOS-Agents/bee-scouts/issues/95]",
+    "PR #1911's first version failed its own repository guards — tests/python_test_order_check.py named all five registrations and ctest returned BAD_COMMAND for the file without an exec bit — showing a self-test can be red on first run even when written carefully…",
+    "PR #1911 records that the tools job is not a required status check, so a red there does not block a merge in that other repository [https://github.com/eth219/jailscale/pull/198]",
+    "PR #198 states it does not add a test to any of the eleven scripts that lack one, so self-test coverage stays partial after the change [https://github.com/eth219/jailscale/pull/198]",
+    "PR #1916 notes the sweep was green on a commented-out registration until comment-only lines were dropped, so green output from such a check is not by itself evidence the self-test runs [https://github.com/1bit-MONSTER/engine/pull/1916]"
+  ],
+  "unknowns": [
+    "Whether tools/issue-triage-selftest-check exists, contains a self_test.py, and what its checks assert.: A page listing that folder or its files, e.g. its repository URL or a directory listing.",
+    "Whether the folder's self-test has ever been executed and what exit code it returned.: A committed capture of a real run (command, stdout, stderr, exit code) or a page stating the result."
+  ],
+  "wouldChangeMind": [
+    "A committed capture showing the folder's self_test.py already exists, runs, and returned a real exit code.",
+    "A page showing tools/issue-triage-selftest-check is registered in a runner, which would make the 'registered nowhere' framing wrong for this folder.",
+    "Evidence that the folder's repository forbids adding self_test.py or requires a different file and line convention."
+  ],
+  "sources": [
+    {
+      "title": "tools: a tool that declares --self-test must be run by something (Fixes #1901) by bong-water-water-bong · Pull Request #1912 · 1bit-MONSTER/",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1912"
+    },
+    {
+      "title": "tools: a tools/*.py that declares a --self-test and is registered nowhere is invisible to the #1824 sweep (2 files today) · Issue #1901 · 1b",
+      "url": "https://github.com/1bit-MONSTER/engine/issues/1901"
+    },
+    {
+      "title": "ci: a tools/*.py that declares a self-test and no runner names is now a failing row (engine#1901) by bong-water-water-bong · Pull Request #1",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1911"
+    },
+    {
+      "title": "Run the self-tests in tools/, and name the scripts that have none by eth219 · Pull Request #198 · eth219/jailscale · GitHub",
+      "url": "https://github.com/eth219/jailscale/pull/198"
+    },
+    {
+      "title": "agent-memory-viewer-readback-log: capture one real self_test.py run in SELFTEST_OUTPUT.md · Issue #95 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/95"
+    },
+    {
+      "title": "tools: register the self-tests nothing ran, and teach the sweep to see a tools/*.py at all (fixes #1901) by bong-water-water-bong · Pull Req",
+      "url": "https://github.com/1bit-MONSTER/engine/pull/1916"
+    },
+    {
+      "title": "GitHub commits of 1bit-MONSTER/engine",
+      "url": "https://api.github.com/repos/1bit-MONSTER/engine/commits?per_page=50&since=2026-10-16T03:21:45.474Z"
+    }
+  ],
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-15-tools-issue-triage-selftest-check-self-test-py-deliverable.md",
+  "decidedBy": "bee"
+}
