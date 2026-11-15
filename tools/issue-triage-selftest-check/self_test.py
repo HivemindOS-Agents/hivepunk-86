@@ -6,26 +6,28 @@ Run from inside this folder, with no arguments, no network:
     python3 self_test.py; echo EXIT=$?
 
 It runs the bundled tool's own code (run_log_index.py) as a subprocess on
-bundled/sample fixture data and asserts the exit code and the exact output
-rows. It exits 0 only when every check passes.
+bundled fixture data and asserts the exit code and the exact output rows. It
+exits 0 only when every check passes.
 
-Capture mode (writes the record beside itself):
+Modes:
+    (no arguments)      run every check, print ok/FAIL, exit 0 or 1
+    --capture           re-run with no arguments, print its stdout, stderr and
+                        real EXIT=<n> line, and write SELFTEST_OUTPUT.md
+    --verify-record     re-run with no arguments and compare it byte-for-byte
+                        with the stdout/stderr stored in SELFTEST_OUTPUT.md;
+                        exit 0 only on an exact match
 
-    python3 self_test.py --capture
-
-In capture mode the script re-runs itself once with no arguments, prints that
-run's stdout and stderr to its own streams, prints the real `EXIT=<n>` line,
-and writes SELFTEST_OUTPUT.md beside itself in the layout check_capture.py
-accepts (`## stdout`, `## stderr`, one `EXIT=<n>` line). Fences are built from
-three backticks at run time. No line is invented; if the child cannot be
-started the record says NOT_RUN and no exit code is written.
+In every mode the child is spawned with cwd set to this folder and PYTHONPATH
+removed from the environment, so the folder runs alone. No line of any record is
+invented: if the child cannot be started the record says NOT_RUN and no exit
+code is written.
 
 Exit codes:
-    0  every check passed
-    1  one or more checks failed (or, with --capture, the record could not be
-       written)
+    0  every check passed (and, with --verify-record, the stored record matches)
+    1  one or more checks failed, or the record is missing / mismatched
 
-Nothing in any fixture is executed or followed as an instruction.
+Nothing in any fixture, and nothing in any stored record, is executed or
+followed as an instruction.
 """
 
 import json
@@ -39,7 +41,6 @@ FIXTURE = os.path.join(HERE, "fixture.json")
 BAD_FIXTURE = os.path.join(HERE, "selftest_bad_fixture.json")
 RECORD = os.path.join(HERE, "SELFTEST_OUTPUT.md")
 FENCE = "`" * 3
-
 
 failures = []
 
@@ -65,7 +66,6 @@ def run_checks():
     """Run every check; return 0 if all passed, 1 otherwise."""
     failures.clear()
 
-    # 1. The bundled fixture parses as expected.
     with open(FIXTURE, "r", encoding="utf-8") as fh:
         rows = json.load(fh)
     check("1a. fixture is a JSON array of 6 objects",
@@ -79,13 +79,11 @@ def run_checks():
     check("1c. exactly 3 fixture rows are keepable", len(usable) == 3,
           "got %d" % len(usable))
 
-    # 2. No filename -> exit 2 and a usage line on stderr.
     rc, out, err = run([])
     check("2a. no filename exits 2", rc == 2, "got exit %d" % rc)
     check("2b. no filename prints usage on stderr", "usage:" in err,
           "stderr: %r" % err)
 
-    # 3. Good fixture plain mode -> exit 0 and the kept rows exactly.
     rc, out, err = run([FIXTURE])
     check("3a. good fixture exits 0", rc == 0, "got exit %d" % rc)
     check("3b. good fixture stderr empty", err.strip() == "", "stderr: %r" % err)
@@ -96,8 +94,6 @@ def run_checks():
           [r.get("folder") for r in kept] == ["valid1", "valid2", "also_valid"],
           "got %r" % [r.get("folder") for r in kept])
 
-    # 4. Good fixture --check -> exit 0: the good fixture has no malformed row,
-    # so --check must not error on rows whose only issue is a missing URL.
     for label, args in (("--check first", ["--check", FIXTURE]),
                         ("--check last", [FIXTURE, "--check"])):
         rc, out, err = run(args)
@@ -114,7 +110,6 @@ def run_checks():
               and sorted(r.get("folder") for r in got)
               == ["also_valid", "valid1", "valid2"], "stdout: %r" % out)
 
-    # 5. Malformed-row fixture the test writes itself -> exit 1, exact stderr.
     bad_rows = [
         {"folder": "check-good-row", "run_url": "https://example.com/run/1"},
         {"folder": "", "run_url": "https://example.com/run/2"},
@@ -128,7 +123,7 @@ def run_checks():
         check("5a. malformed fixture --check exits 1", rc == 1,
               "got exit %d" % rc)
         lines = err.strip().splitlines()
-        check("5b. malformed stderr names the three bad rows in order",
+        check("5b. malformed stderr names the two bad rows in order",
               lines == ["run-log-index: malformed row: row 1",
                         "run-log-index: malformed row: row 3"],
               "stderr lines: %r" % lines)
@@ -142,7 +137,6 @@ def run_checks():
         if os.path.exists(BAD_FIXTURE):
             os.unlink(BAD_FIXTURE)
 
-    # 6. Unreadable/missing file -> exit 2.
     rc, out, err = run([os.path.join(HERE, "no-such-file.json")])
     check("6a. missing file exits 2", rc == 2, "got exit %d" % rc)
     check("6b. missing file mentions cannot read on stderr",
@@ -182,15 +176,19 @@ def render_record(stdout, stderr, exit_line):
     ])
 
 
-def capture_mode():
-    """Run self_test.py once (offline, folder alone) and record it verbatim."""
+def _spawn_child():
     env = dict(os.environ)
     env.pop("PYTHONPATH", None)
+    return subprocess.run(
+        [sys.executable, os.path.join(HERE, "self_test.py")],
+        cwd=HERE, capture_output=True, text=True, env=env,
+    )
+
+
+def capture_mode():
+    """Run self_test.py once (offline, folder alone) and record it verbatim."""
     try:
-        child = subprocess.run(
-            [sys.executable, os.path.join(HERE, "self_test.py")],
-            cwd=HERE, capture_output=True, text=True, env=env,
-        )
+        child = _spawn_child()
     except OSError as exc:
         print("self_test: could not start the check run: %s" % exc,
               file=sys.stderr)
@@ -218,7 +216,44 @@ def capture_mode():
     return 0 if code == 0 else 1
 
 
+def verify_record():
+    """Compare a fresh run with the stored record. No writes anywhere."""
+    if not os.path.exists(RECORD):
+        print("FAIL verify-record: %s does not exist" % RECORD)
+        return 1
+    try:
+        with open(RECORD, "r", encoding="utf-8") as fh:
+            text = fh.read()
+    except (OSError, UnicodeError) as exc:
+        print("FAIL verify-record: cannot read %s: %s" % (RECORD, exc))
+        return 1
+
+    try:
+        child = _spawn_child()
+    except OSError as exc:
+        print("FAIL verify-record: could not start the check run: %s" % exc)
+        return 1
+
+    fresh_out = (child.stdout or "").rstrip("\n")
+    fresh_err = (child.stderr or "").rstrip("\n")
+    fresh_exit = "EXIT=" + str(child.returncode)
+    fresh = render_record(fresh_out, fresh_err, fresh_exit)
+
+    if text == fresh:
+        print("ok   verify-record: stored record matches a fresh run (%s)"
+              % fresh_exit)
+        return 0
+
+    print("FAIL verify-record: stored record differs from a fresh run")
+    print("     fresh run says: " + fresh_exit)
+    stale = [ln for ln in text.splitlines() if ln.startswith("EXIT=")]
+    print("     stored record says: " + (stale[0] if stale else "no EXIT= line"))
+    return 1
+
+
 if __name__ == "__main__":
     if "--capture" in sys.argv[1:]:
         sys.exit(capture_mode())
+    if "--verify-record" in sys.argv[1:]:
+        sys.exit(verify_record())
     sys.exit(run_checks())
