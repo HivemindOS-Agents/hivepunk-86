@@ -17,10 +17,15 @@ Modes:
                         with the stdout/stderr stored in SELFTEST_OUTPUT.md;
                         exit 0 only on an exact match
 
-In every mode the child is spawned with cwd set to this folder and PYTHONPATH
-removed from the environment, so the folder runs alone. No line of any record is
-invented: if the child cannot be started the record says NOT_RUN and no exit
-code is written.
+Every mode spawns the child with cwd set to this folder and PYTHONPATH removed
+from the environment, so the folder runs alone; --capture is the same command
+the step names, `env -u PYTHONPATH python3 self_test.py --capture`.
+
+Record order in SELFTEST_OUTPUT.md is stdout, then stderr, then exactly one
+EXIT=<n> line -- the single source for the ARTIFACTS.md run-record exit cell.
+No line of any record is invented: if the child cannot be started the record
+says NOT_RUN and carries no number, which cannot fill the cell. Two EXIT= lines
+can appear in a capture terminal; the authoritative one is inside the file.
 
 Exit codes:
     0  every check passed (and, with --verify-record, the stored record matches)
@@ -155,11 +160,11 @@ def run_checks():
 
 
 def render_record(stdout, stderr, exit_line):
-    """The capturable record, one EXIT=<n> (or NOT_RUN) line."""
+    """The capturable record: stdout, then stderr, then one EXIT= line."""
     return "\n".join([
         "# self_test output (captured)",
         "",
-        "command: python3 self_test.py; echo EXIT=$?",
+        "command: env -u PYTHONPATH python3 self_test.py; echo EXIT=$?",
         "",
         "## stdout",
         FENCE,
@@ -177,6 +182,7 @@ def render_record(stdout, stderr, exit_line):
 
 
 def _spawn_child():
+    """Run self_test.py with no arguments, this folder alone, PYTHONPATH off."""
     env = dict(os.environ)
     env.pop("PYTHONPATH", None)
     return subprocess.run(
@@ -213,6 +219,8 @@ def capture_mode():
     except OSError as exc:
         print("self_test: cannot write %s: %s" % (RECORD, exc), file=sys.stderr)
         return 1
+    print("self_test: wrote %s (%s); the cell takes this integer only"
+          % (RECORD, exit_line), file=sys.stderr)
     return 0 if code == 0 else 1
 
 
@@ -248,6 +256,9 @@ def verify_record():
     print("     fresh run says: " + fresh_exit)
     stale = [ln for ln in text.splitlines() if ln.startswith("EXIT=")]
     print("     stored record says: " + (stale[0] if stale else "no EXIT= line"))
+    if not stale:
+        print("     the stored record is likely NOT_RUN: it cannot fill the "
+              "ARTIFACTS.md exit cell")
     return 1
 
 
