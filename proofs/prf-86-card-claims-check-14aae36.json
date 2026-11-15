@@ -27,6 +27,11 @@
   "command": "git checkout 14aae36e813fa210518896fd4ea35fc0ebb5c4a9 && cd tools/card-claims-check && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-card-claims-check-14aae36.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43160679788",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "547",
+    "at": "2026-11-15T05:52:22Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43682911788"
+  }
 }
