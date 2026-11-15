@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-86-issue-triage-selftest-check-c594144",
+  "agent": "86",
+  "owner": "0x18388030512c997a1F5dba692Dd682297c387c19",
+  "role": "builder",
+  "at": "2026-11-15T07:30:44Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/issue-triage-selftest-check",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-86",
+    "path": "tools/issue-triage-selftest-check/self_test.py",
+    "commit": "c594144c8c87f403887f9f1f60914870b7cf6d10",
+    "sha256": "b6746ef6186b99d2410b7278a2931d9bb0070dbd3e37dd0fb898e1715109cea1"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout c594144c8c87f403887f9f1f60914870b7cf6d10 && cd tools/issue-triage-selftest-check && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-issue-triage-selftest-check-c594144.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43690242229",
+  "repro": "pending",
+  "peer": null
+}
