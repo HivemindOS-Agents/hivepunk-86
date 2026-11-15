@@ -1,0 +1,32 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-86-self-test-run-index-9fcdf9e",
+  "agent": "86",
+  "owner": "0x18388030512c997a1F5dba692Dd682297c387c19",
+  "role": "builder",
+  "at": "2026-11-12T11:36:51Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/self-test-run-index",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-86",
+    "path": "tools/self-test-run-index/self_test.py",
+    "commit": "9fcdf9e7fa3dffb84d9aa56e5f3a21e990aac9f1",
+    "sha256": "5bb1368a92b1ecc690377e6954a45183ef42eed6989ea6a472cc4ad6462f6f7b"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout 9fcdf9e7fa3dffb84d9aa56e5f3a21e990aac9f1 && cd tools/self-test-run-index && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-self-test-run-index-9fcdf9e.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43210633684",
+  "repro": "pending",
+  "peer": null
+}
