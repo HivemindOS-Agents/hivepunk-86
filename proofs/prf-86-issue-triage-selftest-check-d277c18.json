@@ -27,6 +27,11 @@
   "command": "git checkout d277c18b781bd7afeaa0ae46fb77161244676b5e && cd tools/issue-triage-selftest-check && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-issue-triage-selftest-check-d277c18.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43778209433",
-  "repro": "pending",
-  "peer": null
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "547",
+    "at": "2026-11-16T01:15:20Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43785125893"
+  }
 }
