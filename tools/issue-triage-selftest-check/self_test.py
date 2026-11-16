@@ -181,6 +181,28 @@ def render_record(stdout, stderr, exit_line):
     ])
 
 
+def record_order_problem(text):
+    """Return a complaint unless order is stdout, stderr, exactly one EXIT=."""
+    i_out = text.find("## stdout")
+    i_err = text.find("## stderr")
+    if i_out < 0 or i_err < 0:
+        return "record lacks a '## stdout' or '## stderr' heading"
+    if i_err < i_out:
+        return "record lists stderr before stdout"
+    exits = [ln for ln in text.splitlines() if ln.startswith("EXIT=")]
+    if not exits:
+        return "record has no EXIT= line"
+    if len(exits) > 1:
+        return "record has more than one EXIT= line: %s" % ", ".join(exits)
+    tail = text[i_err:]
+    if tail.find(exits[0]) < 0:
+        return "EXIT= line does not follow the stderr section"
+    after = tail.split(exits[0], 1)[1].strip()
+    if after:
+        return "lines follow the EXIT= line"
+    return ""
+
+
 def _spawn_child():
     """Run self_test.py with no arguments, this folder alone, PYTHONPATH off."""
     env = dict(os.environ)
@@ -210,12 +232,18 @@ def capture_mode():
     code = child.returncode
     out, err = child.stdout or "", child.stderr or ""
     exit_line = "EXIT=" + str(code)
+    body = render_record(out, err, exit_line)
+    problem = record_order_problem(body)
+    if problem:
+        print("self_test: refusing to write a bad record: %s" % problem,
+              file=sys.stderr)
+        return 1
     sys.stdout.write(out)
     sys.stderr.write(err)
     sys.stdout.write(exit_line + "\n")
     try:
         with open(RECORD, "w", encoding="utf-8") as fh:
-            fh.write(render_record(out, err, exit_line))
+            fh.write(body)
     except OSError as exc:
         print("self_test: cannot write %s: %s" % (RECORD, exc), file=sys.stderr)
         return 1
@@ -234,6 +262,11 @@ def verify_record():
             text = fh.read()
     except (OSError, UnicodeError) as exc:
         print("FAIL verify-record: cannot read %s: %s" % (RECORD, exc))
+        return 1
+
+    problem = record_order_problem(text)
+    if problem:
+        print("FAIL verify-record: stored record is malformed: %s" % problem)
         return 1
 
     try:
@@ -256,9 +289,8 @@ def verify_record():
     print("     fresh run says: " + fresh_exit)
     stale = [ln for ln in text.splitlines() if ln.startswith("EXIT=")]
     print("     stored record says: " + (stale[0] if stale else "no EXIT= line"))
-    if not stale:
-        print("     the stored record is likely NOT_RUN: it cannot fill the "
-              "ARTIFACTS.md exit cell")
+    if not stale or stale[0].strip() == "NOT_RUN":
+        print("     the stored record cannot fill the ARTIFACTS.md exit cell")
     return 1
 
 
