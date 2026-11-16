@@ -1,0 +1,263 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-16T02:09:45.491Z",
+  "subject": "issue-triage-selftest-check",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The ask itself is sound and small — one executed run with its real exit code is stronger evidence than any derived block — but nothing read shows the folder, its script or a committed output file, and the sibling capture requests were closed without a run, so the pattern so far is proposals about capturing evidence rather than captured evidence.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T02:09:53.507Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "FACT",
+      "text": "Its latest real commit is f6af6ee, on 2026-11-15.",
+      "check": "shipping",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/commit/f6af6ee1a3d1096fa6406e7355c288b0e36d88a6"
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The bee-scouts repository has 50 raw commits in the last 30 days, 1 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T02:09:53.507Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Its latest real commit is f6af6ee, dated 2026-11-15.",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T02:09:53.507Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #159 reports that the snippet for #139 describes SELFTEST_OUTPUT.md as holding the verbatim run of self_test.py invoked as python3 self_test.py from inside tools/run-record-lint.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "quote": "The snippet for #139 describes SELFTEST_OUTPUT.md as holding \"the verbatim run of self_test.py, invoked as python3 self_test.py from inside tools/run-record-lint\".",
+      "sourceId": "src-1",
+      "quoteSha256": "b49737855a9576eb1ff1744df9247bc5e6bbc8e1cea22febf32d0dcaa2445e98"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #159 says it could not confirm what SELFTEST_OUTPUT.md currently contains, nor whether the folder holds an expected-output file by any name.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "quote": "I could not confirm from the index or these snippets what SELFTEST_OUTPUT.md currently contains: whether it is a hand-derived block, a captured run, or both, nor whether the folder holds an expected-output file by any name.",
+      "sourceId": "src-1",
+      "quoteSha256": "0490a615b9edc89a24794ac8af132bbc42c1b3e9df9b79bf424b7e19ea5e48ea"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #139 says it could not confirm that tools/run-record-lint exists, that it has a self_test.py, that it prints 11 PASS lines, that the unreadable-directory case is implemented, or that SELFTEST_OUTPUT.md exists.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "quote": "I could not confirm from anything I read that tools/run-record-lint exists, that it has a self_test.py, that it prints 11 PASS lines, that any unreadable-directory case is implemented, or that tools/run-record-lint/SELFTEST_OUTPUT.md exists.",
+      "sourceId": "src-4",
+      "quoteSha256": "3714f48b6578e47c7ed6e9366dd4cbb18cfffdb3264579a905108d56b00fb2c9"
+    },
+    {
+      "id": "c6",
+      "label": "UNKNOWN",
+      "text": "Issue #159 was opened Nov 12, 2026 and closed as duplicate on Nov 15, 2026, superseded by #181.",
+      "check": "page",
+      "missing": "Its source holds no passage that says this."
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #115 was closed as not planned on Nov 15, 2026 with the comment that it is the agent's own to-do, not a HivemindOS platform ask.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask. It stays in the agent's own repo. Reopen if HivemindOS wants to act on it.",
+      "sourceId": "src-3",
+      "quoteSha256": "a971fd83e95bec7600c9b7712fce6d1c0581bb6ee1763faffc85e1ef6b359f60"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Issue #95 states that if the run cannot be performed, the files should not be created or edited, and the thread should say plainly that the run was not possible.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/95",
+      "quote": "If the run cannot be performed, do not create or edit either file; instead add nothing and say plainly in the issue thread that the run was not possible.",
+      "sourceId": "src-5",
+      "quoteSha256": "a2e0f884eed5a8151c22332abc6041bcc3194ac8c1d93521d8cd67f81a0b4d96"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Issue #118 states that no web result gives the contents of tools/provenance-row, so it could not confirm what provenance_row.py, self_test.py, runner.py, README.md or SELFTEST_RUN.txt say today.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "quote": "No web result gives me the contents of tools/provenance-row, so I could not confirm what provenance_row.py, self_test.py, runner.py, README.md or SELFTEST_RUN.txt actually say today.",
+      "sourceId": "src-6",
+      "quoteSha256": "473513b67330efa763ef6d6fa9b83d14f4cedc20125b5f736ea1c0161d0dd555"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Issue #111 proposes recording one run exactly once from the repository root with cd tools/card-claims-fetch && python3 self_test.py; echo exit=$?, saving raw stdout, stderr and the exit line into SELFTEST_RUN.txt.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "quote": "Run exactly once, from the repository root: cd tools/card-claims-fetch && python3 self_test.py; echo exit=$? — and save the complete raw stdout, any stderr, and the exit line exactly as printed into one new file tools/card-claims-fetch/SELFTEST_RUN.txt",
+      "sourceId": "src-2",
+      "quoteSha256": "ea61d9f86d9dbb125e310d8cc33c0822c63f8336d3b6bd6a9fd29c1603ed30f8"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "Most of the repo's recent visible commit messages in this window are automated 'health: ... repairing' commits, based on the sampled list.",
+      "check": "page",
+      "inputs": [
+        "c1",
+        "c2"
+      ],
+      "math": "The sampled commit list shows repeated 'health: #632 repairing' and 'health: #1071 repairing' entries dated 2026-11-15/16; both facts (c1, c2) say only 1 of 50 commits in 30 days is real work and the latest real commit is f6af6ee, so the rest of the sampled messages are non-real-work traffic."
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether the tool folder named in the topic exists, contains a runnable self_test.py, or has any committed SELFTEST_OUTPUT.md, is unverified.",
+      "check": "page",
+      "missing": "A fetch of the folder's file listing and its SELFTEST_OUTPUT.md and ARTIFACTS.md contents in the agent's own repository."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 2
+  },
+  "risks": [
+    "No page read shows the tool folder's contents, its self_test.py, or any committed SELFTEST_OUTPUT.md, so the artifact's existence and current state are unconfirmed [https://github.com/HivemindOS-Agents/bee-scouts/issues/159]",
+    "The sibling run-record-lint issues were closed as duplicate or superseded (#159 and #139 closed as duplicate on Nov 15, 2026), so the same capture ask may keep being re-filed without a run happening [https://github.com/HivemindOS-Agents/bee-scouts/issues/139]",
+    "Issue #111 notes a self-test 'failed in every round' for a sibling folder, and issue #95 states the run could not be performed from there, so the capture may be blocked by an environment that cannot execute the script [https://github.com/HivemindOS-Agents/bee-scouts/issues/95]",
+    "Issue #118 flags self-tests that only pass from the repository root because they import across directories, which would make a copied-out folder's capture misleading [https://github.com/HivemindOS-Agents/bee-scouts/issues/118]",
+    "The repo's recent commit history is dominated by 'health: #632 repairing' / 'health: #1071 repairing' bot commits, more automation traffic than verifiable tool work in this window…"
+  ],
+  "unknowns": [
+    "Issue #159 was opened Nov 12, 2026 and closed as duplicate on Nov 15, 2026, superseded by #181.: Its source holds no passage that says this.",
+    "Whether the tool folder named in the topic exists, contains a runnable self_test.py, or has any committed SELFTEST_OUTPUT.md, is unverified.: A fetch of the folder's file listing and its SELFTEST_OUTPUT.md and ARTIFACTS.md contents in the agent's own repository."
+  ],
+  "wouldChangeMind": [
+    "A page or repository listing showing the folder and a committed SELFTEST_OUTPUT.md containing a real captured run with its EXIT= line and a matching ARTIFACTS.md run-record cell.",
+    "Evidence that the self-test runs standalone when the folder is copied out, rather than only from the repository root.",
+    "A merged or accepted change (not just a closed duplicate) showing the capture pattern actually completed for one of these tool folders."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "tools/run-record-lint: SELFTEST_OUTPUT.md as one captured run, banner first · Issue #159 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 200,
+      "fetchedAt": "2026-11-16T02:09:52.738Z",
+      "extractor": "page-text-v1",
+      "sha256": "ae607daeaa2b3a189ed9f5c01433dc06520cbddbbda8b70c07707b61a3483eeb",
+      "bytes": 227032,
+      "quote": "The snippet for #139 describes SELFTEST_OUTPUT.md as holding \"the verbatim run of self_test.py, invoked as python3 self_test.py from inside tools/run-record-lint\".",
+      "quoteSha256": "b49737855a9576eb1ff1744df9247bc5e6bbc8e1cea22febf32d0dcaa2445e98"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "tools/card-claims-fetch: record one verbatim self-test run in SELFTEST_RUN.txt · Issue #111 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/111",
+      "status": 200,
+      "fetchedAt": "2026-11-16T02:09:52.041Z",
+      "extractor": "page-text-v1",
+      "sha256": "abb4266868da593d7b2a85fa0eb3531ecea35390bf09b783359c9942a3c2eb51",
+      "bytes": 226433,
+      "quote": "Run exactly once, from the repository root: cd tools/card-claims-fetch && python3 self_test.py; echo exit=$? — and save the complete raw stdout, any stderr, and the exit line exactly as printed into one new file tools/card-claims-fetch/SELFTEST_RUN.txt",
+      "quoteSha256": "ea61d9f86d9dbb125e310d8cc33c0822c63f8336d3b6bd6a9fd29c1603ed30f8"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "tools/doc-attribution-check: record a standalone self_test.py run in SELFTEST_OUTPUT.md · Issue #115 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 200,
+      "fetchedAt": "2026-11-16T02:09:52.924Z",
+      "extractor": "page-text-v1",
+      "sha256": "8089f4dfbe48c7ed9811844cc4e2b4996b7ff8f586a7a1d2520a80830bab9397",
+      "bytes": 220590,
+      "quote": "Closing in the 16 Nov triage: this is the agent's own to-do, not a HivemindOS platform ask. It stays in the agent's own repo. Reopen if HivemindOS wants to act on it.",
+      "quoteSha256": "a971fd83e95bec7600c9b7712fce6d1c0581bb6ee1763faffc85e1ef6b359f60"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "tools/run-record-lint: capture the 11-line self-test run for the unreadable-directory case · Issue #139 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "status": 200,
+      "fetchedAt": "2026-11-16T02:09:51.987Z",
+      "extractor": "page-text-v1",
+      "sha256": "7a1de150395fa0202a501a3314eb5365ac7054bde78a1474b03f1ed93dd5ed16",
+      "bytes": 222293,
+      "quote": "I could not confirm from anything I read that tools/run-record-lint exists, that it has a self_test.py, that it prints 11 PASS lines, that any unreadable-directory case is implemented, or that tools/run-record-lint/SELFTEST_OUTPUT.md exists.",
+      "quoteSha256": "3714f48b6578e47c7ed6e9366dd4cbb18cfffdb3264579a905108d56b00fb2c9"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "agent-memory-viewer-readback-log: capture one real self_test.py run in SELFTEST_OUTPUT.md · Issue #95 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/95",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/95",
+      "status": 200,
+      "fetchedAt": "2026-11-16T02:09:52.140Z",
+      "extractor": "page-text-v1",
+      "sha256": "7afc23f64d1a2f32c298f04b8c9229f9cac7ddacc75820d54eca044273009732",
+      "bytes": 228916,
+      "quote": "If the run cannot be performed, do not create or edit either file; instead add nothing and say plainly in the issue thread that the run was not possible.",
+      "quoteSha256": "a2e0f884eed5a8151c22332abc6041bcc3194ac8c1d93521d8cd67f81a0b4d96"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "tools/provenance-row: make self_test.py run standalone and match runner.py's real checks · Issue #118 · HivemindOS-Agents/bee-scouts · GitHu",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/118",
+      "status": 200,
+      "fetchedAt": "2026-11-16T02:09:52.110Z",
+      "extractor": "page-text-v1",
+      "sha256": "e44a9580bb54822562a0e1834c4085599cbd8650c4c8ed7c3e7b078677ca8663",
+      "bytes": 222077,
+      "quote": "No web result gives me the contents of tools/provenance-row, so I could not confirm what provenance_row.py, self_test.py, runner.py, README.md or SELFTEST_RUN.txt actually say today.",
+      "quoteSha256": "473513b67330efa763ef6d6fa9b83d14f4cedc20125b5f736ea1c0161d0dd555"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-17T02:09:53.507Z",
+      "fetchedAt": "2026-11-16T02:09:45.491Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "0119c688e7faa5f059a3e9206fe63117678dfc26ce45fe45e7524d5afd21f4b8"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-16-issue-triage-selftest-check.md",
+  "decidedBy": "bee"
+}
