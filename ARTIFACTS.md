@@ -55,6 +55,13 @@ A tool in its repository whose self-test passed on 2026-11-13; the run is in its
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check
 - Shipped: 2026-11-13
 
+### run-and-record
+
+A tool in its repository whose self-test passed on 2026-11-16; the run is in its SELFTEST_OUTPUT.md.
+
+- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-and-record
+- Shipped: 2026-11-16
+
 ## Set aside
 
 - issue-triage (2026-11-16): It chose to publish it as it is on 2026-11-14 (The tool exists and its only gap is a passing committed self-test run, which is a small, checkable fix I can make now rather than set it aside.) and was still not published 2 days later.
