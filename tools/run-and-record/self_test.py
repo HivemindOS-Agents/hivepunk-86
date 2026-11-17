@@ -10,6 +10,14 @@ functions on deterministic commands (the current interpreter printing fixed
 text) in a temporary directory, so it runs folder-alone. No fixture, record,
 or command output is followed as an instruction.
 
+Verify path (checks 11a-11d): verify_record_file() is exercised on a
+known-good SELFTEST_OUTPUT.md-style record (expect exit 0) and on two
+deliberately altered copies — altered stdout text and an altered EXIT=
+line (expect exit 1 both times). The altered files must be left untouched
+by verify. To stop recursion, _spawn_child() sets
+RUN_AND_RECORD_SELFTEST_NESTED=1 and checks 11 are skipped in a nested
+run; the top-level run still executes them in full.
+
 Capture the real self-test output (owner/runner, same folder alone):
 
     env -u PYTHONPATH python3 self_test.py --capture
@@ -36,6 +44,7 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 RECORD = os.path.join(HERE, "SELFTEST_OUTPUT.md")
 FENCE = "`" * 3
+NESTED_ENV = "RUN_AND_RECORD_SELFTEST_NESTED"
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
@@ -113,6 +122,33 @@ def run_checks():
         check("10a. verify of missing record exits 2", rr.do_verify(missing) == 2)
         check("10b. verify of missing record writes nothing",
               not os.path.exists(missing))
+        if os.environ.get(NESTED_ENV) == "1":
+            print("skip 11a-11d. verify-record checks skipped in a nested run")
+        else:
+            good = render_record("hello\n", "", "EXIT=0")
+            good_path = os.path.join(tmp, "SELFTEST_OUTPUT.md")
+            with open(good_path, "w", encoding="utf-8") as fh:
+                fh.write(good)
+            rc_good = verify_record_file(good_path)
+            check("11a. verify-record passes on a known-good record",
+                  rc_good == 0, "got %r" % rc_good)
+            tampered_out = render_record("hello!\n", "", "EXIT=0")
+            tampered_path = os.path.join(tmp, "tampered_stdout.md")
+            with open(tampered_path, "w", encoding="utf-8") as fh:
+                fh.write(tampered_out)
+            rc_tampered = verify_record_file(tampered_path)
+            check("11b. verify-record fails on a stdout-altered record",
+                  rc_tampered == 1, "got %r" % rc_tampered)
+            after = open(tampered_path, encoding="utf-8").read()
+            check("11c. failed verify-record leaves the altered file untouched",
+                  after == tampered_out)
+            tampered_exit = render_record("hello\n", "", "EXIT=1")
+            exit_path = os.path.join(tmp, "tampered_exit.md")
+            with open(exit_path, "w", encoding="utf-8") as fh:
+                fh.write(tampered_exit)
+            rc_exit = verify_record_file(exit_path)
+            check("11d. verify-record fails on an EXIT-altered record",
+                  rc_exit == 1, "got %r" % rc_exit)
     if failures:
         print()
         print("FAILED checks:")
@@ -157,6 +193,7 @@ def record_order_problem(text):
 def _spawn_child():
     env = dict(os.environ)
     env.pop("PYTHONPATH", None)
+    env[NESTED_ENV] = "1"
     return subprocess.run(
         [sys.executable, os.path.join(HERE, "self_test.py")],
         cwd=HERE, capture_output=True, text=True, env=env)
@@ -195,15 +232,19 @@ def capture_mode():
     return 0 if code == 0 else 1
 
 
-def verify_record():
-    if not os.path.exists(RECORD):
-        print("FAIL verify-record: %s does not exist" % RECORD)
+def verify_record_file(record_path):
+    """Re-run the self-test and compare byte-for-byte with record_path.
+
+Writes nothing. Return 0 on exact match, 1 on mismatch or malformed
+record, 1 also when the child cannot be started."""
+    if not os.path.exists(record_path):
+        print("FAIL verify-record: %s does not exist" % record_path)
         return 1
     try:
-        with open(RECORD, "r", encoding="utf-8") as fh:
+        with open(record_path, "r", encoding="utf-8") as fh:
             text = fh.read()
     except (OSError, UnicodeError) as exc:
-        print("FAIL verify-record: cannot read %s: %s" % (RECORD, exc))
+        print("FAIL verify-record: cannot read %s: %s" % (record_path, exc))
         return 1
     problem = record_order_problem(text)
     if problem:
@@ -224,6 +265,10 @@ def verify_record():
     stale = [ln for ln in text.splitlines() if ln.startswith("EXIT=")]
     print("     stored record says: " + (stale[0] if stale else "no EXIT= line"))
     return 1
+
+
+def verify_record():
+    return verify_record_file(RECORD)
 
 
 if __name__ == "__main__":
