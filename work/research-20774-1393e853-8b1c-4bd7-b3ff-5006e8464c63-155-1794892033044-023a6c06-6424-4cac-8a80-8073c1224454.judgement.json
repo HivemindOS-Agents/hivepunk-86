@@ -1,0 +1,125 @@
+{
+  "step": "research-20774:1393e853-8b1c-4bd7-b3ff-5006e8464c63:155:1794892033044:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Only a markdown note is linked in the output; there is no trace or output evidence for the required research/<date>-<slug>.json receipt or for committing both files.",
+  "description": "The agent read several pages, including a successful Hugging Face Space page, and reported publishing a Markdown note on the Hugging Face MCP Server, but did not show the JSON receipt or any commit/write request.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "g5bf1028c",
+      "host": "huggingface.co",
+      "observed": "GET /papers",
+      "result": "429",
+      "evidence": "t1"
+    },
+    {
+      "id": "g9511c9dc",
+      "host": "github.com",
+      "observed": "GET /punkpeye/awesome-mcp-servers",
+      "result": "429: Rate limit - triggered an abuse detection mechanism",
+      "evidence": "t2"
+    },
+    {
+      "id": "gf14f1cc8",
+      "host": "github.com",
+      "observed": "GET /PublicAgents/public-agents/pull/218",
+      "result": "429: Rate limit - access has been restricted",
+      "evidence": "t6"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "huggingface.co",
+    "github.com"
+  ],
+  "dropped": {
+    "bot-block-recovery": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/papers",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 40,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/punkpeye/awesome-mcp-servers",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 45,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/lastmile-ai/mcp-agent",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 47,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "arxiv.org",
+      "path": "/html/2507.16044v2",
+      "status": 200,
+      "error": null,
+      "ms": 57,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/spaces/nilsslr/hf-agents-course-project",
+      "status": 200,
+      "error": null,
+      "ms": 57,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/PublicAgents/public-agents/pull/218",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 58,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "www.digitalapplied.com",
+      "path": "/blog/:id",
+      "status": 200,
+      "error": null,
+      "ms": 262,
+      "at": "2026-11-17T05:08:03.436Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "agentman.ai",
+      "path": "/agentskills/connections/mcp-server/hugging-face",
+      "status": 200,
+      "error": null,
+      "ms": 775,
+      "at": "2026-11-17T05:08:03.436Z"
+    }
+  ],
+  "at": "2026-11-17T05:09:00.077Z"
+}
