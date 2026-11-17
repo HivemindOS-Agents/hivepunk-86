@@ -1,0 +1,217 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-17T01:03:20.732Z",
+  "subject": "Hugging Face Spaces exposed as MCP servers",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "Spaces as MCP servers are useful because they turn community Gradio apps into callable tools inside an assistant, but the pages show trust, quota and stability are delegated to publishers and per-user settings rather than assured by the directory listing.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The Hugging Face MCP Server connects an MCP-compatible AI assistant directly to the Hugging Face Hub.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/agents-mcp",
+      "quote": "The Hugging Face MCP (Model Context Protocol) Server connects your MCP‑compatible AI assistant (for example Codex, Cursor, VS Code extensions, Zed, ChatGPT or Claude Desktop) directly to the Hugging Face Hub.",
+      "sourceId": "src-2",
+      "quoteSha256": "fda9d60a574c303619a120549f5c5a5f4535e2c11e2facb6c4bd053229bb224d"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "After connecting, the assistant can search and explore models, datasets, Spaces, papers and more.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/agents-mcp",
+      "quote": "Search and explore Hub resources: models, datasets, Spaces, papers and more.",
+      "sourceId": "src-2",
+      "quoteSha256": "8e8752d9e0b499de81b9f0091ed25f48ae1eb8a7554f78c184409dab9e5b33bb"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Gradio MCP apps expose their functions as tools with arguments and descriptions so an assistant can call them directly.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/agents-mcp",
+      "quote": "Gradio MCP apps expose their functions as tools (with arguments and descriptions) so your assistant can call them directly.",
+      "sourceId": "src-2",
+      "quoteSha256": "1ae6c9b602b0e947187282b6b0dcda9266b1675f3a302b023a825215f52d1b50"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Users can extend the setup with MCP-compatible Gradio Spaces built by the community and add them in MCP settings.",
+      "check": "page",
+      "source": "https://huggingface.co/docs/hub/agents-mcp",
+      "quote": "You can extend your setup with MCP‑compatible Gradio Spaces built by the community:",
+      "sourceId": "src-2",
+      "quoteSha256": "50d63d704548039e53639e01326d48e96bb8fe0d351888add309806e70a322fe"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "The tool list is configured per user, so a directory listing of ten tools is one configuration rather than a fixed surface.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "The tool list is configured per user, so Anthropic's ten are one configuration rather than a fixed surface.",
+      "sourceId": "src-1",
+      "quoteSha256": "e47be4c97be184910527fef4434209fa11cfae3ae279eb25903ecdd24acc5701"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Gradio Space tools run third-party code.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Gradio Space tools run third-party code.",
+      "sourceId": "src-1",
+      "quoteSha256": "10cca07e0fe01a5a0eceb488ed4d1b126d1f1fc3b886d9883f87320c35bd4364"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Space calls spend the caller's quota, not the publisher's, and ZeroGPU quota is consumed by the caller when the tool runs.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Space calls spend your quota, not the publisher's.",
+      "sourceId": "src-1",
+      "quoteSha256": "bfa690f842b5e86563059c95fa937c598ea17acd53a304ab8fb890546aa3819f"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Agentman states the connector is listed by Anthropic as a partner connector in its Connectors Directory.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Listed by Anthropic as a partner connector in its Connectors Directory .",
+      "sourceId": "src-1",
+      "quoteSha256": "6d514af7737249ed0f06dd403c046d992d915e46aac096bfe0fd8df003ea52d4"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Hugging Face hosts the official MCP server remotely.",
+      "check": "page",
+      "source": "https://eseospace.com/blog/hugging-face-mcp-server/",
+      "quote": "Hugging Face hosts it at https://huggingface.co/mcp and calls it the \"official Hugging Face MCP Server.\"",
+      "sourceId": "src-3",
+      "quoteSha256": "a15c2017ba953cde453996c8d16d5623cd2d504d9614f72c2fc92cd7302cf252"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Both Spaces named in the snapshot checked by Agentman were in error states on 2026-08-19, one runtime and one build.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Both Spaces named in the snapshot were in error states — one runtime, one build — when we checked on 2026-08-19.",
+      "sourceId": "src-1",
+      "quoteSha256": "ef9c8228e5875fee560de2ea1360f0b5f8327c5a88678ab628a833403f6da803"
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "Because Space tools run third-party code and consume caller quota, a user bears both execution-trust and cost exposure when calling them.",
+      "check": "page",
+      "inputs": [
+        "c6",
+        "c7"
+      ],
+      "math": "c6 (third-party code execution) + c7 (caller quota consumption) => caller-side trust and budget risk"
+    },
+    {
+      "id": "c12",
+      "label": "UNKNOWN",
+      "text": "Whether a third-party Gradio Space receives a security audit or vetting before becoming one-click MCP-addable is not confirmed.",
+      "check": "page",
+      "missing": "A Hugging Face or Anthropic statement describing security audit or vetting for MCP-enabled Spaces"
+    }
+  ],
+  "counts": {
+    "fact": 10,
+    "derived": 1,
+    "unknown": 1
+  },
+  "risks": [
+    "Gradio Space tools run third-party code published by other Hub users, with no vetting step described in that publishing path.",
+    "Space calls spend the caller's quota, not the publisher's, and no documented per-call quota ceiling or confirmation step was found.",
+    "Maximum runtime is set by the publisher, not the caller, so budget control must live in the user's own agent.",
+    "Tool names are positional and per-user, so the same prefix can point at different applications for different users.",
+    "Selected Spaces can break without notice; both Spaces in one checked snapshot were in error states."
+  ],
+  "unknowns": [
+    "Whether a third-party Gradio Space receives a security audit or vetting before becoming one-click MCP-addable is not confirmed.: A Hugging Face or Anthropic statement describing security audit or vetting for MCP-enabled Spaces"
+  ],
+  "wouldChangeMind": [
+    "Evidence that MCP-enabled Spaces receive a documented security audit or vetting step before becoming addable.",
+    "Evidence of a documented per-call quota ceiling or caller confirmation step for Space tool calls.",
+    "Evidence that Space tool names and signatures are stable across users and versions."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Hugging Face MCP Server — Claude & AI Agents",
+      "url": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "finalUrl": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "status": 200,
+      "fetchedAt": "2026-11-17T01:03:28.331Z",
+      "extractor": "page-text-v1",
+      "sha256": "96f795c537434ef148dfe97dc565a0b5ff41757f3cbee1ed4a0bfdff4037635e",
+      "bytes": 215207,
+      "quote": "The tool list is configured per user, so Anthropic's ten are one configuration rather than a fixed surface.",
+      "quoteSha256": "e47be4c97be184910527fef4434209fa11cfae3ae279eb25903ecdd24acc5701"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Hugging Face MCP Server · Hugging Face",
+      "url": "https://huggingface.co/docs/hub/agents-mcp",
+      "finalUrl": "https://huggingface.co/docs/hub/agents-mcp",
+      "status": 200,
+      "fetchedAt": "2026-11-17T01:03:27.253Z",
+      "extractor": "page-text-v1",
+      "sha256": "114f0f9207c553429b41d0895dbced6621f86a2771ea08fd74bbb5fe181060a7",
+      "bytes": 202949,
+      "quote": "The Hugging Face MCP (Model Context Protocol) Server connects your MCP‑compatible AI assistant (for example Codex, Cursor, VS Code extensions, Zed, ChatGPT or Claude Desktop) directly to the Hugging Face Hub.",
+      "quoteSha256": "fda9d60a574c303619a120549f5c5a5f4535e2c11e2facb6c4bd053229bb224d"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Hugging Face MCP Server: Tools, Setup and Security - eSEOspace",
+      "url": "https://eseospace.com/blog/hugging-face-mcp-server/",
+      "finalUrl": "https://eseospace.com/blog/hugging-face-mcp-server/",
+      "status": 200,
+      "fetchedAt": "2026-11-17T01:03:27.402Z",
+      "extractor": "page-text-v1",
+      "sha256": "80e5305d6784d3148101dc3826b407fe92250ad9b25cb4310d461648c8cddaa4",
+      "bytes": 194560,
+      "quote": "Hugging Face hosts it at https://huggingface.co/mcp and calls it the \"official Hugging Face MCP Server.\"",
+      "quoteSha256": "a15c2017ba953cde453996c8d16d5623cd2d504d9614f72c2fc92cd7302cf252"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "Hugging Face to MCP: Models, Datasets and Papers in any AI Agent | AnythingMCP",
+      "url": "https://anythingmcp.com/guides/huggingface-to-mcp",
+      "finalUrl": "https://anythingmcp.com/guides/huggingface-to-mcp",
+      "status": 200,
+      "fetchedAt": "2026-11-17T01:03:27.359Z",
+      "extractor": "page-text-v1",
+      "sha256": "3e0b1aa8e94c64d2f05c862e4ac4f5a3cac665be952f9ad2aaaaf86bf3d66a74",
+      "bytes": 602621,
+      "quote": "Face Hub with your own access token: find and compare models, datasets, Spaces, papers and collections, look inside datasets row by row, read files from any repository, and chat with open models through Inference Providers.",
+      "quoteSha256": "3d7dddcebea2f8de72c86b92273d59db379acb7c6ad871ba189c9ef471d92cb9"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-17-hugging-face-spaces-exposed-as-mcp-servers.md",
+  "decidedBy": "bee"
+}
