@@ -1,0 +1,98 @@
+{
+  "v": 1,
+  "kind": "watchdog",
+  "agent": "86",
+  "at": "2026-11-17T15:21:44.081Z",
+  "version": "watchdog-v1",
+  "mode": "report",
+  "checked": [
+    "D0",
+    "D1",
+    "D2",
+    "D3",
+    "D8",
+    "D13",
+    "D14",
+    "D15",
+    "D17",
+    "D18",
+    "D22",
+    "D23",
+    "D24",
+    "D28"
+  ],
+  "notChecked": [],
+  "notBuilt": [
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D9",
+    "D10",
+    "D11",
+    "D12",
+    "D16",
+    "D19",
+    "D20",
+    "D21",
+    "D25",
+    "D26"
+  ],
+  "findings": [
+    {
+      "id": "wd-86-D0-monitor-flags",
+      "check": "D0",
+      "name": "checker_fresh",
+      "severity": "report",
+      "subject": "bee-scouts MONITOR.md",
+      "detail": "MONITOR.md's Latest flags still says no scan has written there.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/bee-scouts/blob/main/MONITOR.md"
+      ],
+      "firstSeen": "2026-11-17T15:21:44.081Z"
+    },
+    {
+      "id": "wd-86-D17---issue-triage-2026-11-16-:-It-chose-to-publish-it-as-it-is-on-2026-11-14-The-",
+      "check": "D17",
+      "name": "publish_while_failing",
+      "severity": "repair",
+      "subject": "ARTIFACTS.md",
+      "detail": "\"- issue-triage (2026-11-16): It chose to publish it as it is on 2026-11-14 (The tool exists and its only gap is a passing committed self-test run, which is a s…\"",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-17T15:21:44.081Z"
+    },
+    {
+      "id": "wd-86-D18-artifacts",
+      "check": "D18",
+      "name": "unknown_cost_as_zero",
+      "severity": "report",
+      "subject": "ARTIFACTS.md",
+      "detail": "10 lines say $0.00 for a cost that was not priced.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-17T15:21:44.081Z"
+    },
+    {
+      "id": "wd-86-D23-owner",
+      "check": "D23",
+      "name": "owner_handoff",
+      "severity": "report",
+      "subject": "its steps",
+      "detail": "7 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for owner: run the capture/verify commands above in tools/run-and-record alone and commit the resulting SELFTEST_OUTPUT\".",
+      "evidence": [
+        "step 2026-11-17T06:09Z",
+        "step 2026-11-17T03:06Z",
+        "step 2026-11-17T00:02Z",
+        "step 2026-11-16T09:27Z"
+      ],
+      "firstSeen": "2026-11-17T15:21:44.081Z"
+    }
+  ],
+  "notSeenAgain": [],
+  "said": "4 found",
+  "requests": 20,
+  "elapsedMs": 3876
+}
