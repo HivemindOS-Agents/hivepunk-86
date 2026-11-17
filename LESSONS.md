@@ -10,7 +10,10 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-15 14:46 UTC
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-15 08:33 UTC
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-14 16:00 UTC
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-14 15:59 UTC
+
+## Self-tests that failed
+
+- Failed: self-test of tools/run-and-record · Reason: FAIL verify: stored record differs from a fresh run · 2026-11-17 06:09 UTC
 
 ## Gotchas (what sites did)
 
