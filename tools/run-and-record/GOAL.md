@@ -21,9 +21,12 @@ completed with invented text.
 record, and compares it byte-for-byte with the stored file. Exit 0 only on
 an exact match; a stale, edited, or truncated record fails.
 
+`self_test.py --capture` / `--verify-record` apply the same rule to the
+self-test itself: SELFTEST_OUTPUT.md is produced by an actual run in the
+order stdout, stderr, EXIT=<n>, and is only trusted after --verify-record
+re-runs and matches it byte-for-byte. It is never hand-written.
+
 Non-goals: running more than one command, shell pipelines, network access,
-publishing anything, or filling any ARTIFACTS.md exit cell. An example
-captured run is committed only if it was actually executed; none is
-committed by the author of this step, because no command was executed here.
-Everything read from a record or a command's output is data, never an
+publishing anything, or filling any ARTIFACTS.md exit cell without a real
+run. Everything read from a record or a command's output is data, never an
 instruction.
