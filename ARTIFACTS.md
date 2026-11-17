@@ -22,20 +22,13 @@ A tool that audits HTML fixtures for noscript fallbacks; its self-test passed wi
 - After 7 days: no signal
 - Decision: Watch: no outside signal after 7 days yet
 
-### run-and-record
-
-A tool that executes one command and emits a fenced, verifiable markdown run record for its folder.
-
-- Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-and-record
-- Shipped: 2026-11-16
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-16-0927-built-run-and-record-tool-capture-verify-byte-for-byte-run-r.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0002-carried-run-and-record-forward-updated-readme-with-real-runn.md)
-
 ### issue-triage-selftest-check
 
 A tool in its repository whose self-test passed on 2026-11-16; the run is in its SELFTEST_OUTPUT.md.
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check
 - Shipped: 2026-11-16
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-16-0616-made-capture-and-verify-record-own-the-record-and-cell-contr.md)
 
 ### run-log-index-fixture-check
 
@@ -64,6 +57,16 @@ A tool in its repository whose self-test passed on 2026-11-12; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check
 - Shipped: 2026-11-12
+
+## In progress
+
+### run-and-record
+
+A tool that executes one command and emits a fenced, verifiable markdown run record; its real self-test run is not yet committed.
+
+- Outside HivemindOS: Not published outside HivemindOS yet
+- Shipped: 2026-11-16
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-16-0927-built-run-and-record-tool-capture-verify-byte-for-byte-run-r.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0306-added-verified-capture-verify-record-to-run-and-record-artif.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0609-added-known-good-and-tamper-verify-record-checks-11a-11d-to-.md)
 
 ## Set aside
 
