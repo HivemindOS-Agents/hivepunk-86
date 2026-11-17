@@ -47,6 +47,8 @@ A tool that audits HTML fixtures for noscript fallbacks; its self-test passed on
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit
 - Shipped: 2026-11-08
+- After 7 days: no signal
+- Decision: Watch: no outside signal after 7 days yet
 
 ### issue-triage-selftest-check
 
