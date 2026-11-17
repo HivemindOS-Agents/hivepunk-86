@@ -1,0 +1,204 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-17T05:07:57.498Z",
+  "subject": "Hugging Face MCP Server",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The Hugging Face MCP server is a real, vendor-made and directory-listed connector that makes Gradio Spaces callable in one click, but its per-user tool list, positional tool names, third-party Space code and caller-paid quota mean an agent must budget and vet calls itself rather than trust the connector's surface.",
+  "claims": [
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "The Hugging Face MCP server is made by Hugging Face and lets an agent search models, datasets, papers and documentation on the Hub and call Gradio Spaces.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "The Hugging Face MCP server connects Claude, ChatGPT or any MCP-compatible agent to the Hugging Face Hub — searching models, datasets, papers and documentation. It also carries Gradio Spaces: applications published by other Hub users that an agent can invoke.",
+      "sourceId": "src-1",
+      "quoteSha256": "e11bd2da685cfc988373fbe281694e809487a145f8395fa781092851c4c2c4cb"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "It is listed by Anthropic as a partner connector in its Connectors Directory, and Anthropic states that listing reflects the level of review a connector received, not a security audit.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Verified connector Listed by Anthropic as a partner connector in its Connectors Directory . Connection checked by Agentman on 19 August 2026 . Anthropic states this reflects the level of review a connector received, not a security audit.",
+      "sourceId": "src-1",
+      "quoteSha256": "0ed69094b24b872f8226e63c01b7492460b4c50e46e953064a172bd9e430c0d1"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "The directory snapshot lists ten tools, and the tool list is configured per user rather than fixed.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "The tool list is configured per user, so Anthropic's ten are one configuration rather than a fixed surface.",
+      "sourceId": "src-1",
+      "quoteSha256": "e47be4c97be184910527fef4434209fa11cfae3ae279eb25903ecdd24acc5701"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "An anonymous handshake returned four tools, overlapping the ten-tool snapshot in a single name.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Our anonymous handshake returned four tools, overlapping the snapshot in a single name.",
+      "sourceId": "src-1",
+      "quoteSha256": "1f3dd9812d1a36d6907b83b6720dbec28a62216de9dc1a4c374ac363bc761e1b"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Gradio Space tools run third-party code, and the documentation describes no vetting step in the path from publishing a Space to making it addable.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Gradio Space tools run third-party code. Any user can publish a Gradio Space, enable MCP with one parameter, and have it become one-click addable. Hugging Face's documentation describes no vetting step in that path.",
+      "sourceId": "src-1",
+      "quoteSha256": "d5ea19380132a8224d6943dd54dde5945187c12bd6ca35564e7eb5eafa0bee87"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Space calls spend the caller's quota, not the publisher's; PRO provides 40 minutes daily, stated as 8× free, with no documented per-call ceiling and no confirmation step.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Space calls spend your quota, not the publisher's. Hugging Face documents that ZeroGPU quota is consumed by the caller when the tool runs. PRO provides 40 minutes daily, stated as 8× free. No documented per-call quota ceiling and no confirmation step.",
+      "sourceId": "src-1",
+      "quoteSha256": "bae9ccae784092e0b03b636c63cef1849147d4ea378c903f4ad2feff5dcec40e"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Gradio tool names are positional slot numbers in one user's configured list, so the same prefix points at different applications for different users.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Gradio tool names are positional, not stable. The gr1_ / gr2_ digits are slot numbers in one user's configured list. The same prefix points at different applications for different users.",
+      "sourceId": "src-1",
+      "quoteSha256": "d24943eaa47f60afaba0d1057e1a899c89139af0976445864e51efe3f64af67b"
+    },
+    {
+      "id": "c8",
+      "label": "FACT",
+      "text": "Both Spaces named in the snapshot were in error states, one runtime and one build, when checked on 2026-08-19.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Space tools can break without notice. Both Spaces named in the snapshot were in error states — one runtime, one build — when we checked on 2026-08-19.",
+      "sourceId": "src-1",
+      "quoteSha256": "4ac366127a11f46689414c99269afcad625769ff5842d1ef461aa0a2b2f0f842"
+    },
+    {
+      "id": "c9",
+      "label": "FACT",
+      "text": "Source defines write-capable tools including repository creation, jobs and sandbox execution, marked destructiveHint: true and readOnlyHint: false, though none appeared in the anonymous session or the snapshot.",
+      "check": "page",
+      "source": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "quote": "Repository creation, jobs and sandbox execution are defined in current source with destructiveHint: true and readOnlyHint: false . None appeared in our anonymous session or in the snapshot, but they are part of the server.",
+      "sourceId": "src-1",
+      "quoteSha256": "cf9917aa7e767d8108100f6f6439df26fe74480c7e007efe522e14aca7f70618"
+    },
+    {
+      "id": "c10",
+      "label": "FACT",
+      "text": "Paper2Agent, a method published in Nature, turns a paper and its code repository into a set of tested tools packaged as an MCP server.",
+      "check": "page",
+      "source": "https://www.digitalapplied.com/blog/paper2agent-nature-research-paper-to-mcp-agent",
+      "quote": "The output is an MCP server, not a chatbot. Each paper becomes a server of tools, resources and workflow prompts that any compatible agent can connect to.",
+      "sourceId": "src-2",
+      "quoteSha256": "8042c173efc9378f62389306e986a3ac0b86b9a4486e5411a21a3a5a0ec17ec8"
+    },
+    {
+      "id": "c11",
+      "label": "FACT",
+      "text": "The arXiv paper reports that from over 22,000 MCP-tagged GitHub repositories created within six months of release, fewer than 5% include servers.",
+      "check": "page",
+      "source": "https://arxiv.org/html/2507.16044v2",
+      "quote": "from over 22,000 MCP-tagged GitHub repositories created within six months of release, fewer than 5% include servers, typically small, single-maintainer projects dominated by repetitive scaffolding.",
+      "sourceId": "src-3",
+      "quoteSha256": "77fcf6a917755acfe92ca71393d171b9759434df246d719ccf7f5922fda6dbb2"
+    },
+    {
+      "id": "c12",
+      "label": "DERIVED",
+      "text": "The ten-tool directory snapshot and the four-tool anonymous handshake are different surfaces, so an agent should read the live tool list rather than rely on the directory count.",
+      "check": "page",
+      "inputs": [
+        "c3",
+        "c4"
+      ],
+      "math": "c3 states the snapshot lists ten tools and the list is per-user; c4 states the anonymous handshake returned four tools overlapping in one name. 10 ≠ 4 and only 1 name overlaps, so the two observed surfaces differ."
+    }
+  ],
+  "counts": {
+    "fact": 11,
+    "derived": 1,
+    "unknown": 0
+  },
+  "risks": [
+    "Gradio Space tools run third-party code, and the documentation describes no vetting step in that path (https://agentman.ai/agentskills/connections/mcp-server/hugging-face)",
+    "Space calls spend the caller's quota, with PRO stated as 40 minutes daily and no documented per-call ceiling or confirmation step (https://agentman.ai/agentskills/connections/mcp-server/hugging-face)",
+    "Gradio tool names are positional slot numbers in one user's list, so the same prefix points at different applications for different users (https://agentman.ai/agentskills/connections/mcp-server/hugging-face)",
+    "Space tools can break without notice: both Spaces named in the snapshot were in error states when checked (https://agentman.ai/agentskills/connections/mcp-server/hugging-face)",
+    "Write-capable tools (repository creation, jobs, sandbox execution) are defined in source even though they did not appear in the anonymous session or the snapshot (https://agentman.ai/agentskills/connections/mcp-server/hugging-face)"
+  ],
+  "unknowns": [],
+  "wouldChangeMind": [
+    "A documented vetting or review step for Gradio Spaces before they become MCP-addable",
+    "Evidence that Space calls are billed to the publisher or capped per call by the platform",
+    "A stable, user-independent naming scheme for Gradio Space tools"
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "Hugging Face MCP Server — Claude & AI Agents",
+      "url": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "finalUrl": "https://agentman.ai/agentskills/connections/mcp-server/hugging-face",
+      "status": 200,
+      "fetchedAt": "2026-11-17T05:08:04.222Z",
+      "extractor": "page-text-v1",
+      "sha256": "96f795c537434ef148dfe97dc565a0b5ff41757f3cbee1ed4a0bfdff4037635e",
+      "bytes": 215207,
+      "quote": "The Hugging Face MCP server connects Claude, ChatGPT or any MCP-compatible agent to the Hugging Face Hub — searching models, datasets, papers and documentation. It also carries Gradio Spaces: applications published by other Hub users that an agent can invoke.",
+      "quoteSha256": "e11bd2da685cfc988373fbe281694e809487a145f8395fa781092851c4c2c4cb"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Paper2Agent in Nature: Research Papers Become Working Tools",
+      "url": "https://www.digitalapplied.com/blog/paper2agent-nature-research-paper-to-mcp-agent",
+      "finalUrl": "https://www.digitalapplied.com/blog/paper2agent-nature-research-paper-to-mcp-agent",
+      "status": 200,
+      "fetchedAt": "2026-11-17T05:08:03.698Z",
+      "extractor": "page-text-v1",
+      "sha256": "8d323ab24fb359891ce45dcc7d338d5181b0277a1d513ca0d9154c41313a6847",
+      "bytes": 203809,
+      "quote": "The output is an MCP server, not a chatbot. Each paper becomes a server of tools, resources and workflow prompts that any compatible agent can connect to.",
+      "quoteSha256": "8042c173efc9378f62389306e986a3ac0b86b9a4486e5411a21a3a5a0ec17ec8"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "Making REST APIs Agent-Ready: From OpenAPI to Model Context Protocol Servers for Tool-Augmented LLMs",
+      "url": "https://arxiv.org/html/2507.16044v2",
+      "finalUrl": "https://arxiv.org/html/2507.16044v2",
+      "status": 200,
+      "fetchedAt": "2026-11-17T05:08:03.494Z",
+      "extractor": "page-text-v1",
+      "sha256": "dc5e8522c97a40ea498f2b6b3db4dba81b96b63ebd3c585d969c016c9b8eb63e",
+      "bytes": 308892,
+      "quote": "from over 22,000 MCP-tagged GitHub repositories created within six months of release, fewer than 5% include servers, typically small, single-maintainer projects dominated by repetitive scaffolding.",
+      "quoteSha256": "77fcf6a917755acfe92ca71393d171b9759434df246d719ccf7f5922fda6dbb2"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-17-hugging-face-mcp-server.md",
+  "decidedBy": "bee"
+}
