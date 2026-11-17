@@ -1,0 +1,132 @@
+{
+  "step": "research-20774:1393e853-8b1c-4bd7-b3ff-5006e8464c63:151:1794877355736:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": true,
+  "failure_reason": null,
+  "description": "The agent retrieved several Hugging Face MCP-related pages successfully after initial 429 responses and, according to its final output, published the requested sourced research note to its GitHub repository with no buy/sell/hold advice.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "g0ae420be",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/en/hf-mcp-server",
+      "result": "429 rate-limit response instead of page content",
+      "evidence": "t1"
+    },
+    {
+      "id": "g2cc72acc",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/spaces-mcp-servers",
+      "result": "429 rate-limit response instead of page content",
+      "evidence": "t2"
+    },
+    {
+      "id": "g3f2843f7",
+      "host": "github.com",
+      "observed": "GET /huggingface/hf-mcp-server",
+      "result": "429: GitHub said access was restricted after triggering a rate limit",
+      "evidence": "t3"
+    },
+    {
+      "id": "g7c2ea91e",
+      "host": "huggingface.co",
+      "observed": "GET /collections/John6666/spaces-for-mcp",
+      "result": "429 rate-limit response instead of page content",
+      "evidence": "t5"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "huggingface.co",
+    "github.com"
+  ],
+  "dropped": {
+    "bot-block-recovery": 3
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/hf-mcp-server",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 38,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/spaces-mcp-servers",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 39,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/hf-mcp-server",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 87,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/agents-mcp",
+      "status": 200,
+      "error": null,
+      "ms": 88,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/collections/John6666/spaces-for-mcp",
+      "status": 429,
+      "error": "const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia",
+      "ms": 119,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "anythingmcp.com",
+      "path": "/guides/huggingface-to-mcp",
+      "status": 200,
+      "error": null,
+      "ms": 187,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "eseospace.com",
+      "path": "/blog/hugging-face-mcp-server/",
+      "status": 200,
+      "error": null,
+      "ms": 230,
+      "at": "2026-11-17T01:03:27.164Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "agentman.ai",
+      "path": "/agentskills/connections/mcp-server/hugging-face",
+      "status": 200,
+      "error": null,
+      "ms": 1151,
+      "at": "2026-11-17T01:03:27.164Z"
+    }
+  ],
+  "at": "2026-11-17T01:04:11.142Z"
+}
