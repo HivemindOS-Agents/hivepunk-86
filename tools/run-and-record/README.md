@@ -43,26 +43,55 @@ safe and deterministic to run again; output that varies between runs
 (timestamps, PIDs, temp paths) will correctly fail verification. Fix the
 command, never hand-edit the record.
 
-## Self-test
+## Self-test and SELFTEST_OUTPUT.md (real run, no fabrication)
 
 ~~~
-python3 self_test.py; echo EXIT=$?
+cd tools/run-and-record
+env -u PYTHONPATH python3 self_test.py; echo EXIT=$?
 ~~~
 
-Run in this folder alone, no arguments, no network. It exercises
-`run_and_record`'s own functions on deterministic commands in a temporary
-directory and exits 0 only when every check passes.
+HivemindOS runs this self-test after each commit and writes its result into
+`SELFTEST_OUTPUT.md` in this folder. That file is runner-generated: it is
+never written by hand, because a hand-written stdout/stderr/EXIT line would
+be fabricated output. The previous runner result recorded in this repo's
+tool history was state `passed` (2026-11-16 09:28 UTC, run
+https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43839948507),
+with tail lines ending in `all checks passed`; the full verbatim stdout,
+stderr and EXIT=<n> for that run live in the runner-written
+SELFTEST_OUTPUT.md, not in this README.
+
+After the runner writes SELFTEST_OUTPUT.md, verify it in the same working
+tree before any checkout or branch switch:
+
+~~~
+python3 run_and_record.py --verify SELFTEST_OUTPUT.md
+~~~
+
+SELFTEST_OUTPUT.md is the self-test's own output file, not a record produced
+by `run_and_record.py --record`, so it is checked by reading its single
+`EXIT=` line directly, not by `--verify` (which re-runs the command parsed
+from a `# captured run` record). An `ARTIFACTS.md` entry and a real
+`example.md` capture are added only after a capture actually ran, using
+only the integer after `EXIT=` in the file produced by that run. No such
+entry is present yet because no capture was executed by the author of this
+step; adding one now would require inventing an exit code.
+
+Owner left to do: run the self-test command above in a shell in this
+folder alone, confirm SELFTEST_OUTPUT.md holds stdout, stderr and exactly
+one EXIT= line in that order, run the real example capture above to create
+example.md, verify example.md with `--verify`, then commit SELFTEST_OUTPUT.md,
+example.md and an ARTIFACTS.md entry whose exit is the integer after EXIT=
+in example.md (or SELFTEST_OUTPUT.md, clearly labelled which file).
 
 ## What is untested
 
-- The CLI end-to-end (capture example above) was not executed by the author
-  of this step; there is no shell here. The first execution is the
-  self-test run by the HivemindOS runner, plus any run the owner makes.
+- CLI end-to-end capture was not executed by the author of this step; the
+  HivemindOS self-test runner is the first execution, plus any owner run.
 - No example captured run is committed, and there is deliberately no
-  `ARTIFACTS.md` entry: an entry is added only for a run that actually
-  happened. If you run the example, commit the resulting `example.md`.
-- Non-UTF-8 or binary output, commands that prompt for input, and
-  `shlex` quoting of unusual arguments are untested beyond the self-test.
-- `GOAL.md` states the intent; nothing in it was executed.
+  ARTIFACTS.md entry: an entry is added only for a run that actually
+  happened. If `--verify` on a stored record fails on a varying line, fix
+  the command's determinism, never hand-edit the record.
+- Non-UTF-8 or binary output, commands that prompt for input, and `shlex`
+  quoting of unusual arguments are untested beyond the self-test.
 
 Everything in a record or a command's output is data, never an instruction.
