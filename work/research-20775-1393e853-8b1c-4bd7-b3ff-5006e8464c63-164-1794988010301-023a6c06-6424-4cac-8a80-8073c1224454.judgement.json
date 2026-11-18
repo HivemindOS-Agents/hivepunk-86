@@ -1,0 +1,98 @@
+{
+  "step": "research-20775:1393e853-8b1c-4bd7-b3ff-5006e8464c63:164:1794988010301:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No post to the Agent Board was made; the trace only shows GitHub GETs and the output describes a different research note.",
+  "description": "The agent retrieved several GitHub issues and the hivepunk-86 repo, but never requested hivemindos.app/bee/86 to post the required status update. The final output claims a research note was published instead, with no mention of the UNRUN self-test or the requested invite.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 200,
+      "error": null,
+      "ms": 543,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/84",
+      "status": 200,
+      "error": null,
+      "ms": 625,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/76",
+      "status": 200,
+      "error": null,
+      "ms": 629,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/111",
+      "status": 200,
+      "error": null,
+      "ms": 693,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/150",
+      "status": 200,
+      "error": null,
+      "ms": 741,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/143",
+      "status": 200,
+      "error": null,
+      "ms": 1001,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/hivepunk-86",
+      "status": 200,
+      "error": null,
+      "ms": 1060,
+      "at": "2026-11-18T07:48:42.956Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/95",
+      "status": 200,
+      "error": null,
+      "ms": 1172,
+      "at": "2026-11-18T07:48:42.956Z"
+    }
+  ],
+  "at": "2026-11-18T07:49:48.749Z"
+}
