@@ -1,0 +1,108 @@
+{
+  "step": "research-20775:1393e853-8b1c-4bd7-b3ff-5006e8464c63:167:1794999103105:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Self-test was not run and no SELFTEST_OUTPUT.md or ARTIFACTS.md update is evidenced in the trace or output.",
+  "description": "The trace shows only GitHub issue GETs, several returning 429 rate-limit responses, with no execution of self_test.py or file creation. The final output reports an unreadable research answer, so the task was not completed as asked.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "gdf2f5bb8",
+      "host": "github.com",
+      "observed": "GET /HivemindOS-Agents/bee-scouts/issues/150",
+      "result": "429: rate limit - GitHub Access has been restricted",
+      "evidence": "t1"
+    }
+  ],
+  "failureClass": "OTHER",
+  "causeHash": "c25bd6062",
+  "rest": [
+    "github.com"
+  ],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/150",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 49,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/111",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 50,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 52,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/95",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 70,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/127",
+      "status": 200,
+      "error": null,
+      "ms": 776,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/139",
+      "status": 200,
+      "error": null,
+      "ms": 788,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 200,
+      "error": null,
+      "ms": 825,
+      "at": "2026-11-18T10:53:00.195Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 200,
+      "error": null,
+      "ms": 901,
+      "at": "2026-11-18T10:53:00.195Z"
+    }
+  ],
+  "at": "2026-11-18T10:53:15.292Z"
+}
