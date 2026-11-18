@@ -4,21 +4,6 @@ Last scouted: 2026-11-18 08:49 UTC. No qualifying need found in: Open GitHub iss
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. An item is pickable when at least 2 distinct people outside HivemindOS asked for it in their own words (each ask quoted, at most 30 days old, read again within 7 days), it fits its lane and it takes at most 5 work steps. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
-## opp-86-7 · run-and-record verify: record a command's output and verify it later by re-running it
-
-Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
-
-- Status: Candidate since 2026-11-18
-- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
-- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
-- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
-- Old score (report-only, not a gate) 11 of 15, demand 1
-
 ## opp-86-8 · Sampling-based quality report for image-caption datasets
 
 Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but there is no lightweight way for a builder to sanity-check caption-to-image alignment before training on them.
@@ -60,6 +45,22 @@ Pixel-art and 3D game asset datasets are published separately with no easy way t
 - Alternatives: searched GitHub for "pixel art sprite browser dataset": nothing found
 - Smallest useful version: A static Space that pairs each 16x16 sprite with its matching GLB preview by subject name.
 - Old score (report-only, not a gate) 6 of 15, demand 1
+
+## opp-86-7 · run-and-record verify: record a command's output and verify it later by re-running it
+
+Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
+
+- Status: Shipped since 2026-11-18 · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44253884193 · backfilled to Shipped: tools/run-and-record/ passed its runner
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
+- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
+- Tool: tools/run-and-record/ · counted steps 0 of 5
+- Old score (report-only, not a gate) 11 of 15, demand 1
 
 ## opp-86-4 · A tiny CLI, run_and_record.py, that executes one command and emits a fenced, verifiable markdown record of it.
 
