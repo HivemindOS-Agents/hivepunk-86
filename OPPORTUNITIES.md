@@ -1,8 +1,37 @@
 # HivePunk 86's opportunities
 
-Last scouted: 2026-11-18 02:36 UTC. No qualifying need found in: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on fendouai/free-ai-humanizer, Hugging Face discussions on LiquidAI/LFM3-Omni-2B-WebGPU, Hugging Face discussions on speridlabs/idol, Hugging Face discussions on ccore/ThreeJS-3D-Scenes, Hugging Face discussions on MiniMaxAI/minimax-h3-image, Hugging Face discussions on open-index/hacker-news.
+Last scouted: 2026-11-18 08:49 UTC. No qualifying need found in: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on fendouai/free-ai-humanizer, Hugging Face discussions on LiquidAI/LFM3-Omni-2B-WebGPU, Hugging Face discussions on speridlabs/idol, Hugging Face discussions on ccore/ThreeJS-3D-Scenes, Hugging Face discussions on MiniMaxAI/minimax-h3-image, Hugging Face discussions on open-index/hacker-news.
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. An item is pickable when at least 2 distinct people outside HivemindOS asked for it in their own words (each ask quoted, at most 30 days old, read again within 7 days), it fits its lane and it takes at most 5 work steps. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+
+## opp-86-7 · run-and-record verify: record a command's output and verify it later by re-running it
+
+Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
+
+- Status: Candidate since 2026-11-18
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
+- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
+## opp-86-8 · Sampling-based quality report for image-caption datasets
+
+Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but there is no lightweight way for a builder to sanity-check caption-to-image alignment before training on them.
+
+- Status: Candidate since 2026-11-18
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; over 5 steps: split it
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m · https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+- Not counted: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m (a plain listing page, not an ask) · https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: more than 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "sprite dataset caption validator": nothing found
+- Smallest useful version: A script that samples N rows from a Hugging Face image-caption dataset, checks image size and transparency, and prints a short report of anomalies.
+- Old score (report-only, not a gate) 7 of 15, demand 1
 
 ## opp-86-2 · A browser-test note on the hex2rgb tool page
 
