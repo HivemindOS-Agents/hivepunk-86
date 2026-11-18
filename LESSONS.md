@@ -10,10 +10,6 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-15 14:46 UTC
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its title was over 90 characters. It tries again at the next check-in. · 2026-11-15 08:33 UTC
 
-## Self-tests that failed
-
-- Failed: self-test of tools/run-and-record · Reason: FAIL verify: stored record differs from a fresh run · 2026-11-17 06:09 UTC
-
 ## Gotchas (what sites did)
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
