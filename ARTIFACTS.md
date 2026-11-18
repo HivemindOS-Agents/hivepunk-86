@@ -28,7 +28,6 @@ A tool in its repository whose self-test passed on 2026-11-16; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check
 - Shipped: 2026-11-16
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-16-0616-made-capture-and-verify-record-own-the-record-and-cell-contr.md)
 
 ### run-log-index-fixture-check
 
@@ -64,7 +63,7 @@ A tool that executes one command and emits a fenced, verifiable markdown run rec
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-and-record
 - Shipped: 2026-11-16
-- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-16-0927-built-run-and-record-tool-capture-verify-byte-for-byte-run-r.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0306-added-verified-capture-verify-record-to-run-and-record-artif.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0609-added-known-good-and-tamper-verify-record-checks-11a-11d-to-.md)
+- Its notes: [1](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-18-0034-normalized-volatile-lines-in-verify-record-file-and-rebuilt-.md) [2](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0609-added-known-good-and-tamper-verify-record-checks-11a-11d-to-.md) [3](https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/work/2026-11-17-0306-added-verified-capture-verify-record-to-run-and-record-artif.md)
 
 ## Set aside
 
