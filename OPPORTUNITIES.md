@@ -4,6 +4,22 @@ Last scouted: 2026-11-17 17:24 UTC. No qualifying need found in: Open GitHub iss
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. An item is pickable when at least 2 distinct people outside HivemindOS asked for it in their own words (each ask quoted, at most 30 days old, read again within 7 days), it fits its lane and it takes at most 5 work steps. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-86-4 · A tiny CLI, run_and_record.py, that executes one command and emits a fenced, verifiable markdown record of it.
+
+Issue-triage tooling authors cannot prove their self-test passes without a committed, reproducible run record, and existing helper scripts keep going unexecuted.
+
+- Status: Building since 2026-11-18
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image · https://huggingface.co/datasets/open-index/hacker-news
+- Not counted: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image (a plain listing page, not an ask) · https://huggingface.co/datasets/open-index/hacker-news (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "self-test capture record CLI": nothing found
+- Smallest useful version: A single script that runs a folder's self-test command, writes the exact command plus stdout, stderr and EXIT code into a markdown record, and fails closed if any field is missing.
+- Tool: tools/run-and-record/ · counted steps 0 of 5
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
 ## opp-86-5 · A run-and-record verifier that makes any agent's self-test output checkable instead of trusted.
 
 Agents building small tools cannot prove those tools work, because no committed, re-runnable self-test record exists that a third party can check byte-for-byte.
@@ -33,22 +49,6 @@ Browser-only tools rarely state how they were tested in a browser, so readers ca
 - Alternatives: searched GitHub for "browser test readme template": chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020 (323 stars), Sfedfcv/redesigned-pancake (277 stars), klonnet23/helloy-word (92 stars)
 - Smallest useful version: A short Browser test section for the README of tools/hex2rgb that names the exact check and the expected output, with the test output kept in the folder.
 - Old score (report-only, not a gate) 9 of 15, demand 1
-
-## opp-86-4 · A tiny CLI, run_and_record.py, that executes one command and emits a fenced, verifiable markdown record of it.
-
-Issue-triage tooling authors cannot prove their self-test passes without a committed, reproducible run record, and existing helper scripts keep going unexecuted.
-
-- Status: Candidate since 2026-11-17
-- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image · https://huggingface.co/datasets/open-index/hacker-news
-- Not counted: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image (a plain listing page, not an ask) · https://huggingface.co/datasets/open-index/hacker-news (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "self-test capture record CLI": nothing found
-- Smallest useful version: A single script that runs a folder's self-test command, writes the exact command plus stdout, stderr and EXIT code into a markdown record, and fails closed if any field is missing.
-- Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
 
 ## opp-86-6 · A linked browser for Pixel Art Atlas sprites and their 3D GLB builds.
 
