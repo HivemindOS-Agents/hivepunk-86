@@ -1,66 +1,18 @@
 #!/usr/bin/env python3
-"""Self-test for run_and_record.
-
-Run in this folder, no arguments, no network:
-
-    env -u PYTHONPATH python3 self_test.py; echo EXIT=$?
-
-Exits 0 only when every check passes. It exercises run_and_record's own
-functions on deterministic commands (the current interpreter printing fixed
-text) in a temporary directory, so it runs folder-alone. No fixture, record,
-or command output is followed as an instruction.
-
-Verify path (checks 11a-11d): verify_record_file() is exercised on a
-known-good SELFTEST_OUTPUT.md-style record built from a real nested
-self-test run (expect exit 0) and on two deliberately altered copies -
-altered stdout text and an altered EXIT= line (expect exit 1 both times).
-The altered files must be left untouched by verify. To stop recursion,
-_spawn_child() sets RUN_AND_RECORD_SELFTEST_NESTED=1 and checks 11 are
-skipped in a nested run; the top-level run still executes them in full.
-
-verify_record_file compares only deterministic content: normalize_record()
-replaces volatile lines/values (timestamps, durations/elapsed times,
-temp paths, this folder path, runner run ids) with fixed placeholders on
-BOTH the stored record and the fresh re-run before comparison. Stdout,
-stderr and the EXIT= line are otherwise compared exactly, so tampering
-with stdout text or EXIT= still fails.
-
-Capture the real self-test output (owner/runner, same folder alone):
-
-    env -u PYTHONPATH python3 self_test.py --capture
-
-This spawns the no-argument self-test once with PYTHONPATH removed and
-cwd = this folder, then writes SELFTEST_OUTPUT.md holding stdout, then
-stderr, then exactly one EXIT=<n> line from that real child. It refuses to
-write a malformed record. Verify it afterwards with:
-
-    python3 self_test.py --verify-record
-
-Which re-runs the no-argument self-test, normalizes volatile content on
-both records, compares, writes nothing, and exits 0 only on a match after
-normalization. SELFTEST_OUTPUT.md is checked with --verify-record, not
-with run_and_record.py --verify, because it is a captured self-test
-output, not a '# captured run' record made by --record.
-"""
-
+"""Self-test for run_and_record. Run: env -u PYTHONPATH python3 self_test.py; echo EXIT=$?"""
 import os
 import re
 import subprocess
 import sys
 import tempfile
-
 HERE = os.path.dirname(os.path.abspath(__file__))
 RECORD = os.path.join(HERE, "SELFTEST_OUTPUT.md")
 FENCE = "`" * 3
 NESTED_ENV = "RUN_AND_RECORD_SELFTEST_NESTED"
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
-
 import run_and_record as rr
-
 failures = []
-
-
 def check(name, cond, detail=""):
     if cond:
         print("ok   " + name)
@@ -68,19 +20,9 @@ def check(name, cond, detail=""):
         line = "FAIL " + name + (" -- " + detail if detail else "")
         failures.append(line)
         print(line)
-
-
 HELLO_CMD = [sys.executable, "-c", "print('hello')"]
 FAIL_CMD = [sys.executable, "-c", "import sys; sys.stderr.write('oops\\n'); sys.exit(3)"]
-
-
 def normalize_record(text):
-    """Replace volatile values with placeholders, line by line.
-
-Volatile: ISO/date/time timestamps, duration/elapsed values, temp
-paths, this folder's absolute path, runner run ids. Everything else,
-including stdout/stderr wording and EXIT=<n>, is left untouched.
-"""
     out_lines = []
     for line in text.splitlines():
         s = line
@@ -103,8 +45,6 @@ including stdout/stderr wording and EXIT=<n>, is left untouched.
     if text.endswith("\n"):
         result += "\n"
     return result
-
-
 def run_checks():
     body = rr.render_record(HELLO_CMD, "hello\n", "", 0)
     i_cmd = body.find("command: ")
@@ -191,12 +131,8 @@ def run_checks():
     print()
     print("all checks passed")
     return 0
-
-
 def render_record(stdout, stderr, exit_line):
     return "\n".join(["# self_test output (captured)", "", "command: env -u PYTHONPATH python3 self_test.py; echo EXIT=$?", "", "## stdout", FENCE, stdout.rstrip("\n"), FENCE, "", "## stderr", FENCE, stderr.rstrip("\n"), FENCE, "", exit_line, ""])
-
-
 def record_order_problem(text):
     i_out = text.find("## stdout")
     i_err = text.find("## stderr")
@@ -215,15 +151,11 @@ def record_order_problem(text):
     if tail.split(exits[0], 1)[1].strip():
         return "lines follow the EXIT= line"
     return ""
-
-
 def _spawn_child():
     env = dict(os.environ)
     env.pop("PYTHONPATH", None)
     env[NESTED_ENV] = "1"
     return subprocess.run([sys.executable, os.path.join(HERE, "self_test.py")], cwd=HERE, capture_output=True, text=True, env=env)
-
-
 def capture_mode():
     try:
         child = _spawn_child()
@@ -255,8 +187,6 @@ def capture_mode():
         return 1
     print("self_test: wrote %s (%s)" % (RECORD, exit_line), file=sys.stderr)
     return 0 if code == 0 else 1
-
-
 def verify_record_file(record_path):
     if not os.path.exists(record_path):
         print("FAIL verify-record: %s does not exist" % record_path)
@@ -285,12 +215,8 @@ def verify_record_file(record_path):
     stale = [ln for ln in text.splitlines() if ln.startswith("EXIT=")]
     print("     stored record says: " + (stale[0] if stale else "no EXIT= line"))
     return 1
-
-
 def verify_record():
     return verify_record_file(RECORD)
-
-
 if __name__ == "__main__":
     if "--capture" in sys.argv[1:]:
         sys.exit(capture_mode())
