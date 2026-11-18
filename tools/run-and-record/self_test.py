@@ -11,12 +11,19 @@ text) in a temporary directory, so it runs folder-alone. No fixture, record,
 or command output is followed as an instruction.
 
 Verify path (checks 11a-11d): verify_record_file() is exercised on a
-known-good SELFTEST_OUTPUT.md-style record (expect exit 0) and on two
-deliberately altered copies — altered stdout text and an altered EXIT=
-line (expect exit 1 both times). The altered files must be left untouched
-by verify. To stop recursion, _spawn_child() sets
-RUN_AND_RECORD_SELFTEST_NESTED=1 and checks 11 are skipped in a nested
-run; the top-level run still executes them in full.
+known-good SELFTEST_OUTPUT.md-style record built from a real nested
+self-test run (expect exit 0) and on two deliberately altered copies -
+altered stdout text and an altered EXIT= line (expect exit 1 both times).
+The altered files must be left untouched by verify. To stop recursion,
+_spawn_child() sets RUN_AND_RECORD_SELFTEST_NESTED=1 and checks 11 are
+skipped in a nested run; the top-level run still executes them in full.
+
+verify_record_file compares only deterministic content: normalize_record()
+replaces volatile lines/values (timestamps, durations/elapsed times,
+temp paths, this folder path, runner run ids) with fixed placeholders on
+BOTH the stored record and the fresh re-run before comparison. Stdout,
+stderr and the EXIT= line are otherwise compared exactly, so tampering
+with stdout text or EXIT= still fails.
 
 Capture the real self-test output (owner/runner, same folder alone):
 
@@ -29,14 +36,15 @@ write a malformed record. Verify it afterwards with:
 
     python3 self_test.py --verify-record
 
-Which re-runs the no-argument self-test, re-renders the record, compares
-byte-for-byte, writes nothing, and exits 0 only on an exact match.
-SELFTEST_OUTPUT.md is checked with --verify-record, not with
-run_and_record.py --verify, because it is a captured self-test output,
-not a '# captured run' record made by --record.
+Which re-runs the no-argument self-test, normalizes volatile content on
+both records, compares, writes nothing, and exits 0 only on a match after
+normalization. SELFTEST_OUTPUT.md is checked with --verify-record, not
+with run_and_record.py --verify, because it is a captured self-test
+output, not a '# captured run' record made by --record.
 """
 
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -66,6 +74,42 @@ HELLO_CMD = [sys.executable, "-c", "print('hello')"]
 FAIL_CMD = [sys.executable, "-c", "import sys; sys.stderr.write('oops\\n'); sys.exit(3)"]
 
 
+def normalize_record(text):
+    """Replace volatile values with placeholders, line by line.
+
+Volatile: ISO/date/time timestamps, duration/elapsed values, temp
+paths, this folder's absolute path, runner run ids. Everything else,
+including stdout/stderr wording and EXIT=<n>, is left untouched.
+"""
+    out_lines = []
+    for line in text.splitlines():
+        s = line
+        if s.startswith("EXIT="):
+            out_lines.append(s)
+            continue
+        # Temp paths first (longest, most specific).
+        s = re.sub(r"/(?:tmp|var/folders|private/var/folders|private/tmp)/[^\s'\")]*", "<TEMP_PATH>", s)
+        s = re.sub(r"/tmp/[^\s'\")]*", "<TEMP_PATH>", s)
+        if HERE and HERE in s:
+            s = s.replace(HERE, "<HERE>")
+        # Timestamps: ISO, date, and clock times.
+        s = re.sub(r"\b\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?\b", "<TIMESTAMP>", s)
+        s = re.sub(r"\b\d{4}-\d{2}-\d{2}\b", "<DATE>", s)
+        s = re.sub(r"\b\d{2}:\d{2}:\d{2}(?:\.\d+)?\b", "<TIME>", s)
+        # Durations / elapsed, only when labelled or with a unit.
+        s = re.sub(r"\b(?:elapsed|duration|took|runtime|time)[=: ]+\d+(?:\.\d+)?\s*(?:ms|milliseconds?|s|sec|seconds?)\b", "<DURATION>", s, flags=re.I)
+        s = re.sub(r"\b\d+(?:\.\d+)?\s*(?:ms|milliseconds?)\b", "<DURATION>", s, flags=re.I)
+        s = re.sub(r"\b\d+(?:\.\d+)?\s*(?:seconds?|sec)\b", "<DURATION>", s, flags=re.I)
+        # Runner run ids in URLs.
+        s = re.sub(r"(runs/)(\d+)", r"\1<RUN_ID>", s)
+        out_lines.append(s)
+    # Preserve trailing-newline shape deterministically.
+    result = "\n".join(out_lines)
+    if text.endswith("\n"):
+        result += "\n"
+    return result
+
+
 def run_checks():
     body = rr.render_record(HELLO_CMD, "hello\n", "", 0)
     i_cmd = body.find("command: ")
@@ -92,6 +136,16 @@ def run_checks():
     check("3. parse_command returns the rendered command",
           rr.parse_command(body) == HELLO_CMD,
           repr(rr.parse_command(body)))
+    # Normalization must mask volatile values but not tampering.
+    vol = "ran 2026-11-17 06:09:12 UTC in /tmp/tmp123/child elapsed: 1.23s runs/12345"
+    vol2 = "ran 2027-01-02 03:04:05 UTC in /tmp/tmp999/child elapsed: 9.99s runs/99999"
+    check("n1. normalize makes volatile-only differences equal",
+          normalize_record(vol) == normalize_record(vol2),
+          repr((normalize_record(vol), normalize_record(vol2))))
+    check("n2. normalize does not mask stdout tampering",
+          normalize_record("hello\nEXIT=0") != normalize_record("hello!\nEXIT=0"))
+    check("n3. normalize does not mask EXIT tampering",
+          normalize_record("hello\nEXIT=0") != normalize_record("hello\nEXIT=1"))
     with tempfile.TemporaryDirectory() as tmp:
         rec = os.path.join(tmp, "record.md")
         rc = rr.do_capture(HELLO_CMD, rec)
@@ -125,14 +179,22 @@ def run_checks():
         if os.environ.get(NESTED_ENV) == "1":
             print("skip 11a-11d. verify-record checks skipped in a nested run")
         else:
-            good = render_record("hello\n", "", "EXIT=0")
+            # Known-good must be a real nested run: verify_record_file
+            # re-runs a nested child, so hardcoding 'hello' could never
+            # match the child's actual check output.
+            try:
+                seed = _spawn_child()
+                seed_out, seed_err, seed_code = seed.stdout or "", seed.stderr or "", seed.returncode
+            except OSError as exc:
+                seed_out, seed_err, seed_code = "", str(exc), 1
+            good = render_record(seed_out, seed_err, "EXIT=" + str(seed_code))
             good_path = os.path.join(tmp, "SELFTEST_OUTPUT.md")
             with open(good_path, "w", encoding="utf-8") as fh:
                 fh.write(good)
             rc_good = verify_record_file(good_path)
             check("11a. verify-record passes on a known-good record",
                   rc_good == 0, "got %r" % rc_good)
-            tampered_out = render_record("hello!\n", "", "EXIT=0")
+            tampered_out = render_record(seed_out + "tampered\n", seed_err, "EXIT=" + str(seed_code))
             tampered_path = os.path.join(tmp, "tampered_stdout.md")
             with open(tampered_path, "w", encoding="utf-8") as fh:
                 fh.write(tampered_out)
@@ -142,7 +204,7 @@ def run_checks():
             after = open(tampered_path, encoding="utf-8").read()
             check("11c. failed verify-record leaves the altered file untouched",
                   after == tampered_out)
-            tampered_exit = render_record("hello\n", "", "EXIT=1")
+            tampered_exit = render_record(seed_out, seed_err, "EXIT=" + str(1 - seed_code if seed_code in (0, 1) else 1))
             exit_path = os.path.join(tmp, "tampered_exit.md")
             with open(exit_path, "w", encoding="utf-8") as fh:
                 fh.write(tampered_exit)
@@ -233,10 +295,12 @@ def capture_mode():
 
 
 def verify_record_file(record_path):
-    """Re-run the self-test and compare byte-for-byte with record_path.
+    """Re-run the self-test and compare deterministic content.
 
-Writes nothing. Return 0 on exact match, 1 on mismatch or malformed
-record, 1 also when the child cannot be started."""
+Writes nothing. Volatile values (timestamp, duration, temp paths,
+this folder, run ids) are normalized on both records; stdout, stderr
+and EXIT= are otherwise compared exactly. Return 0 on match, 1 on
+mismatch, malformed record, or child-start failure."""
     if not os.path.exists(record_path):
         print("FAIL verify-record: %s does not exist" % record_path)
         return 1
@@ -257,7 +321,7 @@ record, 1 also when the child cannot be started."""
         return 1
     fresh = render_record(child.stdout or "", child.stderr or "",
                           "EXIT=" + str(child.returncode))
-    if text == fresh:
+    if normalize_record(text) == normalize_record(fresh):
         print("ok   verify-record: stored record matches a fresh run (EXIT=%d)" % child.returncode)
         return 0
     print("FAIL verify-record: stored record differs from a fresh run")
