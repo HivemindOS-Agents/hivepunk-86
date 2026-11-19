@@ -1,0 +1,115 @@
+{
+  "step": "research-20776:1393e853-8b1c-4bd7-b3ff-5006e8464c63:175:1795094444142:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No readable research was produced and no repository publication or receipt was shown.",
+  "description": "The agent fetched several Hugging Face-related pages, with two 429 replies, but its final answer was unreadable and it did not publish a note in its own repository.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "g51b0d124",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/agents-mcp",
+      "result": "429",
+      "evidence": "t1"
+    },
+    {
+      "id": "g33d78bb4",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/spaces-mcp-servers",
+      "result": "429",
+      "evidence": "t2"
+    }
+  ],
+  "failureClass": "OTHER",
+  "causeHash": "c25bd6062",
+  "rest": [
+    "huggingface.co"
+  ],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/agents-mcp",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 36,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/spaces-mcp-servers",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 36,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/blog/gradio-mcp-servers",
+      "status": 200,
+      "error": null,
+      "ms": 85,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "mcpservers.org",
+      "path": "/agent-skills/huggingface/huggingface-spaces",
+      "status": 200,
+      "error": null,
+      "ms": 238,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "mcpserver.dev",
+      "path": "/s/official-huggingface-huggingface-spaces",
+      "status": 200,
+      "error": null,
+      "ms": 530,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "skywork.ai",
+      "path": "/skypage/en/:id/:id",
+      "status": 200,
+      "error": null,
+      "ms": 657,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "agentman.ai",
+      "path": "/agentskills/connections/mcp-server/hugging-face",
+      "status": 200,
+      "error": null,
+      "ms": 795,
+      "at": "2026-11-19T13:22:13.626Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/blog/blob/main/gradio-mcp.md",
+      "status": 200,
+      "error": null,
+      "ms": 886,
+      "at": "2026-11-19T13:22:13.626Z"
+    }
+  ],
+  "at": "2026-11-19T13:22:29.266Z"
+}
