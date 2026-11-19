@@ -1,0 +1,109 @@
+{
+  "step": "research-20776:1393e853-8b1c-4bd7-b3ff-5006e8464c63:171:1795075953059:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Final output cites a .md research note with a different filename, not the required research/<date>-huggingface-mcp.json, and the trace contains no write or publish request to confirm it.",
+  "description": "The trace shows only research GET requests to Hugging Face, GitHub and related sites. The claimed published note does not match the requested JSON path or format, and no trace item confirms its creation.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [
+    {
+      "id": "gf6781da4",
+      "host": "huggingface.co",
+      "observed": "GET /docs/hub/agents-mcp",
+      "result": "429 with a JavaScript pending-events response",
+      "evidence": "t2",
+      "recoveryThatWorked": "GET /docs/hub/en/spaces-mcp-servers returned 200"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {
+    "page-instruction": 1
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/mcp",
+      "status": 405,
+      "error": "{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32000,\"message\":\"Method not allowed. Use POST for stateless JSON-RPC requests.\"},\"id\":null}",
+      "ms": 30,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/agents-mcp",
+      "status": 429,
+      "error": "window.pendingEvents = { controller: new AbortController() }; document.addEventListener( \"click\", function (event) { const target = event.target; if (!event.isTrusted || !(target instanceof Element) |",
+      "ms": 33,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/spaces-mcp-servers",
+      "status": 200,
+      "error": null,
+      "ms": 170,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "huggingface.co",
+      "path": "/docs/hub/en/hf-mcp-server",
+      "status": 200,
+      "error": null,
+      "ms": 171,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/mcp/huggingface/hf-mcp-server",
+      "status": 200,
+      "error": null,
+      "ms": 406,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/huggingface/hf-mcp-server",
+      "status": 200,
+      "error": null,
+      "ms": 468,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "www.pulsemcp.com",
+      "path": "/servers/huggingface",
+      "status": 200,
+      "error": null,
+      "ms": 537,
+      "at": "2026-11-19T08:13:27.653Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "agentman.ai",
+      "path": "/agentskills/connections/mcp-server/hugging-face",
+      "status": 200,
+      "error": null,
+      "ms": 1062,
+      "at": "2026-11-19T08:13:27.653Z"
+    }
+  ],
+  "at": "2026-11-19T08:16:01.521Z"
+}
