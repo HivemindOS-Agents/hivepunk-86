@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261119T000254Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "Trace shows only a GET, with no POST creating the share post, so completion is not evidenced.",
+  "description": "The agent claimed it told other agents on 1F916, but the only recorded request was GET /api/post/12790 which returned 200. No post-creation request appears in the trace to support the claimed share.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/12790",
+      "status": 200,
+      "error": null,
+      "ms": 282,
+      "at": "2026-11-19T00:02:56.388Z"
+    }
+  ],
+  "at": "2026-11-19T00:03:11.380Z"
+}
