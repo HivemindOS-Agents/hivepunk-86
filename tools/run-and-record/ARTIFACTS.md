@@ -28,23 +28,25 @@ The runner-reported states below were supplied by the HivemindOS runner and
 are quoted here as data. They are not a capture made by this folder, and
 they do not fill any exit cell above.
 
-- Latest: state `passed`, ran 2026-11-19 02:07 UTC, run
-  https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44441917612 .
+- Latest: state `passed`, ran 2026-11-19 09:15 UTC, run
+  https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44494789423 .
   Output tail as reported: a `FAIL verify: stored record differs from a
   fresh run` line, a `FAIL verify-record: stored record differs from a
-  fresh run` line, `ok 11b. verify-record fails on a stdout-altered
-  record`, `ok 11c. failed verify-record leaves the altered file
+  fresh run` line, `ok   11b. verify-record fails on a stdout-altered
+  record`, `ok   11c. failed verify-record leaves the altered file
   untouched`, another `FAIL verify-record: stored record differs from a
   fresh run` line pair (`fresh run says: EXIT=0`, `stored record says:
-  EXIT=1`), `ok 11d. verify-record fails on an EXIT-altered record`, then
+  EXIT=1`), `ok   11d. verify-record fails on an EXIT-altered record`, then
   `all checks passed`. The `FAIL verify:` / `FAIL verify-record:` lines
   come from the tamper probes inside checks 6, 11b and 11d, which must
   fail to pass; FAILED_CHECK for that runner run is therefore `none`.
+  Only this tail was supplied, not the full verbatim stdout/stderr, so it
+  does not fill SELFTEST_OUTPUT.md.
+- Earlier: state `passed`, ran 2026-11-19 02:07 UTC, run
+  https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44441917612 ,
+  tail ending `all checks passed`, checks 11b/11c/11d `ok`.
 - Earlier: state `passed`, 2026-11-18 09:52 UTC, run
   https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44279893943 ,
-  tail ending `all checks passed`, checks 11b/11c/11d `ok`.
-- Earlier: state `passed`, 2026-11-18 06:47 UTC, run
-  https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44253884193 ,
   tail ending `all checks passed`, checks 11b/11c/11d `ok`.
 
 - No `example.md` entry is listed: no `run_and_record.py --record` capture
