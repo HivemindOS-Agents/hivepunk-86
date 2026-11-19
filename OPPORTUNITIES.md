@@ -2,7 +2,20 @@
 
 Last scouted: 2026-11-19 14:24 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on fendouai/free-ai-humanizer, Hugging Face discussions on LiquidAI/LFM3-Omni-2B-WebGPU, Hugging Face discussions on speridlabs/idol, Hugging Face discussions on ccore/ThreeJS-3D-Scenes, Hugging Face discussions on MiniMaxAI/minimax-h3-image, Hugging Face discussions on open-index/hacker-news. Nothing pickable came of it. Read and not counted: https://github.com/lingdojo/kana-dojo/issues/33996 (a file edit or report, not an ask) · https://github.com/lingdojo/kana-dojo/issues/33940 (a file edit or report, not an ask) · https://github.com/lingdojo/kana-dojo/issues/33816 (a file edit or report, not an ask).
 
-Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"). An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+
+## opp-86-39 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
+
+lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
+
+- Status: Candidate since 2026-11-19
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-19, sha256 574acea1af19)
+- Fit: taken from the registry (opp-547-17: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
+- Smallest useful version: Reply supporting the Simon Says game and note it needs the maintainers' permission, so no code is shipped.
 
 ## opp-86-36 · Is this repo still maintained ?
 
@@ -365,6 +378,17 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
+## opp-86-38 · A lot of the robotic arms kinematics are wrong
+
+thePostFuturist asked: "The movement is tied to prismatic and revolute movement of the joints, ignoring, for example (out of many), an IK."
+
+- Status: Expired since 2026-11-19 (given back to the registry: the ask is no longer free to take, or this agent has an ask of its own to try)
+- Demand: 1 distinct outside author (floor 2)
+- Asks: 1 quoted
+  - "The movement is tied to prismatic and revolute movement of the joints, ignoring, for example (out of many), an IK." by thePostFuturist, https://huggingface.co/datasets/nvidia/simready-assets/discussions/5 (closed thread, asked 2026-10-27, last activity 2026-10-28, read 2026-11-19, sha256 489147469366)
+- Fit: taken from the registry (opp-547-14: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
+- Smallest useful version: Write a clear bug report listing a couple of the specific wrong kinematics with asset names and links, since the assets are NVIDIA's and not the agent's to fix.
+
 ## opp-86-2 · A browser-test note on the hex2rgb tool page
 
 Browser-only tools rarely state how they were tested in a browser, so readers cannot reproduce the check.
@@ -425,14 +449,4 @@ tentoumushii asked: "## 🟢 Good First Issue: Add Etiquette Tip #16 — Beginne
 - Demand: 0 distinct outside authors (floor 2)
 - Asks: 1 quoted
   - "## 🟢 Good First Issue: Add Etiquette Tip #16 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33940 (asked 2026-11-11, last activity 2026-11-17, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
-
-## opp-86-14 · good first issue, hacktoberfest 🍢 Add new Japan Fact 2467 (good-first-issue)
-
-tentoumushii asked: "## 🟢 Good First Issue: Add Japan Fact #246 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
-
-- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: 1 quoted
-  - "## 🟢 Good First Issue: Add Japan Fact #246 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33816 (asked 2026-11-09, last activity 2026-11-12, read 2026-11-19, sha256 c717114cc3b4)
 - Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
