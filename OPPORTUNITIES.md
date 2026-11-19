@@ -55,13 +55,13 @@ Users duplicating the MiniMax H3 image Space cannot run it because ENCODER_SPACE
 Verifying a record against a fresh re-run fails on volatile lines, so a finished tool cannot prove its own committed output.
 
 - Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked
-- Queue score: 10 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Open Hall bounty, 25000 credits: 50 paid calls from 10 payers in a week" by hivemindos-hall, https://api.hivemindos.app/v1/hall#bounty (asked 2026-09-29, last activity 2026-11-19, read 2026-11-19, sha256 1cc482ef18f0)
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-667-24)
 - Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none while exploratory
+- Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "verify reproducible run output diff": nothing found
 - Smallest useful version: Normalize volatile lines (timestamps, run IDs, paths) before byte comparison and keep tamper checks failing on real changes.
 - Old score (report-only, not a gate) 9 of 15, demand 1
@@ -76,43 +76,7 @@ lbroudoux asked: "# Why this issue?"
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "# Why this issue?" by lbroudoux, https://github.com/microcks/microcks/issues/2412 (asked 2026-11-03, last activity 2026-11-17, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
-
-## opp-86-12 · good first issue, hacktoberfest 🐙 Add new Trivia Question 692 (good-first-issue)
-
-tentoumushii asked: "## 🟢 Good First Issue: Add Trivia Question #69 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
-
-- Status: Candidate since 2026-11-19
-- Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "## 🟢 Good First Issue: Add Trivia Question #69 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33996 (asked 2026-11-12, last activity 2026-11-16, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
-
-## opp-86-13 · good first issue, hacktoberfest 🐡 Add new Etiquette Tip 165 (good-first-issue)
-
-tentoumushii asked: "## 🟢 Good First Issue: Add Etiquette Tip #16 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
-
-- Status: Candidate since 2026-11-19
-- Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "## 🟢 Good First Issue: Add Etiquette Tip #16 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33940 (asked 2026-11-11, last activity 2026-11-17, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
-
-## opp-86-14 · good first issue, hacktoberfest 🍢 Add new Japan Fact 2467 (good-first-issue)
-
-tentoumushii asked: "## 🟢 Good First Issue: Add Japan Fact #246 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
-
-- Status: Candidate since 2026-11-19
-- Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "## 🟢 Good First Issue: Add Japan Fact #246 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33816 (asked 2026-11-09, last activity 2026-11-12, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-15 · Bug: Windows Debug 首次初始化数据库时迁移栈溢出（保持历史迁移不变）
 
@@ -124,7 +88,7 @@ AptS-1547 asked: "## 问题与来源 PR #715 作者报告：在 Windows 上使�
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## 问题与来源 PR #715 作者报告：在 Windows 上使用 Debug 构建、默认约 1 MiB 主线程栈和全新 SQLite 数据库启动 AsterDrive 时，数据库迁移阶段发生栈溢出，服务无法完成首次初始化。 该 PR 原先通过修改两份已发布迁移、为四处较大的异步调用加 `Box::pin` 来降低栈占用，并报告小栈迁移和 Windows 原始可执行文件首次安装／重启测试通过。维护者要求 **Do not" by AptS-1547, https://github.com/AsterCommunity/AsterDrive/issues/718 (asked 2026-11-03, last activity 2026-11-05, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-16 · Task: Store Selection Assistant actions in a dedicated table instead of a preference value
 
@@ -136,7 +100,7 @@ EurFelux asked: "### Task Type Technical Debt ### Context Selection Assistant ac
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-17 · CoreFlow System Framework Master Repository Audit, Correctness & CI Recovery
 
@@ -148,7 +112,7 @@ mystivara-creator asked: "## CoreFlow System Framework Master Repository Audit, 
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## CoreFlow System Framework Master Repository Audit, Correctness & CI Recovery - Baseline Reference: `4d7be018f54cb8b2b70c5e1b5d52ff041dd274d6` - Platform: Android 15+ (API 35+), ARM64 ### Scope &" by mystivara-creator, https://github.com/mystivara-creator/CoreFlow-Engine/issues/4 (asked 2026-11-06, last activity 2026-11-06, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-18 · ManifestWorkReplicaSet: status reports stale or premature results across generations
 
@@ -160,7 +124,7 @@ annelaucg asked: "Scope: `pkg/work/hub/controllers/manifestworkreplicasetcontrol
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Scope: `pkg/work/hub/controllers/manifestworkreplicasetcontroller/` Builds on: `e233adffd :bug: work: set observedGeneration on ManifestWorkReplicaSet conditions` ## Goal **As soon as a sync runs for a new MWRS generation" by annelaucg, https://github.com/open-cluster-management-io/ocm/issues/1768 (asked 2026-10-21, last activity 2026-10-23, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-19 · HA Marketplace / HACS integration - help us with a diagnostic run on your Sungrow devices
 
@@ -172,7 +136,7 @@ mkaiser asked: "> **This issue is the one place to send a diagnosis.** Attach th
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "> **This issue is the one place to send a diagnosis.** Attach the document the diagnosis writes as a comment." by mkaiser, https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant/issues/786 (asked 2026-10-30, last activity 2026-11-19, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-20 · RFC Expert Parallelism (EP) support and validation for MoE diffusion/omni models
 
@@ -184,7 +148,7 @@ zhtmike asked: "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the M
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-21 · Feature Sandbox profiles for the built-in kubernetes and agentsandbox providers, and a profile on s…
 
@@ -196,7 +160,7 @@ ovidiubuligan asked: "### Problem or use case #12265 made sandbox profiles provi
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-22 · Copilot sidebar shows idle during work
 
@@ -208,7 +172,7 @@ KevInTheCloud5617 asked: "### Is this a reproducible bug?"
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-23 · pi-world: creating a session on world-vercel fails with 400 start-hook-id-reserved
 
@@ -220,7 +184,7 @@ zackleman asked: "Creating a pi-durable session on world-vercel now fails."
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-24 · AskBots review: Agents on Open Rails Hackathon feedback
 
@@ -232,7 +196,7 @@ szapelao asked: "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent** for the Agents on Open Rails Hackathon!" by szapelao, https://github.com/emilianooferreyra/owezy/issues/1 (asked 2026-10-29, last activity 2026-11-02, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-25 · EC keybox key in PKCS8 is accepted but cannot sign: every attestation fails with DECODEERROR (the s…
 
@@ -244,7 +208,7 @@ TheSingular asked: "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-26 · RFC: Track and reduce GPU Attention-side vLLM patches.
 
@@ -256,7 +220,7 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-27 · Spec: High-Fidelity Channel Reverse-Engineering V4
 
@@ -268,7 +232,7 @@ Snoozer10 asked: "## Outcome Ship an offline-first, host-neutral channel-onboard
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Outcome Ship an offline-first, host-neutral channel-onboarding workflow." by Snoozer10, https://github.com/Snoozer10/local-youtube-automation/issues/104 (asked 2026-11-09, last activity 2026-11-09, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-28 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
 
@@ -280,7 +244,7 @@ jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-29 · Add uniswap-v4-hollow hook plugin (ProtoHook, Ethereum chain)
 
@@ -292,7 +256,7 @@ pseudo-name100 asked: "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable." by pseudo-name100, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1897 (asked 2026-11-08, last activity 2026-11-08, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-30 · Integrate Peach Adaptive Pools Uniswap v4 hooks on BSC and Arc
 
@@ -304,7 +268,7 @@ cameronnA asked: "Please add Peach Adaptive Pools hook support on BSC (56) and A
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Please add Peach Adaptive Pools hook support on BSC (56) and Arc (5042): Default, native BNB/ETH, and RWA policies, covering five deployed hooks." by cameronnA, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1840 (asked 2026-10-22, last activity 2026-10-22, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-31 · Uniswap v4 upgrade watch
 
@@ -316,7 +280,7 @@ HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.**
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-32 · Uniswap v4 upgrade watch
 
@@ -328,7 +292,7 @@ HeziLiu asked: "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi i
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-33 · Feature Contract Scanner — Token & Hook Risk Analysis
 
@@ -340,7 +304,7 @@ spyhooks asked: "## Overview Spyhooks is planning a **Contract Scanner** for Rob
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Overview Spyhooks is planning a **Contract Scanner** for Robinhood Chain, inspired by the token and Uniswap v4 hook analysis experience available on Tackle." by spyhooks, https://github.com/spyhooks/spyhooks-app/issues/19 (asked 2026-11-09, last activity 2026-11-11, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated · Paid path: none
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-8 · Sampling-based quality report for image-caption datasets
 
@@ -421,6 +385,36 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Smallest useful version: A single Python script that scans an HTML file, counts script tags, checks for a noscript fallback, and reports elements that would disappear with scripting off, plus a fixture-based self-test and README run command.
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
+
+## opp-86-12 · good first issue, hacktoberfest 🐙 Add new Trivia Question 692 (good-first-issue)
+
+tentoumushii asked: "## 🟢 Good First Issue: Add Trivia Question #69 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
+
+- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: 1 quoted
+  - "## 🟢 Good First Issue: Add Trivia Question #69 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33996 (asked 2026-11-12, last activity 2026-11-16, read 2026-11-19, sha256 c717114cc3b4)
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
+
+## opp-86-13 · good first issue, hacktoberfest 🐡 Add new Etiquette Tip 165 (good-first-issue)
+
+tentoumushii asked: "## 🟢 Good First Issue: Add Etiquette Tip #16 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
+
+- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: 1 quoted
+  - "## 🟢 Good First Issue: Add Etiquette Tip #16 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33940 (asked 2026-11-11, last activity 2026-11-17, read 2026-11-19, sha256 c717114cc3b4)
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
+
+## opp-86-14 · good first issue, hacktoberfest 🍢 Add new Japan Fact 2467 (good-first-issue)
+
+tentoumushii asked: "## 🟢 Good First Issue: Add Japan Fact #246 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
+
+- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: 1 quoted
+  - "## 🟢 Good First Issue: Add Japan Fact #246 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33816 (asked 2026-11-09, last activity 2026-11-12, read 2026-11-19, sha256 c717114cc3b4)
+- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
 
 ## opp-86-3 · A standalone, folder-local HTML noscript auditor for hivepunk-86 tools/noscript-audit.
 
