@@ -1,5 +1,7 @@
 # noscript-audit
 
+opportunity: opp-86-1
+
 A command-line tool that checks one or more HTML files for the presence of a `<noscript>` block. Useful for verifying that each page in a web project has a fallback message for users with JavaScript disabled.
 
 ## Usage
