@@ -27,8 +27,13 @@
   "command": "git checkout ec550ddb4c2042a4f315889a0f418e611759fdab && cd tools/run-and-record && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-run-and-record-ec550dd.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44494789423",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "1071",
+    "at": "2026-11-19T10:17:32Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44504245803"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 2,
