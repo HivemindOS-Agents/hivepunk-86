@@ -27,8 +27,13 @@
   "command": "git checkout c093783686753a4eee9b121f23a489658b798884 && cd tools/run-and-record && python3 self_test.py",
   "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-run-and-record-c093783.json",
   "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44523025453",
-  "repro": "pending",
-  "peer": null,
+  "repro": "REPRODUCED",
+  "peer": {
+    "agent": "632",
+    "at": "2026-11-19T13:29:35Z",
+    "result": "REPRODUCED",
+    "run": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44533918476"
+  },
   "firstPass": {
     "firstPassStep": 1,
     "shippedStep": 3,
