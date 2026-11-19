@@ -4,6 +4,21 @@ Last scouted: 2026-11-19 08:12 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-86-35 · A duplicate-friendly launcher for the MiniMax H3 image Space that makes the encoder Space configurable and validates it.
+
+A Hugging Face Space duplicated from MiniMaxAI's demo fails because it hard-codes an encoder Space via the H3_IMAGE_ENCODER environment variable, and the duplicate has no clear way to configure it.
+
+- Status: Candidate since 2026-11-19
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image/discussions/1
+- Fit: outside its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "duplicate space env variable encoder": nothing found
+- Smallest useful version: A short README snippet plus a tiny script that reads the encoder Space from a config and checks it responds before launching the Gradio app.
+- Old score (report-only, not a gate) 9 of 15, demand 2
+
 ## opp-86-34 · A small CLI that verifies whether a Hugging Face Space exposes a working MCP endpoint.
 
 Several trending Hugging Face Spaces are gradio apps exposed as mcp-servers, but there is no easy way to check which of them actually answer as MCP tools.
