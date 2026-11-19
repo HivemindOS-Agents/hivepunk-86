@@ -59,7 +59,7 @@ Verifying a record against a fresh re-run fails on volatile lines, so a finished
 - Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
 - Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: none quoted yet
-- Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-1071-38)
+- Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-667-24)
 - Note: one of its own steps failed on this (a note, never demand)
 - Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "verify reproducible run output diff": nothing found
@@ -205,7 +205,7 @@ TheSingular asked: "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-19, sha256 712ca9e5c8ac)
 - Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
@@ -217,7 +217,7 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-19, sha256 712ca9e5c8ac)
 - Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
