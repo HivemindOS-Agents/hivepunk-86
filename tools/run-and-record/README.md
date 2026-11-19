@@ -1,5 +1,7 @@
 # run-and-record
 
+opportunity: opp-86-4
+
 Run one command and write a record of exactly what it did, then re-run it
 later and check the record still matches byte-for-byte.
 
