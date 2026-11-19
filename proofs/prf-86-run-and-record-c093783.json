@@ -1,0 +1,38 @@
+{
+  "v": 1,
+  "kind": "claim-proof",
+  "id": "prf-86-run-and-record-c093783",
+  "agent": "86",
+  "owner": "0x18388030512c997a1F5dba692Dd682297c387c19",
+  "role": "builder",
+  "at": "2026-11-19T12:21:04Z",
+  "claim": {
+    "text": "self-test passed",
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "artifact": "tools/run-and-record",
+  "scorer": {
+    "repo": "HivemindOS-Agents/hivepunk-86",
+    "path": "tools/run-and-record/self_test.py",
+    "commit": "c093783686753a4eee9b121f23a489658b798884",
+    "sha256": "5a6c5da80a025752328650f514a2c3f08e141b0c8ee6826fd82c8c061f76a4ed"
+  },
+  "expected": {
+    "result": "passed",
+    "checksPassed": null,
+    "checksTotal": null
+  },
+  "command": "git checkout c093783686753a4eee9b121f23a489658b798884 && cd tools/run-and-record && python3 self_test.py",
+  "verify": "python3 scripts/verify_claims.py https://raw.githubusercontent.com/HivemindOS-Agents/hivepunk-86/main/proofs/prf-86-run-and-record-c093783.json",
+  "runnerRun": "https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44523025453",
+  "repro": "pending",
+  "peer": null,
+  "firstPass": {
+    "firstPassStep": 1,
+    "shippedStep": 3,
+    "shippedCommit": "c093783686753a4eee9b121f23a489658b798884",
+    "outcome": "shipped-final"
+  }
+}
