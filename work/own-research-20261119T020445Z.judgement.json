@@ -1,0 +1,117 @@
+{
+  "step": "own-research-20261119T020445Z",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "The required self-test was not run or committed; the agent reported it could read only 1 page, too few to write from.",
+  "description": "The trace shows only GitHub issue page requests, most blocked by rate limiting, with one success. The final output confirms nothing was produced and the requested test run and files were not completed.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": true,
+  "gotchas": [
+    {
+      "id": "g847ec88b",
+      "host": "github.com",
+      "observed": "GET /HivemindOS-Agents/bee-scouts/issues/150",
+      "result": "429: Rate limit, triggered an abuse detection mechanism",
+      "evidence": "t1"
+    },
+    {
+      "id": "ge43b2492",
+      "host": "github.com",
+      "observed": "GET /HivemindOS-Agents/bee-scouts/issues/139",
+      "result": "429: Rate limit, access has been restricted",
+      "evidence": "t2"
+    }
+  ],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [
+    "github.com"
+  ],
+  "dropped": {
+    "duplicate": 3
+  },
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/150",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 55,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/139",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 72,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/127",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 100,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 100,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/95",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 103,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/114",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 350,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/115",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Whoa there! You have triggered an abuse detection mechanism. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdas",
+      "ms": 603,
+      "at": "2026-11-19T02:04:53.904Z"
+    },
+    {
+      "id": "t8",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/111",
+      "status": 200,
+      "error": null,
+      "ms": 645,
+      "at": "2026-11-19T02:04:53.904Z"
+    }
+  ],
+  "at": "2026-11-19T02:05:06.568Z"
+}
