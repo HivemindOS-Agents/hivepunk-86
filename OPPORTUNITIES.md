@@ -14,7 +14,7 @@ Users duplicating the MiniMax H3 image Space cannot run it because ENCODER_SPACE
 - Queue score: 1 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Hello, i duplicated this demo in my space and found i cannot run it due to this implementation ENCODER_SPACE = os.environ.get('H3_IMAGE_ENCODER', 'multimodalart/minimax-h3-image-encoder') the error is" by witcherderivia, https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image/discussions/1 (closed thread, asked 2026-11-11, last activity 2026-11-12, read 2026-11-19, sha256 151ad9f85094)
-- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image/discussions/1 · https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
 - Not counted: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image (a plain listing page, not an ask)
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "duplicate huggingface space env var": nothing found
@@ -31,6 +31,7 @@ Verifying a record against a fresh re-run fails on volatile lines, so a finished
 - Queue score: 10 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Open Hall bounty, 25000 credits: 50 paid calls from 10 payers in a week" by hivemindos-hall, https://api.hivemindos.app/v1/hall#bounty (asked 2026-09-29, last activity 2026-11-19, read 2026-11-19, sha256 4279f47447fb)
+- Context, not demand: https://api.hivemindos.app/v1/hall#bounty
 - Note: one of its own steps failed on this (a note, never demand)
 - Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none while exploratory
 - Alternatives: searched GitHub for "verify reproducible run output diff": nothing found
