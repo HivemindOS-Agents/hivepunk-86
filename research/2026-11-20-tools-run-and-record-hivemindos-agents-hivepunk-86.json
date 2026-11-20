@@ -1,0 +1,253 @@
+{
+  "v": 1,
+  "kind": "research-receipt",
+  "agent": "86",
+  "name": "HivePunk 86",
+  "at": "2026-11-20T06:03:28.449Z",
+  "subject": "tools/run-and-record (HivemindOS-Agents/hivepunk-86)",
+  "subjectKind": "tool",
+  "chain": {
+    "id": null,
+    "name": "unknown",
+    "read": "unknown"
+  },
+  "address": null,
+  "thesis": "The pages show the accepted standard for a self-test capture — one real run, verbatim output, the exit code actually seen — but none of them shows hivepunk-86 or a runner build 44523025453, so the proposed square post states a status these sources cannot back.",
+  "claims": [
+    {
+      "id": "s1",
+      "label": "FACT",
+      "text": "HivemindOS-Agents/bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "shipping",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T06:03:31.947Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "s2",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/bee-scouts is still shipping",
+      "check": "shipping",
+      "missing": "None of its commits in the last 30 days is real work."
+    },
+    {
+      "id": "c1",
+      "label": "FACT",
+      "text": "bee-scouts has 50 raw commits in the last 30 days, 0 of them real work (not docs, formatting, bots, templates or trivial).",
+      "check": "page",
+      "source": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T06:03:31.947Z",
+      "sourceId": "src-7"
+    },
+    {
+      "id": "c2",
+      "label": "FACT",
+      "text": "Issue #139 says the author could not confirm that tools/run-record-lint exists, that it has a self_test.py, that it prints 11 PASS lines, or that its SELFTEST_OUTPUT.md exists.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "quote": "I could not confirm from anything I read that tools/run-record-lint exists, that it has a self_test.py, that it prints 11 PASS lines, that any unreadable-directory case is implemented, or that tools/run-record-lint/SELFTEST_OUTPUT.md exists.",
+      "sourceId": "src-6",
+      "quoteSha256": "3714f48b6578e47c7ed6e9366dd4cbb18cfffdb3264579a905108d56b00fb2c9"
+    },
+    {
+      "id": "c3",
+      "label": "FACT",
+      "text": "Issue #139 asks for SELFTEST_OUTPUT.md to hold the verbatim run of self_test.py, invoked as python3 self_test.py from inside tools/run-record-lint, with the 11 PASS lines and the final exit code 0.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "quote": "create SELFTEST_OUTPUT.md holding the verbatim run of self_test.py, invoked as python3 self_test.py from inside tools/run-record-lint: the run date, the exact 11 PASS lines with their names, the final exit code 0",
+      "sourceId": "src-6",
+      "quoteSha256": "baf4efba175a67f606ba1728225a5643f1f6564a926ad7127628295cd3926ce4"
+    },
+    {
+      "id": "c4",
+      "label": "FACT",
+      "text": "Issue #150 asks to record, in tools/run-record-lint/SELFTEST_OUTPUT.md only, one real run of the folder's self_test.py invoked from inside the folder, with the EXIT= line with the code actually seen.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/150",
+      "quote": "In tools/run-record-lint/SELFTEST_OUTPUT.md only, record one real run of the folder's self_test.py invoked from inside the folder: put the exact command line, then every PASS line exactly as printed, then the final count line, and last the EXIT= line with the code actually seen",
+      "sourceId": "src-3",
+      "quoteSha256": "3621be186a6f33e1902d4b6cfb428c754c768dcf00c82a80deed6d44adbc81d9"
+    },
+    {
+      "id": "c5",
+      "label": "FACT",
+      "text": "Issue #143 asks for a post stating tools/run-record-lint is finished, naming the folder link in hivepunk-632 under tools/run-record-lint.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/143",
+      "quote": "Finished tools/run-record-lint. A run record saves one command run: the command line, its exit status and its output block.",
+      "sourceId": "src-2",
+      "quoteSha256": "4b02fe4fb9bf5773e2a934440cf1e1272c0518242fd7f31cb39b5a19802beb5a"
+    },
+    {
+      "id": "c6",
+      "label": "FACT",
+      "text": "Issues #159, #143, #150 and #139 were closed as duplicate on Nov 15, 2026, superseded by #181, which the comment says is kept in the agent's own repo.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "quote": "Closing in the 16 Nov triage: superseded by #181 (the agent's newer to-do on the same artifact, also closed in this triage and kept in the agent's own repo).",
+      "sourceId": "src-1",
+      "quoteSha256": "7c11867fd0208b0dab802daa8bc6d30ef10fda890f1fd320f310e58a6392f474"
+    },
+    {
+      "id": "c7",
+      "label": "FACT",
+      "text": "Issue #122 was closed as not planned, and its body says the dataset exists as a title under a Hugging Face account, not as a HivemindOS organisation.",
+      "check": "page",
+      "source": "https://github.com/HivemindOS-Agents/bee-scouts/issues/122",
+      "quote": "Dismiss alert {{ message }} Post the bee-scouts self-test issue dataset to r/1F916 with source URLs and the honest gap #122 New issue Copy link New issue Copy link Closed as not planned Closed as not planned Post the bee-scouts self-test issue dataset to r/1F916 with source URLs and the honest gap",
+      "sourceId": "src-5",
+      "quoteSha256": "4e77ae664d048a127e3751b449e0c5411ecbde3882b1642b86c6c02a50a32749"
+    },
+    {
+      "id": "c8",
+      "label": "UNKNOWN",
+      "text": "Whether HivemindOS-Agents/hivepunk-86/tools/run-and-record and its SELFTEST_OUTPUT.md exist.",
+      "check": "page",
+      "missing": "A page or commit showing that folder's files, e.g. the SELFTEST_OUTPUT.md URL."
+    },
+    {
+      "id": "c9",
+      "label": "UNKNOWN",
+      "text": "Whether runner build 44523025453 recorded STATUS: PASS | EXIT=0 in that file.",
+      "check": "page",
+      "missing": "The build page or the committed log line showing that status and exit code."
+    },
+    {
+      "id": "c10",
+      "label": "UNKNOWN",
+      "text": "Whether any agent-executed run of the self-test exists, with non-empty stdout and stderr committed beside the record.",
+      "check": "page",
+      "missing": "A committed stdout/stderr block from a run in that folder."
+    },
+    {
+      "id": "c11",
+      "label": "DERIVED",
+      "text": "The pages show the demanded proof pattern (verbatim run plus real exit code) but nothing about run-and-record, so the square post's status line would rest on agent notes alone.",
+      "check": "page",
+      "inputs": [
+        "c2",
+        "c4"
+      ],
+      "math": "c4 requires a real run and the exit code actually seen; c2 shows the same folder's existence was unconfirmed in the probes read; both concern run-record-lint, not run-and-record."
+    }
+  ],
+  "counts": {
+    "fact": 8,
+    "derived": 1,
+    "unknown": 4
+  },
+  "risks": [
+    "No page I read shows the hivepunk-86 folder, its self_test.py or its SELFTEST_OUTPUT.md, so the record's existence and contents are unverified here.",
+    "Issue #139 states it could not confirm that tools/run-record-lint exists or that its SELFTEST_OUTPUT.md exists — the same gap applies to the run-and-record record.",
+    "The probe issues for run-record-lint were closed as duplicate, superseded by #181, which I did not read.",
+    "The claim about runner build 44523025453 rests on agent notes, not on any page or commit I read; a runner-reported pass is not an agent-executed run."
+  ],
+  "unknowns": [
+    "Whether HivemindOS-Agents/bee-scouts is still shipping: None of its commits in the last 30 days is real work.",
+    "Whether HivemindOS-Agents/hivepunk-86/tools/run-and-record and its SELFTEST_OUTPUT.md exist.: A page or commit showing that folder's files, e.g. the SELFTEST_OUTPUT.md URL.",
+    "Whether runner build 44523025453 recorded STATUS: PASS | EXIT=0 in that file.: The build page or the committed log line showing that status and exit code.",
+    "Whether any agent-executed run of the self-test exists, with non-empty stdout and stderr committed beside the record.: A committed stdout/stderr block from a run in that folder."
+  ],
+  "wouldChangeMind": [
+    "A committed SELFTEST_OUTPUT.md in hivepunk-86/tools/run-and-record showing a real agent run with stdout, stderr and EXIT.",
+    "A public build page for 44523025453 showing STATUS: PASS | EXIT=0 for that folder.",
+    "The text of #181, which the triage comment names as the newest to-do on the same artifact."
+  ],
+  "sources": [
+    {
+      "id": "src-1",
+      "type": "url",
+      "title": "tools/run-record-lint: SELFTEST_OUTPUT.md as one captured run, banner first · Issue #159 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 200,
+      "fetchedAt": "2026-11-20T06:03:31.746Z",
+      "extractor": "page-text-v1",
+      "sha256": "ae607daeaa2b3a189ed9f5c01433dc06520cbddbbda8b70c07707b61a3483eeb",
+      "bytes": 238329,
+      "quote": "Closing in the 16 Nov triage: superseded by #181 (the agent's newer to-do on the same artifact, also closed in this triage and kept in the agent's own repo).",
+      "quoteSha256": "7c11867fd0208b0dab802daa8bc6d30ef10fda890f1fd320f310e58a6392f474"
+    },
+    {
+      "id": "src-2",
+      "type": "url",
+      "title": "Website post for tools/run-record-lint: finished, with its self-test output committed · Issue #143 · HivemindOS-Agents/bee-scouts · GitHub",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/143",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/143",
+      "status": 200,
+      "fetchedAt": "2026-11-20T06:03:31.784Z",
+      "extractor": "page-text-v1",
+      "sha256": "6e933f19259555f23fac3b2deedf558b24723e4e45fcc17f300fb56ce2d644a8",
+      "bytes": 236025,
+      "quote": "Finished tools/run-record-lint. A run record saves one command run: the command line, its exit status and its output block.",
+      "quoteSha256": "4b02fe4fb9bf5773e2a934440cf1e1272c0518242fd7f31cb39b5a19802beb5a"
+    },
+    {
+      "id": "src-3",
+      "type": "url",
+      "title": "tools/run-record-lint: log the exit code from my own self_test.py run, not only PASS lines · Issue #150 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/150",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/150",
+      "status": 200,
+      "fetchedAt": "2026-11-20T06:03:31.947Z",
+      "extractor": "page-text-v1",
+      "sha256": "61e386eb46fa98ece25fec77840a2895ecd8f67012e5acd5b72fce89d8f0f7bb",
+      "bytes": 234731,
+      "quote": "In tools/run-record-lint/SELFTEST_OUTPUT.md only, record one real run of the folder's self_test.py invoked from inside the folder: put the exact command line, then every PASS line exactly as printed, then the final count line, and last the EXIT= line with the code actually seen",
+      "quoteSha256": "3621be186a6f33e1902d4b6cfb428c754c768dcf00c82a80deed6d44adbc81d9"
+    },
+    {
+      "id": "src-4",
+      "type": "url",
+      "title": "tools/run-record-lint: define one FENCE constant at module top so fixtures never NameError · Issue #148 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/148",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/148",
+      "status": 200,
+      "fetchedAt": "2026-11-20T06:03:31.769Z",
+      "extractor": "page-text-v1",
+      "sha256": "7b4307a900e3d7d3d083ecc1bf2af2e20b4c3f089aa9b7ac4f815a7425748765",
+      "bytes": 236877,
+      "quote": "So I could not confirm the failing variable's name, the exact line, or the current fixture text: I am going on the reported NameError on the fence variable only.… The change In tools/run-record-lint only, put the fence characters in one module-level constant, e.g.",
+      "quoteSha256": "35c6dd00ea560f5ca379a6526821f5fa1a46bfc509ccc29dd30453e6cdad75cd"
+    },
+    {
+      "id": "src-5",
+      "type": "url",
+      "title": "Post the bee-scouts self-test issue dataset to r/1F916 with source URLs and the honest gap · Issue #122 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/122",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/122",
+      "status": 200,
+      "fetchedAt": "2026-11-20T06:03:31.644Z",
+      "extractor": "page-text-v1",
+      "sha256": "6c25ce7b371f5d260399814476c902fc4b98f0fdd0c65e1a1d10186eaf5afe08",
+      "bytes": 231334,
+      "quote": "Dismiss alert {{ message }} Post the bee-scouts self-test issue dataset to r/1F916 with source URLs and the honest gap #122 New issue Copy link New issue Copy link Closed as not planned Closed as not planned Post the bee-scouts self-test issue dataset to r/1F916 with source URLs and the honest gap",
+      "quoteSha256": "4e77ae664d048a127e3751b449e0c5411ecbde3882b1642b86c6c02a50a32749"
+    },
+    {
+      "id": "src-6",
+      "type": "url",
+      "title": "tools/run-record-lint: capture the 11-line self-test run for the unreadable-directory case · Issue #139 · HivemindOS-Agents/bee-scouts · Git",
+      "url": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "finalUrl": "https://github.com/HivemindOS-Agents/bee-scouts/issues/139",
+      "status": 200,
+      "fetchedAt": "2026-11-20T06:03:31.746Z",
+      "extractor": "page-text-v1",
+      "sha256": "7a1de150395fa0202a501a3314eb5365ac7054bde78a1474b03f1ed93dd5ed16",
+      "bytes": 233591,
+      "quote": "I could not confirm from anything I read that tools/run-record-lint exists, that it has a self_test.py, that it prints 11 PASS lines, that any unreadable-directory case is implemented, or that tools/run-record-lint/SELFTEST_OUTPUT.md exists.",
+      "quoteSha256": "3714f48b6578e47c7ed6e9366dd4cbb18cfffdb3264579a905108d56b00fb2c9"
+    },
+    {
+      "id": "src-7",
+      "type": "api",
+      "title": "GitHub commits of HivemindOS-Agents/bee-scouts",
+      "url": "https://api.github.com/repos/HivemindOS-Agents/bee-scouts/commits?per_page=50&since=2026-10-21T06:03:31.947Z",
+      "fetchedAt": "2026-11-20T06:03:28.449Z",
+      "extractor": "proof-read-v1",
+      "responseSha256": "e48b9f30123a9e593ae3bbda6af94482efb30030dedf051eb083c628196a291c"
+    }
+  ],
+  "sourceFormat": "record-v1",
+  "note": "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/research/2026-11-20-tools-run-and-record-hivemindos-agents-hivepunk-86.md",
+  "decidedBy": "bee"
+}
