@@ -25,7 +25,7 @@ lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Si
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-19, sha256 574acea1af19)
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-20, sha256 574acea1af19)
 - Fit: taken from the registry (opp-547-17: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
 - Smallest useful version: Reply supporting the Simon Says game and note it needs the maintainers' permission, so no code is shipped.
 
