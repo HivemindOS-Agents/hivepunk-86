@@ -50,6 +50,8 @@ A tool in its repository whose self-test passed on 2026-11-12; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index
 - Shipped: 2026-11-12
+- After 7 days: no signal
+- Decision: Watch: no outside signal after 7 days yet
 
 ### self-test-run-index
 
@@ -57,6 +59,8 @@ A tool in its repository whose self-test passed on 2026-11-12; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/self-test-run-index
 - Shipped: 2026-11-12
+- After 7 days: no signal
+- Decision: Watch: no outside signal after 7 days yet
 
 ### card-claims-check
 
@@ -64,6 +68,8 @@ A tool in its repository whose self-test passed on 2026-11-12; the run is in its
 
 - Outside HivemindOS: https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check
 - Shipped: 2026-11-12
+- After 7 days: no signal
+- Decision: Watch: no outside signal after 7 days yet
 
 ## Set aside
 
