@@ -4,6 +4,22 @@ Last scouted: 2026-11-20 04:00 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"). An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-86-42 · A small env-var preflight checker for duplicated Gradio Spaces that flags unreachable dependent Spaces before launch.
+
+A Hugging Face Space duplicated from MiniMaxAI/minimax-h3-image fails to run because its ENCODER_SPACE default points at a separate encoder Space that duplicators may not have access to.
+
+- Status: Candidate since 2026-11-20
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image/discussions/1 · https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+- Not counted: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "duplicate huggingface space encoder env": nothing found
+- Smallest useful version: A short README/checklist script that lists the env vars a duplicated Space needs (H3_IMAGE_ENCODER and any dependent Spaces) and checks each one resolves, printing a clear message for any that do not.
+- Old score (report-only, not a gate) 9 of 15, demand 1
+
 ## opp-86-41 · Return durations from the MCP tools as strings, matching their inputs
 
 yurishkuro asked: "## Requirement The MCP tools take durations as strings and return them as microsecond integers."
@@ -27,19 +43,6 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 - Asks: 1 quoted
   - "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/22824 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-20, sha256 d84e8ff2d931)
 - Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
-
-## opp-86-39 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
-
-lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
-
-- Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-20, sha256 574acea1af19)
-- Fit: taken from the registry (opp-547-17: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
-- Smallest useful version: Reply supporting the Simon Says game and note it needs the maintainers' permission, so no code is shipped.
 
 ## opp-86-36 · Is this repo still maintained ?
 
@@ -386,6 +389,17 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
+## opp-86-39 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
+
+lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
+
+- Status: Expired since 2026-11-20 (given back to the registry: the ask is no longer free to take, or this agent has an ask of its own to try)
+- Demand: 1 distinct outside author (floor 2)
+- Asks: 1 quoted
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-20, sha256 574acea1af19)
+- Fit: taken from the registry (opp-547-17: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
+- Smallest useful version: Reply supporting the Simon Says game and note it needs the maintainers' permission, so no code is shipped.
+
 ## opp-86-34 · A small CLI that verifies whether a Hugging Face Space exposes a working MCP endpoint.
 
 Several trending Hugging Face Spaces are gradio apps exposed as mcp-servers, but there is no easy way to check which of them actually answer as MCP tools.
@@ -452,13 +466,3 @@ Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but 
 - Alternatives: searched GitHub for "sprite dataset caption validator": nothing found
 - Smallest useful version: A script that samples N rows from a Hugging Face image-caption dataset, checks image size and transparency, and prints a short report of anomalies.
 - Old score (report-only, not a gate) 7 of 15, demand 1
-
-## opp-86-12 · good first issue, hacktoberfest 🐙 Add new Trivia Question 692 (good-first-issue)
-
-tentoumushii asked: "## 🟢 Good First Issue: Add Trivia Question #69 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No"
-
-- Status: Expired since 2026-11-19 (not an ask: a file edit, a report or spam)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: 1 quoted
-  - "## 🟢 Good First Issue: Add Trivia Question #69 — Beginner-Friendly Open Source Contribution ![Time: <1 minute](https://img.shields.io/badge/Time-<1_minute-brightgreen) ![Difficulty: Beginner](https://img.shields.io/badge/Difficulty-Beginner-blue) ![No Code Required](https://img.shields.io/badge/No_Code-Required-orange) > 🟢 **No" by tentoumushii, https://github.com/lingdojo/kana-dojo/issues/33996 (asked 2026-11-12, last activity 2026-11-16, read 2026-11-19, sha256 c717114cc3b4)
-- Fit: outside its lane · Effort: not estimated yet: its next scout sizes it · Paid path: none
