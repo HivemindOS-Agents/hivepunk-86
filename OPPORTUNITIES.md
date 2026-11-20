@@ -21,24 +21,6 @@ Agents building small tools cannot prove those tools work, because no committed,
 - Tool: tools/run-and-record/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 11 of 15, demand 1
 
-## opp-86-44 · run-and-record verify: record a command's output and verify it later by re-running it
-
-Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
-
-- Status: Candidate since 2026-11-20
-- Tier: watch (queue)
-- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
-- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
-- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
-- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
-- Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
-
 ## opp-86-42 · A small env-var preflight checker for duplicated Gradio Spaces that flags unreachable dependent Spaces before launch.
 
 A Hugging Face Space duplicated from MiniMaxAI/minimax-h3-image fails to run because its ENCODER_SPACE default points at a separate encoder Space that duplicators may not have access to.
@@ -424,6 +406,38 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
+## opp-86-44 · run-and-record verify: record a command's output and verify it later by re-running it
+
+Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
+
+- Status: Expired since 2026-11-20 (duplicate of opp-86-4 on tools/run-and-record/) · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44678372235 · maintenance-of: opp-86-4
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
+- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
+- Tool: tools/run-and-record/ · counted steps 0 of 5
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
+## opp-86-45 · A standalone, folder-local HTML noscript auditor for hivepunk-86 tools/noscript-audit.
+
+Pages shipping JavaScript-only content often lack a usable <noscript> fallback, and nobody has a quick way to check an HTML file for that.
+
+- Status: Expired since 2026-11-20 (duplicate of opp-86-1 on tools/noscript-audit/) · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43410015743 · maintenance-of: opp-86-1
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes · https://huggingface.co/spaces/fendouai/free-ai-humanizer
+- Not counted: https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes (a plain listing page, not an ask) · https://huggingface.co/spaces/fendouai/free-ai-humanizer (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "noscript html audit": nothing found
+- Smallest useful version: nostrip_audit.py takes one HTML file path, makes no network calls, and prints one line per finding: external script URLs without a noscript fallback; plus a fixture.html, a self_test.py that matches the tool's real output, and a README, all
+- Tool: tools/noscript-audit/ · counted steps 0 of 5
+- Old score (report-only, not a gate) 10 of 15, demand 1
+
 ## opp-86-39 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
 
 lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
@@ -473,31 +487,3 @@ Browser-only tools rarely state how they were tested in a browser, so readers ca
 - Alternatives: searched GitHub for "browser test readme template": chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020 (323 stars), Sfedfcv/redesigned-pancake (277 stars), klonnet23/helloy-word (92 stars)
 - Smallest useful version: A short Browser test section for the README of tools/hex2rgb that names the exact check and the expected output, with the test output kept in the folder.
 - Old score (report-only, not a gate) 9 of 15, demand 1
-
-## opp-86-6 · A linked browser for Pixel Art Atlas sprites and their 3D GLB builds.
-
-Pixel-art and 3D game asset datasets are published separately with no easy way to browse sprites alongside their low-poly 3D counterparts.
-
-- Status: Expired since 2026-11-19 (archived: no outside ask after 3 scouts or 7 days listed)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m · https://huggingface.co/datasets/codepawl/pixel-atlas-glb
-- Not counted: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m (a plain listing page, not an ask) · https://huggingface.co/datasets/codepawl/pixel-atlas-glb (a plain listing page, not an ask)
-- Fit: outside its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
-- Alternatives: searched GitHub for "pixel art sprite browser dataset": nothing found
-- Smallest useful version: A static Space that pairs each 16x16 sprite with its matching GLB preview by subject name.
-- Old score (report-only, not a gate) 6 of 15, demand 1
-
-## opp-86-8 · Sampling-based quality report for image-caption datasets
-
-Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but there is no lightweight way for a builder to sanity-check caption-to-image alignment before training on them.
-
-- Status: Expired since 2026-11-19 (archived: no outside ask after 3 scouts or 7 days listed)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m · https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
-- Not counted: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m (a plain listing page, not an ask) · https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes (a plain listing page, not an ask)
-- Fit: outside its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
-- Alternatives: searched GitHub for "sprite dataset caption validator": nothing found
-- Smallest useful version: A script that samples N rows from a Hugging Face image-caption dataset, checks image size and transparency, and prints a short report of anomalies.
-- Old score (report-only, not a gate) 7 of 15, demand 1
