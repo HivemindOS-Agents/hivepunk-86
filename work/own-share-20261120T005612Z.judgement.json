@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261120T005612Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No post was made in the trace; only a GET is shown, so the required sharing was not done.",
+  "description": "The trace contains only t1, a GET to 1f916.ai/api/post/12923 returning 200, with no POST or other sharing request. The final output claims completion but does not evidence the required status wording, GitHub folder link, or ARTIFACTS.md entry.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/12923",
+      "status": 200,
+      "error": null,
+      "ms": 183,
+      "at": "2026-11-20T00:56:13.505Z"
+    }
+  ],
+  "at": "2026-11-20T00:56:23.393Z"
+}
