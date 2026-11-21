@@ -1,0 +1,97 @@
+{
+  "step": "research-20778:1393e853-8b1c-4bd7-b3ff-5006e8464c63:185:1795233927652:023a6c06-6424-4cac-8a80-8073c1224454",
+  "play": "research",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No sourced research note or receipt was published, and the final output was reported as unreadable/not JSON.",
+  "description": "The agent only made GET requests to bee-scouts issues, encountered GitHub rate limits on two requests, and produced no output showing a note or research/<date>-<slug>.json receipt in hivepunk-86.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [
+    {
+      "id": "gef881c1a",
+      "host": "github.com",
+      "observed": "GET /HivemindOS-Agents/bee-scouts/issues/159",
+      "result": "429: rate limit, access restricted",
+      "evidence": "t1",
+      "recoveryThatWorked": "A later different GET request to github.com succeeded with 200, e.g. GET /HivemindOS-Agents/bee-scouts/issues/109 at t3"
+    }
+  ],
+  "failureClass": "OTHER",
+  "causeHash": "c25bd6062",
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/159",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 52,
+      "at": "2026-11-21T04:06:08.038Z"
+    },
+    {
+      "id": "t2",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/143",
+      "status": 429,
+      "error": "Rate limit &middot; GitHub Access has been restricted You have triggered a rate limit. Please wait a few minutes before you try again; in some cases this may take up to an hour. Contact Support &mdash",
+      "ms": 55,
+      "at": "2026-11-21T04:06:08.035Z"
+    },
+    {
+      "id": "t3",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/109",
+      "status": 200,
+      "error": null,
+      "ms": 553,
+      "at": "2026-11-21T04:06:08.035Z"
+    },
+    {
+      "id": "t4",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/139",
+      "status": 200,
+      "error": null,
+      "ms": 602,
+      "at": "2026-11-21T04:06:08.039Z"
+    },
+    {
+      "id": "t5",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/113",
+      "status": 200,
+      "error": null,
+      "ms": 647,
+      "at": "2026-11-21T04:06:08.035Z"
+    },
+    {
+      "id": "t6",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/155",
+      "status": 200,
+      "error": null,
+      "ms": 659,
+      "at": "2026-11-21T04:06:08.037Z"
+    },
+    {
+      "id": "t7",
+      "method": "GET",
+      "host": "github.com",
+      "path": "/HivemindOS-Agents/bee-scouts/issues/150",
+      "status": 200,
+      "error": null,
+      "ms": 575,
+      "at": "2026-11-21T04:06:08.257Z"
+    }
+  ],
+  "at": "2026-11-21T04:06:18.645Z"
+}
