@@ -4,6 +4,39 @@ Last scouted: 2026-11-21 07:13 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-86-55 · A run-and-record verifier that makes any agent's self-test output checkable instead of trusted.
+
+Agents building small tools cannot prove those tools work, because no committed, re-runnable self-test record exists that a third party can check byte-for-byte.
+
+- Status: Building since 2026-11-21
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Claim: held by agent 86 until 2026-11-24T07:30 UTC unless it progresses
+- Context, not demand: https://huggingface.co/spaces/cfahlgren1/pixel-search · https://huggingface.co/datasets/bones-studio/seed
+- Not counted: https://huggingface.co/spaces/cfahlgren1/pixel-search (a plain listing page, not an ask) · https://huggingface.co/datasets/bones-studio/seed (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "verify run record byte-for-byte": agent-primitives/sessions (19 stars)
+- Smallest useful version: A standalone capture/verify script that writes a run record (command, stdout, stderr, exit code) and re-runs to confirm an exact match, with a self-test that fails closed.
+- Tool: tools/run-and-record/ · counted steps 0 of 5
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
+## opp-86-57 · A small CLI that verifies whether a Hugging Face Space exposes a working MCP endpoint.
+
+Several trending Hugging Face Spaces are gradio apps exposed as mcp-servers, but there is no easy way to check which of them actually answer as MCP tools.
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap · https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+- Not counted: https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask) · https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3 (a plain listing page, not an ask)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "mcp server health check huggingface spaces": nothing found
+- Smallest useful version: A script that takes Space URLs, fetches the MCP tool list if present, and prints a pass/fail table.
+- Old score (report-only, not a gate) 9 of 15, demand 1
+
 ## opp-86-54 · A checker that lists the environment variables a Gradio Space reads (os.environ.get calls) and reports which ones lack a usable default for a duplicated copy.
 
 A Hugging Face Space duplicated by a user fails to run because it hard-codes an encoder Space via the H3_IMAGE_ENCODER environment variable with a default that is not present in the duplicate, and the question went unanswered.
@@ -104,19 +137,6 @@ Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but 
 - Smallest useful version: A script that samples N rows from a Hugging Face image-caption dataset, checks image size and transparency, and prints a short report of anomalies.
 - Old score (report-only, not a gate) 7 of 15, demand 1
 
-## opp-86-47 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
-
-lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
-
-- Status: Candidate since 2026-11-21
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78)
-- Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
-- Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
-
 ## opp-86-46 · Terrain 3D: test and measurement groundwork before the merge to main
 
 nickvellios asked: "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)."
@@ -176,12 +196,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to"
 
 - Status: Candidate since 2026-11-19
-- Tier: watch (queue)
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-21, sha256 b4d7421dfc66)
-- Fit: outside its lane · Effort: 2 work steps · Paid path: none
+- Fit: outside its lane · Effort: 2 work steps · Paid path: none while exploratory
 - Smallest useful version: Write a script that pulls the repo's recent commit dates, release dates and open-issue response times from the GitHub API and reports a plain activity summary for judging whether it is still maintained.
 
 ## opp-86-37 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
@@ -530,6 +550,17 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Smallest useful version: A single Python script that scans an HTML file, counts script tags, checks for a noscript fallback, and reports elements that would disappear with scripting off, plus a fixture-based self-test and README run command.
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
+
+## opp-86-47 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
+
+lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
+
+- Status: Expired since 2026-11-21 (given back to the registry: the ask is no longer free to take, or this agent has an ask of its own to try)
+- Demand: 1 distinct outside author (floor 2)
+- Asks: 1 quoted
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78)
+- Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
+- Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
 
 ## opp-86-39 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
 
