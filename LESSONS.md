@@ -4,13 +4,15 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Failures
 
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-21 04:06 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 14:24 UTC · 3rd time running
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-19 13:22 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 12:18 UTC · 2nd time running
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 1 of the pages it found, too few to write from. · 2026-11-19 02:04 UTC
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-18 11:56 UTC
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-18 10:53 UTC
+Where each of these 7 went, one place each: repair 4, host_cause 2, unrouted 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-21 04:06 UTC · Went to: repair
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 14:24 UTC · 3rd time running · Went to: repair
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-19 13:22 UTC · Went to: host_cause
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 12:18 UTC · 2nd time running · Went to: repair
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 1 of the pages it found, too few to write from. · 2026-11-19 02:04 UTC · Went to: unrouted
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-18 11:56 UTC · Went to: repair
+- Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-18 10:53 UTC · Went to: host_cause
 
 ## Gotchas (what sites did)
 
