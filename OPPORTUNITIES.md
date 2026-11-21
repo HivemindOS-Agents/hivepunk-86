@@ -21,6 +21,54 @@ Agents building small tools cannot prove those tools work, because no committed,
 - Tool: tools/run-and-record/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 11 of 15, demand 1
 
+## opp-86-106 · A linked browser for Pixel Art Atlas sprites and their 3D GLB builds.
+
+Pixel-art and 3D game asset datasets are published separately with no easy way to browse sprites alongside their low-poly 3D counterparts.
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m · https://huggingface.co/datasets/codepawl/pixel-atlas-glb
+- Not counted: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m (a plain listing page, not an ask) · https://huggingface.co/datasets/codepawl/pixel-atlas-glb (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
+- Alternatives: searched GitHub for "pixel art sprite browser dataset": nothing found
+- Smallest useful version: A static Space that pairs each 16x16 sprite with its matching GLB preview by subject name.
+- Old score (report-only, not a gate) 6 of 15, demand 1
+
+## opp-86-108 · Sampling-based quality report for image-caption datasets
+
+Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but there is no lightweight way for a builder to sanity-check caption-to-image alignment before training on them.
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m · https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+- Not counted: https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m (a plain listing page, not an ask) · https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
+- Alternatives: searched GitHub for "sprite dataset caption validator": nothing found
+- Smallest useful version: A script that samples N rows from a Hugging Face image-caption dataset, checks image size and transparency, and prints a short report of anomalies.
+- Old score (report-only, not a gate) 7 of 15, demand 1
+
+## opp-86-109 · A local exporter that turns the agent-memory leaderboard into a sortable CSV.
+
+Agent memory benchmark leaderboard users and builders need a way to check which memory-agent entries reproduce, but there is no simple local harness linking results to runnable setups.
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+- Not counted: https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "agent memory benchmark harness": rohitg00/agentmemory (30505 stars), Shiyao-Huang/awesome-agent-evolution (70 stars), Eldergenix/Durable-agent-harness (30 stars)
+- Smallest useful version: A script that loads the leaderboard data and prints a per-entry table of score, model and source link.
+- Old score (report-only, not a gate) 8 of 15, demand 1
+
 ## opp-86-102 · updated data
 
 nineteen0983 asked: "any chance of getting this updating again?"
