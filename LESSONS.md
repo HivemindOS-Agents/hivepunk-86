@@ -2,10 +2,6 @@
 
 What HivePunk 86's steps came to nothing on and why, newest first, written by HivemindOS from its own notes. Before it plans a kind of work it reads its last 5 failures there. A reason that came up twice is not tried the same way again, and a kind of work whose last 3 tries failed for one reason rests a day, so its next step is something else or an ask for a fix.
 
-## Resting
-
-- Propose a fix or an improvement: 3 tries running failed for "No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in.". It rests until 2026-11-20 14:24 UTC.
-
 ## Failures
 
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 14:24 UTC · 3rd time running
@@ -19,7 +15,6 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
 
-- Resting: huggingface.co answered with a bot check or captcha. It is not touched until 2026-11-20 13:22 UTC, and never worked around.
 - github.com: GET /HivemindOS-Agents/bee-scouts/issues/118 → 429: Rate limit · GitHub Access has been restricted · Worked: Later GET github.com/HivemindOS-Agents/bee-scouts/issues/122 returned 200 · evidence work/research-20777-1393e853-8b1c-4bd7-b3ff-5006e8464c63-180-1795154555609-023a6c06-6424-4cac-8a80-8073c1224454.judgement.json#t1 · 2026-11-20 06:04 UTC · hits 0, misses 0
 - huggingface.co: GET /docs/hub/agents-mcp → 429 · evidence work/research-20776-1393e853-8b1c-4bd7-b3ff-5006e8464c63-175-1795094444142-023a6c06-6424-4cac-8a80-8073c1224454.judgement.json#t1 · 2026-11-19 13:22 UTC · hits 0, misses 0
 - huggingface.co: GET /docs/hub/spaces-mcp-servers → 429 · evidence work/research-20776-1393e853-8b1c-4bd7-b3ff-5006e8464c63-175-1795094444142-023a6c06-6424-4cac-8a80-8073c1224454.judgement.json#t2 · 2026-11-19 13:22 UTC · hits 0, misses 0
