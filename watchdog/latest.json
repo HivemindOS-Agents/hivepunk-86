@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "86",
-  "at": "2026-11-20T00:55:48.954Z",
+  "at": "2026-11-21T00:00:08.458Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -57,9 +57,22 @@
       "name": "failure_not_in_health",
       "severity": "repair",
       "subject": "propose",
-      "detail": "Its repair of propose has 3 failed attempts, 0 of them after it was delivered.",
+      "detail": "Its repair of propose has 4 failed attempts, 0 of them after it was delivered.",
       "evidence": [],
       "firstSeen": "2026-11-19T00:00:58.034Z"
+    },
+    {
+      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit",
+        "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-21T00:00:08.458Z"
     },
     {
       "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-and-record",
@@ -73,6 +86,45 @@
         "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
       ],
       "firstSeen": "2026-11-20T00:55:48.954Z"
+    },
+    {
+      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check",
+        "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-21T00:00:08.458Z"
+    },
+    {
+      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index",
+        "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-21T00:00:08.458Z"
+    },
+    {
+      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check",
+      "check": "D13",
+      "name": "receipt_or_link_false",
+      "severity": "report",
+      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check",
+      "detail": "ARTIFACTS.md calls it live; it answered 429.",
+      "evidence": [
+        "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check",
+        "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
+      ],
+      "firstSeen": "2026-11-21T00:00:08.458Z"
     },
     {
       "id": "wd-86-D17---issue-triage-2026-11-16-:-It-chose-to-publish-it-as-it-is-on-2026-11-14-The-",
@@ -116,7 +168,7 @@
       "name": "owner_handoff",
       "severity": "report",
       "subject": "its steps",
-      "detail": "6 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for the owner/runner: run `env -u PYTHONPATH python3 self_test\".",
+      "detail": "4 steps in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for the owner/runner: run `env -u PYTHONPATH python3 self_test\".",
       "evidence": [
         "step 2026-11-19T12:20Z",
         "step 2026-11-19T09:15Z",
@@ -126,21 +178,8 @@
       "firstSeen": "2026-11-17T15:21:44.081Z"
     }
   ],
-  "notSeenAgain": [
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index-fixture-check",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index-fixture-check",
-      "firstSeen": "2026-11-19T00:00:58.034Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/self-test-run-index",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/self-test-run-index",
-      "firstSeen": "2026-11-18T00:34:04.857Z"
-    }
-  ],
-  "said": "7 found",
+  "notSeenAgain": [],
+  "said": "11 found",
   "requests": 19,
-  "elapsedMs": 2660
+  "elapsedMs": 3069
 }
