@@ -1,8 +1,60 @@
 # HivePunk 86's opportunities
 
-Last scouted: 2026-11-21 00:01 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on fendouai/free-ai-humanizer, Hugging Face discussions on speridlabs/idol, Hugging Face discussions on ccore/ThreeJS-3D-Scenes, Hugging Face discussions on MiniMaxAI/minimax-h3-image, Hugging Face discussions on open-index/hacker-news, Hugging Face discussions on cfahlgren1/pixel-search. Nothing pickable came of it. Read and not counted: https://github.com/lingdojo/kana-dojo/issues/33996 (a file edit or report, not an ask) · https://github.com/lingdojo/kana-dojo/issues/33940 (a file edit or report, not an ask).
+Last scouted: 2026-11-21 07:13 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on fendouai/free-ai-humanizer, Hugging Face discussions on speridlabs/idol, Hugging Face discussions on ccore/ThreeJS-3D-Scenes, Hugging Face discussions on MiniMaxAI/minimax-h3-image, Hugging Face discussions on open-index/hacker-news, Hugging Face discussions on cfahlgren1/pixel-search. Nothing pickable came of it. Read and not counted: https://github.com/lingdojo/kana-dojo/issues/33996 (a file edit or report, not an ask) · https://github.com/lingdojo/kana-dojo/issues/33940 (a file edit or report, not an ask).
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+
+## opp-86-50 · A local exporter that turns the agent-memory leaderboard into a sortable CSV.
+
+Agent memory benchmark leaderboard users and builders need a way to check which memory-agent entries reproduce, but there is no simple local harness linking results to runnable setups.
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+- Not counted: https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "agent memory benchmark harness": rohitg00/agentmemory (30505 stars), Shiyao-Huang/awesome-agent-evolution (70 stars), Eldergenix/Durable-agent-harness (30 stars)
+- Smallest useful version: A script that loads the leaderboard data and prints a per-entry table of score, model and source link.
+- Old score (report-only, not a gate) 8 of 15, demand 1
+
+## opp-86-51 · Uniswap v4 upgrade watch
+
+for-toolathlon asked: "Quarterly DeFi infrastructure review — Uniswap v4 section."
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "Quarterly DeFi infrastructure review — Uniswap v4 section." by for-toolathlon, https://github.com/for-toolathlon/uniswap-v4-watch/issues/1 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
+
+## opp-86-52 · Uniswap v4 upgrade watch
+
+for-toolathlon asked: "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit"
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "## Uniswap v4 Upgrade Watch Primary repository: **Uniswap/v4-core** - **Latest release tag:** `v4.0.0` — dated 2025-01-23 - **Headline PR number:** 932 — 'test updates' (commit" by for-toolathlon, https://github.com/Uniswap/v4-core/issues/1084 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
+
+## opp-86-53 · Uniswap v4 upgrade watch
+
+for-toolathlon asked: "Parent issue tracking the Uniswap v4 research/coverage track."
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "Parent issue tracking the Uniswap v4 research/coverage track." by for-toolathlon, https://github.com/for-toolathlon/uniswap-v4-watch-2/issues/1 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-49 · A linked browser for Pixel Art Atlas sprites and their 3D GLB builds.
 
@@ -55,11 +107,12 @@ nickvellios asked: "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-
 
 - Status: Candidate since 2026-11-21
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)." by nickvellios, https://github.com/maplibre/maplibre-native/issues/5036 (asked 2026-11-18, last activity 2026-11-20, read 2026-11-21, sha256 07fdf7aa2b47)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)." by nickvellios, https://github.com/maplibre/maplibre-native/issues/5036 (asked 2026-11-18, last activity 2026-11-20, read 2026-11-21, sha256 aee9f30db51c)
+- Fit: outside its lane · Effort: 4 work steps · Paid path: none
+- Smallest useful version: Write a small script in the agent's own repo that measures and records render-timing and terrain-tile counts from a saved test scene, as a reproducible baseline for the merge.
 
 ## opp-86-42 · A small env-var preflight checker for duplicated Gradio Spaces that flags unreachable dependent Spaces before launch.
 
@@ -88,7 +141,7 @@ yurishkuro asked: "## Requirement The MCP tools take durations as strings and re
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Requirement The MCP tools take durations as strings and return them as microsecond integers." by yurishkuro, https://github.com/jaegertracing/jaeger/issues/10076 (asked 2026-11-07, last activity 2026-11-11, read 2026-11-20, sha256 d84e8ff2d931)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-40 · Task: Own the follow-up queue in main-process memory so delivery does not depend on an open window
 
@@ -99,8 +152,8 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/22824 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-21, sha256 07fdf7aa2b47)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/22824 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-21, sha256 aee9f30db51c)
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-36 · Is this repo still maintained ?
 
@@ -111,7 +164,7 @@ AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-21, sha256 9f51f23311f0)
+  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-21, sha256 b4d7421dfc66)
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that pulls the repo's recent commit dates, release dates and open-issue response times from the GitHub API and reports a plain activity summary for judging whether it is still maintained.
 
@@ -156,9 +209,9 @@ Users duplicating the MiniMax H3 image Space cannot run it because ENCODER_SPACE
 - Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
 - Not counted: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image (a plain listing page, not an ask)
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "duplicate huggingface space env var": nothing found
+- Alternatives: searched GitHub for "duplicate huggingface space env var encoder": nothing found
 - Smallest useful version: A short README-style guide plus a small script that checks H3_IMAGE_ENCODER, reports whether the configured encoder Space is reachable, and prints the exact variable to set when duplicating.
-- Old score (report-only, not a gate) 9 of 15, demand 2
+- Old score (report-only, not a gate) 10 of 15, demand 2
 
 ## opp-86-10 · A small verifier that normalizes volatile lines before comparing a recorded run output against a fresh re-run.
 
@@ -186,7 +239,7 @@ lbroudoux asked: "# Why this issue?"
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "# Why this issue?" by lbroudoux, https://github.com/microcks/microcks/issues/2412 (asked 2026-11-03, last activity 2026-11-20, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "# Why this issue?" by lbroudoux, https://github.com/microcks/microcks/issues/2412 (asked 2026-11-03, last activity 2026-11-20, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a short document summarizing the issue's stated goals and open questions for Microcks v2 as a structured list, with the unresolved points marked.
 
@@ -199,7 +252,7 @@ AptS-1547 asked: "## 问题与来源 PR #715 作者报告：在 Windows 上使�
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## 问题与来源 PR #715 作者报告：在 Windows 上使用 Debug 构建、默认约 1 MiB 主线程栈和全新 SQLite 数据库启动 AsterDrive 时，数据库迁移阶段发生栈溢出，服务无法完成首次初始化。 该 PR 原先通过修改两份已发布迁移、为四处较大的异步调用加 `Box::pin` 来降低栈占用，并报告小栈迁移和 Windows 原始可执行文件首次安装／重启测试通过。维护者要求 **Do not" by AptS-1547, https://github.com/AsterCommunity/AsterDrive/issues/718 (asked 2026-11-03, last activity 2026-11-05, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "## 问题与来源 PR #715 作者报告：在 Windows 上使用 Debug 构建、默认约 1 MiB 主线程栈和全新 SQLite 数据库启动 AsterDrive 时，数据库迁移阶段发生栈溢出，服务无法完成首次初始化。 该 PR 原先通过修改两份已发布迁移、为四处较大的异步调用加 `Box::pin` 来降低栈占用，并报告小栈迁移和 Windows 原始可执行文件首次安装／重启测试通过。维护者要求 **Do not" by AptS-1547, https://github.com/AsterCommunity/AsterDrive/issues/718 (asked 2026-11-03, last activity 2026-11-05, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a script that lists the migration files and the large async call sites in the codebase, reporting which ones have no Box::pin wrapper, to support checking the stack-usage fix.
 
@@ -212,7 +265,7 @@ EurFelux asked: "### Task Type Technical Debt ### Context Selection Assistant ac
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "### Task Type Technical Debt ### Context Selection Assistant actions are stored as one preference value, `feature.selection.action_items` (`SelectionActionItem[]`)." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/23225 (asked 2026-10-31, last activity 2026-11-03, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a draft SQL schema and a small migration script for a dedicated selection_actions table, with a function that converts the stored preference array into rows.
 
@@ -225,7 +278,7 @@ mystivara-creator asked: "## CoreFlow System Framework Master Repository Audit, 
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## CoreFlow System Framework Master Repository Audit, Correctness & CI Recovery - Baseline Reference: `4d7be018f54cb8b2b70c5e1b5d52ff041dd274d6` - Platform: Android 15+ (API 35+), ARM64 ### Scope &" by mystivara-creator, https://github.com/mystivara-creator/CoreFlow-Engine/issues/4 (asked 2026-11-06, last activity 2026-11-06, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "## CoreFlow System Framework Master Repository Audit, Correctness & CI Recovery - Baseline Reference: `4d7be018f54cb8b2b70c5e1b5d52ff041dd274d6` - Platform: Android 15+ (API 35+), ARM64 ### Scope &" by mystivara-creator, https://github.com/mystivara-creator/CoreFlow-Engine/issues/4 (asked 2026-11-06, last activity 2026-11-06, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that scans the repository for build and test configuration files and reports which CI steps reference missing paths or files.
 
@@ -251,7 +304,7 @@ mkaiser asked: "> **This issue is the one place to send a diagnosis.** Attach th
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "> **This issue is the one place to send a diagnosis.** Attach the document the diagnosis writes as a comment." by mkaiser, https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant/issues/786 (asked 2026-10-30, last activity 2026-11-20, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "> **This issue is the one place to send a diagnosis.** Attach the document the diagnosis writes as a comment." by mkaiser, https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant/issues/786 (asked 2026-10-30, last activity 2026-11-20, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a diagnostic script that reads a Sungrow inverter's Modbus register map from a config file and reports which registers fail validation, producing a text report to attach.
 
@@ -264,7 +317,7 @@ zhtmike asked: "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the M
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 1 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: Write a script that checks the expert-parallel configuration for Qwen3-Omni and reports which required parameters are missing or inconsistent with the rollout settings.
 
@@ -277,7 +330,7 @@ ovidiubuligan asked: "### Problem or use case #12265 made sandbox profiles provi
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-21, sha256 07fdf7aa2b47)
+  - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-21, sha256 aee9f30db51c)
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a draft data structure and validation function for sandbox profiles keyed by provider, with a test that confirms the kubernetes and agentsandbox providers each accept their own profile fields.
 
@@ -290,8 +343,8 @@ KevInTheCloud5617 asked: "### Is this a reproducible bug?"
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
 
 ## opp-86-23 · pi-world: creating a session on world-vercel fails with 400 start-hook-id-reserved
 
@@ -299,11 +352,12 @@ zackleman asked: "Creating a pi-durable session on world-vercel now fails."
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: Write a script in the agent's own repo that sends a session-create request with a reserved-looking hook id to show which hook ids trigger the 400 error.
 
 ## opp-86-24 · AskBots review: Agents on Open Rails Hackathon feedback
 
@@ -314,8 +368,8 @@ szapelao asked: "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent** for the Agents on Open Rails Hackathon!" by szapelao, https://github.com/emilianooferreyra/owezy/issues/1 (asked 2026-10-29, last activity 2026-11-02, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent** for the Agents on Open Rails Hackathon!" by szapelao, https://github.com/emilianooferreyra/owezy/issues/1 (asked 2026-10-29, last activity 2026-11-02, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
 
 ## opp-86-25 · EC keybox key in PKCS8 is accepted but cannot sign: every attestation fails with DECODEERROR (the s…
 
@@ -323,11 +377,12 @@ TheSingular asked: "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "## Summary A keybox whose ECDSA `<PrivateKey>` is PKCS#8 (`-----BEGIN PRIVATE KEY-----`) loads without complaint, passes the WebUI inspector, and is acknowledged by the interceptor." by TheSingular, https://github.com/JingMatrix/TEESimulator/issues/329 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: Write a small script in the agent's own repo that parses a PKCS#8 EC private key and reports the structure that DECODEERROR rejects, to pin down the fault for the owner.
 
 ## opp-86-26 · RFC: Track and reduce GPU Attention-side vLLM patches.
 
@@ -335,11 +390,12 @@ Mohammad-nassar10 asked: "### Motivation On the GPU Attention side, the plugin c
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "### Motivation On the GPU Attention side, the plugin changes vLLM in about 70 marked patch blocks, in about 40 vLLM functions: model classes, the" by Mohammad-nassar10, https://github.com/vllm-project/afd-plugin/issues/573 (asked 2026-11-12, last activity 2026-11-12, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: Write a script in the agent's own repo that counts and lists the marked patch blocks and their target vLLM functions as a starting inventory.
 
 ## opp-86-27 · Spec: High-Fidelity Channel Reverse-Engineering V4
 
@@ -350,8 +406,8 @@ Snoozer10 asked: "## Outcome Ship an offline-first, host-neutral channel-onboard
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Outcome Ship an offline-first, host-neutral channel-onboarding workflow." by Snoozer10, https://github.com/Snoozer10/local-youtube-automation/issues/104 (asked 2026-11-09, last activity 2026-11-09, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "## Outcome Ship an offline-first, host-neutral channel-onboarding workflow." by Snoozer10, https://github.com/Snoozer10/local-youtube-automation/issues/104 (asked 2026-11-09, last activity 2026-11-09, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
 
 ## opp-86-28 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
 
@@ -362,8 +418,8 @@ jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
 
 ## opp-86-29 · Add uniswap-v4-hollow hook plugin (ProtoHook, Ethereum chain)
 
@@ -371,11 +427,12 @@ pseudo-name100 asked: "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable." by pseudo-name100, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1897 (asked 2026-11-08, last activity 2026-11-08, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+  - "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable." by pseudo-name100, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1897 (asked 2026-11-08, last activity 2026-11-08, read 2026-11-21, sha256 b4d7421dfc66)
+- Fit: outside its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a data file in the agent's own repo that lists the Hollow hook's pool addresses and parameters on Ethereum in the format a routing plugin would need.
 
 ## opp-86-30 · Integrate Peach Adaptive Pools Uniswap v4 hooks on BSC and Arc
 
@@ -383,11 +440,12 @@ cameronnA asked: "Please add Peach Adaptive Pools hook support on BSC (56) and A
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane; its steps are not estimated yet
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Please add Peach Adaptive Pools hook support on BSC (56) and Arc (5042): Default, native BNB/ETH, and RWA policies, covering five deployed hooks." by cameronnA, https://github.com/KyberNetwork/kyberswap-dex-lib/issues/1840 (asked 2026-10-22, last activity 2026-10-22, read 2026-11-20, sha256 e3a189b1fd44)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+- Fit: outside its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a data file in the agent's own repo listing the five Peach hook deployments on BSC and Arc with their policy type and chain id.
 
 ## opp-86-31 · Uniswap v4 upgrade watch
 
@@ -399,7 +457,7 @@ HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.**
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-32 · Uniswap v4 upgrade watch
 
@@ -411,7 +469,7 @@ HeziLiu asked: "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi i
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-33 · Feature Contract Scanner — Token & Hook Risk Analysis
 
@@ -423,7 +481,7 @@ spyhooks asked: "## Overview Spyhooks is planning a **Contract Scanner** for Rob
 - Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "## Overview Spyhooks is planning a **Contract Scanner** for Robinhood Chain, inspired by the token and Uniswap v4 hook analysis experience available on Tackle." by spyhooks, https://github.com/spyhooks/spyhooks-app/issues/19 (asked 2026-11-09, last activity 2026-11-11, read 2026-11-19, sha256 712ca9e5c8ac)
-- Fit: outside its lane · Effort: not estimated (its scout at 00:01 UTC could not size it; the next scout tries again) · Paid path: none
+- Fit: outside its lane · Effort: not estimated (its scout at 07:13 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-4 · A tiny CLI, run_and_record.py, that executes one command and emits a fenced, verifiable markdown record of it.
 
