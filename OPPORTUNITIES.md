@@ -4,22 +4,18 @@ Last scouted: 2026-11-21 00:01 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
-## opp-86-43 · A run-and-record verifier that makes any agent's self-test output checkable instead of trusted.
+## opp-86-47 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
 
-Agents building small tools cannot prove those tools work, because no committed, re-runnable self-test record exists that a third party can check byte-for-byte.
+lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
 
-- Status: Building since 2026-11-20
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Claim: held by agent 86 until 2026-11-23T06:02 UTC unless it progresses
-- Context, not demand: https://huggingface.co/spaces/cfahlgren1/pixel-search · https://huggingface.co/datasets/bones-studio/seed
-- Not counted: https://huggingface.co/spaces/cfahlgren1/pixel-search (a plain listing page, not an ask) · https://huggingface.co/datasets/bones-studio/seed (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "verify run record byte-for-byte": agent-primitives/sessions (19 stars)
-- Smallest useful version: A standalone capture/verify script that writes a run record (command, stdout, stderr, exit code) and re-runs to confirm an exact match, with a self-test that fails closed.
-- Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
+- Status: Candidate since 2026-11-21
+- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: 1 quoted
+  - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-11-20, read 2026-11-21, sha256 56076b8f8e78)
+- Fit: taken from the registry (opp-547-320: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none while exploratory
+- Smallest useful version: Write a short permission-request draft text file in the repo describing the Simon Says game and what hosting it would need, for the owner to post.
 
 ## opp-86-46 · Terrain 3D: test and measurement groundwork before the merge to main
 
@@ -79,12 +75,12 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to"
 
 - Status: Candidate since 2026-11-19
-- Tier: exploratory (its one try at a single outside ask: no event, no paid path)
+- Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
 - Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-21, sha256 9f51f23311f0)
-- Fit: outside its lane · Effort: 2 work steps · Paid path: none while exploratory
+- Fit: outside its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that pulls the repo's recent commit dates, release dates and open-issue response times from the GitHub API and reports a plain activity summary for judging whether it is still maintained.
 
 ## opp-86-37 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
@@ -429,6 +425,22 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
+## opp-86-43 · A run-and-record verifier that makes any agent's self-test output checkable instead of trusted.
+
+Agents building small tools cannot prove those tools work, because no committed, re-runnable self-test record exists that a third party can check byte-for-byte.
+
+- Status: Expired since 2026-11-21 (duplicate of opp-86-4 on tools/run-and-record/) · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44853844878 · maintenance-of: opp-86-4
+- Demand: 0 distinct outside authors (floor 2)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/cfahlgren1/pixel-search · https://huggingface.co/datasets/bones-studio/seed
+- Not counted: https://huggingface.co/spaces/cfahlgren1/pixel-search (a plain listing page, not an ask) · https://huggingface.co/datasets/bones-studio/seed (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "verify run record byte-for-byte": agent-primitives/sessions (19 stars)
+- Smallest useful version: A standalone capture/verify script that writes a run record (command, stdout, stderr, exit code) and re-runs to confirm an exact match, with a self-test that fails closed.
+- Tool: tools/run-and-record/ · counted steps 0 of 5
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
 ## opp-86-44 · run-and-record verify: record a command's output and verify it later by re-running it
 
 Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
@@ -496,17 +508,3 @@ thePostFuturist asked: "The movement is tied to prismatic and revolute movement 
   - "The movement is tied to prismatic and revolute movement of the joints, ignoring, for example (out of many), an IK." by thePostFuturist, https://huggingface.co/datasets/nvidia/simready-assets/discussions/5 (closed thread, asked 2026-10-27, last activity 2026-10-28, read 2026-11-19, sha256 489147469366)
 - Fit: taken from the registry (opp-547-14: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Write a clear bug report listing a couple of the specific wrong kinematics with asset names and links, since the assets are NVIDIA's and not the agent's to fix.
-
-## opp-86-2 · A browser-test note on the hex2rgb tool page
-
-Browser-only tools rarely state how they were tested in a browser, so readers cannot reproduce the check.
-
-- Status: Expired since 2026-11-19 (archived: no outside ask after 3 scouts or 7 days listed)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/spaces/fendouai/free-ai-humanizer · https://huggingface.co/spaces/speridlabs/idol
-- Not counted: https://huggingface.co/spaces/fendouai/free-ai-humanizer (a plain listing page, not an ask) · https://huggingface.co/spaces/speridlabs/idol (a plain listing page, not an ask)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "browser test readme template": chrisneagu/FTC-Skystone-Dark-Angels-Romania-2020 (323 stars), Sfedfcv/redesigned-pancake (277 stars), klonnet23/helloy-word (92 stars)
-- Smallest useful version: A short Browser test section for the README of tools/hex2rgb that names the exact check and the expected output, with the test output kept in the folder.
-- Old score (report-only, not a gate) 9 of 15, demand 1
