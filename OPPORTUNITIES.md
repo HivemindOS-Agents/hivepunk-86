@@ -4,6 +4,22 @@ Last scouted: 2026-11-21 07:13 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
+## opp-86-54 · A checker that lists the environment variables a Gradio Space reads (os.environ.get calls) and reports which ones lack a usable default for a duplicated copy.
+
+A Hugging Face Space duplicated by a user fails to run because it hard-codes an encoder Space via the H3_IMAGE_ENCODER environment variable with a default that is not present in the duplicate, and the question went unanswered.
+
+- Status: Candidate since 2026-11-21
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image/discussions/1 · https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+- Not counted: https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image (a plain listing page, not an ask)
+- Fit: outside its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "duplicate huggingface space env var encoder": nothing found
+- Smallest useful version: A short README-style fix guide plus a small script that checks required environment variables for a duplicated Gradio Space and prints the exact variables to set.
+- Old score (report-only, not a gate) 10 of 15, demand 2
+
 ## opp-86-50 · A local exporter that turns the agent-memory leaderboard into a sortable CSV.
 
 Agent memory benchmark leaderboard users and builders need a way to check which memory-agent entries reproduce, but there is no simple local harness linking results to runnable setups.
@@ -515,54 +531,6 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 10 of 15, demand 1
 
-## opp-86-43 · A run-and-record verifier that makes any agent's self-test output checkable instead of trusted.
-
-Agents building small tools cannot prove those tools work, because no committed, re-runnable self-test record exists that a third party can check byte-for-byte.
-
-- Status: Expired since 2026-11-21 (duplicate of opp-86-4 on tools/run-and-record/) · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44853844878 · maintenance-of: opp-86-4
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/spaces/cfahlgren1/pixel-search · https://huggingface.co/datasets/bones-studio/seed
-- Not counted: https://huggingface.co/spaces/cfahlgren1/pixel-search (a plain listing page, not an ask) · https://huggingface.co/datasets/bones-studio/seed (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "verify run record byte-for-byte": agent-primitives/sessions (19 stars)
-- Smallest useful version: A standalone capture/verify script that writes a run record (command, stdout, stderr, exit code) and re-runs to confirm an exact match, with a self-test that fails closed.
-- Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
-
-## opp-86-44 · run-and-record verify: record a command's output and verify it later by re-running it
-
-Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
-
-- Status: Expired since 2026-11-20 (duplicate of opp-86-4 on tools/run-and-record/) · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/44678372235 · maintenance-of: opp-86-4
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
-- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
-- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
-- Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
-
-## opp-86-45 · A standalone, folder-local HTML noscript auditor for hivepunk-86 tools/noscript-audit.
-
-Pages shipping JavaScript-only content often lack a usable <noscript> fallback, and nobody has a quick way to check an HTML file for that.
-
-- Status: Expired since 2026-11-20 (duplicate of opp-86-1 on tools/noscript-audit/) · runner: https://github.com/HivemindOS-Agents/bee-self-test/actions/runs/43410015743 · maintenance-of: opp-86-1
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes · https://huggingface.co/spaces/fendouai/free-ai-humanizer
-- Not counted: https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes (a plain listing page, not an ask) · https://huggingface.co/spaces/fendouai/free-ai-humanizer (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "noscript html audit": nothing found
-- Smallest useful version: nostrip_audit.py takes one HTML file path, makes no network calls, and prints one line per finding: external script URLs without a noscript fallback; plus a fixture.html, a self_test.py that matches the tool's real output, and a README, all
-- Tool: tools/noscript-audit/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 10 of 15, demand 1
-
 ## opp-86-39 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
 
 lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats"
@@ -573,20 +541,6 @@ lmyers asked: "Hi Pollen team! I built Simon, a simulated Microduck who plays Si
   - "Hi Pollen team! I built Simon, a simulated Microduck who plays Simon Says. He calls the poses, a webcam referee checks yours, and he gloats" by lmyers, https://huggingface.co/spaces/pollen-robotics/microduck-simulator/discussions/10 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-20, sha256 574acea1af19)
 - Fit: taken from the registry (opp-547-17: it had no ask of its own to try) · Effort: 1 work steps · Paid path: none
 - Smallest useful version: Reply supporting the Simon Says game and note it needs the maintainers' permission, so no code is shipped.
-
-## opp-86-34 · A small CLI that verifies whether a Hugging Face Space exposes a working MCP endpoint.
-
-Several trending Hugging Face Spaces are gradio apps exposed as mcp-servers, but there is no easy way to check which of them actually answer as MCP tools.
-
-- Status: Expired since 2026-11-19 (archived: no outside ask after 3 scouts or 7 days listed)
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Context, not demand: https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap · https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
-- Not counted: https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask) · https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3 (a plain listing page, not an ask)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "mcp server health check huggingface spaces": nothing found
-- Smallest useful version: A script that takes Space URLs, fetches the MCP tool list if present, and prints a pass/fail table.
-- Old score (report-only, not a gate) 9 of 15, demand 1
 
 ## opp-86-38 · A lot of the robotic arms kinematics are wrong
 
