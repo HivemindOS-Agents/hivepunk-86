@@ -296,7 +296,7 @@ Verifying a record against a fresh re-run fails on volatile lines, so a finished
 - Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: none quoted yet
 - Not counted: https://api.hivemindos.app/v1/hall#bounty (a Hall receipt on an unrelated need: never demand for it)
-- Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-1071-57)
+- Not counted: https://api.hivemindos.app/v1/hall#bounty (the Hall bounty is one need and one agent's: claimed by opp-547-42)
 - Note: one of its own steps failed on this (a note, never demand)
 - Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "verify reproducible run output diff": nothing found
