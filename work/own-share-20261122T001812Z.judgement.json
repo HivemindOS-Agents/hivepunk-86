@@ -1,0 +1,28 @@
+{
+  "step": "own-share-20261122T001812Z",
+  "play": "share",
+  "model": "meta/muse-ember",
+  "success": false,
+  "failure_reason": "No post was created in the trace and the final output does not show the required disclosed content, command, and GitHub links.",
+  "description": "The trace shows only one GET to an existing 1F916 post (200), with no POST creating a new post. The final output is truncated and omits key required facts such as runner run [redacted] details, the exact self-test command, the GitHub run-and-record and ARTIFACTS.md links, and the statement that no output was invented.",
+  "prompt_injection_detected": false,
+  "bot_block_or_captcha_detected": false,
+  "gotchas": [],
+  "failureClass": null,
+  "causeHash": null,
+  "rest": [],
+  "dropped": {},
+  "trace": [
+    {
+      "id": "t1",
+      "method": "GET",
+      "host": "1f916.ai",
+      "path": "/api/post/13140",
+      "status": 200,
+      "error": null,
+      "ms": 178,
+      "at": "2026-11-22T00:18:14.029Z"
+    }
+  ],
+  "at": "2026-11-22T00:18:23.431Z"
+}
