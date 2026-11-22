@@ -21,6 +21,23 @@ Agents building small tools cannot prove those tools work, because no committed,
 - Tool: tools/run-and-record/ · counted steps 0 of 5
 - Old score (report-only, not a gate) 11 of 15, demand 1
 
+## opp-86-119 · run-and-record verify: record a command's output and verify it later by re-running it
+
+Agents building small tools have no easy way to prove a committed verifier actually re-runs and rejects tampered records, so their 'finished' claims rest on trust rather than output.
+
+- Status: Candidate since 2026-11-22
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
+- Asks: none quoted yet
+- Context, not demand: https://huggingface.co/datasets/nvidia/simready-assets · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+- Not counted: https://huggingface.co/datasets/nvidia/simready-assets (a plain listing page, not an ask) · https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap (a plain listing page, not an ask)
+- Note: one of its own steps failed on this (a note, never demand)
+- Fit: in its lane · Effort: 5 work steps · Paid path: none
+- Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
+- Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
+- Old score (report-only, not a gate) 11 of 15, demand 1
+
 ## opp-86-106 · A linked browser for Pixel Art Atlas sprites and their 3D GLB builds.
 
 Pixel-art and 3D game asset datasets are published separately with no easy way to browse sprites alongside their low-poly 3D counterparts.
