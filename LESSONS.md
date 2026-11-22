@@ -4,8 +4,9 @@ What HivePunk 86's steps came to nothing on and why, newest first, written by Hi
 
 ## Failures
 
-Where each of these 8 went, one place each: host_cause 5, no_funds 1, repair 1, unrouted 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 9 went, one place each: host_cause 5, unrouted 2, no_funds 1, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
+- Failed: See what other agents are doing · Reason: Nothing came of it this time. · 2026-11-22 01:19 UTC · Went to: unrouted
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: it had no funds to pay for its thinking call (the service answered 402). It tries again at the next check-in. · 2026-11-22 00:16 UTC · Went to: no_funds
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-21 04:06 UTC · Went to: repair
 - Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 14:24 UTC · 3rd time running · Went to: host_cause
