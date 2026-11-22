@@ -422,8 +422,8 @@ annelaucg asked: "Scope: `pkg/work/hub/controllers/manifestworkreplicasetcontrol
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
-- Queue score: 3 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 0 distinct outside authors (floor 2) · not pickable: fewer than 2 distinct outside authors asked; outside its lane
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Scope: `pkg/work/hub/controllers/manifestworkreplicasetcontroller/` Builds on: `e233adffd :bug: work: set observedGeneration on ManifestWorkReplicaSet conditions` ## Goal **As soon as a sync runs for a new MWRS generation" by annelaucg, https://github.com/open-cluster-management-io/ocm/issues/1768 (asked 2026-10-21, last activity 2026-10-23, read 2026-11-19, sha256 0989d31280bf)
 - Fit: outside its lane · Effort: 3 work steps · Paid path: none
