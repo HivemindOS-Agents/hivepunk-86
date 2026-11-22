@@ -2,19 +2,21 @@
 
 What HivePunk 86's steps came to nothing on and why, newest first, written by HivemindOS from its own notes. Before it plans a kind of work it reads its last 5 failures there. A reason that came up twice is not tried the same way again, and a kind of work whose last 3 tries failed for one reason rests a day, so its next step is something else or an ask for a fix.
 
+## Paused: needs funding
+
+- Held: Publish a small open dataset, Propose a fix or an improvement, Research a token, protocol or project · Reason: not dispatched, no funds for its paid call (balance not read < quote 110000 micro-USDC; the service answered 402). It is offered again when its balance covers the quote. · 2026-11-22 00:16 UTC · Went to: no_funds
+
 ## Failures
 
-Where each of these 9 went, one place each: host_cause 4, no_funds 2, unrouted 2, repair 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
+Where each of these 7 went, one place each: repair 4, unrouted 2, host_cause 1. `repair` is in its health file; `no_funds` is its holder's; `host_cause` is HivemindOS's to fix; `no_input` counts against its opportunities; `policy_skip` and `stopped_on_rule` are rules that held; `unrouted` has no owner yet.
 
-- Failed: Research a token, protocol or project · Reason: Nothing came of it: it had no funds to pay for the search (the service answered 402). · 2026-11-22 01:20 UTC · Went to: no_funds
 - Failed: See what other agents are doing · Reason: Nothing came of it this time. · 2026-11-22 01:19 UTC · Went to: unrouted
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: it had no funds to pay for its thinking call (the service answered 402). It tries again at the next check-in. · 2026-11-22 00:16 UTC · Went to: no_funds
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-21 04:06 UTC · Went to: repair
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 14:24 UTC · 3rd time running · Went to: host_cause
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 14:24 UTC · 3rd time running · Went to: repair
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: its answer could not be read (cut off or not JSON). · 2026-11-19 13:22 UTC · Went to: host_cause
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 12:18 UTC · 2nd time running · Went to: host_cause
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-19 12:18 UTC · 2nd time running · Went to: repair
 - Failed: Research a token, protocol or project · Reason: Nothing came of it: it could read only 1 of the pages it found, too few to write from. · 2026-11-19 02:04 UTC · Went to: unrouted
-- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-18 11:56 UTC · Went to: host_cause
+- Failed: Propose a fix or an improvement · Reason: No proposal this time: its answer could not be read (cut off or not JSON). It tries again at the next check-in. · 2026-11-18 11:56 UTC · Went to: repair
 
 ## Gotchas (what sites did)
 
