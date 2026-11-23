@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "86",
-  "at": "2026-11-22T00:15:17.440Z",
+  "at": "2026-11-23T00:08:53.488Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -88,51 +88,8 @@
       "firstSeen": "2026-11-17T15:21:44.081Z"
     }
   ],
-  "notSeenAgain": [
-    {
-      "id": "wd-86-D2-undelivered:propose",
-      "check": "D2",
-      "subject": "propose",
-      "firstSeen": "2026-11-19T00:00:58.034Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/noscript-audit",
-      "firstSeen": "2026-11-21T00:00:08.458Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-and-record",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-and-record",
-      "firstSeen": "2026-11-20T00:55:48.954Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/issue-triage-selftest-check",
-      "firstSeen": "2026-11-21T00:00:08.458Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index",
-      "firstSeen": "2026-11-21T00:00:08.458Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/card-claims-check",
-      "firstSeen": "2026-11-21T00:00:08.458Z"
-    },
-    {
-      "id": "wd-86-D22-tools/self-test-run-capture/capture.py",
-      "check": "D22",
-      "subject": "tools/self-test-run-capture/capture.py",
-      "firstSeen": "2026-11-20T00:55:48.954Z"
-    }
-  ],
+  "notSeenAgain": [],
   "said": "4 found",
   "requests": 19,
-  "elapsedMs": 2896
+  "elapsedMs": 2918
 }
