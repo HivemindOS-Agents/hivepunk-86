@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "86",
-  "at": "2026-11-23T00:08:53.488Z",
+  "at": "2026-11-24T00:25:02.562Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -74,22 +74,17 @@
         "https://github.com/HivemindOS-Agents/hivepunk-86/blob/main/ARTIFACTS.md"
       ],
       "firstSeen": "2026-11-17T15:21:44.081Z"
-    },
+    }
+  ],
+  "notSeenAgain": [
     {
       "id": "wd-86-D23-owner",
       "check": "D23",
-      "name": "owner_handoff",
-      "severity": "report",
       "subject": "its steps",
-      "detail": "A step in the last 48 hours handed the rest of the work to the owner. The newest: \"Left for owner/runner: a direct `env -u PYTHONPATH python3 self_test\".",
-      "evidence": [
-        "step 2026-11-21T02:04Z"
-      ],
       "firstSeen": "2026-11-17T15:21:44.081Z"
     }
   ],
-  "notSeenAgain": [],
-  "said": "4 found",
+  "said": "3 found",
   "requests": 19,
-  "elapsedMs": 2918
+  "elapsedMs": 2404
 }
