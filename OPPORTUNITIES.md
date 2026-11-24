@@ -19,7 +19,6 @@ Agents building small tools cannot prove those tools work, because no committed,
 - Alternatives: searched GitHub for "verify run record byte-for-byte": agent-primitives/sessions (19 stars)
 - Smallest useful version: A standalone capture/verify script that writes a run record (command, stdout, stderr, exit code) and re-runs to confirm an exact match, with a self-test that fails closed.
 - Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
 
 ## opp-86-122 · A linked browser for Pixel Art Atlas sprites and their 3D GLB builds.
 
@@ -35,7 +34,6 @@ Pixel-art and 3D game asset datasets are published separately with no easy way t
 - Fit: outside its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "pixel art sprite browser dataset": nothing found
 - Smallest useful version: A static Space that pairs each 16x16 sprite with its matching GLB preview by subject name.
-- Old score (report-only, not a gate) 6 of 15, demand 1
 
 ## opp-86-123 · run-and-record verify: record a command's output and verify it later by re-running it
 
@@ -52,7 +50,6 @@ Agents building small tools have no easy way to prove a committed verifier actua
 - Fit: in its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "byte-for-byte verify record re-run": nothing found
 - Smallest useful version: A tiny CLI that wraps any command, saves stdout, stderr and exit code to a record file, and later re-runs the command and reports PASS or FAIL by byte-for-byte comparison after normalizing timestamps and temp paths.
-- Old score (report-only, not a gate) 11 of 15, demand 1
 
 ## opp-86-124 · Sampling-based quality report for image-caption datasets
 
@@ -68,7 +65,6 @@ Pixel-art and sprite datasets like the 1.4M synthetic sprite set are large, but 
 - Fit: outside its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "sprite dataset caption validator": nothing found
 - Smallest useful version: A script that samples N rows from a Hugging Face image-caption dataset, checks image size and transparency, and prints a short report of anomalies.
-- Old score (report-only, not a gate) 7 of 15, demand 1
 
 ## opp-86-125 · A local exporter that turns the agent-memory leaderboard into a sortable CSV.
 
@@ -84,7 +80,6 @@ Agent memory benchmark leaderboard users and builders need a way to check which 
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "agent memory benchmark harness": rohitg00/agentmemory (30505 stars), Shiyao-Huang/awesome-agent-evolution (70 stars), Eldergenix/Durable-agent-harness (30 stars)
 - Smallest useful version: A script that loads the leaderboard data and prints a per-entry table of score, model and source link.
-- Old score (report-only, not a gate) 8 of 15, demand 1
 
 ## opp-86-126 · Proposal Role-based agent dispatch: assign tasks to agents by their strengths
 
@@ -221,7 +216,6 @@ A Hugging Face Space duplicated by a user fails to run because it hard-codes an 
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "duplicate huggingface space env var encoder": nothing found
 - Smallest useful version: A short README-style fix guide plus a small script that checks required environment variables for a duplicated Gradio Space and prints the exact variables to set.
-- Old score (report-only, not a gate) 10 of 15, demand 2
 
 ## opp-86-51 · Uniswap v4 upgrade watch
 
@@ -287,7 +281,6 @@ A Hugging Face Space duplicated from MiniMaxAI/minimax-h3-image fails to run bec
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "duplicate huggingface space encoder env": nothing found
 - Smallest useful version: A short README/checklist script that lists the env vars a duplicated Space needs (H3_IMAGE_ENCODER and any dependent Spaces) and checks each one resolves, printing a clear message for any that do not.
-- Old score (report-only, not a gate) 9 of 15, demand 1
 
 ## opp-86-41 · Return durations from the MCP tools as strings, matching their inputs
 
@@ -352,7 +345,6 @@ A Hugging Face Space duplicated from MiniMaxAI's demo fails because it hard-code
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "duplicate space env variable encoder": nothing found
 - Smallest useful version: A short README snippet plus a tiny script that reads the encoder Space from a config and checks it responds before launching the Gradio app.
-- Old score (report-only, not a gate) 9 of 15, demand 2
 
 ## opp-86-9 · A standalone checker that diagnoses why a duplicated Gradio Space fails on a missing or unreachable encoder environment variable.
 
@@ -369,7 +361,6 @@ Users duplicating the MiniMax H3 image Space cannot run it because ENCODER_SPACE
 - Fit: outside its lane · Effort: 5 work steps · Paid path: none
 - Alternatives: searched GitHub for "duplicate huggingface space env var": nothing found
 - Smallest useful version: A short README-style guide plus a small script that checks H3_IMAGE_ENCODER, reports whether the configured encoder Space is reachable, and prints the exact variable to set when duplicating.
-- Old score (report-only, not a gate) 9 of 15, demand 2
 
 ## opp-86-10 · A small verifier that normalizes volatile lines before comparing a recorded run output against a fresh re-run.
 
@@ -386,7 +377,6 @@ Verifying a record against a fresh re-run fails on volatile lines, so a finished
 - Fit: in its lane · Effort: split to its smallest useful version, 3 work steps · Paid path: none
 - Alternatives: searched GitHub for "verify reproducible run output diff": nothing found
 - Smallest useful version: Normalize volatile lines (timestamps, run IDs, paths) before byte comparison and keep tamper checks failing on real changes.
-- Old score (report-only, not a gate) 9 of 15, demand 1
 
 ## opp-86-11 · Microcks v2: kick-off of the discussion and state of the thinking
 
@@ -629,7 +619,6 @@ Issue-triage tooling authors cannot prove their self-test passes without a commi
 - Alternatives: searched GitHub for "self-test capture record CLI": nothing found
 - Smallest useful version: A single script that runs a folder's self-test command, writes the exact command plus stdout, stderr and EXIT code into a markdown record, and fails closed if any field is missing.
 - Tool: tools/run-and-record/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 11 of 15, demand 1
 
 ## opp-86-1 · A folder-local noscript audit script in the hivepunk-86 repository
 
@@ -645,7 +634,6 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Alternatives: searched GitHub for "noscript html audit linter": nothing found
 - Smallest useful version: A single Python script that scans an HTML file, counts script tags, checks for a noscript fallback, and reports elements that would disappear with scripting off, plus a fixture-based self-test and README run command.
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
-- Old score (report-only, not a gate) 10 of 15, demand 1
 
 ## opp-86-47 · Permission request: hosting a playable Simon Says game on the Microduck simulator.
 
