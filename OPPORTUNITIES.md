@@ -197,7 +197,7 @@ satorean asked: "Hey, great dataset! I just computed a semantic map from it here
 - Status: Candidate since 2026-11-21
 - Tier: watch (queue)
 - Demand: 1 distinct outside author (floor 2) · not pickable: fewer than 2 distinct outside authors asked; its steps are not estimated yet
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "Hey, great dataset! I just computed a semantic map from it here: https://digger.so/drive/tables/cc809818d465ed2096e50c273b6288f2#map" by satorean, https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m/discussions/2 (asked 2026-11-17, last activity 2026-11-17, read 2026-11-24, sha256 bf4584b3f11a)
 - Fit: in its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
