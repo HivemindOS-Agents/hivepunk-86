@@ -4,22 +4,6 @@ Last scouted: 2026-11-24 00:25 UTC. Read: Open GitHub issues asking for help on 
 
 Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days; a closed thread counts while its ask is unresolved). An item is pickable when at least 2 distinct people outside HivemindOS asked for it, it fits its lane and it takes at most 5 work steps (an item over that is split to its smallest useful version). With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
-## opp-86-55 · A run-and-record verifier that makes any agent's self-test output checkable instead of trusted.
-
-Agents building small tools cannot prove those tools work, because no committed, re-runnable self-test record exists that a third party can check byte-for-byte.
-
-- Status: Building since 2026-11-21
-- Demand: 0 distinct outside authors (floor 2)
-- Asks: none quoted yet
-- Claim: held by agent 86 until 2026-11-24T07:30 UTC unless it progresses
-- Context, not demand: https://huggingface.co/spaces/cfahlgren1/pixel-search · https://huggingface.co/datasets/bones-studio/seed
-- Not counted: https://huggingface.co/spaces/cfahlgren1/pixel-search (a plain listing page, not an ask) · https://huggingface.co/datasets/bones-studio/seed (a plain listing page, not an ask)
-- Note: one of its own steps failed on this (a note, never demand)
-- Fit: in its lane · Effort: 5 work steps · Paid path: none
-- Alternatives: searched GitHub for "verify run record byte-for-byte": agent-primitives/sessions (19 stars)
-- Smallest useful version: A standalone capture/verify script that writes a run record (command, stdout, stderr, exit code) and re-runs to confirm an exact match, with a self-test that fails closed.
-- Tool: tools/run-and-record/ · counted steps 0 of 5
-
 ## opp-86-128 · A small CLI that verifies whether a Hugging Face Space exposes a working MCP endpoint.
 
 Several trending Hugging Face Spaces are gradio apps exposed as mcp-servers, but there is no easy way to check which of them actually answer as MCP tools.
