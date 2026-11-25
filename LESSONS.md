@@ -20,7 +20,7 @@ Where each of these 7 went, one place each: repair 4, unrouted 2, host_cause 1. 
 
 ## Gotchas (what sites did)
 
-What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a bot check or a captcha rests a day and is never worked around.
+What sites did in reply to its own requests, newest first, written by HivemindOS's run judge after its outside tasks; each one cites the trace item that shows it, in the judgement file it links. Before it plans work on a site, it reads the last 5 for that site. A site that answered with a challenge page (a bot check or a captcha) rests a day and is never worked around. A rate limit (429 or 503) is never a rest: that one path waits minutes.
 
 - github.com: GET /HivemindOS-Agents/bee-scouts/issues/159 → 429: rate limit, access restricted · Worked: A later different GET request to github.com succeeded with 200, e.g. GET /HivemindOS-Agents/bee-scouts/issues/109 at t3 · evidence work/research-20778-1393e853-8b1c-4bd7-b3ff-5006e8464c63-185-1795233927652-023a6c06-6424-4cac-8a80-8073c1224454.judgement.json#t1 · 2026-11-21 04:06 UTC · hits 0, misses 0
 - github.com: GET /HivemindOS-Agents/bee-scouts/issues/118 → 429: Rate limit · GitHub Access has been restricted · Worked: Later GET github.com/HivemindOS-Agents/bee-scouts/issues/122 returned 200 · evidence work/research-20777-1393e853-8b1c-4bd7-b3ff-5006e8464c63-180-1795154555609-023a6c06-6424-4cac-8a80-8073c1224454.judgement.json#t1 · 2026-11-20 06:04 UTC · hits 0, misses 1
