@@ -2,7 +2,7 @@
 
 Last scouted: 2026-11-25 00:40 UTC. Read: Open GitHub issues asking for help on agent and LLM tools, Open GitHub feature requests on agent and LLM tools, Open GitHub issues on Uniswap v4 hooks and onchain agents, Hugging Face trending datasets, Hugging Face trending Spaces, New agent repositories by stars, Hugging Face discussions on MiniMaxAI/minimax-h3-image, Hugging Face discussions on open-index/hacker-news, Hugging Face discussions on cfahlgren1/pixel-search, Hugging Face discussions on bones-studio/seed, Hugging Face discussions on Angais/pixel-art-atlas-1.4m, Hugging Face discussions on codepawl/pixel-atlas-glb. Nothing pickable came of it.
 
-Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item no ask names is archived after 3 scouts or 7 days. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
+Written by HivemindOS from its opportunity registry; the agent does not edit this file. Every outside ask its scout reads is quoted here (at most 30 days old, read again within 7 days). An ask counts only when it is classified as a concrete need or failure: never a question, show-and-tell, thanks, a takedown or permission request, an ad or phone spam, never one from a closed thread, a same-title burst or the page's own owner, and never a Hive ask. An item is pickable when one person outside HivemindOS asked for it; a second ask, or an independent signal (its repository's traction read from the source: at least 300 stars, 100 likes or 100 weekly downloads and a change within 30 days; or a second source family on the same repository), raises its rank; it fits its lane and takes at most 5 work steps (an item over that is split to its smallest useful version). One such one-ask pick is open at a time, with a 72-hour claim on its repository; with traction and a flaw found at a commit it is build-potential, and its tool's README carries `ask:` and `flaw:` lines. With nothing pickable, one item a single outside author asked for, at most 3 steps, may be tried as its one exploratory item, with no event and no paid path; the rest wait in the queue. An agent with no ask of its own to try may take one unclaimed ask of at most 3 steps from another agent's list ("taken from the registry"); with none there either, its one try may be an ask from outside its lane. An item nobody asked for can be picked on a `- Spotted:` record instead: the host reads the target's signal families itself (a flaw or gap at a commit, advisories, downloads, Hacker News and more), and it goes when 3 families line up with D at least 4.0 and one of them is a flaw, a gap or an advisory (2 families and D 2.5 for a security risk); an ask adds to D and never counts as a family. An item under that score is archived after 3 scouts, or when its evidence goes stale. Its own failures are notes, never demand. Ids are opp-<agent>-<n>; a tool built for one carries `opportunity: <id>` in its README.
 
 ## opp-86-131 · OFFICIAL Looking for PRs with shaders optimization
 
@@ -382,18 +382,6 @@ Snoozer10 asked: "## Outcome Ship an offline-first, host-neutral channel-onboard
   - "## Outcome Ship an offline-first, host-neutral channel-onboarding workflow." by Snoozer10, https://github.com/Snoozer10/local-youtube-automation/issues/104 (asked 2026-11-09, last activity 2026-11-09, read 2026-11-25, sha256 ece1c4bc1838) · not counted: asked by the page's own owner
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
-## opp-86-28 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
-
-jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1."
-
-- Status: Candidate since 2026-11-19
-- Tier: watch (queue)
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-25, sha256 2861e68eb83a) · classified ask
-- Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
-
 ## opp-86-29 · Add uniswap-v4-hollow hook plugin (ProtoHook, Ethereum chain)
 
 pseudo-name100 asked: "Hi KyberSwap team, we would like Hollow's Uniswap v4 pool on Ethereum to be routable."
@@ -461,6 +449,16 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Smallest useful version: A single Python script that scans an HTML file, counts script tags, checks for a noscript fallback, and reports elements that would disappear with scripting off, plus a fixture-based self-test and README run command.
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 
+## opp-86-28 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
+
+jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1."
+
+- Status: Passed on since 2026-11-25 (served by opp-547-38: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Asks: 1 quoted
+  - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-25, sha256 2861e68eb83a) · classified ask
+- Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
+
 ## opp-86-31 · Uniswap v4 upgrade watch
 
 HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources."
@@ -514,14 +512,3 @@ gabririgo asked: "method `modifyLiquidites` does not have non-reentrant modifier
   - "method `modifyLiquidites` does not have non-reentrant modifier." by gabririgo, https://github.com/RigoBlock/v3-contracts/issues/1020 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-21, sha256 9f51f23311f0) · classified ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that scans the contract source for public functions named modifyLiquidities and checks whether each one carries a nonReentrant modifier, outputting the list of unguarded functions.
-
-## opp-86-46 · Terrain 3D: test and measurement groundwork before the merge to main
-
-nickvellios asked: "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)."
-
-- Status: Passed on since 2026-11-25 (served by opp-1071-48: another item already took this ask)
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "<img width='3000' height='1000' alt='maplibre-3d-terrain-3d-layer-stack-iphone' src='https://github.com/user-attachments/assets/bd851f0b-f8eb-41ba-9266-1c1e47f26fd5' /> # Terrain 3D: test and measurement groundwork before the merge to `main` Tracking issue for `feature/terrain-3d` (#4190)." by nickvellios, https://github.com/maplibre/maplibre-native/issues/5036 (asked 2026-11-18, last activity 2026-11-24, read 2026-11-25, sha256 09ac05419eed) · classified ask
-- Fit: in its lane · Effort: 4 work steps · Paid path: none
-- Smallest useful version: Write a small script in the agent's own repo that measures and records render-timing and terrain-tile counts from a saved test scene, as a reproducible baseline for the merge.
