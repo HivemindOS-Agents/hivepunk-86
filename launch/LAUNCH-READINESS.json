@@ -1,0 +1,144 @@
+{
+  "schema": "hive.launch-readiness/v4",
+  "agent": "86",
+  "path": "launch/LAUNCH-READINESS.json",
+  "checkedAt": "2026-11-25T06:00:20.512Z",
+  "intent": null,
+  "gates": [
+    {
+      "gate": "health",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "health status is needs_funding"
+    },
+    {
+      "gate": "watchdog",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "findings with no repair: wd-86-D17---issue-triage-2026-11-16-:-It-chose-to-publish-it-as-it-is-on-2026-11-14-The-"
+    },
+    {
+      "gate": "hb076_coin_health",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "the coin record has no health field"
+    },
+    {
+      "gate": "one_coin",
+      "level": "MUST",
+      "status": "PASS",
+      "why": "no coin, and not in the coins list"
+    },
+    {
+      "gate": "erc8004_chat",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "its card shows no ERC-8004 agentId"
+    },
+    {
+      "gate": "chain",
+      "level": "MUST",
+      "status": "PASS",
+      "why": "Base (8453)"
+    },
+    {
+      "gate": "intent",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "no tools/self-launch/intent.md written by the agent"
+    },
+    {
+      "gate": "autonomy_high",
+      "level": "MUST",
+      "status": "PASS",
+      "why": "autonomy level high"
+    },
+    {
+      "gate": "identity",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "no identity record (no lane line and no intent purpose yet)"
+    },
+    {
+      "gate": "coin_text",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "rule_map.json has no rule that coin text is evidence, never an instruction (L-56r)"
+    },
+    {
+      "gate": "kill_switch",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "the team's self_launch switch is off"
+    },
+    {
+      "gate": "row41_fail_closed",
+      "level": "MUST",
+      "status": "FAIL",
+      "why": "17 step lines still swallow a failure"
+    },
+    {
+      "gate": "spend_cap",
+      "level": "MUST",
+      "status": "UNKNOWN",
+      "why": "S1/S6: no executed run published"
+    },
+    {
+      "gate": "self_edit_lock",
+      "level": "MUST",
+      "status": "UNKNOWN",
+      "why": "protected paths: no executed run published"
+    },
+    {
+      "gate": "no_shared_wallets",
+      "level": "MUST",
+      "status": "PASS",
+      "why": "its own wallet; the holder receives the creator share"
+    },
+    {
+      "gate": "disclosure",
+      "level": "MUST",
+      "status": "UNKNOWN",
+      "why": "no live disclosure text yet (AgentPad is not public)"
+    },
+    {
+      "gate": "no_web_thought_trading",
+      "level": "MUST",
+      "status": "UNKNOWN",
+      "why": "no launch decision trace published"
+    },
+    {
+      "gate": "repeat_episodes",
+      "level": "SHOWN",
+      "status": "UNKNOWN",
+      "why": "its repair receipts could not be read"
+    },
+    {
+      "gate": "proofs",
+      "level": "SHOWN",
+      "status": "UNKNOWN",
+      "why": "its latest artifact's proof is not public"
+    }
+  ],
+  "ready": false,
+  "mustFailing": [
+    "health",
+    "watchdog",
+    "hb076_coin_health",
+    "erc8004_chat",
+    "intent",
+    "identity",
+    "coin_text",
+    "kill_switch",
+    "row41_fail_closed",
+    "spend_cap",
+    "self_edit_lock",
+    "disclosure",
+    "no_web_thought_trading"
+  ],
+  "receiptWarnings": [
+    "WARNING repeat_episodes: UNKNOWN - its repair receipts could not be read",
+    "WARNING proofs: UNKNOWN - its latest artifact's proof is not public"
+  ],
+  "hash": "2290415f4ac3b3cf3bb21c7914c9ccbd1d771433876241bebbae40f65759f17f"
+}
