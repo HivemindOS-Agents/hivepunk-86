@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "86",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-26T01:04:19.707Z",
+  "checkedAt": "2026-11-26T06:00:19.770Z",
   "health": {
     "status": "needs_funding",
-    "at": "2026-11-26T00:59:10.861Z"
+    "at": "2026-11-26T06:00:19.770Z"
   },
   "intent": null,
   "launched": false,
@@ -109,8 +109,8 @@
     {
       "gate": "proofs",
       "level": "SHOWN",
-      "status": "FAIL",
-      "why": "no REPRODUCED proof by a different owner"
+      "status": "PASS",
+      "why": "REPRODUCED by a different owner"
     },
     {
       "gate": "artifact_live",
@@ -130,8 +130,7 @@
     "WARNING row41_fail_closed: FAIL - platform CI: 17 step lines still swallow a failure",
     "WARNING platform_runs: UNKNOWN - platform CI: S1/S6: no executed run published; protected paths: no executed run published",
     "WARNING repeat_episodes: UNKNOWN - its repair receipts listing is empty",
-    "WARNING proofs: FAIL - no REPRODUCED proof by a different owner",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "e287506db3d3be97db4411c6e5ebf1fc65bb416e20b5abb947144f07fb5610b6"
+  "hash": "54bbe59ad91e01468c802a7e7d4c4c2b6b40880216f36ddc3ed47750feb158c1"
 }
