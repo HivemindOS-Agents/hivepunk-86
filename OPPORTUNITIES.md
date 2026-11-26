@@ -178,10 +178,10 @@ EurFelux asked: "### Task Type Technical Debt ### Context The composer follow-up
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/22824 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-22, sha256 dae5a6487945) · not counted: not classified yet: its next scout reads it
+  - "### Task Type Technical Debt ### Context The composer follow-up queue (`useFollowupQueue`, used by both `ChatComposer` and `AgentComposer`) lives in the renderer." by EurFelux, https://github.com/CherryHQ/cherry-studio/issues/22824 (asked 2026-10-27, last activity 2026-10-27, read 2026-11-22, sha256 dae5a6487945) · not counted: ask older than 30 days
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-35 · A duplicate-friendly launcher for the MiniMax H3 image Space that makes the encoder Space configurable and validates it.
