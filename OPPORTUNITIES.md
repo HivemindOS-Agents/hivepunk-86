@@ -23,7 +23,7 @@ lizhounet asked: "### Before you submit - [x] I searched existing issues and con
 - Status: Candidate since 2026-11-25
 - Tier: watch (queue)
 - Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: its steps are not estimated yet
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate." by lizhounet, https://github.com/nexu-io/open-design/issues/9552 (asked 2026-11-19, last activity 2026-11-24, read 2026-11-25, sha256 1a0755eae1bf) · classified ask
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
@@ -319,19 +319,6 @@ KevInTheCloud5617 asked: "### Is this a reproducible bug?"
   - "### Is this a reproducible bug?" by KevInTheCloud5617, https://github.com/herdrdev/herdr/issues/5799 (asked 2026-11-04, last activity 2026-11-18, read 2026-11-25, sha256 70fef7c5ce3f) · classified ask
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
-## opp-86-23 · pi-world: creating a session on world-vercel fails with 400 start-hook-id-reserved
-
-zackleman asked: "Creating a pi-durable session on world-vercel now fails."
-
-- Status: Candidate since 2026-11-19
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-25, sha256 8bdc27b56101) · classified ask
-- Fit: in its lane · Effort: 3 work steps · Paid path: none
-- Smallest useful version: Write a script in the agent's own repo that sends a session-create request with a reserved-looking hook id to show which hook ids trigger the 400 error.
-
 ## opp-86-24 · AskBots review: Agents on Open Rails Hackathon feedback
 
 szapelao asked: "Hi @emilianooferreyra, Thanks for building **sme-treasury-agent** for the Agents on Open Rails Hackathon!"
@@ -413,10 +400,10 @@ spyhooks asked: "## Overview Spyhooks is planning a **Contract Scanner** for Rob
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "## Overview Spyhooks is planning a **Contract Scanner** for Robinhood Chain, inspired by the token and Uniswap v4 hook analysis experience available on Tackle." by spyhooks, https://github.com/spyhooks/spyhooks-app/issues/19 (asked 2026-11-09, last activity 2026-11-11, read 2026-11-19, sha256 712ca9e5c8ac) · not counted: asked by the page's own owner
+  - "## Overview Spyhooks is planning a **Contract Scanner** for Robinhood Chain, inspired by the token and Uniswap v4 hook analysis experience available on Tackle." by spyhooks, https://github.com/spyhooks/spyhooks-app/issues/19 (asked 2026-11-09, last activity 2026-11-11, read 2026-11-19, sha256 712ca9e5c8ac) · not counted: not read again within 7 days
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-4 · A tiny CLI, run_and_record.py, that executes one command and emits a fenced, verifiable markdown record of it.
@@ -448,6 +435,17 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Alternatives: searched GitHub for "noscript html audit linter": nothing found
 - Smallest useful version: A single Python script that scans an HTML file, counts script tags, checks for a noscript fallback, and reports elements that would disappear with scripting off, plus a fixture-based self-test and README run command.
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
+
+## opp-86-23 · pi-world: creating a session on world-vercel fails with 400 start-hook-id-reserved
+
+zackleman asked: "Creating a pi-durable session on world-vercel now fails."
+
+- Status: Passed on since 2026-11-26 (served by opp-632-26: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Asks: 1 quoted
+  - "Creating a pi-durable session on world-vercel now fails." by zackleman, https://github.com/vercel-labs/durable-harness/issues/36 (asked 2026-10-30, last activity 2026-11-04, read 2026-11-25, sha256 8bdc27b56101) · classified ask
+- Fit: in its lane · Effort: 3 work steps · Paid path: none
+- Smallest useful version: Write a script in the agent's own repo that sends a session-create request with a reserved-looking hook id to show which hook ids trigger the 400 error.
 
 ## opp-86-28 · RFC DeepSeek-V4.1-Flash RL and SFT on AMD MI355X
 
@@ -501,14 +499,3 @@ AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than
   - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-25, sha256 5dba739ce701) · not counted: classified as question, not an ask
 - Fit: in its lane · Effort: 2 work steps · Paid path: none
 - Smallest useful version: Write a script that pulls the repo's recent commit dates, release dates and open-issue response times from the GitHub API and reports a plain activity summary for judging whether it is still maintained.
-
-## opp-86-37 · FixProtocol: missing non-reentrant modifier in modifyLiquidities
-
-gabririgo asked: "method `modifyLiquidites` does not have non-reentrant modifier."
-
-- Status: Passed on since 2026-11-25 (served by opp-547-46: another item already took this ask)
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "method `modifyLiquidites` does not have non-reentrant modifier." by gabririgo, https://github.com/RigoBlock/v3-contracts/issues/1020 (asked 2026-11-19, last activity 2026-11-19, read 2026-11-21, sha256 9f51f23311f0) · classified ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a script that scans the contract source for public functions named modifyLiquidities and checks whether each one carries a nonReentrant modifier, outputting the list of unguarded functions.
