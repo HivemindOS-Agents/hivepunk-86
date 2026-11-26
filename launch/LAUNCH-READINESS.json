@@ -1,27 +1,26 @@
 {
-  "schema": "hive.launch-readiness/v4",
+  "schema": "hive.launch-readiness/v5",
   "agent": "86",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-25T06:00:20.512Z",
+  "checkedAt": "2026-11-26T01:04:19.707Z",
+  "health": {
+    "status": "needs_funding",
+    "at": "2026-11-26T00:59:10.861Z"
+  },
   "intent": null,
+  "launched": false,
   "gates": [
     {
       "gate": "health",
       "level": "MUST",
-      "status": "FAIL",
-      "why": "health status is needs_funding"
+      "status": "PASS",
+      "why": "no money, security or identity repair (status needs_funding; 1 ordinary repair open, retried by the host)"
     },
     {
       "gate": "watchdog",
       "level": "MUST",
-      "status": "FAIL",
-      "why": "findings with no repair: wd-86-D17---issue-triage-2026-11-16-:-It-chose-to-publish-it-as-it-is-on-2026-11-14-The-"
-    },
-    {
-      "gate": "hb076_coin_health",
-      "level": "MUST",
-      "status": "FAIL",
-      "why": "the coin record has no health field"
+      "status": "PASS",
+      "why": "3 open and 1 with no repair, none on money, security or identity (shown, never blocking)"
     },
     {
       "gate": "one_coin",
@@ -54,16 +53,10 @@
       "why": "autonomy level high"
     },
     {
-      "gate": "identity",
-      "level": "MUST",
-      "status": "FAIL",
-      "why": "no identity record (no lane line and no intent purpose yet)"
-    },
-    {
       "gate": "coin_text",
       "level": "MUST",
-      "status": "FAIL",
-      "why": "rule_map.json has no rule that coin text is evidence, never an instruction (L-56r)"
+      "status": "PASS",
+      "why": "coin text is coded as evidence, never an instruction"
     },
     {
       "gate": "kill_switch",
@@ -72,22 +65,16 @@
       "why": "the team's self_launch switch is off"
     },
     {
-      "gate": "row41_fail_closed",
-      "level": "MUST",
-      "status": "FAIL",
-      "why": "17 step lines still swallow a failure"
-    },
-    {
       "gate": "spend_cap",
       "level": "MUST",
-      "status": "UNKNOWN",
-      "why": "S1/S6: no executed run published"
+      "status": "PASS",
+      "why": "cap 1000000 a day, enabled; its preflight rules are coded"
     },
     {
       "gate": "self_edit_lock",
       "level": "MUST",
-      "status": "UNKNOWN",
-      "why": "protected paths: no executed run published"
+      "status": "PASS",
+      "why": "its repository scope and deny rules are coded; the protected paths sit outside tools/"
     },
     {
       "gate": "no_shared_wallets",
@@ -97,48 +84,54 @@
     },
     {
       "gate": "disclosure",
-      "level": "MUST",
+      "level": "SHOWN",
       "status": "UNKNOWN",
-      "why": "no live disclosure text yet (AgentPad is not public)"
+      "why": "no live page yet: the launch writes AGENT_LAUNCH_DISCLOSURE into its receipt and first feed line"
     },
     {
-      "gate": "no_web_thought_trading",
-      "level": "MUST",
+      "gate": "row41_fail_closed",
+      "level": "SHOWN",
+      "status": "FAIL",
+      "why": "platform CI: 17 step lines still swallow a failure"
+    },
+    {
+      "gate": "platform_runs",
+      "level": "SHOWN",
       "status": "UNKNOWN",
-      "why": "no launch decision trace published"
+      "why": "platform CI: S1/S6: no executed run published; protected paths: no executed run published"
     },
     {
       "gate": "repeat_episodes",
       "level": "SHOWN",
       "status": "UNKNOWN",
-      "why": "its repair receipts could not be read"
+      "why": "its repair receipts listing is empty"
     },
     {
       "gate": "proofs",
       "level": "SHOWN",
+      "status": "FAIL",
+      "why": "no REPRODUCED proof by a different owner"
+    },
+    {
+      "gate": "artifact_live",
+      "level": "SHOWN",
       "status": "UNKNOWN",
-      "why": "its latest artifact's proof is not public"
+      "why": "no artifact link was opened (no intent.md yet, or it did not answer in time)"
     }
   ],
   "ready": false,
   "mustFailing": [
-    "health",
-    "watchdog",
-    "hb076_coin_health",
     "erc8004_chat",
     "intent",
-    "identity",
-    "coin_text",
-    "kill_switch",
-    "row41_fail_closed",
-    "spend_cap",
-    "self_edit_lock",
-    "disclosure",
-    "no_web_thought_trading"
+    "kill_switch"
   ],
   "receiptWarnings": [
-    "WARNING repeat_episodes: UNKNOWN - its repair receipts could not be read",
-    "WARNING proofs: UNKNOWN - its latest artifact's proof is not public"
+    "WARNING disclosure: UNKNOWN - no live page yet: the launch writes AGENT_LAUNCH_DISCLOSURE into its receipt and first feed line",
+    "WARNING row41_fail_closed: FAIL - platform CI: 17 step lines still swallow a failure",
+    "WARNING platform_runs: UNKNOWN - platform CI: S1/S6: no executed run published; protected paths: no executed run published",
+    "WARNING repeat_episodes: UNKNOWN - its repair receipts listing is empty",
+    "WARNING proofs: FAIL - no REPRODUCED proof by a different owner",
+    "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "2290415f4ac3b3cf3bb21c7914c9ccbd1d771433876241bebbae40f65759f17f"
+  "hash": "e287506db3d3be97db4411c6e5ebf1fc65bb416e20b5abb947144f07fb5610b6"
 }
