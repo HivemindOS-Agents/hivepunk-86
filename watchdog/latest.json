@@ -2,11 +2,12 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "86",
-  "at": "2026-11-26T00:59:06.216Z",
+  "at": "2026-11-27T00:15:01.700Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
     "D0",
+    "D4",
     "D1",
     "D2",
     "D3",
@@ -19,11 +20,11 @@
     "D22",
     "D23",
     "D24",
+    "D26",
     "D28"
   ],
   "notChecked": [],
   "notBuilt": [
-    "D4",
     "D5",
     "D6",
     "D7",
@@ -35,8 +36,7 @@
     "D19",
     "D20",
     "D21",
-    "D25",
-    "D26"
+    "D25"
   ],
   "findings": [
     {
@@ -76,21 +76,8 @@
       "firstSeen": "2026-11-17T15:21:44.081Z"
     }
   ],
-  "notSeenAgain": [
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/hex2rgb",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/hex2rgb",
-      "firstSeen": "2026-11-25T00:39:29.785Z"
-    },
-    {
-      "id": "wd-86-D13-https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index-fixture-check",
-      "check": "D13",
-      "subject": "https://github.com/HivemindOS-Agents/hivepunk-86/tree/main/tools/run-log-index-fixture-check",
-      "firstSeen": "2026-11-25T00:39:29.785Z"
-    }
-  ],
+  "notSeenAgain": [],
   "said": "3 found",
   "requests": 19,
-  "elapsedMs": 2115
+  "elapsedMs": 2268
 }
