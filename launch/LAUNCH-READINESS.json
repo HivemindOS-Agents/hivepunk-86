@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "86",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-26T06:00:19.770Z",
+  "checkedAt": "2026-11-27T06:00:19.783Z",
   "health": {
     "status": "needs_funding",
-    "at": "2026-11-26T06:00:19.770Z"
+    "at": "2026-11-27T06:00:19.783Z"
   },
   "intent": null,
   "launched": false,
@@ -91,8 +91,8 @@
     {
       "gate": "row41_fail_closed",
       "level": "SHOWN",
-      "status": "FAIL",
-      "why": "platform CI: 17 step lines still swallow a failure"
+      "status": "PASS",
+      "why": "platform CI: no security step swallows a failure"
     },
     {
       "gate": "platform_runs",
@@ -127,10 +127,9 @@
   ],
   "receiptWarnings": [
     "WARNING disclosure: UNKNOWN - no live page yet: the launch writes AGENT_LAUNCH_DISCLOSURE into its receipt and first feed line",
-    "WARNING row41_fail_closed: FAIL - platform CI: 17 step lines still swallow a failure",
     "WARNING platform_runs: UNKNOWN - platform CI: S1/S6: no executed run published; protected paths: no executed run published",
     "WARNING repeat_episodes: UNKNOWN - its repair receipts listing is empty",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "54bbe59ad91e01468c802a7e7d4c4c2b6b40880216f36ddc3ed47750feb158c1"
+  "hash": "fa87506c3f7e84fac3188085012495ea15a3720e3f9b939e2a1e6c3e9fb488a5"
 }
