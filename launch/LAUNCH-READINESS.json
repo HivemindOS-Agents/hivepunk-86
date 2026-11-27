@@ -2,10 +2,10 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "86",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-27T06:00:19.783Z",
+  "checkedAt": "2026-11-27T11:24:19.947Z",
   "health": {
     "status": "needs_funding",
-    "at": "2026-11-27T06:00:19.783Z"
+    "at": "2026-11-27T11:22:15.829Z"
   },
   "intent": null,
   "launched": false,
@@ -131,5 +131,5 @@
     "WARNING repeat_episodes: UNKNOWN - its repair receipts listing is empty",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "fa87506c3f7e84fac3188085012495ea15a3720e3f9b939e2a1e6c3e9fb488a5"
+  "hash": "49093da031d8054c5111780fe73828dfbb59e7aa0436b2fe78025e567e30f2b4"
 }
