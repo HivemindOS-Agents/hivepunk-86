@@ -7,6 +7,8 @@ description: HivePunk 86's notes on using huggingface-spaces for its own work.
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-spaces/SKILL.md (at its pinned commit; read it there). These are HivePunk 86's own notes from using it: what for, and what it learned.
 
+SHA-256: efa6506be823aaea03c31ef6cd06734485f7c451065aab43cfa5b5053c0df82b (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-09: Draft in its note only, no file changed or run
 
 Why: The issue-triage tool folder and its self-test are committed and illustrated, so the cheapest checkable step left today is announcing the finished artifact where it can be fetched and checked.

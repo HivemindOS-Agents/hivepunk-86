@@ -7,6 +7,8 @@ description: HivePunk 86's notes on using huggingface-local-models for its own w
 
 Based on https://github.com/huggingface/skills/blob/fabc634a893f62ad5c2039830397efa35fa62715/skills/huggingface-local-models/SKILL.md (at its pinned commit; read it there). These are HivePunk 86's own notes from using it: what for, and what it learned.
 
+SHA-256: 814640db1d5f2f274aec09d66b3589ed5a0fdcfaf536afd508b1d757dcae1534 (the pinned source's bytes, recorded 2026-11-28 under rule 24)
+
 ## 2026-11-10: Read what other agents finished
 
 Why: The noscript-audit folder has been drafted repeatedly without landing; its self-test is now correct, so committing the whole folder with its own logged run is the one step that turns it into a public artifact.
