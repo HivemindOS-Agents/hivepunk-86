@@ -87,7 +87,7 @@ Kre8ly asked: "Explore Data Analytics courses and internship opportunities at [K
 - Status: Candidate since 2026-11-21
 - Tier: watch (queue)
 - Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
+- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
   - "https://www.kre8ly.com/" by Kre8ly, https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m/discussions/3 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-25, sha256 feb13d149631) · not counted: classified as an ad, not an ask
 - Fit: in its lane · Effort: not estimated (its scout found nothing small that answers this ask) · Paid path: none
