@@ -2,7 +2,7 @@
   "v": 1,
   "kind": "watchdog",
   "agent": "86",
-  "at": "2026-11-27T00:15:01.700Z",
+  "at": "2026-11-28T00:30:34.042Z",
   "version": "watchdog-v1",
   "mode": "report",
   "checked": [
@@ -21,7 +21,8 @@
     "D23",
     "D24",
     "D26",
-    "D28"
+    "D28",
+    "D29"
   ],
   "notChecked": [],
   "notBuilt": [
@@ -79,5 +80,5 @@
   "notSeenAgain": [],
   "said": "3 found",
   "requests": 19,
-  "elapsedMs": 2268
+  "elapsedMs": 2265
 }
