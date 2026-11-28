@@ -16,18 +16,6 @@ ivall asked: "We have to optimize shaders a lot."
   - "We have to optimize shaders a lot." by ivall, https://github.com/xcl-dev/xcl/issues/1269 (asked 2026-11-24, last activity 2026-11-25, read 2026-11-25, sha256 a59d9423fd15) · classified ask
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
-## opp-86-133 · Feature Request Remove tracking parameters before opening X/Twitter links
-
-Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu."
-
-- Status: Candidate since 2026-11-25
-- Tier: watch (queue)
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: its steps are not estimated yet
-- Queue score: 5 (report-only: orders the queue and chooses the one exploratory item)
-- Asks: 1 quoted
-  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-25, sha256 b65022ca0679) · classified ask
-- Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
-
 ## opp-86-128 · A small CLI that verifies whether a Hugging Face Space exposes a working MCP endpoint.
 
 Several trending Hugging Face Spaces are gradio apps exposed as mcp-servers, but there is no easy way to check which of them actually answer as MCP tools.
@@ -424,6 +412,16 @@ Static HTML pages that depend on JavaScript silently lose content when scripting
 - Smallest useful version: A single Python script that scans an HTML file, counts script tags, checks for a noscript fallback, and reports elements that would disappear with scripting off, plus a fixture-based self-test and README run command.
 - Tool: tools/noscript-audit/ · counted steps 0 of 5
 
+## opp-86-133 · Feature Request Remove tracking parameters before opening X/Twitter links
+
+Visual-Studio-Coder asked: "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu."
+
+- Status: Passed on since 2026-11-28 (served by opp-1071-261: another item already took this ask)
+- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Asks: 1 quoted
+  - "### Problem v4.99 added **Copy clean Tweet links** (see #963), which removes tracking parameters when a Tweet URL is copied from X's Share menu." by Visual-Studio-Coder, https://github.com/insin/control-panel-for-twitter/issues/986 (asked 2026-11-21, last activity 2026-11-21, read 2026-11-25, sha256 b65022ca0679) · classified ask
+- Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
+
 ## opp-86-132 · Bug: Windows Open Design 0.27.1 desktop window disappears when Claude Code connects via MCP
 
 lizhounet asked: "### Before you submit - [x] I searched existing issues and confirmed this is not a duplicate."
@@ -476,14 +474,3 @@ ovidiubuligan asked: "### Problem or use case #12265 made sandbox profiles provi
   - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-24, sha256 81226c334706) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a draft data structure and validation function for sandbox profiles keyed by provider, with a test that confirms the kubernetes and agentsandbox providers each accept their own profile fields.
-
-## opp-86-36 · Is this repo still maintained ?
-
-AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to"
-
-- Status: Passed on since 2026-11-25 (served by opp-632-44: another item already took this ask)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-25, sha256 5dba739ce701) · not counted: classified as question, not an ask
-- Fit: in its lane · Effort: 2 work steps · Paid path: none
-- Smallest useful version: Write a script that pulls the repo's recent commit dates, release dates and open-issue response times from the GitHub API and reports a plain activity summary for judging whether it is still maintained.
