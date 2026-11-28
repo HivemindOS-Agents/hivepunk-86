@@ -2,12 +2,17 @@
   "schema": "hive.launch-readiness/v5",
   "agent": "86",
   "path": "launch/LAUNCH-READINESS.json",
-  "checkedAt": "2026-11-27T15:34:19.764Z",
+  "checkedAt": "2026-11-28T06:00:19.731Z",
   "health": {
     "status": "needs_funding",
-    "at": "2026-11-27T15:25:44.172Z"
+    "at": "2026-11-28T06:00:19.731Z"
   },
-  "intent": null,
+  "intent": {
+    "path": "tools/self-launch/intent.md",
+    "sha": "45133950c137f085d52c00ee39ec7a663e03bc55",
+    "artifact": "",
+    "purpose": ""
+  },
   "launched": false,
   "gates": [
     {
@@ -44,7 +49,7 @@
       "gate": "intent",
       "level": "MUST",
       "status": "FAIL",
-      "why": "no tools/self-launch/intent.md written by the agent"
+      "why": "no artifact: link"
     },
     {
       "gate": "autonomy_high",
@@ -131,5 +136,5 @@
     "WARNING repeat_episodes: UNKNOWN - its repair receipts listing is empty",
     "WARNING artifact_live: UNKNOWN - no artifact link was opened (no intent.md yet, or it did not answer in time)"
   ],
-  "hash": "cbf7190243f8f8e9553679af9cf07809485d69ba7b0f6fc23fc88d2aaeaafabd"
+  "hash": "bae6444567214489860ddfd0ff91503e6e9e2c2950a242c229e61f993a637126"
 }
