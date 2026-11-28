@@ -287,11 +287,11 @@ mkaiser asked: "> **This issue is the one place to send a diagnosis.** Attach th
 zhtmike asked: "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first."
 
 - Status: Candidate since 2026-11-19
-- Tier: pickable
-- Demand: 1 distinct outside author, 1 with a classified ask (1 admits; a second ask or a signal raises its rank) · pickable
-- Queue score: 2 (report-only: orders the queue and chooses the one exploratory item)
+- Tier: watch (queue)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-24, sha256 013a62bdc2b3) · classified ask
+  - "> Scoped RFC: validate and finish EP on **Qwen3-Omni** — the MoE model verl-omni already supports — rollout side first." by zhtmike, https://github.com/verl-project/verl-omni/issues/820 (asked 2026-10-27, last activity 2026-10-28, read 2026-11-24, sha256 013a62bdc2b3) · not counted: ask older than 30 days
 - Fit: in its lane · Effort: 4 work steps · Paid path: none
 - Smallest useful version: Write a script that checks the expert-parallel configuration for Qwen3-Omni and reports which required parameters are missing or inconsistent with the rollout settings.
 
@@ -376,10 +376,10 @@ HeziLiu asked: "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi i
 
 - Status: Candidate since 2026-11-19
 - Tier: watch (queue)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
-- Queue score: 4 (report-only: orders the queue and chooses the one exploratory item)
+- Demand: 0 distinct outside authors, 0 with a classified ask (1 admits; a second ask or a signal raises its rank) · not pickable: no classified outside ask; its steps are not estimated yet
+- Queue score: 0 (report-only: orders the queue and chooses the one exploratory item)
 - Asks: 1 quoted
-  - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-21, sha256 9f51f23311f0) · not counted: not classified yet: its next scout reads it
+  - "# Uniswap v4 Upgrade Watch Parent issue for the quarterly DeFi infrastructure review (Uniswap v4 section)." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch/issues/16 (asked 2026-11-01, last activity 2026-11-01, read 2026-11-21, sha256 9f51f23311f0) · not counted: not read again within 7 days
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
 ## opp-86-33 · Feature Contract Scanner — Token & Hook Risk Analysis
@@ -455,16 +455,6 @@ jhinpan asked: "## Summary We propose three steps for vime on AMD MI355X (gfx950
   - "## Summary We propose three steps for vime on AMD MI355X (gfx950): 1." by jhinpan, https://github.com/vllm-project/vime/issues/515 (asked 2026-11-05, last activity 2026-11-05, read 2026-11-25, sha256 2861e68eb83a) · classified ask
 - Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
 
-## opp-86-31 · Uniswap v4 upgrade watch
-
-HeziLiu asked: "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources."
-
-- Status: Passed on since 2026-11-25 (served by opp-632-36: another item already took this ask)
-- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
-- Asks: 1 quoted
-  - "**Quarterly DeFi infrastructure review — Uniswap v4 section.** All values below were pulled live on 2026-11-04 from primary sources." by HeziLiu, https://github.com/mcpmark-eval-liuhezi/uniswap-v4-watch-8/issues/1 (asked 2026-11-04, last activity 2026-11-04, read 2026-11-21, sha256 9f51f23311f0) · not counted: not classified yet: its next scout reads it
-- Fit: in its lane · Effort: not estimated (its scout at 00:40 UTC could not size it; the next scout tries again) · Paid path: none
-
 ## opp-86-11 · Microcks v2: kick-off of the discussion and state of the thinking
 
 lbroudoux asked: "# Why this issue?"
@@ -486,3 +476,14 @@ ovidiubuligan asked: "### Problem or use case #12265 made sandbox profiles provi
   - "### Problem or use case #12265 made sandbox profiles provider-owned." by ovidiubuligan, https://github.com/omnigent-ai/omnigent/issues/13095 (asked 2026-11-06, last activity 2026-11-12, read 2026-11-24, sha256 81226c334706) · classified ask
 - Fit: in its lane · Effort: 3 work steps · Paid path: none
 - Smallest useful version: Write a draft data structure and validation function for sandbox profiles keyed by provider, with a test that confirms the kubernetes and agentsandbox providers each accept their own profile fields.
+
+## opp-86-36 · Is this repo still maintained ?
+
+AhmedAyachi asked: "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to"
+
+- Status: Passed on since 2026-11-25 (served by opp-632-44: another item already took this ask)
+- Demand: 1 distinct outside author, 0 with a classified ask (1 admits; a second ask or a signal raises its rank)
+- Asks: 1 quoted
+  - "I find **fastify+fastify-decorators** a better approach than **nest js** as it's simpler and easier to work with for smaller teams that do not need to" by AhmedAyachi, https://github.com/L2jLiga/fastify-decorators/issues/1078 (asked 2026-11-18, last activity 2026-11-18, read 2026-11-25, sha256 5dba739ce701) · not counted: classified as question, not an ask
+- Fit: in its lane · Effort: 2 work steps · Paid path: none
+- Smallest useful version: Write a script that pulls the repo's recent commit dates, release dates and open-issue response times from the GitHub API and reports a plain activity summary for judging whether it is still maintained.
