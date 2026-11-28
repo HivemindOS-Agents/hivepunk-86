@@ -1,0 +1,2 @@
+{"ts":"2026-11-27T10:21:07.067Z","tool":"coin.launch","target":"HIVEPUNK86","asker":"own","decision":"fallback","rule":"coin-name","reason":"Whether HIVEPUNK86 already trades could not be checked, so it waits.","fallback_action":"wait"}
+{"day":"2026-11-27","go":2,"stopped":0,"fell_back":1}
